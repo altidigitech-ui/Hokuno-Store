@@ -10,41 +10,216 @@
       "version_linguistique": "universelle — pas de texte sur le design",
       "tshirt_base": "blanc",
       "tshirt_noir": "version couleurs inversées du design",
-      "couleurs_dispo": ["blanc", "noir", "gris clair", "beige", "bleu ciel", "rose pâle", "menthe", "lavande"],
+      "couleurs_dispo_light": ["White", "Natural", "Gravel", "Red", "Royal", "Safety Pink", "Sky"],
+      "couleurs_dispo_dark": ["Black"],
       "print": "back uniquement"
+    },
+    "printify_id_schema": {
+      "tshirt_light": "Version sur t-shirt clair (56 variantes)",
+      "tshirt_light_v2": "Version alternative 'new' light (Zoro uniquement)",
+      "tshirt_noir": "Version NOIR uniquement, 8 tailles S→5XL (couleurs inversées)",
+      "tshirt_noir_v2": "Variante alternative NOIR (Brook uniquement)",
+      "mug": "Tasse céramique 11oz/15oz",
+      "coque": "Coque téléphone slim — iPhone 15"
     }
   },
   "personnages": [
     {
       "id": "mytho-001",
-      "nom": "Le Cuisinier Divin",
+      "nom": "Luffy",
+      "nom_original_ref": "Monkey D. Luffy",
+      "couleur_signature": "#DC2626",
+      "couleur_nom": "Rouge",
+      "description_visuelle": "Silhouette entièrement rouge, drapée dans une toge grecque qui flotte. Auréole lumineuse rayonnante derrière la tête. Chapeau de paille évoqué dans la silhouette. Bras tendu vers l'avant, posture conquérante. Fond transparent.",
+      "backstory_fr": "Avant que le soleil ne se lève, il marchait déjà devant. On dit que son rire fait fondre les empires — pas par colère, par habitude.",
+      "backstory_en": "Before the sun rose, he was already walking ahead. They say his laughter melts empires — not from anger, just from habit.",
+      "divinite_associee": "Apollon / Hélios — le dieu solaire qui ouvre la marche",
+      "tags": ["luffy", "rouge", "soleil", "capitaine", "divin", "mythologie"],
+      "printify_product_ids": {
+        "tshirt_light": "6846b317f4071352350c150a",
+        "tshirt_light_v2": "",
+        "tshirt_noir": "6849b61fd0482255940866ea",
+        "tshirt_noir_v2": "",
+        "mug": "684d59ac1d7c908d840c9497",
+        "coque": ""
+      }
+    },
+    {
+      "id": "mytho-002",
+      "nom": "Zoro",
+      "nom_original_ref": "Roronoa Zoro",
+      "couleur_signature": "#16A34A",
+      "couleur_nom": "Vert",
+      "description_visuelle": "Silhouette entièrement verte, drapée dans une toge grecque. Auréole lumineuse derrière la tête. Trois sabres devinés à la hanche. Posture stable, jambes ancrées, prête à trancher. Fond transparent.",
+      "backstory_fr": "Les dieux ont besoin d'une lame pour partager le ciel. Il en porte trois. Il n'a jamais demandé pourquoi.",
+      "backstory_en": "The gods need a blade to divide the sky. He carries three. He never asked why.",
+      "divinite_associee": "Arès / Achille — le tranchant divin",
+      "tags": ["zoro", "vert", "sabreur", "guerrier", "divin", "mythologie"],
+      "printify_product_ids": {
+        "tshirt_light": "6849a0426ab7f1ef5d069673",
+        "tshirt_light_v2": "6855d6fe2f8c83730f09f141",
+        "tshirt_noir": "6849c1ce6ab7f1ef5d069e35",
+        "tshirt_noir_v2": "",
+        "mug": "",
+        "coque": "684d613ffef859492303a65a"
+      }
+    },
+    {
+      "id": "mytho-003",
+      "nom": "Nami",
+      "nom_original_ref": "Nami",
+      "couleur_signature": "#F97316",
+      "couleur_nom": "Orange",
+      "description_visuelle": "Silhouette entièrement orange, drapée dans une toge grecque. Auréole lumineuse derrière la tête. Cheveux longs flottants, boussole à la main. Posture attentive, regard tourné vers le large. Fond transparent.",
+      "backstory_fr": "Elle nomme les vents avant qu'ils ne soufflent. Le ciel suit son doigt. Les marins prient — elle ne répond pas.",
+      "backstory_en": "She names the winds before they blow. The sky follows her finger. Sailors pray — she doesn't answer.",
+      "divinite_associee": "Iris / Boréas — déesse des vents et messagère du ciel",
+      "tags": ["nami", "orange", "navigatrice", "vent", "divin", "mythologie"],
+      "printify_product_ids": {
+        "tshirt_light": "6849a4237483e9399e0d4444",
+        "tshirt_light_v2": "",
+        "tshirt_noir": "6849c07b943f652c190bd88d",
+        "tshirt_noir_v2": "",
+        "mug": "",
+        "coque": ""
+      }
+    },
+    {
+      "id": "mytho-004",
+      "nom": "Ussop",
+      "nom_original_ref": "Usopp",
+      "couleur_signature": "#EAB308",
+      "couleur_nom": "Jaune doré",
+      "description_visuelle": "Silhouette entièrement jaune doré, drapée dans une toge grecque. Auréole lumineuse derrière la tête. Long nez caractéristique en silhouette, lance-pierre tendu en arc parfait. Posture noble. Fond transparent.",
+      "backstory_fr": "Il décoche des flèches qui n'existent que parce qu'il y croit. Cinq sur six manquent leur cible. La sixième fait s'écrouler les murs.",
+      "backstory_en": "He looses arrows that exist only because he believes in them. Five out of six miss. The sixth brings down walls.",
+      "divinite_associee": "Apollon archer / Eole — l'archer doré",
+      "tags": ["usopp", "jaune", "tireur", "archer", "divin", "mythologie"],
+      "printify_product_ids": {
+        "tshirt_light": "6849a898e27810926a088854",
+        "tshirt_light_v2": "",
+        "tshirt_noir": "6849c298b5bde8e15300e417",
+        "tshirt_noir_v2": "",
+        "mug": "",
+        "coque": ""
+      }
+    },
+    {
+      "id": "mytho-005",
+      "nom": "Sanji",
       "nom_original_ref": "Sanji",
       "couleur_signature": "#1E3A8A",
       "couleur_nom": "Bleu",
       "description_visuelle": "Silhouette entièrement bleue, drapée dans une toge grecque. Auréole lumineuse avec rayons derrière la tête. Cheveux lisses couvrant un œil. Posture élégante, debout, un bras le long du corps. Fond transparent.",
       "backstory_fr": "Avant de nourrir les mortels, il a nourri les dieux. On dit que son feu brûle plus fort que celui de Prométhée — mais lui, il l'utilise pour cuisiner.",
       "backstory_en": "Before feeding mortals, he fed the gods. They say his fire burns hotter than Prometheus' — but he uses it to cook.",
-      "divinite_associee": "Apollon / Héphaïstos",
-      "tags": ["bleu", "cuisinier", "élégance", "feu"],
+      "divinite_associee": "Apollon / Héphaïstos — le feu divin domestiqué",
+      "tags": ["sanji", "bleu", "cuisinier", "feu", "divin", "mythologie"],
       "printify_product_ids": {
-        "tshirt": "",
+        "tshirt_light": "6849a6e0bd30bb1f1304c67e",
+        "tshirt_light_v2": "",
+        "tshirt_noir": "6849be2de27810926a088d94",
+        "tshirt_noir_v2": "",
         "mug": "",
         "coque": ""
       }
     },
     {
-      "id": "mytho-002",
-      "nom": "",
-      "nom_original_ref": "",
-      "couleur_signature": "",
-      "couleur_nom": "",
-      "description_visuelle": "",
-      "backstory_fr": "",
-      "backstory_en": "",
-      "divinite_associee": "",
-      "tags": [],
+      "id": "mytho-006",
+      "nom": "Choper",
+      "nom_original_ref": "Tony Tony Chopper",
+      "couleur_signature": "#EC4899",
+      "couleur_nom": "Rose",
+      "description_visuelle": "Silhouette entièrement rose, drapée dans une toge grecque adaptée à sa petite taille. Auréole lumineuse derrière la tête. Bois ramifiés au-dessus du chapeau. Posture vive et bienveillante. Fond transparent.",
+      "backstory_fr": "Les dieux meurent aussi. C'est lui qu'on appelle quand ça arrive. Il est petit. Il pose sa patte. Quelque chose repart.",
+      "backstory_en": "Even gods die. He's the one they call when it happens. He's small. He places his hoof. Something starts again.",
+      "divinite_associee": "Asclépios — le médecin sacré",
+      "tags": ["chopper", "rose", "medecin", "guerison", "divin", "mythologie"],
       "printify_product_ids": {
-        "tshirt": "",
+        "tshirt_light": "",
+        "tshirt_light_v2": "",
+        "tshirt_noir": "6849a7517483e9399e0d44ef",
+        "tshirt_noir_v2": "",
+        "mug": "",
+        "coque": ""
+      }
+    },
+    {
+      "id": "mytho-007",
+      "nom": "Robin",
+      "nom_original_ref": "Nico Robin",
+      "couleur_signature": "#7C3AED",
+      "couleur_nom": "Violet",
+      "description_visuelle": "Silhouette entièrement violette, drapée dans une toge grecque. Auréole lumineuse derrière la tête. Cheveux longs ondulés, livre ouvert en main. Plusieurs bras émergeant du drapé — geste divin de connaissance. Fond transparent.",
+      "backstory_fr": "Elle se souvient de ce que le monde a oublié. Quand elle ouvre un livre, le passé s'agenouille. Elle l'écoute, puis elle tourne la page.",
+      "backstory_en": "She remembers what the world forgot. When she opens a book, the past kneels. She listens, then turns the page.",
+      "divinite_associee": "Mnémosyne / Athéna — la déesse de la mémoire et du savoir",
+      "tags": ["robin", "violet", "archeologue", "memoire", "savoir", "divin", "mythologie"],
+      "printify_product_ids": {
+        "tshirt_light": "",
+        "tshirt_light_v2": "",
+        "tshirt_noir": "6849a8397483e9399e0d455d",
+        "tshirt_noir_v2": "",
+        "mug": "",
+        "coque": ""
+      }
+    },
+    {
+      "id": "mytho-008",
+      "nom": "Franky",
+      "nom_original_ref": "Franky",
+      "couleur_signature": "#06B6D4",
+      "couleur_nom": "Cyan",
+      "description_visuelle": "Silhouette entièrement cyan, drapée dans une toge grecque qui couvre mal une carrure massive. Auréole lumineuse derrière la tête. Bras croisés en étoile au-dessus de la tête (pose SUPER). Carrure imposante. Fond transparent.",
+      "backstory_fr": "Il a forgé des navires pour des dieux fatigués. Quand il frappe, les montagnes s'alignent. Personne ne lui a jamais dit merci. Il s'en moque.",
+      "backstory_en": "He forged ships for tired gods. When he hammers, mountains line up. Nobody ever thanked him. He doesn't care.",
+      "divinite_associee": "Héphaïstos — l'architecte divin",
+      "tags": ["franky", "cyan", "charpentier", "forgeron", "divin", "mythologie"],
+      "printify_product_ids": {
+        "tshirt_light": "6849a62c7483e9399e0d44b5",
+        "tshirt_light_v2": "",
+        "tshirt_noir": "6849bfd6943f652c190bd86d",
+        "tshirt_noir_v2": "",
+        "mug": "",
+        "coque": ""
+      }
+    },
+    {
+      "id": "mytho-009",
+      "nom": "Brook",
+      "nom_original_ref": "Brook",
+      "couleur_signature": "#404040",
+      "couleur_nom": "Gris/Noir",
+      "description_visuelle": "Silhouette entièrement gris foncé/noir, drapée dans une toge grecque. Auréole lumineuse pâle derrière la tête. Crâne nu visible sous le drapé. Violon levé, archet en mouvement. Posture théâtrale et solennelle. Fond transparent.",
+      "backstory_fr": "Il joue pour les morts qui n'ont pas trouvé la sortie. Il connaît la mélodie par cœur — il l'a écrite quand il était encore vivant.",
+      "backstory_en": "He plays for the dead who couldn't find the exit. He knows the melody by heart — he wrote it while he was still alive.",
+      "divinite_associee": "Orphée — le musicien des Enfers",
+      "tags": ["brook", "noir", "gris", "squelette", "musicien", "divin", "mythologie"],
+      "printify_product_ids": {
+        "tshirt_light": "6849a7abf43bb403450bd907",
+        "tshirt_light_v2": "",
+        "tshirt_noir": "6849bcd3bd30bb1f1304cc78",
+        "tshirt_noir_v2": "6849c4469bf7aebaf7048740",
+        "mug": "",
+        "coque": ""
+      }
+    },
+    {
+      "id": "mytho-010",
+      "nom": "Jinbe",
+      "nom_original_ref": "Jinbe",
+      "couleur_signature": "#1E40AF",
+      "couleur_nom": "Bleu marine",
+      "description_visuelle": "Silhouette entièrement bleu marine, drapée dans une toge grecque tendue par une carrure massive. Auréole lumineuse derrière la tête. Posture stable, pieds ancrés, bras ouverts comme une vague. Fond transparent.",
+      "backstory_fr": "Quand il marche, les marées suivent. Quand il s'arrête, l'océan retient son souffle. Les autres dieux le saluent en silence.",
+      "backstory_en": "When he walks, the tides follow. When he stops, the ocean holds its breath. The other gods salute in silence.",
+      "divinite_associee": "Poséidon / Triton — le roi des marées",
+      "tags": ["jinbe", "bleu-marine", "homme-poisson", "ocean", "divin", "mythologie"],
+      "printify_product_ids": {
+        "tshirt_light": "6849a4e7d5b83610460568ba",
+        "tshirt_light_v2": "",
+        "tshirt_noir": "6849c0fc9bf7aebaf704867b",
+        "tshirt_noir_v2": "",
         "mug": "",
         "coque": ""
       }
