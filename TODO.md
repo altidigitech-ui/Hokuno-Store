@@ -1,163 +1,202 @@
-# TODO PRODUITS — Hokuno Store
+# TODO — Hokuno Store
 
-**Date** : 01/05/2026
-**Base** : INVENTAIRE.md (105 produits actuels)
-
----
-
-## 1. PRODUITS MANQUANTS (collections existantes)
-
-### 1.1 Versions anglaises (EN) — PRIORITÉ HAUTE
-
-**Wanted — 17 personnages × 2 versions (light + dark) = 34 t-shirts EN à créer**
-
-| Personnage | Punchline FR (à traduire) | Punchline EN (à valider) |
-|---|---|---|
-| Lufi | ENCORE UN TOUR... | ONE MORE LAP... |
-| Chanks | (à récupérer du design) | (à traduire) |
-| Alabastards | (à récupérer du design) | (à traduire) |
-| Baggy | ÇA NE FINIRA JAMAIS... | IT WILL NEVER END... |
-| Caido | (à récupérer du design) | (à traduire) |
-| Doflamyngo | (à récupérer du design) | (à traduire) |
-| Francky | (à récupérer du design) | (à traduire) |
-| God Ussop | (à récupérer du design) | (à traduire) |
-| Gymbey | (à récupérer du design) | (à traduire) |
-| Tittch | (à récupérer du design) | (à traduire) |
-| Namy | (à récupérer du design) | (à traduire) |
-| Niko Robine | (à récupérer du design) | (à traduire) |
-| Zoro | (à récupérer du design) | (à traduire) |
-| Sandji | (à récupérer du design) | (à traduire) |
-| Sharlot Linline | (à récupérer du design) | (à traduire) |
-| Shoper | (à récupérer du design) | (à traduire) |
-| Broock | (à récupérer du design) | (à traduire) |
-
-**Direction — 10 personnages × 2 versions (light + dark) = 20 t-shirts EN à créer**
-
-| Personnage | Quote FR (à traduire) | Quote EN (à valider) |
-|---|---|---|
-| Luffy | JE NE SAIS PAS OÙ JE VAIS, MAIS J'Y VAIS. | I DON'T KNOW WHERE I'M GOING, BUT I'M GOING. |
-| Zoro | (à récupérer du design) | (à traduire) |
-| Nami | (à récupérer du design) | (à traduire) |
-| Ussop | (à récupérer du design) | (à traduire) |
-| Sanji | (à récupérer du design) | (à traduire) |
-| Choper | (à récupérer du design) | (à traduire) |
-| Franky | (à récupérer du design) | (à traduire) |
-| Robin | JE N'AI PAS BESOIN D'UN PLAN.. JUSTE D'UNE DIRECTION. | I DON'T NEED A PLAN.. JUST A DIRECTION. |
-| Brook | (à récupérer du design) | (à traduire) |
-| Jinbe | (à récupérer du design) | (à traduire) |
-
-**Mythologie — PAS DE VERSION EN NÉCESSAIRE** (design sans texte)
-
-**TOTAL versions EN : 54 t-shirts à créer dans Printify**
+## État actuel (2026-05-01)
+- 105 produits Printify (shop ID 22774508, **shop disconnected**)
+- 17 personnages Wanted sur Printify (FR uniquement)
+- 49 designs Wanted dans Canva (FR + EN traduit)
+- 10 personnages Direction sur Printify (FR uniquement)
+- 10 personnages Mythologie sur Printify (version universelle)
+- Aucun canal de vente connecté (Shopify, TikTok Shop)
 
 ---
 
-### 1.2 Mugs manquants
+## PHASE 0 — NETTOYAGE PRINTIFY *(faire en premier — automatisable via API)*
 
-| Collection | Personnages manquants | Nombre |
-|---|---|---|
-| Direction | Zoro, Nami, Ussop, Sanji, Choper, Franky, Robin, Brook, Jinbe | 9 mugs |
-| Mythologie | Zoro, Nami, Ussop, Sanji, Choper, Franky, Robin, Brook, Jinbe | 9 mugs |
-| Wanted | ✅ Tous les 17 personnages ont leur mug | 0 |
+### Doublons à supprimer
+- [ ] Supprimer `Copy of TSHIRT ZORO DIRECTION noir/bleu marine` (`684c6ced9a71a3cc7e0f30c0`) — doublon manifeste
+- [ ] Supprimer `T-SHIRT BROOK MYTHOLOGIE NOIR VARIANTE 2` (`6849c4469bf7aebaf7048740`) — variante non documentée
+- [ ] Décider entre Lufi v1 et v2 Wanted → archiver v1 (`6849d4756ab7f1ef5d06a2e9` light + `684b42ddc1b6866d8600db8f` dark)
+- [ ] Décider entre Chanks v1 et v2 Wanted → archiver v1 (`684b39093a95f8f9ac0cd9d7` light + `684b52a24a52709620072dec` dark)
 
-**TOTAL mugs à créer : 18**
+### Titres à corriger
+- [ ] Supprimer espaces parasites en début/fin de titre (6 produits Direction, 1 Wanted, 2 Mythologie)
+- [ ] Corriger suffixe `(11oz, 15oz)ie de` sur 6 mugs Wanted (Zoro, Sandji, Sharlot, Shoper, Sk Broock)
+- [ ] Standardiser `MYTHOLOGIQUE` → `MYTHOLOGIE` (Ussop ×2)
+- [ ] Standardiser `T-SHIRT` / `T SHIRT` / `TSHIRT` → choisir une convention et appliquer partout
+- [ ] Unifier `Niko robin` (mug) vs `Niko robine` (t-shirt) → une seule orthographe
 
----
-
-### 1.3 Coques manquantes
-
-| Collection | Personnages manquants | Nombre |
-|---|---|---|
-| Wanted | TOUS les 17 personnages | 17 coques |
-| Direction | TOUS les 10 personnages | 10 coques |
-| Mythologie | Luffy, Nami, Ussop, Sanji, Choper, Franky, Robin, Brook, Jinbe (Zoro OK) | 9 coques |
-
-**TOTAL coques à créer : 36**
+### Connexions canal de vente
+- [ ] Connecter Shopify au shop Printify (actuellement `disconnected`)
+- [ ] Connecter TikTok Shop au shop Printify
 
 ---
 
-### 1.4 T-shirts manquants (versions light/dark incomplètes)
+## PHASE 1 — WANTED EN *(designs prêts dans Canva "Copie de THE END")*
 
-| Collection | Problème | Action |
-|---|---|---|
-| Mythologie — Choper | Seulement version NOIR, pas de version light | Créer version light (56 variantes) |
-| Mythologie — Robin | Seulement version NOIR, pas de version light | Créer version light (56 variantes) |
+**Contexte** : Les 49 designs EN sont traduits dans Canva via l'outil de traduction intégré. Il faut exporter les PNG puis créer les produits Printify.
+**Punchline** : "IT WILL NEVER END..." (identique pour tous)
 
-**TOTAL t-shirts light manquants : 2**
+### 1a — Personnages déjà sur Printify (17 × 2 = 34 t-shirts)
+Créer la version EN (light + dark) pour chaque personnage Wanted FR existant :
+- [ ] Lufi EN (light + dark)
+- [ ] Chanks EN (light + dark)
+- [ ] Rororoa Zoro EN (light + dark)
+- [ ] Namy EN (light + dark)
+- [ ] Sandji EN (light + dark)
+- [ ] Shoper EN (light + dark)
+- [ ] Niko Robine EN (light + dark)
+- [ ] Francky EN (light + dark)
+- [ ] Broock EN (light + dark)
+- [ ] God Ussop EN (light + dark)
+- [ ] Gymbey EN (light + dark)
+- [ ] Baggy EN (light + dark)
+- [ ] Caido EN (light + dark)
+- [ ] Doflamyngo EN (light + dark)
+- [ ] Marshal Di Tittch EN (light + dark)
+- [ ] Sharlot Linline EN (light + dark)
+- [ ] Alabastards EN (light + dark)
 
----
+### 1b — Personnages dans Canva mais PAS sur Printify (29 personnages)
+Créer pour chacun : FR light + FR dark + EN light + EN dark + mug + coque
+_(soit 116 t-shirts + 29 mugs + 29 coques = 174 produits)_
 
-### 1.5 Nettoyage / Hygiène
-
-| Problème | Action |
-|---|---|
-| `Copy of TSHIRT ZORO DIRECTION noir/bleu marine` | Supprimer le doublon |
-| `T-SHIRT BROOK MYTHOLOGIE NOIR VARIANTE 2` | Décider : garder ou supprimer |
-| Lufi Wanted : 5 produits (v1 + v2 + THE END NOIR) | Choisir v1 ou v2, archiver l'autre |
-| Chanks Wanted : 4 produits (v1 + v2) | Choisir v1 ou v2, archiver l'autre |
-| Espaces parasites dans les titres | Nettoyer tous les titres |
-| Suffixe `(11oz, 15oz)ie de` sur 6 mugs | Corriger les titres |
-| `MYTHOLOGIQUE` vs `MYTHOLOGIE` (Ussop) | Renommer en MYTHOLOGIE |
-| Inconsistance `T-SHIRT` / `T SHIRT` / `TSHIRT` | Standardiser en `T-SHIRT` |
-| `Niko robin` vs `Niko robine` | Choisir une orthographe |
-| Shop `disconnected` | Connecter Shopify + TikTok Shop |
-
----
-
-## 2. COLLECTION ÉTÉ — Nouveaux produits
-
-### 2.1 Nouveaux types de produits (avec logo/marque Hokuno)
-
-| Type | Design | Variantes à prévoir |
-|---|---|---|
-| Bob / Bucket hat | Logo Logpose brodé ou imprimé | Noir, Blanc, Beige, Navy |
-| Casquette / Dad cap | ホクノ brodé face + Logpose côté | Noir, Blanc, Beige, Navy, Rouge |
-| Short / Boardshort | Logo Hokuno + motif subtil all-over | S, M, L, XL — Noir, Blanc, Navy |
-| Débardeur / Tank top | Designs existants adaptés (Mythologie ou Direction) | Mêmes couleurs que les t-shirts |
-
-### 2.2 Déclinaisons été des collections existantes
-
-| Collection | Produit été | Idée |
-|---|---|---|
-| Wanted | Bob avec mini poster wanted imprimé | Parchemin sur le bob |
-| Mythologie | Short avec silhouette all-over en pattern | Motif répétitif des silhouettes divines |
-| Direction | Casquette avec quote courte brodée | Ex: "JUSTE UNE DIRECTION" |
-| Hokuno (marque) | Bob + casquette + short logo pur | Branding Hokuno sans collection |
-
-### 2.3 Produits été à vérifier sur Printify
-
-Avant de créer les designs, vérifier la disponibilité sur Printify :
-
-| Produit | Blueprint Printify à chercher | POD compatible ? |
-|---|---|---|
-| Bob / Bucket hat | Chercher "bucket hat" dans le catalogue | À vérifier |
-| Casquette | Chercher "dad cap" ou "baseball cap" | À vérifier |
-| Short | Chercher "shorts" ou "swim trunks" | Le maillot AOP existe déjà |
-| Débardeur | Chercher "tank top" ou "muscle tee" | Probable |
-
----
-
-## 3. RÉSUMÉ GLOBAL
-
-| Catégorie | Nombre de produits à créer |
-|---|---|
-| T-shirts EN (Wanted + Direction) | 54 |
-| T-shirts light manquants (Mythologie) | 2 |
-| Mugs manquants (Direction + Mythologie) | 18 |
-| Coques manquantes (3 collections) | 36 |
-| **Sous-total collections existantes** | **110** |
-| Collection Été (bobs, casquettes, shorts) | ~15-20 (estimation) |
-| **TOTAL ESTIMÉ** | **~125-130 nouveaux produits** |
+- [ ] Bartolomiou Kouma
+- [ ] Iwankoff
+- [ ] Harllong
+- [ ] Momonosucke
+- [ ] Eustash Cap.Kid
+- [ ] Boha Ancock
+- [ ] Iamato
+- [ ] Kobi
+- [ ] Portgas Di Ase
+- [ ] Crocockdile
+- [ ] Dracule Miok
+- [ ] Sabot
+- [ ] Trafalgar Di Low
+- [ ] Monki Di Dragone
+- [ ] Gayko Mauria
+- [ ] Aokidji
+- [ ] Kaktakoury
+- [ ] Kouine
+- [ ] Qing
+- [ ] Smokerr
+- [ ] Hodene
+- [ ] Bartolomio
+- [ ] Dr Vegan Punck
+- [ ] Edouard Niougate
+- [ ] Goldiroger
+- [ ] Henere
+- [ ] Marko The Fenix
+- [ ] Quinemone
+- [ ] Peronah
 
 ---
 
-## 4. ORDRE DE PRIORITÉ RECOMMANDÉ
+## PHASE 2 — DIRECTION EN *(designs à régénérer avec ChatGPT)*
 
-1. **Nettoyage** — Supprimer doublons, corriger titres, harmoniser noms (1h)
-2. **Connecter Shopify** — Brancher le canal de vente principal
-3. **Mugs Direction + Mythologie** — 18 mugs, même design que les t-shirts, rapide (2h)
-4. **Versions EN Wanted + Direction** — 54 t-shirts, dupliquer designs Canva + changer texte (1 journée)
-5. **Coques** — 36 coques, même design adapté au format (2-3h)
-6. **T-shirts light Mythologie** — Choper + Robin (30min)
-7. **Collection Été** — Bobs, casquettes, shorts (après validation blueprints Printify)
-8. **Connecter TikTok Shop** — Quand catalogue complet
+**Contexte** : Le texte est intégré dans l'image IA — impossible de modifier dans Canva. Les versions EN doivent être régénérées entièrement avec ChatGPT.
+**Texte à intégrer** : `"I DON'T NEED A PLAN.. JUST A DIRECTION."` + `ホクノ`
+
+- [ ] Régénérer les 10 silhouettes Direction EN avec ChatGPT (même pose que FR, texte EN)
+- [ ] Exporter les PNG
+- [ ] Créer les produits Printify Direction EN (20 t-shirts) :
+  - [ ] Luffy EN (light + dark)
+  - [ ] Zoro EN (light + dark)
+  - [ ] Nami EN (light + dark)
+  - [ ] Ussop EN (light + dark)
+  - [ ] Sanji EN (light + dark)
+  - [ ] Choper EN (light + dark)
+  - [ ] Franky EN (light + dark)
+  - [ ] Robin EN (light + dark)
+  - [ ] Brook EN (light + dark)
+  - [ ] Jinbe EN (light + dark)
+
+---
+
+## PHASE 3 — MYTHOLOGIE compléments
+
+### T-shirts light manquants (2)
+- [ ] Choper MYTHOLOGIE light (56 variantes — seul NOIR existe actuellement)
+- [ ] Robin MYTHOLOGIE light (56 variantes — seul NOIR existe actuellement)
+
+### Mugs manquants (9)
+- [ ] Zoro mug Mythologie
+- [ ] Nami mug Mythologie
+- [ ] Ussop mug Mythologie
+- [ ] Sanji mug Mythologie
+- [ ] Choper mug Mythologie
+- [ ] Franky mug Mythologie
+- [ ] Robin mug Mythologie
+- [ ] Brook mug Mythologie
+- [ ] Jinbe mug Mythologie
+
+### Coques manquantes (9)
+- [ ] Luffy coque Mythologie
+- [ ] Nami coque Mythologie
+- [ ] Ussop coque Mythologie
+- [ ] Sanji coque Mythologie
+- [ ] Choper coque Mythologie
+- [ ] Franky coque Mythologie
+- [ ] Robin coque Mythologie
+- [ ] Brook coque Mythologie
+- [ ] Jinbe coque Mythologie
+
+---
+
+## PHASE 4 — MUGS & COQUES batch toutes collections
+
+### Wanted existants — coques manquantes (17)
+- [ ] Lufi coque
+- [ ] Chanks coque
+- [ ] Rororoa Zoro coque
+- [ ] Namy coque
+- [ ] Sandji coque
+- [ ] Shoper coque
+- [ ] Niko Robine coque
+- [ ] Francky coque
+- [ ] Broock coque
+- [ ] God Ussop coque
+- [ ] Gymbey coque
+- [ ] Baggy coque
+- [ ] Caido coque
+- [ ] Doflamyngo coque
+- [ ] Marshal Di Tittch coque
+- [ ] Sharlot Linline coque
+- [ ] Alabastards coque
+
+### Direction — mugs manquants (9)
+- [ ] Zoro mug Direction
+- [ ] Nami mug Direction
+- [ ] Ussop mug Direction
+- [ ] Sanji mug Direction
+- [ ] Choper mug Direction
+- [ ] Franky mug Direction
+- [ ] Robin mug Direction
+- [ ] Brook mug Direction
+- [ ] Jinbe mug Direction
+
+### Direction — coques manquantes (10)
+- [ ] Luffy coque Direction
+- [ ] Zoro coque Direction
+- [ ] Nami coque Direction
+- [ ] Ussop coque Direction
+- [ ] Sanji coque Direction
+- [ ] Choper coque Direction
+- [ ] Franky coque Direction
+- [ ] Robin coque Direction
+- [ ] Brook coque Direction
+- [ ] Jinbe coque Direction
+
+---
+
+## PHASE 5 — COLLECTION ÉTÉ
+
+**Contexte** : Produits saisonniers avec logo Hokuno (Logpose + ホクノ). Vérifier les blueprints Printify disponibles avant de créer les designs.
+
+- [ ] Vérifier blueprints Printify disponibles : bob/bucket hat, casquette/dad cap, short/boardshort, débardeur
+- [ ] Créer les designs logo Hokuno adaptés à chaque format
+- [ ] Créer les produits Printify :
+  - [ ] Bob / bucket hat
+  - [ ] Casquette / dad cap
+  - [ ] Short / boardshort
+  - [ ] Débardeur

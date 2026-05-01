@@ -46,13 +46,14 @@ Le ton est décalé, nostalgique, parfois mélancolique, toujours avec une point
 - Poster wanted sur parchemin vieilli, bords brûlés/déchirés
 - "THE END" en titre (remplace le "WANTED" classique)
 - Portrait du personnage transformé (vieilli, fatigué, parodié)
-- Punchline personnalisée sous le portrait (ex: "ÇA NE FINIRA JAMAIS...")
+- Punchline **identique pour tous les personnages** : "ÇA NE FINIRA JAMAIS..." (FR) / "IT WILL NEVER END..." (EN)
+- Texte secondaire (identique pour tous) : "CETTE PRIME TRAINE DEPUIS 12 ANS. HONNETEMENT, SI VOUS LE TROUVEZ DEMANDEZ-LUI SIL EST TOUJOURS PARTANT" / EN : "THIS BOUNTY HAS BEEN RUNNING FOR 12 YEARS. HONESTLY, IF YOU FIND HIM ASK HIM IF HE'S STILL UP FOR IT"
 - Cachet "MARINE" en bas
 - Mention "ALIVE OR DEAD"
 
 **T-shirts** : Noir principalement (le parchemin ressort naturellement sur fond sombre).
-**Couleurs dispo** : Noir + 6-8 autres couleurs de base.
-**Nombre de designs** : ~15 personnages.
+**Couleurs dispo** : Light : White, Natural, Gravel, Red, Royal (20 variantes) — Dark : Black, Navy (8 variantes).
+**Nombre de designs** : 49 personnages (17 sur Printify, 29 à créer).
 **Ton** : Humour noir, fatigue existentielle, satire.
 
 ### 2. MYTHOLOGIE
@@ -90,15 +91,43 @@ _(À confirmer/ajuster selon les designs finaux)_
 
 **Style visuel** :
 - Silhouette noire encrée du personnage en action (pose caractéristique)
-- Citation motivationnelle en français, typographie forte (ex: "JE N'AI PAS BESOIN D'UN PLAN.. JUSTE D'UNE DIRECTION.")
+- Citation **identique pour tous les personnages** : "JE N'AI PAS BESOIN D'UN PLAN.. JUSTE D'UNE DIRECTION." (FR) — intégrée dans l'image IA, non modifiable dans Canva
+- Version EN ("I DON'T NEED A PLAN.. JUST A DIRECTION.") à régénérer avec ChatGPT (texte intégré dans l'image IA, impossible à modifier)
 - ホクノ (katakana) intégré au design
 - Style illustration street/encre — minimaliste et graphique
 - Print front ET back
 
 **T-shirts** : Blanc principalement. Version inversée disponible pour t-shirts noirs.
-**Couleurs dispo** : Blanc + noir + 6-8 autres couleurs.
-**Nombre de designs** : 8-10 personnages.
+**Couleurs dispo** : Light : White, Natural, Gravel, Red, Royal, Safety Pink, Sky (56 variantes) — Dark : Black, Navy (8 variantes).
+**Nombre de designs** : 10 personnages (équipage complet).
 **Ton** : Motivationnel, inspirant, force tranquille.
+
+### 4. COLLECTION ÉTÉ
+
+**Concept** : Produits saisonniers avec le logo Hokuno (Logpose + ホクノ). Accessoires et vêtements d'été pour étendre la marque au-delà des t-shirts.
+
+**Produits** :
+- Bob / bucket hat
+- Casquette / dad cap
+- Short / boardshort
+- Débardeur
+
+**Design** : Logo Hokuno — Logpose + ホクノ en katakana.
+**Note** : Vérifier les blueprints Printify disponibles avant de créer les designs.
+**Ton** : Décontracté, été, identité de marque.
+
+---
+
+## Outils de design
+
+### Canva
+- Projet **"THE END"** : Wanted FR — 92 pages (tous les personnages en français)
+- Projet **"Copie de THE END"** : Wanted EN — 49 designs traduits automatiquement via l'outil de traduction intégré Canva
+- Projet **"FRUIT"** : Direction FR — 24 pages (10 personnages × variantes couleur)
+
+### ChatGPT
+- Génération des silhouettes Direction EN avec le texte "I DON'T NEED A PLAN.. JUST A DIRECTION." + ホクノ
+- Note : le texte Direction est intégré dans l'image IA — impossible à modifier dans Canva. Les versions EN doivent être régénérées entièrement.
 
 ---
 
@@ -126,8 +155,8 @@ Chaque design textuel existe en **deux versions linguistiques** :
 - **Anglais** (marché international)
 
 Cela concerne principalement :
-- **Wanted** : les punchlines sous les portraits (ex: "ÇA NE FINIRA JAMAIS..." → "IT WILL NEVER END...")
-- **Direction** : les citations motivationnelles (ex: "JE N'AI PAS BESOIN D'UN PLAN.. JUSTE D'UNE DIRECTION." → "I DON'T NEED A PLAN.. JUST A DIRECTION.")
+- **Wanted** : punchline **identique pour tous** : "ÇA NE FINIRA JAMAIS..." (FR) → "IT WILL NEVER END..." (EN)
+- **Direction** : citation **identique pour tous** : "JE N'AI PAS BESOIN D'UN PLAN.. JUSTE D'UNE DIRECTION." (FR) → "I DON'T NEED A PLAN.. JUST A DIRECTION." (EN). Note : la version EN doit être régénérée avec ChatGPT (texte intégré dans l'image IA).
 - **Mythologie** : pas de texte sur le design → pas de version linguistique nécessaire (une seule version universelle)
 
 Conséquences sur le catalogue :
@@ -146,7 +175,7 @@ Dans les JSON de collection, chaque personnage contient ses textes en FR et EN d
 hokuno-store/
 ├── CONTEXT.md                 # Ce fichier — brand bible
 ├── collections/
-│   ├── wanted.json            # ~15 personnages
+│   ├── wanted.json            # 49 personnages (17 sur Printify, 29 à créer)
 │   ├── direction.json         # 8-10 personnages
 │   └── mythologie.json        # 8-10 personnages
 ├── assets/

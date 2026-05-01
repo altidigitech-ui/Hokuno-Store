@@ -11,10 +11,31 @@ Lis `CONTEXT.md` en premier — il contient toute la brand bible : identité, co
 ├── CONTEXT.md                        # Brand bible complète
 ├── .claude/skills/printify/SKILL.md  # Référence API Printify
 ├── collections/
-│   ├── wanted.json                   # Personnages collection Wanted (~15)
+│   ├── wanted.json                   # Personnages collection Wanted (49)
 │   ├── direction.json                # Personnages collection Direction (8-10)
 │   └── mythologie.json               # Personnages collection Mythologie (8-10)
 ```
+
+## État actuel (2026-05-01)
+
+- **Shop Printify** : ID `22774508`, nom "My new store", **sales channel : disconnected** (aucun canal connecté)
+- **Total produits** : 105 (82 t-shirts, 19 mugs, 3 coques, 1 maillot de bain)
+- **Wanted** : 17 personnages sur Printify (FR uniquement) — 49 designs dans Canva (FR + EN traduit)
+- **Direction** : 10 personnages sur Printify (FR uniquement) — versions EN à régénérer avec ChatGPT
+- **Mythologie** : 10 personnages sur Printify (version universelle — pas de texte)
+
+## Projets Canva
+
+- **"THE END"** : Wanted FR — 92 pages (tous les personnages Wanted en français)
+- **"Copie de THE END"** : Wanted EN — 49 designs traduits automatiquement via l'outil de traduction intégré Canva
+- **"FRUIT"** : Direction FR — 24 pages (10 personnages × variantes couleur)
+
+## Contraintes importantes
+
+- **Punchline Wanted** : identique pour TOUS les personnages — `"ÇA NE FINIRA JAMAIS..."` (FR) / `"IT WILL NEVER END..."` (EN). Ne jamais créer de punchlines personnalisées.
+- **Texte secondaire Wanted** : identique pour tous — `"CETTE PRIME TRAINE DEPUIS 12 ANS. HONNETEMENT, SI VOUS LE TROUVEZ DEMANDEZ-LUI SIL EST TOUJOURS PARTANT"` (FR) / `"THIS BOUNTY HAS BEEN RUNNING FOR 12 YEARS. HONESTLY, IF YOU FIND HIM ASK HIM IF HE'S STILL UP FOR IT"` (EN)
+- **Quote Direction** : identique pour TOUS — `"JE N'AI PAS BESOIN D'UN PLAN.. JUSTE D'UNE DIRECTION."` (FR) / `"I DON'T NEED A PLAN.. JUST A DIRECTION."` (EN)
+- **Direction EN** : le texte est intégré dans l'image IA, non modifiable dans Canva. Les versions EN doivent être régénérées entièrement avec ChatGPT.
 
 ## API Printify
 
