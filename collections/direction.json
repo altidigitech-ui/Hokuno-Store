@@ -1,0 +1,52 @@
+{
+  "collection": {
+    "name": "DIRECTION",
+    "slug": "direction",
+    "concept": "Les silhouettes des membres de l'équipage accompagnées d'une citation motivationnelle en français sur le thème 'toujours aller de l'avant'. Lien direct avec l'identité Hokuno et le logpose.",
+    "concept_en": "Crew member silhouettes paired with a motivational quote on the theme of 'always moving forward'. Directly tied to the Hokuno identity and the log pose.",
+    "style": {
+      "format": "Silhouette noire encrée, style illustration street, minimaliste et graphique",
+      "branding": "ホクノ intégré au design",
+      "tshirt_base": "blanc",
+      "tshirt_noir": "version couleurs inversées du design",
+      "couleurs_dispo": ["blanc", "noir", "gris clair", "beige", "bleu ciel", "rose pâle", "menthe", "lavande"],
+      "print": "front + back"
+    }
+  },
+  "personnages": [
+    {
+      "id": "direction-001",
+      "nom": "Robin",
+      "nom_original_ref": "Nico Robin",
+      "description_visuelle": "Silhouette noire encrée, femme élégante tenant une guitare, cheveux afro volumineux, pose confiante et décontractée, style street/rock. Lunettes de soleil rondes.",
+      "backstory_fr": "Elle a lu tous les livres, déchiffré toutes les cartes. Mais la seule vérité qu'elle a trouvée, c'est qu'aucun plan ne survit au premier pas. Alors elle a pris sa guitare et elle avance.",
+      "backstory_en": "She read every book, deciphered every map. But the only truth she found is that no plan survives the first step. So she picked up her guitar and keeps moving.",
+      "quote_fr": "JE N'AI PAS BESOIN D'UN PLAN.. JUSTE D'UNE DIRECTION.",
+      "quote_en": "I DON'T NEED A PLAN.. JUST A DIRECTION.",
+      "tags": ["guitare", "intellectuelle", "rock", "liberté"],
+      "printify_product_ids": {
+        "tshirt_fr": "",
+        "tshirt_en": "",
+        "mug": "",
+        "coque": ""
+      }
+    },
+    {
+      "id": "direction-002",
+      "nom": "",
+      "nom_original_ref": "",
+      "description_visuelle": "",
+      "backstory_fr": "",
+      "backstory_en": "",
+      "quote_fr": "",
+      "quote_en": "",
+      "tags": [],
+      "printify_product_ids": {
+        "tshirt_fr": "",
+        "tshirt_en": "",
+        "mug": "",
+        "coque": ""
+      }
+    }
+  ]
+}
