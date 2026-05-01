@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl *api.printify.com*)",
+      "Bash(curl *api.shopify.com*)",
+      "Bash(node *)",
+      "Bash(npx *)",
+      "Bash(npm *)",
+      "Bash(jq *)",
+      "Bash(cat *)",
+      "Bash(ls *)",
+      "Bash(mkdir *)",
+      "Bash(cp *)"
+    ]
+  }
+}
