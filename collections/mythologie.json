@@ -1,0 +1,53 @@
+{
+  "collection": {
+    "name": "MYTHOLOGIE",
+    "slug": "mythologie",
+    "concept": "Les ombres de l'équipage de Luffy réinventées en divinités grecques. Chaque personnage est représenté en silhouette monochrome drapée dans une toge, avec une auréole divine. Une couleur unique par personnage — sa couleur signature.",
+    "concept_en": "The shadows of Luffy's crew reimagined as Greek deities. Each character is a monochrome silhouette draped in a toga, with a divine halo. One unique color per character — their signature color.",
+    "style": {
+      "format": "Silhouette monochrome pleine, toge/drapé grec, auréole lumineuse",
+      "design_textuel": false,
+      "version_linguistique": "universelle — pas de texte sur le design",
+      "tshirt_base": "blanc",
+      "tshirt_noir": "version couleurs inversées du design",
+      "couleurs_dispo": ["blanc", "noir", "gris clair", "beige", "bleu ciel", "rose pâle", "menthe", "lavande"],
+      "print": "back uniquement"
+    }
+  },
+  "personnages": [
+    {
+      "id": "mytho-001",
+      "nom": "Le Cuisinier Divin",
+      "nom_original_ref": "Sanji",
+      "couleur_signature": "#1E3A8A",
+      "couleur_nom": "Bleu",
+      "description_visuelle": "Silhouette entièrement bleue, drapée dans une toge grecque. Auréole lumineuse avec rayons derrière la tête. Cheveux lisses couvrant un œil. Posture élégante, debout, un bras le long du corps. Fond transparent.",
+      "backstory_fr": "Avant de nourrir les mortels, il a nourri les dieux. On dit que son feu brûle plus fort que celui de Prométhée — mais lui, il l'utilise pour cuisiner.",
+      "backstory_en": "Before feeding mortals, he fed the gods. They say his fire burns hotter than Prometheus' — but he uses it to cook.",
+      "divinite_associee": "Apollon / Héphaïstos",
+      "tags": ["bleu", "cuisinier", "élégance", "feu"],
+      "printify_product_ids": {
+        "tshirt": "",
+        "mug": "",
+        "coque": ""
+      }
+    },
+    {
+      "id": "mytho-002",
+      "nom": "",
+      "nom_original_ref": "",
+      "couleur_signature": "",
+      "couleur_nom": "",
+      "description_visuelle": "",
+      "backstory_fr": "",
+      "backstory_en": "",
+      "divinite_associee": "",
+      "tags": [],
+      "printify_product_ids": {
+        "tshirt": "",
+        "mug": "",
+        "coque": ""
+      }
+    }
+  ]
+}
