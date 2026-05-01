@@ -1,0 +1,53 @@
+{
+  "collection": {
+    "name": "WANTED",
+    "slug": "wanted",
+    "concept": "Des avis de recherche revisités. Les personnages ont traversé 30 ans de manga — ils ont mal vieilli, ils sont épuisés, éreintés par le temps. Ils ne sont plus dangereux. Ils veulent juste que ça se termine.",
+    "concept_en": "Reimagined wanted posters. The characters have endured 30 years of manga — they've aged badly, exhausted and worn down by time. They're no longer dangerous. They just want it to end.",
+    "style": {
+      "format": "Poster wanted sur parchemin vieilli, bords brûlés/déchirés",
+      "header": "THE END",
+      "footer": "MARINE",
+      "mention": "ALIVE OR DEAD",
+      "tshirt_base": "noir",
+      "couleurs_dispo": ["noir", "blanc", "gris", "navy", "bordeaux", "vert forêt", "marron", "sable"],
+      "print": "front + back"
+    }
+  },
+  "personnages": [
+    {
+      "id": "wanted-001",
+      "nom": "Baggy",
+      "nom_original_ref": "Buggy le Clown",
+      "description_visuelle": "Clown vieilli et fatigué, maquillage qui coule, cheveux bleus en bataille, regard vide et épuisé, nez rouge usé, vêtements de clown défraîchis. Expression de lassitude totale.",
+      "backstory_fr": "30 ans à jouer les méchants pour rien. Le maquillage coule, le nez rouge ne fait plus rire personne. Baggy n'a jamais été dangereux, mais maintenant même lui le sait. Il attend juste la dernière page.",
+      "backstory_en": "30 years of playing the villain for nothing. The makeup is running, the red nose doesn't make anyone laugh anymore. Baggy was never dangerous, but now even he knows it. He's just waiting for the last page.",
+      "punchline_fr": "ÇA NE FINIRA JAMAIS...",
+      "punchline_en": "IT WILL NEVER END...",
+      "tags": ["clown", "fatigue", "humour-noir", "villain"],
+      "printify_product_ids": {
+        "tshirt_fr": "",
+        "tshirt_en": "",
+        "mug": "",
+        "coque": ""
+      }
+    },
+    {
+      "id": "wanted-002",
+      "nom": "",
+      "nom_original_ref": "",
+      "description_visuelle": "",
+      "backstory_fr": "",
+      "backstory_en": "",
+      "punchline_fr": "",
+      "punchline_en": "",
+      "tags": [],
+      "printify_product_ids": {
+        "tshirt_fr": "",
+        "tshirt_en": "",
+        "mug": "",
+        "coque": ""
+      }
+    }
+  ]
+}
