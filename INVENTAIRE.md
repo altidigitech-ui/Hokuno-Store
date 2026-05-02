@@ -1,11 +1,11 @@
 # INVENTAIRE PRINTIFY — Hokuno Store
 
 **Source** : Printify shop ID `22774508` ("My new store", sales_channel: `disconnected`)
-**Total produits** : 94 (tous `visible: true`, `is_locked: false`)
-**Date inventaire** : 2026-05-02 (post Phase 0 nettoyage)
+**Total produits** : 128 (tous `visible: true`, `is_locked: false`)
+**Date inventaire** : 2026-05-02 (post Phase 1a — Wanted EN créés)
 
 **Répartition** :
-- T-shirts : 72 (34 WANTED + 20 DIRECTION + 18 MYTHOLOGIE)
+- T-shirts : 106 (68 WANTED + 20 DIRECTION + 18 MYTHOLOGIE)
 - Mugs : 19 (17 WANTED + 1 DIRECTION + 1 MYTHOLOGIE)
 - Coques : 2 (1 MYTHOLOGIE + 1 NON CLASSÉ)
 - Maillot de bain : 1 (NON CLASSÉ)
@@ -16,7 +16,7 @@
 
 ---
 
-## WANTED (51 produits)
+## WANTED (85 produits)
 
 ### T-shirts WANTED — Light (17)
 
@@ -61,6 +61,50 @@
 | 15 | T-SHIRT MARSHAL DI TITTCH WANTED NOIR | 684b4fc190d6792b870a9fae | 8 | published | FR |
 | 16 | T-SHIRT SHARLOT LINLINE WANTED NOIR | 684b4c7eea64cf1036087f88 | 8 | published | FR |
 | 17 | T-SHIRT ALABASTARDS WANTED NOIR | 684b5414b0ad75db150b812b | 8 | published | FR |
+
+### T-shirts WANTED — Light EN (17)
+
+| # | Titre | Product ID | Variantes | Statut | Langue |
+|---|-------|------------|-----------|--------|--------|
+| 01 | T-SHIRT LUFI WANTED EN 1/17 | 69f5ec11cf535c302f083cad | 20 | published | EN |
+| 02 | T-SHIRT CHANKS WANTED EN 2/17 | 69f5ec1fe1b7b9b0b0086b67 | 20 | published | EN |
+| 03 | T-SHIRT ROROROA ZORO WANTED EN 3/17 | 69f5ec2fcf535c302f083ccd | 20 | published | EN |
+| 04 | T-SHIRT NAMY WANTED EN 4/17 | 69f5ec3fe1b7b9b0b0086b7e | 20 | published | EN |
+| 05 | T-SHIRT SANDJI WANTED EN 5/17 | 69f5ec4b1cc4ed38fb0b77fc | 20 | published | EN |
+| 06 | T-SHIRT SHOPER WANTED EN 6/17 | 69f5ec57ef66d02ffe02a19b | 20 | published | EN |
+| 07 | T-SHIRT NIKO ROBINE WANTED EN 7/17 | 69f5ec68ecefd0d57d047d32 | 20 | published | EN |
+| 08 | T-SHIRT FRANCKY WANTED EN 8/17 | 69f5ec7bcf535c302f083d29 | 20 | published | EN |
+| 09 | T-SHIRT BROOCK WANTED EN 9/17 | 69f5ec8b758757bfa3041238 | 20 | published | EN |
+| 10 | T-SHIRT GOD USSOP WANTED EN 10/17 | 69f5ec9a1cc4ed38fb0b7851 | 20 | published | EN |
+| 11 | T-SHIRT GYMBEY WANTED EN 11/17 | 69f5eca5ef66d02ffe02a1d2 | 20 | published | EN |
+| 12 | T-SHIRT BAGGY WANTED EN 12/17 | 69f5ecb3758757bfa3041249 | 20 | published | EN |
+| 13 | T-SHIRT CAIDO WANTED EN 13/17 | 69f5ecbf758757bfa304124b | 20 | published | EN |
+| 14 | T-SHIRT DOFLAMYNGO WANTED EN 14/17 | 69f5eccb758757bfa304124d | 20 | published | EN |
+| 15 | T-SHIRT MARSHAL DI TITTCH WANTED EN 15/17 | 69f5ed3adb88631ee309c14d | 20 | published | EN |
+| 16 | T-SHIRT SHARLOT LINLINE WANTED EN 16/17 | 69f5ed00e1b7b9b0b0086c1b | 20 | published | EN |
+| 17 | T-SHIRT ALABASTARDS WANTED EN 17/17 | 69f5ed0d348775ebe705b78d | 20 | published | EN |
+
+### T-shirts WANTED — Noir/Bleu Marine EN (17)
+
+| # | Titre | Product ID | Variantes | Statut | Langue |
+|---|-------|------------|-----------|--------|--------|
+| 01 | T-SHIRT LUFI WANTED NOIR EN 1/17 | 69f5ec18758757bfa30411a9 | 8 | published | EN |
+| 02 | T-SHIRT CHANKS WANTED NOIR EN 2/17 | 69f5ec26e1b7b9b0b0086b6e | 8 | published | EN |
+| 03 | T-SHIRT ROROROA ZORO WANTED NOIR EN 3/17 | 69f5ec391cc4ed38fb0b77d1 | 8 | published | EN |
+| 04 | T-SHIRT NAMY WANTED NOIR EN 4/17 | 69f5ec44db88631ee309c0b2 | 8 | published | EN |
+| 05 | T-SHIRT SANDJI WANTED NOIR EN 5/17 | 69f5ec51db88631ee309c0e4 | 8 | published | EN |
+| 06 | T-SHIRT SHOPER WANTED NOIR EN 6/17 | 69f5ec5f1cc4ed38fb0b781b | 8 | published | EN |
+| 07 | T-SHIRT NIKO ROBINE WANTED NOIR EN 7/17 | 69f5ec75cf535c302f083d21 | 8 | published | EN |
+| 08 | T-SHIRT FRANCKY WANTED NOIR EN 8/17 | 69f5ec84db88631ee309c111 | 8 | published | EN |
+| 09 | T-SHIRT BROOCK WANTED NOIR EN 9/17 | 69f5ec94cf535c302f083d3b | 8 | published | EN |
+| 10 | T-SHIRT GOD USSOP WANTED NOIR EN 10/17 | 69f5ec9fe1b7b9b0b0086bfc | 8 | published | EN |
+| 11 | T-SHIRT GYMBEY WANTED NOIR EN 11/17 | 69f5ecacecefd0d57d047d56 | 8 | published | EN |
+| 12 | T-SHIRT BAGGY WANTED NOIR EN 12/17 | 69f5ecb9ef66d02ffe02a1db | 8 | published | EN |
+| 13 | T-SHIRT CAIDO WANTED NOIR EN 13/17 | 69f5ecc5ef66d02ffe02a1dc | 8 | published | EN |
+| 14 | T-SHIRT DOFLAMYNGO WANTED NOIR EN 14/17 | 69f5ecd14369722b330efb0e | 8 | published | EN |
+| 15 | T-SHIRT MARSHAL DI TITTCH WANTED NOIR EN 15/17 | 69f5ed40348775ebe705b79f | 8 | published | EN |
+| 16 | T-SHIRT SHARLOT LINLINE WANTED NOIR EN 16/17 | 69f5ed06348775ebe705b78a | 8 | published | EN |
+| 17 | T-SHIRT ALABASTARDS WANTED NOIR EN 17/17 | 69f5ed13e1b7b9b0b0086c22 | 8 | published | EN |
 
 ### Mugs WANTED (17)
 
@@ -185,16 +229,16 @@ _Note : Choper et Robin n'ont pas de version light — uniquement noir._
 
 | Collection | T-shirts | Mugs | Coques | Total |
 |-----------|---------|------|--------|-------|
-| WANTED | 34 | 17 | 0 | **51** |
+| WANTED | 68 (34 FR + 34 EN) | 17 | 0 | **85** |
 | DIRECTION | 20 | 1 | 0 | **21** |
 | MYTHOLOGIE | 18 | 1 | 1 | **20** |
 | NON CLASSÉ | 0 | 0 | 1 + 1 maillot | **2** |
-| **TOTAL** | **72** | **19** | **2 + 1 maillot** | **94** |
+| **TOTAL** | **106** | **19** | **2 + 1 maillot** | **128** |
 
 ## Produits manquants identifiés
 
 ### WANTED — Versions EN (non créées)
-- 17 × 2 (light + dark) = **34 t-shirts EN** pour personnages existants sur Printify
+- ~~17 × 2 (light + dark) = **34 t-shirts EN** pour personnages existants sur Printify~~ ✅ **Phase 1a TERMINÉE** (2026-05-02)
 - 29 × 4 (FR light + FR dark + EN light + EN dark) + 29 mugs + 29 coques = **174 produits** pour personnages dans Canva uniquement
 
 ### DIRECTION — Versions EN (à régénérer)

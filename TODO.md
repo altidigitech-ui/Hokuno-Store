@@ -28,27 +28,27 @@
 **Punchline** : `"IT WILL NEVER END..."` (EN)
 **Workflow** : Exporter PNG depuis Canva (projet "Copie de THE END") → Upload Printify → Créer produit `T-SHIRT [NOM] WANTED EN N/17`
 
-### Phase 1a — Personnages existants sur Printify (17 × 2 = 34 t-shirts)
+### Phase 1a — Personnages existants sur Printify (17 × 2 = 34 t-shirts) ✅ TERMINÉ (2026-05-02)
 
 | # | Personnage | EN Light | EN Dark |
 |---|-----------|---------|---------|
-| 1/17 | Lufi | [ ] | [ ] |
-| 2/17 | Chanks | [ ] | [ ] |
-| 3/17 | Rororoa Zoro | [ ] | [ ] |
-| 4/17 | Namy | [ ] | [ ] |
-| 5/17 | Sandji | [ ] | [ ] |
-| 6/17 | Shoper | [ ] | [ ] |
-| 7/17 | Niko Robine | [ ] | [ ] |
-| 8/17 | Francky | [ ] | [ ] |
-| 9/17 | Broock | [ ] | [ ] |
-| 10/17 | God Ussop | [ ] | [ ] |
-| 11/17 | Gymbey | [ ] | [ ] |
-| 12/17 | Baggy | [ ] | [ ] |
-| 13/17 | Caido | [ ] | [ ] |
-| 14/17 | Doflamyngo | [ ] | [ ] |
-| 15/17 | Marshal Di Tittch | [ ] | [ ] |
-| 16/17 | Sharlot Linline | [ ] | [ ] |
-| 17/17 | Alabastards | [ ] | [ ] |
+| 1/17 | Lufi | [x] 69f5ec11cf535c302f083cad | [x] 69f5ec18758757bfa30411a9 |
+| 2/17 | Chanks | [x] 69f5ec1fe1b7b9b0b0086b67 | [x] 69f5ec26e1b7b9b0b0086b6e |
+| 3/17 | Rororoa Zoro | [x] 69f5ec2fcf535c302f083ccd | [x] 69f5ec391cc4ed38fb0b77d1 |
+| 4/17 | Namy | [x] 69f5ec3fe1b7b9b0b0086b7e | [x] 69f5ec44db88631ee309c0b2 |
+| 5/17 | Sandji | [x] 69f5ec4b1cc4ed38fb0b77fc | [x] 69f5ec51db88631ee309c0e4 |
+| 6/17 | Shoper | [x] 69f5ec57ef66d02ffe02a19b | [x] 69f5ec5f1cc4ed38fb0b781b |
+| 7/17 | Niko Robine | [x] 69f5ec68ecefd0d57d047d32 | [x] 69f5ec75cf535c302f083d21 |
+| 8/17 | Francky | [x] 69f5ec7bcf535c302f083d29 | [x] 69f5ec84db88631ee309c111 |
+| 9/17 | Broock | [x] 69f5ec8b758757bfa3041238 | [x] 69f5ec94cf535c302f083d3b |
+| 10/17 | God Ussop | [x] 69f5ec9a1cc4ed38fb0b7851 | [x] 69f5ec9fe1b7b9b0b0086bfc |
+| 11/17 | Gymbey | [x] 69f5eca5ef66d02ffe02a1d2 | [x] 69f5ecacecefd0d57d047d56 |
+| 12/17 | Baggy | [x] 69f5ecb3758757bfa3041249 | [x] 69f5ecb9ef66d02ffe02a1db |
+| 13/17 | Caido | [x] 69f5ecbf758757bfa304124b | [x] 69f5ecc5ef66d02ffe02a1dc |
+| 14/17 | Doflamyngo | [x] 69f5eccb758757bfa304124d | [x] 69f5ecd14369722b330efb0e |
+| 15/17 | Marshal Di Tittch | [x] 69f5ed3adb88631ee309c14d | [x] 69f5ed40348775ebe705b79f |
+| 16/17 | Sharlot Linline | [x] 69f5ed00e1b7b9b0b0086c1b | [x] 69f5ed06348775ebe705b78a |
+| 17/17 | Alabastards | [x] 69f5ed0d348775ebe705b78d | [x] 69f5ed13e1b7b9b0b0086c22 |
 
 ### Phase 1b — Nouveaux personnages dans Canva (29 × 6 = 174 produits)
 
@@ -248,7 +248,7 @@ _Total Phase 4 : 53 produits (17 coques FR + 17 mugs EN + 9 mugs Direction + 10 
 | Phase | Description | Produits à créer | Designs disponibles | Statut |
 |-------|-------------|-----------------|--------------------|----|
 | **0** | Nettoyage + numérotation | — | — | ✅ FAIT |
-| **1a** | Wanted EN (17 existants) | 34 t-shirts | ✅ Prêts (Canva "Copie de THE END") | ⏳ |
+| **1a** | Wanted EN (17 existants) | 34 t-shirts | ✅ Prêts (Canva "Copie de THE END") | ✅ FAIT |
 | **1b** | Wanted FR+EN (29 nouveaux) | 174 produits | ✅ Prêts (Canva FR+EN) | ⏳ |
 | **2** | Direction EN | 20 t-shirts | ❌ À régénérer (ChatGPT) | ⏳ |
 | **3** | Mythologie compléments | 20 produits | ✅ Designs existants | ⏳ |
