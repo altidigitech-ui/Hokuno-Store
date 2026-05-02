@@ -1,22 +1,22 @@
 # INVENTAIRE PRINTIFY — Hokuno Store
 
 **Source** : Printify shop ID `22774508` ("My new store", sales_channel: `disconnected`)
-**Total produits** : 97 (tous `visible: true`, `is_locked: false`)
+**Total produits** : 94 (tous `visible: true`, `is_locked: false`)
 **Date inventaire** : 2026-05-02 (post Phase 0 nettoyage)
 
 **Répartition** :
-- T-shirts : 75 (35 WANTED + 22 DIRECTION + 18 MYTHOLOGIE)
+- T-shirts : 72 (34 WANTED + 20 DIRECTION + 18 MYTHOLOGIE)
 - Mugs : 19 (17 WANTED + 1 DIRECTION + 1 MYTHOLOGIE)
 - Coques : 2 (1 MYTHOLOGIE + 1 NON CLASSÉ)
 - Maillot de bain : 1 (NON CLASSÉ)
 
 **Convention de titrage appliquée** :
 - Format standard T-shirts : `T-SHIRT [NOM] [COLLECTION] [VERSION]` en majuscules
-- VERSION = `NOIR` pour dark (Black+Navy), `NOIR XL` pour NOIR uniquement 8 tailles, `XL` pour palette étendue
+- VERSION = `NOIR` pour dark (Black+Navy), vide pour light
 
 ---
 
-## WANTED (52 produits)
+## WANTED (51 produits)
 
 ### T-shirts WANTED — Light (17)
 
@@ -62,14 +62,6 @@
 | 16 | T-SHIRT SHARLOT LINLINE WANTED NOIR | 684b4c7eea64cf1036087f88 | 8 | published | FR |
 | 17 | T-SHIRT ALABASTARDS WANTED NOIR | 684b5414b0ad75db150b812b | 8 | published | FR |
 
-### T-shirts WANTED — Spéciaux (1)
-
-| # | Titre | Product ID | Variantes | Statut | Langue |
-|---|-------|------------|-----------|--------|--------|
-| 01 | T-SHIRT LUFI WANTED NOIR XL | 6846b6a0666917ada800dcb1 | 8 | published | FR |
-
-_Note : Noir uniquement (Black), 8 tailles S→5XL._
-
 ### Mugs WANTED (17)
 
 | # | Titre | Product ID | Variantes | Statut | Langue |
@@ -94,9 +86,9 @@ _Note : Noir uniquement (Black), 8 tailles S→5XL._
 
 ---
 
-## DIRECTION (23 produits)
+## DIRECTION (21 produits)
 
-### T-shirts DIRECTION — Light standard (10)
+### T-shirts DIRECTION — Light (10)
 
 | # | Titre | Product ID | Variantes | Statut | Langue |
 |---|-------|------------|-----------|--------|--------|
@@ -125,15 +117,6 @@ _Note : Noir uniquement (Black), 8 tailles S→5XL._
 | 08 | T-SHIRT ROBIN DIRECTION NOIR | 684c6b157a567575d002f416 | 8 | published | FR |
 | 09 | T-SHIRT BROOK DIRECTION NOIR | 684c6b5587f5fc4a810113bf | 8 | published | FR |
 | 10 | T-SHIRT JINBE DIRECTION NOIR | 684c6b98f3b91cf7810bf40a | 8 | published | FR |
-
-### T-shirts DIRECTION — Spéciaux (2)
-
-| # | Titre | Product ID | Variantes | Statut | Langue |
-|---|-------|------------|-----------|--------|--------|
-| 01 | T-SHIRT LUFFY DIRECTION XL | 6846b778f4071352350c1606 | 56 | published | FR |
-| 02 | T-SHIRT LUFFY DIRECTION NOIR XL | 6849cfa22fc5a1b04e0aa559 | 8 | published | FR |
-
-_Note : XL = palette étendue 7 couleurs × 8 tailles. NOIR XL = Black uniquement, 8 tailles S→5XL._
 
 ### Mugs DIRECTION (1)
 
@@ -202,11 +185,11 @@ _Note : Choper et Robin n'ont pas de version light — uniquement noir._
 
 | Collection | T-shirts | Mugs | Coques | Total |
 |-----------|---------|------|--------|-------|
-| WANTED | 35 | 17 | 0 | **52** |
-| DIRECTION | 22 | 1 | 0 | **23** |
+| WANTED | 34 | 17 | 0 | **51** |
+| DIRECTION | 20 | 1 | 0 | **21** |
 | MYTHOLOGIE | 18 | 1 | 1 | **20** |
 | NON CLASSÉ | 0 | 0 | 1 + 1 maillot | **2** |
-| **TOTAL** | **75** | **19** | **2 + 1 maillot** | **97** |
+| **TOTAL** | **72** | **19** | **2 + 1 maillot** | **94** |
 
 ## Produits manquants identifiés
 

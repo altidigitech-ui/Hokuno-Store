@@ -19,7 +19,7 @@ Lis `CONTEXT.md` en premier — il contient toute la brand bible : identité, co
 ## État actuel (2026-05-02)
 
 - **Shop Printify** : ID `22774508`, nom "My new store", **sales channel : disconnected** (à connecter Shopify + TikTok Shop)
-- **Total produits** : 97 (75 t-shirts, 19 mugs, 2 coques, 1 maillot de bain)
+- **Total produits** : 94 (72 t-shirts, 19 mugs, 2 coques, 1 maillot de bain)
 - **Phase 0 TERMINÉE** : titres corrigés (70 renames), catalogue nettoyé
 - **Wanted** : 17 personnages sur Printify (FR uniquement) — 46 personnages dans les JSONs, 49 designs dans Canva (FR + EN)
 - **Direction** : 10 personnages sur Printify (FR uniquement) — versions EN à régénérer avec ChatGPT
