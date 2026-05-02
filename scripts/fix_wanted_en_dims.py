@@ -1,8 +1,12 @@
 #!/usr/bin/env python3
-"""Fix print_areas for 34 EN Wanted products.
+"""Fix EN Wanted products: correct width/height metadata for front and neck images.
 
-For each EN product, fetches the corresponding FR product's print_areas,
-replaces ONLY the back image ID with the EN image, and PUTs the result.
+Root cause: when EN products were created via POST without width/height fields,
+Printify defaulted all image dimensions to ~1555x2000 (the EN back image size).
+This causes the editor to show wrong Scale% (e.g. 18.22% instead of 53.59%).
+
+Fix: PUT with correct width/height taken from the FR product for front/neck images.
+The back image keeps its actual EN dimensions (fetched from current EN product).
 """
 
 import os, sys, json, time, requests
@@ -52,46 +56,87 @@ def get_product(pid):
     return r.json()
 
 
-def build_en_print_areas(fr_print_areas, new_back_image_id):
-    """Exact copy of FR print_areas. Only the back image id is swapped."""
+def get_back_dims(product):
+    """Return stored width/height of the back image from a product."""
+    for area in product["print_areas"]:
+        for ph in area.get("placeholders", []):
+            if ph["position"] == "back":
+                for img in ph.get("images", []):
+                    return {"width": img.get("width"), "height": img.get("height")}
+    return {}
+
+
+def build_print_areas(fr_product, new_back_image_id, en_back_dims):
+    """
+    Deep-copy FR print_areas with:
+    - back  : new EN image id + EN image dimensions (width/height)
+    - front : FR image id + FR dimensions (unchanged)
+    - neck  : FR image ids + FR dimensions, minus text_layer SVG
+    - sleeves: skipped if empty
+    """
     new_areas = []
-    for area in fr_print_areas:
+    for area in fr_product["print_areas"]:
         new_area = {"variant_ids": area["variant_ids"]}
         if "font_color" in area:
             new_area["font_color"] = area["font_color"]
         if "font_family" in area:
             new_area["font_family"] = area["font_family"]
         new_area["placeholders"] = []
+
         for ph in area.get("placeholders", []):
-            new_ph = {"position": ph["position"]}
+            pos = ph["position"]
+            raw_images = ph.get("images", [])
+
+            if pos == "back":
+                valid = raw_images  # keep all back images (there is only one)
+            else:
+                valid = [img for img in raw_images if img["id"] not in INVALID_IMAGE_IDS]
+
+            if not valid:
+                continue  # skip empty sleeves and placeholders emptied by SVG filter
+
+            new_ph = {"position": pos}
             if "decoration_method" in ph:
                 new_ph["decoration_method"] = ph["decoration_method"]
+
             new_imgs = []
-            for img in ph.get("images", []):
-                use_id = new_back_image_id if ph["position"] == "back" else img["id"]
-                if use_id in INVALID_IMAGE_IDS:
-                    continue
-                new_imgs.append({
-                    "id":    use_id,
-                    "x":     img["x"],
-                    "y":     img["y"],
-                    "scale": img["scale"],
-                    "angle": img["angle"],
-                    "flipX": img.get("flipX", False),
-                    "flipY": img.get("flipY", False),
-                })
-            if not new_imgs:
-                continue
+            for img in valid:
+                if pos == "back":
+                    new_imgs.append({
+                        "id":     new_back_image_id,
+                        "x":      img["x"],
+                        "y":      img["y"],
+                        "scale":  img["scale"],
+                        "angle":  img.get("angle", 0),
+                        "flipX":  img.get("flipX", False),
+                        "flipY":  img.get("flipY", False),
+                        "width":  en_back_dims.get("width", img.get("width")),
+                        "height": en_back_dims.get("height", img.get("height")),
+                    })
+                else:
+                    new_imgs.append({
+                        "id":     img["id"],
+                        "x":      img["x"],
+                        "y":      img["y"],
+                        "scale":  img["scale"],
+                        "angle":  img.get("angle", 0),
+                        "flipX":  img.get("flipX", False),
+                        "flipY":  img.get("flipY", False),
+                        "width":  img.get("width"),
+                        "height": img.get("height"),
+                    })
+
             new_ph["images"] = new_imgs
             new_area["placeholders"].append(new_ph)
+
         new_areas.append(new_area)
     return new_areas
 
 
-def put_print_areas(product_id, print_areas):
+def put_product(pid, print_areas):
     sleep()
     r = requests.put(
-        f"{BASE_URL}/shops/{SHOP_ID}/products/{product_id}.json",
+        f"{BASE_URL}/shops/{SHOP_ID}/products/{pid}.json",
         headers=HEADERS,
         json={"print_areas": print_areas},
         timeout=60,
@@ -103,7 +148,7 @@ def put_print_areas(product_id, print_areas):
 errors = []
 rows = []
 
-print(f"Fixing print_areas for {len(CHARACTERS) * 2} EN products...")
+print(f"Fixing width/height metadata for {len(CHARACTERS) * 2} EN products...")
 print("=" * 80)
 
 for char in CHARACTERS:
@@ -119,34 +164,54 @@ for char in CHARACTERS:
             print(f"  {version}: GET FR {fr_id}...", flush=True)
             fr = get_product(fr_id)
 
-            print_areas = build_en_print_areas(fr["print_areas"], char["image_id"])
+            print(f"  {version}: GET EN {en_id} (for back dims)...", flush=True)
+            en = get_product(en_id)
+            en_back_dims = get_back_dims(en)
+
+            print_areas = build_print_areas(fr, char["image_id"], en_back_dims)
+
+            # Spot-check: verify front logo dims match FR
+            for area in print_areas:
+                for ph in area.get("placeholders", []):
+                    if ph["position"] == "front":
+                        img = ph["images"][0]
+                        print(f"  {version}: front → id={img['id'][:8]}... w={img['width']} h={img['height']} scale={img['scale']:.5f}", flush=True)
 
             print(f"  {version}: PUT EN {en_id}...", flush=True)
-            put_print_areas(en_id, print_areas)
+            put_product(en_id, print_areas)
             print(f"  {version}: ✓ OK", flush=True)
             rows.append((n, nom, version, en_id, "✓"))
 
         except requests.HTTPError as e:
             body = ""
             try:   body = e.response.json()
-            except: body = e.response.text[:200]
+            except: body = e.response.text[:300]
             print(f"  {version}: ✗ HTTP {e.response.status_code}: {body}", flush=True)
-            errors.append({"n": n, "nom": nom, "version": version, "en_id": en_id, "error": str(body)})
-            rows.append((n, nom, version, en_id, "✗ ERREUR"))
+            errors.append({"n": n, "nom": nom, "version": version, "error": str(body)})
+            rows.append((n, nom, version, en_id, "✗"))
 
         except Exception as e:
             print(f"  {version}: ✗ {e}", flush=True)
-            errors.append({"n": n, "nom": nom, "version": version, "en_id": en_id, "error": str(e)})
-            rows.append((n, nom, version, en_id, "✗ ERREUR"))
+            errors.append({"n": n, "nom": nom, "version": version, "error": str(e)})
+            rows.append((n, nom, version, en_id, "✗"))
 
 
 print("\n" + "=" * 80)
-print(f"✅ Corrigés : {len([r for r in rows if r[4] == '✓'])}/34")
+ok = len([r for r in rows if r[4] == "✓"])
+print(f"✅ Corrigés : {ok}/34")
 if errors:
     print(f"❌ Erreurs  : {len(errors)}")
+    for e in errors:
+        print(f"   [{e['n']:02d}] {e['nom']} {e['version']}: {e['error']}")
 
-print("\n### Tableau récapitulatif ###")
-print(f"{'#':>3} {'Personnage':<20} {'Version':<6} {'Product ID':<28} {'Statut'}")
-print("-" * 80)
-for n, nom, ver, pid, status in sorted(rows, key=lambda r: (r[0], r[2])):
-    print(f"{n:>3} {nom:<20} {ver:<6} {pid:<28} {status}")
+# Verify first product after fix
+print("\n--- Vérification EN DARK LUFI après fix ---")
+try:
+    en_check = get_product("69f603f5ef66d02ffe02b1ce")
+    for area in en_check["print_areas"]:
+        for ph in area.get("placeholders", []):
+            pos = ph["position"]
+            for img in ph.get("images", []):
+                print(f"  [{pos}] {img.get('name','?')}: w={img.get('width')} h={img.get('height')} scale={img['scale']:.6f}")
+except Exception as e:
+    print(f"  Vérif échouée: {e}")

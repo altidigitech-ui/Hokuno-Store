@@ -32,7 +32,7 @@
 
 | # | Personnage | EN Light | EN Dark |
 |---|-----------|---------|---------|
-| 1/17 | Lufi | [x] 69f5ec11cf535c302f083cad | [x] 69f5ec18758757bfa30411a9 |
+| 1/17 | Lufi | [x] 69f6032239e419a2dc02e247 | [x] 69f603f5ef66d02ffe02b1ce |
 | 2/17 | Chanks | [x] 69f5ec1fe1b7b9b0b0086b67 | [x] 69f5ec26e1b7b9b0b0086b6e |
 | 3/17 | Rororoa Zoro | [x] 69f5ec2fcf535c302f083ccd | [x] 69f5ec391cc4ed38fb0b77d1 |
 | 4/17 | Namy | [x] 69f5ec3fe1b7b9b0b0086b7e | [x] 69f5ec44db88631ee309c0b2 |

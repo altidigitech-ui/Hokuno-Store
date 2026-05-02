@@ -66,7 +66,7 @@
 
 | # | Titre | Product ID | Variantes | Statut | Langue |
 |---|-------|------------|-----------|--------|--------|
-| 01 | T-SHIRT LUFI WANTED EN 1/17 | 69f5ec11cf535c302f083cad | 20 | published | EN |
+| 01 | T-SHIRT LUFI WANTED EN 1/17 | 69f6032239e419a2dc02e247 | 20 | published | EN |
 | 02 | T-SHIRT CHANKS WANTED EN 2/17 | 69f5ec1fe1b7b9b0b0086b67 | 20 | published | EN |
 | 03 | T-SHIRT ROROROA ZORO WANTED EN 3/17 | 69f5ec2fcf535c302f083ccd | 20 | published | EN |
 | 04 | T-SHIRT NAMY WANTED EN 4/17 | 69f5ec3fe1b7b9b0b0086b7e | 20 | published | EN |
@@ -88,7 +88,7 @@
 
 | # | Titre | Product ID | Variantes | Statut | Langue |
 |---|-------|------------|-----------|--------|--------|
-| 01 | T-SHIRT LUFI WANTED NOIR EN 1/17 | 69f5ec18758757bfa30411a9 | 8 | published | EN |
+| 01 | T-SHIRT LUFI WANTED NOIR EN 1/17 | 69f603f5ef66d02ffe02b1ce | 8 | published | EN |
 | 02 | T-SHIRT CHANKS WANTED NOIR EN 2/17 | 69f5ec26e1b7b9b0b0086b6e | 8 | published | EN |
 | 03 | T-SHIRT ROROROA ZORO WANTED NOIR EN 3/17 | 69f5ec391cc4ed38fb0b77d1 | 8 | published | EN |
 | 04 | T-SHIRT NAMY WANTED NOIR EN 4/17 | 69f5ec44db88631ee309c0b2 | 8 | published | EN |
