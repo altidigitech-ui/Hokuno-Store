@@ -11,16 +11,17 @@ Lis `CONTEXT.md` en premier — il contient toute la brand bible : identité, co
 ├── CONTEXT.md                        # Brand bible complète
 ├── .claude/skills/printify/SKILL.md  # Référence API Printify
 ├── collections/
-│   ├── wanted.json                   # Personnages collection Wanted (49)
-│   ├── direction.json                # Personnages collection Direction (8-10)
-│   └── mythologie.json               # Personnages collection Mythologie (8-10)
+│   ├── wanted.json                   # Personnages collection Wanted (46 — 17 sur Printify, 29 dans Canva)
+│   ├── direction.json                # Personnages collection Direction (10)
+│   └── mythologie.json               # Personnages collection Mythologie (10)
 ```
 
-## État actuel (2026-05-01)
+## État actuel (2026-05-02)
 
-- **Shop Printify** : ID `22774508`, nom "My new store", **sales channel : disconnected** (aucun canal connecté)
-- **Total produits** : 105 (82 t-shirts, 19 mugs, 3 coques, 1 maillot de bain)
-- **Wanted** : 17 personnages sur Printify (FR uniquement) — 49 designs dans Canva (FR + EN traduit)
+- **Shop Printify** : ID `22774508`, nom "My new store", **sales channel : disconnected** (à connecter Shopify + TikTok Shop)
+- **Total produits** : 97 (75 t-shirts, 19 mugs, 2 coques, 1 maillot de bain)
+- **Phase 0 TERMINÉE** : titres corrigés (70 renames), catalogue nettoyé
+- **Wanted** : 17 personnages sur Printify (FR uniquement) — 46 personnages dans les JSONs, 49 designs dans Canva (FR + EN)
 - **Direction** : 10 personnages sur Printify (FR uniquement) — versions EN à régénérer avec ChatGPT
 - **Mythologie** : 10 personnages sur Printify (version universelle — pas de texte)
 
@@ -35,7 +36,15 @@ Lis `CONTEXT.md` en premier — il contient toute la brand bible : identité, co
 - **Punchline Wanted** : identique pour TOUS les personnages — `"ÇA NE FINIRA JAMAIS..."` (FR) / `"IT WILL NEVER END..."` (EN). Ne jamais créer de punchlines personnalisées.
 - **Texte secondaire Wanted** : identique pour tous — `"CETTE PRIME TRAINE DEPUIS 12 ANS. HONNETEMENT, SI VOUS LE TROUVEZ DEMANDEZ-LUI SIL EST TOUJOURS PARTANT"` (FR) / `"THIS BOUNTY HAS BEEN RUNNING FOR 12 YEARS. HONESTLY, IF YOU FIND HIM ASK HIM IF HE'S STILL UP FOR IT"` (EN)
 - **Quote Direction** : identique pour TOUS — `"JE N'AI PAS BESOIN D'UN PLAN.. JUSTE D'UNE DIRECTION."` (FR) / `"I DON'T NEED A PLAN.. JUST A DIRECTION."` (EN)
-- **Direction EN** : le texte est intégré dans l'image IA, non modifiable dans Canva. Les versions EN doivent être régénérées entièrement avec ChatGPT.
+- **Direction EN** : le texte est intégré dans l'image IA, non modifiable dans Canva. Les versions EN doivent être régénérées entièrement avec ChatGPT / DALL-E (même silhouette, texte EN intégré).
+
+## Convention de titrage Printify
+
+Format standard : `T-SHIRT [NOM] [COLLECTION] [VERSION]` en MAJUSCULES
+
+- `VERSION` = vide pour light standard, `NOIR` pour dark (Black+Navy), `NOIR XL` pour Black uniquement 8 tailles, `XL` pour palette étendue 56 variantes
+- Mugs : `tasse en céramique [collection] [nom] (11oz, 15oz)` en minuscules
+- Coques : `[type] [NOM] [COLLECTION]`
 
 ## API Printify
 

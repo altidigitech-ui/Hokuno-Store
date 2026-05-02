@@ -10,8 +10,18 @@
       "version_linguistique": "universelle — pas de texte sur le design",
       "tshirt_base": "blanc",
       "tshirt_noir": "version couleurs inversées du design",
-      "couleurs_dispo_light": ["White", "Natural", "Gravel", "Red", "Royal", "Safety Pink", "Sky"],
-      "couleurs_dispo_dark": ["Black"],
+      "couleurs_dispo_light": [
+        "White",
+        "Natural",
+        "Gravel",
+        "Red",
+        "Royal",
+        "Safety Pink",
+        "Sky"
+      ],
+      "couleurs_dispo_dark": [
+        "Black"
+      ],
       "print": "back uniquement"
     },
     "printify_id_schema": {
@@ -34,7 +44,14 @@
       "backstory_fr": "Avant que le soleil ne se lève, il marchait déjà devant. On dit que son rire fait fondre les empires — pas par colère, par habitude.",
       "backstory_en": "Before the sun rose, he was already walking ahead. They say his laughter melts empires — not from anger, just from habit.",
       "divinite_associee": "Apollon / Hélios — le dieu solaire qui ouvre la marche",
-      "tags": ["luffy", "rouge", "soleil", "capitaine", "divin", "mythologie"],
+      "tags": [
+        "luffy",
+        "rouge",
+        "soleil",
+        "capitaine",
+        "divin",
+        "mythologie"
+      ],
       "printify_product_ids": {
         "tshirt_light": "6846b317f4071352350c150a",
         "tshirt_light_v2": "",
@@ -54,10 +71,17 @@
       "backstory_fr": "Les dieux ont besoin d'une lame pour partager le ciel. Il en porte trois. Il n'a jamais demandé pourquoi.",
       "backstory_en": "The gods need a blade to divide the sky. He carries three. He never asked why.",
       "divinite_associee": "Arès / Achille — le tranchant divin",
-      "tags": ["zoro", "vert", "sabreur", "guerrier", "divin", "mythologie"],
+      "tags": [
+        "zoro",
+        "vert",
+        "sabreur",
+        "guerrier",
+        "divin",
+        "mythologie"
+      ],
       "printify_product_ids": {
         "tshirt_light": "6849a0426ab7f1ef5d069673",
-        "tshirt_light_v2": "6855d6fe2f8c83730f09f141",
+        "tshirt_light_v2": "",
         "tshirt_noir": "6849c1ce6ab7f1ef5d069e35",
         "tshirt_noir_v2": "",
         "mug": "",
@@ -74,7 +98,14 @@
       "backstory_fr": "Elle nomme les vents avant qu'ils ne soufflent. Le ciel suit son doigt. Les marins prient — elle ne répond pas.",
       "backstory_en": "She names the winds before they blow. The sky follows her finger. Sailors pray — she doesn't answer.",
       "divinite_associee": "Iris / Boréas — déesse des vents et messagère du ciel",
-      "tags": ["nami", "orange", "navigatrice", "vent", "divin", "mythologie"],
+      "tags": [
+        "nami",
+        "orange",
+        "navigatrice",
+        "vent",
+        "divin",
+        "mythologie"
+      ],
       "printify_product_ids": {
         "tshirt_light": "6849a4237483e9399e0d4444",
         "tshirt_light_v2": "",
@@ -94,7 +125,14 @@
       "backstory_fr": "Il décoche des flèches qui n'existent que parce qu'il y croit. Cinq sur six manquent leur cible. La sixième fait s'écrouler les murs.",
       "backstory_en": "He looses arrows that exist only because he believes in them. Five out of six miss. The sixth brings down walls.",
       "divinite_associee": "Apollon archer / Eole — l'archer doré",
-      "tags": ["usopp", "jaune", "tireur", "archer", "divin", "mythologie"],
+      "tags": [
+        "usopp",
+        "jaune",
+        "tireur",
+        "archer",
+        "divin",
+        "mythologie"
+      ],
       "printify_product_ids": {
         "tshirt_light": "6849a898e27810926a088854",
         "tshirt_light_v2": "",
@@ -114,7 +152,14 @@
       "backstory_fr": "Avant de nourrir les mortels, il a nourri les dieux. On dit que son feu brûle plus fort que celui de Prométhée — mais lui, il l'utilise pour cuisiner.",
       "backstory_en": "Before feeding mortals, he fed the gods. They say his fire burns hotter than Prometheus' — but he uses it to cook.",
       "divinite_associee": "Apollon / Héphaïstos — le feu divin domestiqué",
-      "tags": ["sanji", "bleu", "cuisinier", "feu", "divin", "mythologie"],
+      "tags": [
+        "sanji",
+        "bleu",
+        "cuisinier",
+        "feu",
+        "divin",
+        "mythologie"
+      ],
       "printify_product_ids": {
         "tshirt_light": "6849a6e0bd30bb1f1304c67e",
         "tshirt_light_v2": "",
@@ -134,7 +179,14 @@
       "backstory_fr": "Les dieux meurent aussi. C'est lui qu'on appelle quand ça arrive. Il est petit. Il pose sa patte. Quelque chose repart.",
       "backstory_en": "Even gods die. He's the one they call when it happens. He's small. He places his hoof. Something starts again.",
       "divinite_associee": "Asclépios — le médecin sacré",
-      "tags": ["chopper", "rose", "medecin", "guerison", "divin", "mythologie"],
+      "tags": [
+        "chopper",
+        "rose",
+        "medecin",
+        "guerison",
+        "divin",
+        "mythologie"
+      ],
       "printify_product_ids": {
         "tshirt_light": "",
         "tshirt_light_v2": "",
@@ -154,7 +206,15 @@
       "backstory_fr": "Elle se souvient de ce que le monde a oublié. Quand elle ouvre un livre, le passé s'agenouille. Elle l'écoute, puis elle tourne la page.",
       "backstory_en": "She remembers what the world forgot. When she opens a book, the past kneels. She listens, then turns the page.",
       "divinite_associee": "Mnémosyne / Athéna — la déesse de la mémoire et du savoir",
-      "tags": ["robin", "violet", "archeologue", "memoire", "savoir", "divin", "mythologie"],
+      "tags": [
+        "robin",
+        "violet",
+        "archeologue",
+        "memoire",
+        "savoir",
+        "divin",
+        "mythologie"
+      ],
       "printify_product_ids": {
         "tshirt_light": "",
         "tshirt_light_v2": "",
@@ -174,7 +234,14 @@
       "backstory_fr": "Il a forgé des navires pour des dieux fatigués. Quand il frappe, les montagnes s'alignent. Personne ne lui a jamais dit merci. Il s'en moque.",
       "backstory_en": "He forged ships for tired gods. When he hammers, mountains line up. Nobody ever thanked him. He doesn't care.",
       "divinite_associee": "Héphaïstos — l'architecte divin",
-      "tags": ["franky", "cyan", "charpentier", "forgeron", "divin", "mythologie"],
+      "tags": [
+        "franky",
+        "cyan",
+        "charpentier",
+        "forgeron",
+        "divin",
+        "mythologie"
+      ],
       "printify_product_ids": {
         "tshirt_light": "6849a62c7483e9399e0d44b5",
         "tshirt_light_v2": "",
@@ -194,11 +261,19 @@
       "backstory_fr": "Il joue pour les morts qui n'ont pas trouvé la sortie. Il connaît la mélodie par cœur — il l'a écrite quand il était encore vivant.",
       "backstory_en": "He plays for the dead who couldn't find the exit. He knows the melody by heart — he wrote it while he was still alive.",
       "divinite_associee": "Orphée — le musicien des Enfers",
-      "tags": ["brook", "noir", "gris", "squelette", "musicien", "divin", "mythologie"],
+      "tags": [
+        "brook",
+        "noir",
+        "gris",
+        "squelette",
+        "musicien",
+        "divin",
+        "mythologie"
+      ],
       "printify_product_ids": {
         "tshirt_light": "6849a7abf43bb403450bd907",
         "tshirt_light_v2": "",
-        "tshirt_noir": "6849bcd3bd30bb1f1304cc78",
+        "tshirt_noir": "",
         "tshirt_noir_v2": "6849c4469bf7aebaf7048740",
         "mug": "",
         "coque": ""
@@ -214,7 +289,14 @@
       "backstory_fr": "Quand il marche, les marées suivent. Quand il s'arrête, l'océan retient son souffle. Les autres dieux le saluent en silence.",
       "backstory_en": "When he walks, the tides follow. When he stops, the ocean holds its breath. The other gods salute in silence.",
       "divinite_associee": "Poséidon / Triton — le roi des marées",
-      "tags": ["jinbe", "bleu-marine", "homme-poisson", "ocean", "divin", "mythologie"],
+      "tags": [
+        "jinbe",
+        "bleu-marine",
+        "homme-poisson",
+        "ocean",
+        "divin",
+        "mythologie"
+      ],
       "printify_product_ids": {
         "tshirt_light": "6849a4e7d5b83610460568ba",
         "tshirt_light_v2": "",

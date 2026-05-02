@@ -14,8 +14,17 @@
       "texte_secondaire_fr": "CETTE PRIME TRAINE DEPUIS 12 ANS. HONNETEMENT, SI VOUS LE TROUVEZ DEMANDEZ-LUI SIL EST TOUJOURS PARTANT",
       "texte_secondaire_en": "THIS BOUNTY HAS BEEN RUNNING FOR 12 YEARS. HONESTLY, IF YOU FIND HIM ASK HIM IF HE'S STILL UP FOR IT",
       "tshirt_base": "noir",
-      "couleurs_dispo_light": ["White", "Natural", "Gravel", "Red", "Royal"],
-      "couleurs_dispo_dark": ["Black", "Navy"],
+      "couleurs_dispo_light": [
+        "White",
+        "Natural",
+        "Gravel",
+        "Red",
+        "Royal"
+      ],
+      "couleurs_dispo_dark": [
+        "Black",
+        "Navy"
+      ],
       "variantes_light": 20,
       "variantes_dark": 8,
       "print": "front + back"
@@ -42,12 +51,18 @@
       "backstory_en": "30 years chasing a treasure no one has ever seen. The straw hat has yellowed. So have his dreams. He no longer has the strength to shout that he'll be king.",
       "punchline_fr": "ÇA NE FINIRA JAMAIS...",
       "punchline_en": "IT WILL NEVER END...",
-      "tags": ["luffy", "chapeau-de-paille", "capitaine", "fatigue", "humour-noir"],
+      "tags": [
+        "luffy",
+        "chapeau-de-paille",
+        "capitaine",
+        "fatigue",
+        "humour-noir"
+      ],
       "printify_product_ids": {
         "tshirt_fr_light": "6849d4756ab7f1ef5d06a2e9",
         "tshirt_fr_dark": "684b42ddc1b6866d8600db8f",
-        "tshirt_fr_v2_light": "68558d447cace068960963f6",
-        "tshirt_fr_v2_dark": "68558de28247b00a080adf14",
+        "tshirt_fr_v2_light": "",
+        "tshirt_fr_v2_dark": "",
         "tshirt_fr_noir_xl": "6846b6a0666917ada800dcb1",
         "tshirt_en_light": "",
         "tshirt_en_dark": "",
@@ -64,12 +79,19 @@
       "backstory_en": "He gave his arm to a kid who forgot him. He's been waiting 30 years to get the hat back. He knows he never will.",
       "punchline_fr": "ÇA NE FINIRA JAMAIS...",
       "punchline_en": "IT WILL NEVER END...",
-      "tags": ["chanks", "shanks", "roux", "empereur", "attente", "humour-noir"],
+      "tags": [
+        "chanks",
+        "shanks",
+        "roux",
+        "empereur",
+        "attente",
+        "humour-noir"
+      ],
       "printify_product_ids": {
         "tshirt_fr_light": "684b39093a95f8f9ac0cd9d7",
         "tshirt_fr_dark": "684b52a24a52709620072dec",
-        "tshirt_fr_v2_light": "68552e5614c6f2ed2b0024ee",
-        "tshirt_fr_v2_dark": "684c62948a7f6f02b704e330",
+        "tshirt_fr_v2_light": "",
+        "tshirt_fr_v2_dark": "",
         "tshirt_fr_noir_xl": "",
         "tshirt_en_light": "",
         "tshirt_en_dark": "",
@@ -86,7 +108,13 @@
       "backstory_en": "He got lost on the way to the bathroom back in 1999. He's still walking. No one's brave enough to tell him the main road is right there.",
       "punchline_fr": "ÇA NE FINIRA JAMAIS...",
       "punchline_en": "IT WILL NEVER END...",
-      "tags": ["zoro", "sabreur", "trois-sabres", "perdu", "humour-noir"],
+      "tags": [
+        "zoro",
+        "sabreur",
+        "trois-sabres",
+        "perdu",
+        "humour-noir"
+      ],
       "printify_product_ids": {
         "tshirt_fr_light": "684b2dfacd0c3157940915f8",
         "tshirt_fr_dark": "684b4e188ad27b8d900556b7",
@@ -108,7 +136,13 @@
       "backstory_en": "She mapped the entire world. The world forgot her. She counts her berries one by one — they're worth nothing now.",
       "punchline_fr": "ÇA NE FINIRA JAMAIS...",
       "punchline_en": "IT WILL NEVER END...",
-      "tags": ["nami", "navigatrice", "argent", "cartes", "humour-noir"],
+      "tags": [
+        "nami",
+        "navigatrice",
+        "argent",
+        "cartes",
+        "humour-noir"
+      ],
       "printify_product_ids": {
         "tshirt_fr_light": "684b300c4dfca61d6e03f94c",
         "tshirt_fr_dark": "684b4f338ad27b8d900556ff",
@@ -130,7 +164,13 @@
       "backstory_en": "He cooked for kings, monsters, and ungrateful brats. Now the kitchen is cold. No one orders food anymore.",
       "punchline_fr": "ÇA NE FINIRA JAMAIS...",
       "punchline_en": "IT WILL NEVER END...",
-      "tags": ["sanji", "cuisinier", "fumeur", "fatigue", "humour-noir"],
+      "tags": [
+        "sanji",
+        "cuisinier",
+        "fumeur",
+        "fatigue",
+        "humour-noir"
+      ],
       "printify_product_ids": {
         "tshirt_fr_light": "684b2d165ea5d8765401f04f",
         "tshirt_fr_dark": "684b4d774a52709620072c94",
@@ -152,7 +192,13 @@
       "backstory_en": "He patched the crew for 30 years. Nobody gets sick anymore — they're all too tired for that. His kit is untouched. Useless.",
       "punchline_fr": "ÇA NE FINIRA JAMAIS...",
       "punchline_en": "IT WILL NEVER END...",
-      "tags": ["chopper", "renne", "medecin", "tendresse", "humour-noir"],
+      "tags": [
+        "chopper",
+        "renne",
+        "medecin",
+        "tendresse",
+        "humour-noir"
+      ],
       "printify_product_ids": {
         "tshirt_fr_light": "6849f9d953576a8a950e2eee",
         "tshirt_fr_dark": "684b4b9d8ad27b8d9005563e",
@@ -174,7 +220,13 @@
       "backstory_en": "She read every history book. None of them say how to stand back up. The arms that bloom everywhere have nothing left to carry.",
       "punchline_fr": "ÇA NE FINIRA JAMAIS...",
       "punchline_en": "IT WILL NEVER END...",
-      "tags": ["robin", "archeologue", "intellectuelle", "melancolie", "humour-noir"],
+      "tags": [
+        "robin",
+        "archeologue",
+        "intellectuelle",
+        "melancolie",
+        "humour-noir"
+      ],
       "printify_product_ids": {
         "tshirt_fr_light": "684b2ef790d6792b870a98b8",
         "tshirt_fr_dark": "684b4ead8b6650a870003f9e",
@@ -196,7 +248,13 @@
       "backstory_en": "His parts squeak. The cola fizzes sadly. He built the ship of their dreams. The ship sank in 2018, nobody talks about it.",
       "punchline_fr": "ÇA NE FINIRA JAMAIS...",
       "punchline_en": "IT WILL NEVER END...",
-      "tags": ["franky", "cyborg", "charpentier", "rouille", "humour-noir"],
+      "tags": [
+        "franky",
+        "cyborg",
+        "charpentier",
+        "rouille",
+        "humour-noir"
+      ],
       "printify_product_ids": {
         "tshirt_fr_light": "684b35628ad27b8d90055159",
         "tshirt_fr_dark": "684b515f5ea5d8765401f813",
@@ -218,7 +276,13 @@
       "backstory_en": "He's been dead for 50 years. He thought that would be enough to rest. Apparently not — he still has to play.",
       "punchline_fr": "ÇA NE FINIRA JAMAIS...",
       "punchline_en": "IT WILL NEVER END...",
-      "tags": ["brook", "squelette", "musicien", "violon", "humour-noir"],
+      "tags": [
+        "brook",
+        "squelette",
+        "musicien",
+        "violon",
+        "humour-noir"
+      ],
       "printify_product_ids": {
         "tshirt_fr_light": "6849f7fc8b94b5b93d0fcd10",
         "tshirt_fr_dark": "684b44995ea5d8765401f580",
@@ -240,7 +304,13 @@
       "backstory_en": "He proclaimed himself a god so he wouldn't have to be afraid anymore. Nobody disagreed. Now the faithful wait for a miracle. So does he.",
       "punchline_fr": "ÇA NE FINIRA JAMAIS...",
       "punchline_en": "IT WILL NEVER END...",
-      "tags": ["usopp", "tireur", "menteur", "dieu", "humour-noir"],
+      "tags": [
+        "usopp",
+        "tireur",
+        "menteur",
+        "dieu",
+        "humour-noir"
+      ],
       "printify_product_ids": {
         "tshirt_fr_light": "684b33afa9314bdcdf0d53d7",
         "tshirt_fr_dark": "684b50d6c1b6866d8600de29",
@@ -262,7 +332,13 @@
       "backstory_en": "He carried the ocean on his back. The ocean doesn't speak to him anymore. The currents changed direction. He didn't.",
       "punchline_fr": "ÇA NE FINIRA JAMAIS...",
       "punchline_en": "IT WILL NEVER END...",
-      "tags": ["jinbe", "homme-poisson", "barreur", "ocean", "humour-noir"],
+      "tags": [
+        "jinbe",
+        "homme-poisson",
+        "barreur",
+        "ocean",
+        "humour-noir"
+      ],
       "printify_product_ids": {
         "tshirt_fr_light": "684b327cb0ad75db150b79d1",
         "tshirt_fr_dark": "684b50508ad27b8d90055731",
@@ -284,7 +360,13 @@
       "backstory_en": "30 years of playing the villain for nothing. The makeup is running, the red nose doesn't make anyone laugh anymore. He was never dangerous, but now even he knows it. He's just waiting for the last page.",
       "punchline_fr": "ÇA NE FINIRA JAMAIS...",
       "punchline_en": "IT WILL NEVER END...",
-      "tags": ["buggy", "clown", "fatigue", "humour-noir", "villain"],
+      "tags": [
+        "buggy",
+        "clown",
+        "fatigue",
+        "humour-noir",
+        "villain"
+      ],
       "printify_product_ids": {
         "tshirt_fr_light": "684b3fee2c4daa76ec095919",
         "tshirt_fr_dark": "684b53a2a9314bdcdf0d5a62",
@@ -306,7 +388,13 @@
       "backstory_en": "He's thrown himself off every cliff in the world. None of them killed him. He's starting to wonder if death is an option or a premium service.",
       "punchline_fr": "ÇA NE FINIRA JAMAIS...",
       "punchline_en": "IT WILL NEVER END...",
-      "tags": ["kaido", "empereur", "dragon", "sake", "humour-noir"],
+      "tags": [
+        "kaido",
+        "empereur",
+        "dragon",
+        "sake",
+        "humour-noir"
+      ],
       "printify_product_ids": {
         "tshirt_fr_light": "684b3a018b6650a870003b88",
         "tshirt_fr_dark": "684b532f90d6792b870aa071",
@@ -328,7 +416,13 @@
       "backstory_en": "He pulled every string in the world. The puppets cut their own. He pretends he's still in control — it's all he knows how to do.",
       "punchline_fr": "ÇA NE FINIRA JAMAIS...",
       "punchline_en": "IT WILL NEVER END...",
-      "tags": ["doflamingo", "donquixote", "manipulateur", "rose", "humour-noir"],
+      "tags": [
+        "doflamingo",
+        "donquixote",
+        "manipulateur",
+        "rose",
+        "humour-noir"
+      ],
       "printify_product_ids": {
         "tshirt_fr_light": "684b37628ad27b8d900551ef",
         "tshirt_fr_dark": "684b520eff145207d8018ff7",
@@ -350,7 +444,13 @@
       "backstory_en": "He stole the power of darkness. Darkness kept him. He sleeps badly — it's black everywhere, even with his eyes closed.",
       "punchline_fr": "ÇA NE FINIRA JAMAIS...",
       "punchline_en": "IT WILL NEVER END...",
-      "tags": ["teach", "blackbeard", "barbe-noire", "tenebres", "humour-noir"],
+      "tags": [
+        "teach",
+        "blackbeard",
+        "barbe-noire",
+        "tenebres",
+        "humour-noir"
+      ],
       "printify_product_ids": {
         "tshirt_fr_light": "684b3118ff145207d801891c",
         "tshirt_fr_dark": "684b4fc190d6792b870a9fae",
@@ -372,7 +472,13 @@
       "backstory_en": "She devoured continents of cake. Nothing has flavor anymore. Sugar makes her tired. She doesn't know how to say 'I've had enough'.",
       "punchline_fr": "ÇA NE FINIRA JAMAIS...",
       "punchline_en": "IT WILL NEVER END...",
-      "tags": ["bigmom", "charlotte", "linlin", "gateaux", "humour-noir"],
+      "tags": [
+        "bigmom",
+        "charlotte",
+        "linlin",
+        "gateaux",
+        "humour-noir"
+      ],
       "printify_product_ids": {
         "tshirt_fr_light": "684b2b09a9314bdcdf0d5220",
         "tshirt_fr_dark": "684b4c7eea64cf1036087f88",
@@ -394,7 +500,13 @@
       "backstory_en": "He ruled a kingdom of sand. The sand eventually fell. Nobody noticed. He counts every grain that slips through. There aren't many left.",
       "punchline_fr": "ÇA NE FINIRA JAMAIS...",
       "punchline_en": "IT WILL NEVER END...",
-      "tags": ["crocodile", "alabasta", "sable", "warlord", "humour-noir"],
+      "tags": [
+        "crocodile",
+        "alabasta",
+        "sable",
+        "warlord",
+        "humour-noir"
+      ],
       "printify_product_ids": {
         "tshirt_fr_light": "684b40a48ad27b8d90055440",
         "tshirt_fr_dark": "684b5414b0ad75db150b812b",
@@ -416,7 +528,13 @@
       "backstory_en": "He was a revolutionary with good manners. They erased his memory, his convictions, then his manners. All that's left is the politeness of machines.",
       "punchline_fr": "ÇA NE FINIRA JAMAIS...",
       "punchline_en": "IT WILL NEVER END...",
-      "tags": ["kuma", "revolutionnaire", "cyborg", "obeissance", "humour-noir"],
+      "tags": [
+        "kuma",
+        "revolutionnaire",
+        "cyborg",
+        "obeissance",
+        "humour-noir"
+      ],
       "printify_product_ids": {
         "tshirt_fr_light": "",
         "tshirt_fr_dark": "",
@@ -438,7 +556,12 @@
       "backstory_en": "He could transform anyone. 30 years of changing others — nobody asked if he wanted to change himself. He handled it. Didn't really help.",
       "punchline_fr": "ÇA NE FINIRA JAMAIS...",
       "punchline_en": "IT WILL NEVER END...",
-      "tags": ["ivankov", "revolutionnaire", "transformation", "humour-noir"],
+      "tags": [
+        "ivankov",
+        "revolutionnaire",
+        "transformation",
+        "humour-noir"
+      ],
       "printify_product_ids": {
         "tshirt_fr_light": "",
         "tshirt_fr_dark": "",
@@ -460,7 +583,13 @@
       "backstory_en": "He hated humans for what they did to his people. After 30 years, humans did exactly what he'd predicted. He would have preferred to be wrong.",
       "punchline_fr": "ÇA NE FINIRA JAMAIS...",
       "punchline_en": "IT WILL NEVER END...",
-      "tags": ["arlong", "homme-poisson", "haine", "rancœur", "humour-noir"],
+      "tags": [
+        "arlong",
+        "homme-poisson",
+        "haine",
+        "rancœur",
+        "humour-noir"
+      ],
       "printify_product_ids": {
         "tshirt_fr_light": "",
         "tshirt_fr_dark": "",
@@ -482,7 +611,13 @@
       "backstory_en": "He jumped 20 years in one go. Maturity arrived before everything else. He doesn't know what he missed — but he knows he misses it.",
       "punchline_fr": "ÇA NE FINIRA JAMAIS...",
       "punchline_en": "IT WILL NEVER END...",
-      "tags": ["momonosuke", "shogun", "dragon", "wano", "humour-noir"],
+      "tags": [
+        "momonosuke",
+        "shogun",
+        "dragon",
+        "wano",
+        "humour-noir"
+      ],
       "printify_product_ids": {
         "tshirt_fr_light": "",
         "tshirt_fr_dark": "",
@@ -504,7 +639,13 @@
       "backstory_en": "He has the power of metals and rage as a free add-on. He lost an arm, a crew, and the will to try. The metals are still holding.",
       "punchline_fr": "ÇA NE FINIRA JAMAIS...",
       "punchline_en": "IT WILL NEVER END...",
-      "tags": ["kid", "pirate", "metal", "rage", "humour-noir"],
+      "tags": [
+        "kid",
+        "pirate",
+        "metal",
+        "rage",
+        "humour-noir"
+      ],
       "printify_product_ids": {
         "tshirt_fr_light": "",
         "tshirt_fr_dark": "",
@@ -526,7 +667,13 @@
       "backstory_en": "She's too beautiful for it to help. Beauty never won a war. She won hers — and it left her lonelier than anything.",
       "punchline_fr": "ÇA NE FINIRA JAMAIS...",
       "punchline_en": "IT WILL NEVER END...",
-      "tags": ["hancock", "beaute", "serpent", "solitude", "humour-noir"],
+      "tags": [
+        "hancock",
+        "beaute",
+        "serpent",
+        "solitude",
+        "humour-noir"
+      ],
       "printify_product_ids": {
         "tshirt_fr_light": "",
         "tshirt_fr_dark": "",
@@ -548,7 +695,13 @@
       "backstory_en": "He spent his life being someone else. That someone else died a long time ago. He carries on anyway — it's the only identity he knows.",
       "punchline_fr": "ÇA NE FINIRA JAMAIS...",
       "punchline_en": "IT WILL NEVER END...",
-      "tags": ["yamato", "identite", "wano", "liberte", "humour-noir"],
+      "tags": [
+        "yamato",
+        "identite",
+        "wano",
+        "liberte",
+        "humour-noir"
+      ],
       "printify_product_ids": {
         "tshirt_fr_light": "",
         "tshirt_fr_dark": "",
@@ -570,7 +723,13 @@
       "backstory_en": "He used to shake so much when they first met. He became a Marine hero. He still shakes — but nobody sees it anymore.",
       "punchline_fr": "ÇA NE FINIRA JAMAIS...",
       "punchline_en": "IT WILL NEVER END...",
-      "tags": ["koby", "marine", "courage", "commencement", "humour-noir"],
+      "tags": [
+        "koby",
+        "marine",
+        "courage",
+        "commencement",
+        "humour-noir"
+      ],
       "printify_product_ids": {
         "tshirt_fr_light": "",
         "tshirt_fr_dark": "",
@@ -592,7 +751,13 @@
       "backstory_en": "He died so his brother could live. His brother lived well. That's enough, right? He asked the universe. The universe didn't answer.",
       "punchline_fr": "ÇA NE FINIRA JAMAIS...",
       "punchline_en": "IT WILL NEVER END...",
-      "tags": ["ace", "frere", "sacrifice", "feu", "humour-noir"],
+      "tags": [
+        "ace",
+        "frere",
+        "sacrifice",
+        "feu",
+        "humour-noir"
+      ],
       "printify_product_ids": {
         "tshirt_fr_light": "",
         "tshirt_fr_dark": "",
@@ -614,7 +779,13 @@
       "backstory_en": "A hook, a cigar, a secret so old he can't remember it himself. He played the villain so long he became indistinguishable from the hero. It's awkward.",
       "punchline_fr": "ÇA NE FINIRA JAMAIS...",
       "punchline_en": "IT WILL NEVER END...",
-      "tags": ["crocodile", "sable", "warlord", "ambiguite", "humour-noir"],
+      "tags": [
+        "crocodile",
+        "sable",
+        "warlord",
+        "ambiguite",
+        "humour-noir"
+      ],
       "printify_product_ids": {
         "tshirt_fr_light": "",
         "tshirt_fr_dark": "",
@@ -636,7 +807,13 @@
       "backstory_en": "He's been the world's greatest swordsman for 20 years. Nobody has seriously challenged him. He waits. He's starting to wonder if waiting is already retirement.",
       "punchline_fr": "ÇA NE FINIRA JAMAIS...",
       "punchline_en": "IT WILL NEVER END...",
-      "tags": ["mihawk", "sabreur", "excellence", "attente", "humour-noir"],
+      "tags": [
+        "mihawk",
+        "sabreur",
+        "excellence",
+        "attente",
+        "humour-noir"
+      ],
       "printify_product_ids": {
         "tshirt_fr_light": "",
         "tshirt_fr_dark": "",
@@ -658,7 +835,13 @@
       "backstory_en": "He lost his memory, found his brother, watched his brother die. Memory comes back in fragments. The good pieces are taking their time.",
       "punchline_fr": "ÇA NE FINIRA JAMAIS...",
       "punchline_en": "IT WILL NEVER END...",
-      "tags": ["sabo", "revolutionnaire", "memoire", "deuil", "humour-noir"],
+      "tags": [
+        "sabo",
+        "revolutionnaire",
+        "memoire",
+        "deuil",
+        "humour-noir"
+      ],
       "printify_product_ids": {
         "tshirt_fr_light": "",
         "tshirt_fr_dark": "",
@@ -680,7 +863,13 @@
       "backstory_en": "He performs open-heart surgery in silence. People heal, leave, and he stays in his cold room. It's been the same operation for 30 years.",
       "punchline_fr": "ÇA NE FINIRA JAMAIS...",
       "punchline_en": "IT WILL NEVER END...",
-      "tags": ["law", "chirurgien", "solitude", "pirate", "humour-noir"],
+      "tags": [
+        "law",
+        "chirurgien",
+        "solitude",
+        "pirate",
+        "humour-noir"
+      ],
       "printify_product_ids": {
         "tshirt_fr_light": "",
         "tshirt_fr_dark": "",
@@ -702,7 +891,13 @@
       "backstory_en": "He sacrificed everything for the revolution. His wife. His son. His presence. The revolution moves slowly. He walks with it. He's forgotten why he started.",
       "punchline_fr": "ÇA NE FINIRA JAMAIS...",
       "punchline_en": "IT WILL NEVER END...",
-      "tags": ["dragon", "revolutionnaire", "sacrifice", "vent", "humour-noir"],
+      "tags": [
+        "dragon",
+        "revolutionnaire",
+        "sacrifice",
+        "vent",
+        "humour-noir"
+      ],
       "printify_product_ids": {
         "tshirt_fr_light": "",
         "tshirt_fr_dark": "",
@@ -724,7 +919,13 @@
       "backstory_en": "He commanded a boat-island full of the dead. Even the dead left him. He makes his shadow alone now — it no longer resembles anything.",
       "punchline_fr": "ÇA NE FINIRA JAMAIS...",
       "punchline_en": "IT WILL NEVER END...",
-      "tags": ["moria", "zombie", "ombre", "isolement", "humour-noir"],
+      "tags": [
+        "moria",
+        "zombie",
+        "ombre",
+        "isolement",
+        "humour-noir"
+      ],
       "printify_product_ids": {
         "tshirt_fr_light": "",
         "tshirt_fr_dark": "",
@@ -746,7 +947,13 @@
       "backstory_en": "He left the Navy to keep his principles. Principles are heavy when you sleep on an ice bench. He's slowly thawing. Nobody's waiting.",
       "punchline_fr": "ÇA NE FINIRA JAMAIS...",
       "punchline_en": "IT WILL NEVER END...",
-      "tags": ["aokiji", "glace", "marine-deserteur", "principes", "humour-noir"],
+      "tags": [
+        "aokiji",
+        "glace",
+        "marine-deserteur",
+        "principes",
+        "humour-noir"
+      ],
       "printify_product_ids": {
         "tshirt_fr_light": "",
         "tshirt_fr_dark": "",
@@ -768,7 +975,13 @@
       "backstory_en": "He was perfect. He chose to lose a fight to stay honest. Perfection is lonely. Honesty is even worse.",
       "punchline_fr": "ÇA NE FINIRA JAMAIS...",
       "punchline_en": "IT WILL NEVER END...",
-      "tags": ["katakuri", "perfection", "honnetete", "donuts", "humour-noir"],
+      "tags": [
+        "katakuri",
+        "perfection",
+        "honnetete",
+        "donuts",
+        "humour-noir"
+      ],
       "printify_product_ids": {
         "tshirt_fr_light": "",
         "tshirt_fr_dark": "",
@@ -790,7 +1003,13 @@
       "backstory_en": "He invents plagues for laughs. Nobody laughs. The viruses are doing just fine — they're the only thing he's ever managed to keep alive.",
       "punchline_fr": "ÇA NE FINIRA JAMAIS...",
       "punchline_en": "IT WILL NEVER END...",
-      "tags": ["queen", "savant-fou", "virus", "cyborg", "humour-noir"],
+      "tags": [
+        "queen",
+        "savant-fou",
+        "virus",
+        "cyborg",
+        "humour-noir"
+      ],
       "printify_product_ids": {
         "tshirt_fr_light": "",
         "tshirt_fr_dark": "",
@@ -812,7 +1031,13 @@
       "backstory_en": "He's the last of his kind. He burned everything left of his world to serve another fate. The fate fell. The race stays extinct.",
       "punchline_fr": "ÇA NE FINIRA JAMAIS...",
       "punchline_en": "IT WILL NEVER END...",
-      "tags": ["king", "dernier-survivant", "race-eteinte", "wano", "humour-noir"],
+      "tags": [
+        "king",
+        "dernier-survivant",
+        "race-eteinte",
+        "wano",
+        "humour-noir"
+      ],
       "printify_product_ids": {
         "tshirt_fr_light": "",
         "tshirt_fr_dark": "",
@@ -834,7 +1059,13 @@
       "backstory_en": "He spent 30 years chasing the same straw hat. The hat is right there. He can't catch it. He's starting to wonder if he really wants to.",
       "punchline_fr": "ÇA NE FINIRA JAMAIS...",
       "punchline_en": "IT WILL NEVER END...",
-      "tags": ["smoker", "marine", "fumee", "poursuite", "humour-noir"],
+      "tags": [
+        "smoker",
+        "marine",
+        "fumee",
+        "poursuite",
+        "humour-noir"
+      ],
       "printify_product_ids": {
         "tshirt_fr_light": "",
         "tshirt_fr_dark": "",
@@ -856,7 +1087,13 @@
       "backstory_en": "They boiled him alive for an hour. He held on. The 30 years of manga that followed lasted much longer. He didn't get that chance.",
       "punchline_fr": "ÇA NE FINIRA JAMAIS...",
       "punchline_en": "IT WILL NEVER END...",
-      "tags": ["oden", "samourai", "legende", "sacrifice", "humour-noir"],
+      "tags": [
+        "oden",
+        "samourai",
+        "legende",
+        "sacrifice",
+        "humour-noir"
+      ],
       "printify_product_ids": {
         "tshirt_fr_light": "",
         "tshirt_fr_dark": "",
@@ -878,7 +1115,13 @@
       "backstory_en": "He's devoted himself absolutely to his hero from the start. His hero became king. He cried for 3 weeks. He still cries a little.",
       "punchline_fr": "ÇA NE FINIRA JAMAIS...",
       "punchline_en": "IT WILL NEVER END...",
-      "tags": ["bartolomeo", "fan", "devotion", "larmes", "humour-noir"],
+      "tags": [
+        "bartolomeo",
+        "fan",
+        "devotion",
+        "larmes",
+        "humour-noir"
+      ],
       "printify_product_ids": {
         "tshirt_fr_light": "",
         "tshirt_fr_dark": "",
@@ -900,7 +1143,13 @@
       "backstory_en": "He understood everything before everyone else. The devil fruits, the bio-weapons, the future. The future didn't wait for him. He's been running after it since.",
       "punchline_fr": "ÇA NE FINIRA JAMAIS...",
       "punchline_en": "IT WILL NEVER END...",
-      "tags": ["vegapunk", "savant", "genie", "avenir", "humour-noir"],
+      "tags": [
+        "vegapunk",
+        "savant",
+        "genie",
+        "avenir",
+        "humour-noir"
+      ],
       "printify_product_ids": {
         "tshirt_fr_light": "",
         "tshirt_fr_dark": "",
@@ -922,7 +1171,13 @@
       "backstory_en": "He was the strongest. He died standing, not a wound on his back. 267 wounds from the front. Nobody planned retirement statistics for him.",
       "punchline_fr": "ÇA NE FINIRA JAMAIS...",
       "punchline_en": "IT WILL NEVER END...",
-      "tags": ["barbe-blanche", "plus-fort", "mort-debout", "marineford", "humour-noir"],
+      "tags": [
+        "barbe-blanche",
+        "plus-fort",
+        "mort-debout",
+        "marineford",
+        "humour-noir"
+      ],
       "printify_product_ids": {
         "tshirt_fr_light": "",
         "tshirt_fr_dark": "",
@@ -944,7 +1199,13 @@
       "backstory_en": "He started everything with his last words. Thirty years of everyone chasing his ghost. He thought it would last ten years, tops. He was wrong.",
       "punchline_fr": "ÇA NE FINIRA JAMAIS...",
       "punchline_en": "IT WILL NEVER END...",
-      "tags": ["roger", "roi-des-pirates", "tresor", "commencement", "humour-noir"],
+      "tags": [
+        "roger",
+        "roi-des-pirates",
+        "tresor",
+        "commencement",
+        "humour-noir"
+      ],
       "printify_product_ids": {
         "tshirt_fr_light": "",
         "tshirt_fr_dark": "",
@@ -966,7 +1227,13 @@
       "backstory_en": "He thought he was a god. He was on the moon. Humility came late — and only because a rubber kid didn't conduct electricity.",
       "punchline_fr": "ÇA NE FINIRA JAMAIS...",
       "punchline_en": "IT WILL NEVER END...",
-      "tags": ["enel", "faux-dieu", "eclairs", "lune", "humour-noir"],
+      "tags": [
+        "enel",
+        "faux-dieu",
+        "eclairs",
+        "lune",
+        "humour-noir"
+      ],
       "printify_product_ids": {
         "tshirt_fr_light": "",
         "tshirt_fr_dark": "",
@@ -988,7 +1255,13 @@
       "backstory_en": "He's the phoenix — he regenerates, always. The scars, though, stay. Not the physical ones. The other kind.",
       "punchline_fr": "ÇA NE FINIRA JAMAIS...",
       "punchline_en": "IT WILL NEVER END...",
-      "tags": ["marco", "phenix", "regeneration", "deuil", "humour-noir"],
+      "tags": [
+        "marco",
+        "phenix",
+        "regeneration",
+        "deuil",
+        "humour-noir"
+      ],
       "printify_product_ids": {
         "tshirt_fr_light": "",
         "tshirt_fr_dark": "",
@@ -1010,7 +1283,13 @@
       "backstory_en": "He jumped 20 years through time for a foolproof plan. The plan had a few flaws. He patched them with pride and bad faith. It barely held.",
       "punchline_fr": "ÇA NE FINIRA JAMAIS...",
       "punchline_en": "IT WILL NEVER END...",
-      "tags": ["kinemon", "samourai", "plan", "temps", "humour-noir"],
+      "tags": [
+        "kinemon",
+        "samourai",
+        "plan",
+        "temps",
+        "humour-noir"
+      ],
       "printify_product_ids": {
         "tshirt_fr_light": "",
         "tshirt_fr_dark": "",
@@ -1032,7 +1311,13 @@
       "backstory_en": "She commanded gothic ghosts from her castle. She ended up cooking for the world's greatest swordsman. At least the ghosts didn't eat.",
       "punchline_fr": "ÇA NE FINIRA JAMAIS...",
       "punchline_en": "IT WILL NEVER END...",
-      "tags": ["perona", "fantomes", "gothique", "chateau", "humour-noir"],
+      "tags": [
+        "perona",
+        "fantomes",
+        "gothique",
+        "chateau",
+        "humour-noir"
+      ],
       "printify_product_ids": {
         "tshirt_fr_light": "",
         "tshirt_fr_dark": "",

@@ -9,9 +9,28 @@
       "branding": "ホクノ intégré au design",
       "tshirt_base": "blanc",
       "tshirt_noir": "version couleurs inversées du design",
-      "couleurs_dispo_light_v1": ["White", "Natural", "Gravel", "Red", "Royal", "Safety Pink", "Sky"],
-      "couleurs_dispo_light_v2": ["White", "Natural", "Gravel", "Red", "Neon Green", "Safety Pink", "Sky"],
-      "couleurs_dispo_dark": ["Black", "Navy"],
+      "couleurs_dispo_light_v1": [
+        "White",
+        "Natural",
+        "Gravel",
+        "Red",
+        "Royal",
+        "Safety Pink",
+        "Sky"
+      ],
+      "couleurs_dispo_light_v2": [
+        "White",
+        "Natural",
+        "Gravel",
+        "Red",
+        "Neon Green",
+        "Safety Pink",
+        "Sky"
+      ],
+      "couleurs_dispo_dark": [
+        "Black",
+        "Navy"
+      ],
       "print": "front + back"
     },
     "printify_id_schema": {
@@ -33,9 +52,15 @@
       "description_visuelle": "Silhouette noire encrée d'un capitaine pirate, chapeau de paille caractéristique, bras tendu en avant, pose dynamique en plein élan. ホクノ intégré au design. Style street/encre minimaliste.",
       "backstory_fr": "Il n'a jamais regardé une carte. Jamais demandé son chemin. Il avance parce que c'est devant — c'est tout ce qu'il a besoin de savoir.",
       "backstory_en": "He never looked at a map. Never asked for directions. He moves forward because it's forward — that's all he needs to know.",
-      "quote_fr": "JE NE SAIS PAS OÙ JE VAIS, MAIS J'Y VAIS.",
-      "quote_en": "I DON'T KNOW WHERE I'M GOING, BUT I'M GOING.",
-      "tags": ["luffy", "capitaine", "chapeau-de-paille", "instinct", "motivation"],
+      "quote_fr": "JE N'AI PAS BESOIN D'UN PLAN.. JUSTE D'UNE DIRECTION.",
+      "quote_en": "I DON'T NEED A PLAN.. JUST A DIRECTION.",
+      "tags": [
+        "luffy",
+        "capitaine",
+        "chapeau-de-paille",
+        "instinct",
+        "motivation"
+      ],
       "printify_product_ids": {
         "tshirt_fr_light": "684c63107a567575d002f21b",
         "tshirt_fr_light_xl": "6846b778f4071352350c1606",
@@ -54,14 +79,20 @@
       "description_visuelle": "Silhouette noire encrée d'un sabreur en posture de combat, trois sabres au côté, bandana sur le bras, pose ancrée et stable. ホクノ intégré au design. Style street/encre minimaliste.",
       "backstory_fr": "Il s'est perdu mille fois. Il n'a jamais reculé. La direction n'est pas dans la carte — elle est dans la lame.",
       "backstory_en": "He's been lost a thousand times. He's never gone back. Direction isn't on the map — it's on the blade.",
-      "quote_fr": "PERDU N'EST PAS UN PROBLÈME. ARRÊTÉ, OUI.",
-      "quote_en": "LOST ISN'T A PROBLEM. STOPPED IS.",
-      "tags": ["zoro", "sabreur", "trois-sabres", "discipline", "motivation"],
+      "quote_fr": "JE N'AI PAS BESOIN D'UN PLAN.. JUSTE D'UNE DIRECTION.",
+      "quote_en": "I DON'T NEED A PLAN.. JUST A DIRECTION.",
+      "tags": [
+        "zoro",
+        "sabreur",
+        "trois-sabres",
+        "discipline",
+        "motivation"
+      ],
       "printify_product_ids": {
         "tshirt_fr_light": "684c63e57a567575d002f24c",
         "tshirt_fr_light_xl": "",
         "tshirt_fr_dark": "684c693fb2d4e68c870de492",
-        "tshirt_fr_dark_duplicate": "684c6ced9a71a3cc7e0f30c0",
+        "tshirt_fr_dark_duplicate": "",
         "tshirt_fr_noir_xl": "",
         "tshirt_en_light": "",
         "tshirt_en_dark": "",
@@ -76,9 +107,15 @@
       "description_visuelle": "Silhouette noire encrée d'une navigatrice, log pose au poignet, cheveux mi-longs au vent, pose attentive et alerte, cartes en main. ホクノ intégré au design.",
       "backstory_fr": "Elle a vu mille tempêtes. Aucune n'a jamais effacé le cap. Le ciel change — la boussole, non.",
       "backstory_en": "She's seen a thousand storms. None ever wiped out the course. The sky changes — the compass doesn't.",
-      "quote_fr": "LA TEMPÊTE PASSE. LE CAP RESTE.",
-      "quote_en": "THE STORM PASSES. THE COURSE REMAINS.",
-      "tags": ["nami", "navigatrice", "boussole", "tempete", "motivation"],
+      "quote_fr": "JE N'AI PAS BESOIN D'UN PLAN.. JUSTE D'UNE DIRECTION.",
+      "quote_en": "I DON'T NEED A PLAN.. JUST A DIRECTION.",
+      "tags": [
+        "nami",
+        "navigatrice",
+        "boussole",
+        "tempete",
+        "motivation"
+      ],
       "printify_product_ids": {
         "tshirt_fr_light": "684c64317a567575d002f25a",
         "tshirt_fr_light_xl": "",
@@ -97,9 +134,15 @@
       "description_visuelle": "Silhouette noire encrée d'un tireur d'élite, lance-pierre tendu, long nez caractéristique, bandana, sac à dos plein. Pose tendue mais déterminée. ホクノ intégré au design.",
       "backstory_fr": "Il a menti sur tout — sauf sur une chose : il continue. Le courage n'est pas l'absence de peur. C'est ce qu'on en fait.",
       "backstory_en": "He lied about everything — except one thing: he keeps going. Courage isn't the absence of fear. It's what you do with it.",
-      "quote_fr": "MENTIR SUR SOI N'EMPÊCHE PAS D'AVANCER.",
-      "quote_en": "LYING TO YOURSELF DOESN'T STOP YOU FROM MOVING.",
-      "tags": ["usopp", "tireur", "lance-pierre", "courage", "motivation"],
+      "quote_fr": "JE N'AI PAS BESOIN D'UN PLAN.. JUSTE D'UNE DIRECTION.",
+      "quote_en": "I DON'T NEED A PLAN.. JUST A DIRECTION.",
+      "tags": [
+        "usopp",
+        "tireur",
+        "lance-pierre",
+        "courage",
+        "motivation"
+      ],
       "printify_product_ids": {
         "tshirt_fr_light": "684c648061f0867d160dcdbb",
         "tshirt_fr_light_xl": "",
@@ -118,9 +161,15 @@
       "description_visuelle": "Silhouette noire encrée d'un cuisinier élégant en costume, mèche couvrant un œil, cigarette à la bouche, jambe levée en pose de coup de pied. ホクノ intégré au design.",
       "backstory_fr": "Le feu dans la cuisine, le feu sous les pieds. Il ne reste pas en place. Même la flamme cherche où aller.",
       "backstory_en": "Fire in the kitchen, fire under his feet. He doesn't stay still. Even flame looks for somewhere to go.",
-      "quote_fr": "MÊME LE FEU CHERCHE UNE DIRECTION.",
-      "quote_en": "EVEN FIRE LOOKS FOR A DIRECTION.",
-      "tags": ["sanji", "cuisinier", "feu", "elegance", "motivation"],
+      "quote_fr": "JE N'AI PAS BESOIN D'UN PLAN.. JUSTE D'UNE DIRECTION.",
+      "quote_en": "I DON'T NEED A PLAN.. JUST A DIRECTION.",
+      "tags": [
+        "sanji",
+        "cuisinier",
+        "feu",
+        "elegance",
+        "motivation"
+      ],
       "printify_product_ids": {
         "tshirt_fr_light": "684c64cdf8df6e09820d1487",
         "tshirt_fr_light_xl": "",
@@ -139,9 +188,15 @@
       "description_visuelle": "Silhouette noire encrée d'un petit renne médecin, chapeau caractéristique avec croix, posture vive et alerte, sac à dos médical. ホクノ intégré au design.",
       "backstory_fr": "Il est petit. Il est doux. Il est lent. Mais il n'est jamais à l'arrêt — c'est tout ce qui compte.",
       "backstory_en": "He's small. He's soft. He's slow. But he's never standing still — that's all that counts.",
-      "quote_fr": "PETIT, MAIS JAMAIS À L'ARRÊT.",
-      "quote_en": "SMALL, NEVER STILL.",
-      "tags": ["chopper", "renne", "medecin", "tenacite", "motivation"],
+      "quote_fr": "JE N'AI PAS BESOIN D'UN PLAN.. JUSTE D'UNE DIRECTION.",
+      "quote_en": "I DON'T NEED A PLAN.. JUST A DIRECTION.",
+      "tags": [
+        "chopper",
+        "renne",
+        "medecin",
+        "tenacite",
+        "motivation"
+      ],
       "printify_product_ids": {
         "tshirt_fr_light": "684c65141d7c908d840c5e16",
         "tshirt_fr_light_xl": "",
@@ -160,9 +215,15 @@
       "description_visuelle": "Silhouette noire encrée d'un cyborg charpentier, pose 'SUUUPER' bras croisés en étoile, lunettes de soleil, coupe carrée caractéristique. ホクノ intégré au design.",
       "backstory_fr": "Tout ce qui rouille s'arrête. Tout ce qui s'arrête rouille. Il a choisi son camp en 1995 et n'en a pas bougé.",
       "backstory_en": "Anything that rusts stops. Anything that stops rusts. He picked his side in 1995 and hasn't moved.",
-      "quote_fr": "ON AVANCE OU ON ROUILLE.",
-      "quote_en": "MOVE FORWARD OR RUST.",
-      "tags": ["franky", "cyborg", "charpentier", "energie", "motivation"],
+      "quote_fr": "JE N'AI PAS BESOIN D'UN PLAN.. JUSTE D'UNE DIRECTION.",
+      "quote_en": "I DON'T NEED A PLAN.. JUST A DIRECTION.",
+      "tags": [
+        "franky",
+        "cyborg",
+        "charpentier",
+        "energie",
+        "motivation"
+      ],
       "printify_product_ids": {
         "tshirt_fr_light": "684c656856fb86136206591f",
         "tshirt_fr_light_xl": "",
@@ -183,7 +244,14 @@
       "backstory_en": "She read every book, deciphered every map. But the only truth she found is that no plan survives the first step. So she picked up her guitar and keeps moving.",
       "quote_fr": "JE N'AI PAS BESOIN D'UN PLAN.. JUSTE D'UNE DIRECTION.",
       "quote_en": "I DON'T NEED A PLAN.. JUST A DIRECTION.",
-      "tags": ["robin", "guitare", "intellectuelle", "rock", "liberte", "motivation"],
+      "tags": [
+        "robin",
+        "guitare",
+        "intellectuelle",
+        "rock",
+        "liberte",
+        "motivation"
+      ],
       "printify_product_ids": {
         "tshirt_fr_light": "684c65b97a567575d002f2d6",
         "tshirt_fr_light_xl": "",
@@ -202,9 +270,16 @@
       "description_visuelle": "Silhouette noire encrée d'un squelette élégant en costume et haut-de-forme, violon en main, posture théâtrale, afro caractéristique. ホクノ intégré au design.",
       "backstory_fr": "La mort ne l'a pas arrêté. Pourquoi quelque chose d'autre y arriverait ? Tant qu'il y a un archet, il y a une direction.",
       "backstory_en": "Death didn't stop him. Why would anything else? As long as there's a bow, there's a direction.",
-      "quote_fr": "MORT OU PAS, ON CONTINUE.",
-      "quote_en": "DEAD OR NOT, WE GO ON.",
-      "tags": ["brook", "squelette", "musicien", "violon", "perseverance", "motivation"],
+      "quote_fr": "JE N'AI PAS BESOIN D'UN PLAN.. JUSTE D'UNE DIRECTION.",
+      "quote_en": "I DON'T NEED A PLAN.. JUST A DIRECTION.",
+      "tags": [
+        "brook",
+        "squelette",
+        "musicien",
+        "violon",
+        "perseverance",
+        "motivation"
+      ],
       "printify_product_ids": {
         "tshirt_fr_light": "684c65fbdb8b74bc2d0b88bd",
         "tshirt_fr_light_xl": "",
@@ -223,9 +298,15 @@
       "description_visuelle": "Silhouette noire encrée d'un homme-poisson massif en kimono, posture stable et imposante, regard calme tourné vers l'avant. ホクノ intégré au design.",
       "backstory_fr": "Le courant ne demande pas l'avis du poisson. Il avance. Le poisson nage avec ou il coule. Lui, il nage.",
       "backstory_en": "The current doesn't ask the fish for permission. It moves. The fish swims with it or sinks. He swims.",
-      "quote_fr": "LES COURANTS NE DEMANDENT PAS LA PERMISSION.",
-      "quote_en": "CURRENTS DON'T ASK PERMISSION.",
-      "tags": ["jinbe", "homme-poisson", "barreur", "calme", "motivation"],
+      "quote_fr": "JE N'AI PAS BESOIN D'UN PLAN.. JUSTE D'UNE DIRECTION.",
+      "quote_en": "I DON'T NEED A PLAN.. JUST A DIRECTION.",
+      "tags": [
+        "jinbe",
+        "homme-poisson",
+        "barreur",
+        "calme",
+        "motivation"
+      ],
       "printify_product_ids": {
         "tshirt_fr_light": "684c664a7a567575d002f304",
         "tshirt_fr_light_xl": "",

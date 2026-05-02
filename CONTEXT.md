@@ -53,7 +53,7 @@ Le ton est décalé, nostalgique, parfois mélancolique, toujours avec une point
 
 **T-shirts** : Noir principalement (le parchemin ressort naturellement sur fond sombre).
 **Couleurs dispo** : Light : White, Natural, Gravel, Red, Royal (20 variantes) — Dark : Black, Navy (8 variantes).
-**Nombre de designs** : 49 personnages (17 sur Printify, 29 à créer).
+**Nombre de designs** : 46 personnages dans les JSONs (17 sur Printify FR, 29 dans Canva uniquement). 49 designs au total dans Canva (FR + EN — les 46 personnages + 3 variantes supplémentaires).
 **Ton** : Humour noir, fatigue existentielle, satire.
 
 ### 2. MYTHOLOGIE
@@ -168,24 +168,6 @@ Conséquences sur le catalogue :
 Dans les JSON de collection, chaque personnage contient ses textes en FR et EN dans le même objet.
 
 ---
-
-## Structure du repo
-
-```
-hokuno-store/
-├── CONTEXT.md                 # Ce fichier — brand bible
-├── collections/
-│   ├── wanted.json            # 49 personnages (17 sur Printify, 29 à créer)
-│   ├── direction.json         # 8-10 personnages
-│   └── mythologie.json        # 8-10 personnages
-├── assets/
-│   └── logos/                 # Logpose + ホクノ typographie
-├── seo/
-│   ├── llms.txt               # Fichier descriptif pour les LLMs
-│   └── schemas/               # Templates JSON-LD par type de page
-└── config/
-    └── products.json          # Specs produits Printify (blueprints, print areas)
-```
 
 ## SEO & GEO (Generative Engine Optimization)
 
@@ -319,6 +301,26 @@ Hokuno utilise Printify comme hub de production central. Les produits sont cré�
 - Shopify reste la destination finale — tous les autres canaux doivent rediriger vers la boutique Shopify quand possible
 
 ---
+
+## Structure du repo (mise à jour 2026-05-02)
+
+```
+hokuno-store/
+├── CONTEXT.md                 # Ce fichier — brand bible
+├── INVENTAIRE.md              # Inventaire Printify 97 produits (post Phase 0)
+├── TODO.md                    # Roadmap phases 0→5
+├── collections/
+│   ├── wanted.json            # 46 personnages (17 sur Printify FR, 29 dans Canva)
+│   ├── direction.json         # 10 personnages
+│   └── mythologie.json        # 10 personnages
+├── assets/
+│   └── logos/                 # Logpose + ホクノ typographie
+├── seo/
+│   ├── llms.txt               # Fichier descriptif pour les LLMs
+│   └── schemas/               # Templates JSON-LD par type de page
+└── config/
+    └── products.json          # Specs produits Printify (blueprints, print areas)
+```
 
 ## Notes pour Claude Code
 
