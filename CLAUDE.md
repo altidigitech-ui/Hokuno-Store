@@ -9,26 +9,44 @@ Lis `CONTEXT.md` en premier — il contient toute la brand bible : identité, co
 
 ```
 ├── CONTEXT.md                        # Brand bible complète
-├── .claude/skills/printify/SKILL.md  # Référence API Printify
+├── INVENTAIRE.md                     # Inventaire complet Printify (tous IDs)
+├── .claude/skills/printify/SKILLS.md # Référence API Printify
 ├── collections/
 │   ├── wanted.json                   # Personnages collection Wanted (46 — tous sur Printify FR+EN)
 │   ├── direction.json                # Personnages collection Direction (10)
 │   └── mythologie.json               # Personnages collection Mythologie (10)
+├── exports/
+│   ├── wanted-fr/                    # Designs Wanted FR (posters 1198×1690)
+│   ├── wanted-en/                    # Designs Wanted EN
+│   ├── direction-fr-dark/            # 10 PNG Direction FR — silhouette blanche, fond transparent (t-shirts noirs)
+│   ├── direction-fr-light/           # 10 PNG Direction FR — silhouette noire, fond transparent (t-shirts clairs)
+│   ├── direction-en-dark/            # 10 PNG Direction EN — silhouette blanche, fond transparent (t-shirts noirs)
+│   └── direction-en-light/           # 10 PNG Direction EN — silhouette noire, fond transparent (t-shirts clairs)
+└── scripts/
+    ├── update_direction_backs.py     # Met à jour le dos des 20 t-shirts Direction FR
+    ├── create_direction_en.py        # Crée les 20 t-shirts Direction EN depuis templates FR
+    ├── restore_front_logo.py         # Restaure le logo front sur N produits Direction
+    └── fix_front_logo_scale.py       # Corrige le scale du logo front (59.53 UI = 0.14076 API)
 ```
 
 ## État actuel (2026-05-03)
 
 - **Shop Printify** : ID `22774508`, nom "My new store", **sales channel : disconnected** (à connecter Shopify + TikTok Shop)
-- **Total produits** : 322 (vérifié via API — voir INVENTAIRE.md)
+- **Total produits** : 342 (322 + 20 Direction EN créés)
 - **Wanted** : 46/46 personnages complets FR+EN — 46 t-shirts FR light, 46 FR dark, 46 EN light, 46 EN dark, 46 mugs FR, 46 mugs EN = 276 produits
   - ⚠️ 4 produits EN à renommer (Lufi ×2 + Bartolomiou Kouma ×2 — titres incorrects, contenu OK)
-- **Direction** : 10/10 personnages FR (light+dark = 20 t-shirts), 1 mug (Luffy seulement) — versions EN non créées (ChatGPT/DALL-E requis)
+- **Direction FR** : 10/10 personnages — 10 light + 10 dark = 20 t-shirts, 1 mug (Luffy seulement)
+  - Dos mis à jour avec nouvelles images (exports/direction-fr-dark/ et direction-fr-light/)
+  - Logo front restauré (ID `69f79f1270e1b9ced794f3ab`, scale 59.53)
+- **Direction EN** : 10/10 personnages — 10 light + 10 dark = 20 t-shirts ✅ (créés 2026-05-03)
+  - Dos : exports/direction-en-dark/ et direction-en-light/
+  - Logo front identique FR (ID `69f79f1270e1b9ced794f3ab`, scale 59.53)
 - **Mythologie** : 10/10 light, 10/10 dark, 1 mug (Luffy), 1 coque (Zoro) = 22 produits
 - **Hors collections** : 3 produits (maillot de bain AOP, étuis kanji otaku, étuis mur brique × THE END)
 
 ### Produits restants à créer
-- [ ] **Direction EN** : 10 personnages × 2 versions = 20 t-shirts (régénération complète ChatGPT)
-- [ ] **Direction Mugs** : 9 mugs manquants (tous sauf Luffy)
+- [ ] **Direction Mugs FR** : 9 mugs manquants (Zoro, Nami, Ussop, Sanji, Choper, Franky, Robin, Brook, Jinbe)
+- [ ] **Direction Mugs EN** : 10 mugs manquants (aucun)
 - [ ] **Mythologie Mugs** : 9 mugs manquants (tous sauf Luffy)
 - [ ] **Mythologie Coques** : 9 coques manquantes (toutes sauf Zoro)
 - [ ] **Renommer** : 4 produits Wanted EN → format standard (cosmétique)
@@ -37,14 +55,15 @@ Lis `CONTEXT.md` en premier — il contient toute la brand bible : identité, co
 
 - **"THE END"** : Wanted FR — 92 pages (tous les personnages Wanted en français)
 - **"Copie de THE END"** : Wanted EN — 49 designs traduits automatiquement via l'outil de traduction intégré Canva
-- **"FRUIT"** : Direction FR — 24 pages (10 personnages × variantes couleur)
+- **"FRUIT"** : Direction FR — 24 pages (10 personnages × variantes couleur) — exports dans `exports/direction-fr-dark/` et `direction-fr-light/`
+- **Direction EN** : images régénérées manuellement (texte EN intégré dans l'IA) — exports dans `exports/direction-en-dark/` et `direction-en-light/`
 
 ## Contraintes importantes
 
 - **Punchline Wanted** : identique pour TOUS les personnages — `"ÇA NE FINIRA JAMAIS..."` (FR) / `"IT WILL NEVER END..."` (EN). Ne jamais créer de punchlines personnalisées.
 - **Texte secondaire Wanted** : identique pour tous — `"CETTE PRIME TRAINE DEPUIS 12 ANS. HONNETEMENT, SI VOUS LE TROUVEZ DEMANDEZ-LUI SIL EST TOUJOURS PARTANT"` (FR) / `"THIS BOUNTY HAS BEEN RUNNING FOR 12 YEARS. HONESTLY, IF YOU FIND HIM ASK HIM IF HE'S STILL UP FOR IT"` (EN)
 - **Quote Direction** : identique pour TOUS — `"JE N'AI PAS BESOIN D'UN PLAN.. JUSTE D'UNE DIRECTION."` (FR) / `"I DON'T NEED A PLAN.. JUST A DIRECTION."` (EN)
-- **Direction EN** : le texte est intégré dans l'image IA, non modifiable dans Canva. Les versions EN doivent être régénérées entièrement avec ChatGPT / DALL-E (même silhouette, texte EN intégré).
+- **Direction EN** : le texte est intégré dans l'image IA — les 20 t-shirts (light+dark) sont créés sur Printify. Pour les prochaines collections similaires, utiliser le script `scripts/create_direction_en.py` comme référence.
 
 ## Convention de titrage Printify
 

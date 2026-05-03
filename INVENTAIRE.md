@@ -1,7 +1,7 @@
 # INVENTAIRE PRINTIFY — HOKUNO
 
 > Mis à jour le **2026-05-03** — Source : API Printify shop `22774508`
-> **Total vérifié : 322 produits**
+> **Total : 342 produits** (322 → +20 Direction EN créés)
 
 ---
 
@@ -321,6 +321,8 @@
 
 ## 3. DIRECTION FR
 
+> Mis à jour le **2026-05-03** : dos remplacé par nouvelles images (`exports/direction-fr-dark/` et `direction-fr-light/`). Logo front restauré sur tous les produits (ID `69f79f1270e1b9ced794f3ab`, scale 59.53 UI / 0.14076 API, position x=0.847, y=0.117).
+
 ### T-shirts Light FR
 
 | # | Titre Printify | Product ID | Variantes |
@@ -361,7 +363,37 @@
 
 ## 4. DIRECTION EN
 
-> **Aucun produit.** Les t-shirts Direction EN nécessitent une régénération complète via ChatGPT/DALL-E (le texte anglais est intégré dans l'image IA — impossible à modifier dans Canva).
+> **20 produits créés le 2026-05-03** via `scripts/create_direction_en.py` — templates FR copiés, dos EN uploadés depuis `exports/direction-en-dark/` et `direction-en-light/`, logo front identique FR (scale 59.53).
+
+### T-shirts Light EN
+
+| # | Titre Printify | Product ID | Variantes |
+|---|---|---|---|
+| #01 | T-SHIRT LUFFY DIRECTION EN 1/10 | `69f79ad4a5ddadd686033eb1` | 560 |
+| #02 | T-SHIRT ZORO DIRECTION EN 2/10 | `69f79ae2bb69c26a6c044f39` | 560 |
+| #03 | T-SHIRT NAMI DIRECTION EN 3/10 | `69f79aefa1a4c45aad04f22e` | 560 |
+| #04 | T-SHIRT USSOP DIRECTION EN 4/10 | `69f79afa2592a8ad8e0e7625` | 560 |
+| #05 | T-SHIRT SANJI DIRECTION EN 5/10 | `69f79b0fa5ddadd686033edf` | 560 |
+| #06 | T-SHIRT CHOPER DIRECTION EN 6/10 | `69f79b1925819cdf3d04cfda` | 560 |
+| #07 | T-SHIRT FRANKY DIRECTION EN 7/10 | `69f79b22a5ddadd686033ee6` | 560 |
+| #08 | T-SHIRT ROBIN DIRECTION EN 8/10 | `69f79b2a4c4cd0e2bd0ade85` | 560 |
+| #09 | T-SHIRT BROOK DIRECTION EN 9/10 | `69f79b3483a8608fd80e7e92` | 560 |
+| #10 | T-SHIRT JINBE DIRECTION EN 10/10 | `69f79b3e782c77f6f105bfb1` | 560 |
+
+### T-shirts Dark EN
+
+| # | Titre Printify | Product ID | Variantes |
+|---|---|---|---|
+| #01 | T-SHIRT LUFFY DIRECTION EN NOIR 1/10 | `69f79b4a38c22e9be806ef68` | 560 |
+| #02 | T-SHIRT ZORO DIRECTION EN NOIR 2/10 | `69f79b5809f3b73024016bab` | 560 |
+| #03 | T-SHIRT NAMI DIRECTION EN NOIR 3/10 | `69f79b62e8580fe5eb0596b2` | 560 |
+| #04 | T-SHIRT USSOP DIRECTION EN NOIR 4/10 | `69f79b6ef9374ed4f1053744` | 560 |
+| #05 | T-SHIRT SANJI DIRECTION EN NOIR 5/10 | `69f79b7aa1a4c45aad04f2bb` | 560 |
+| #06 | T-SHIRT CHOPER DIRECTION EN NOIR 6/10 | `69f79b85782c77f6f105bffe` | 560 |
+| #07 | T-SHIRT FRANKY DIRECTION EN NOIR 7/10 | `69f79b8f5da263f75f04578c` | 560 |
+| #08 | T-SHIRT ROBIN DIRECTION EN NOIR 8/10 | `69f79ba0f9374ed4f1053781` | 560 |
+| #09 | T-SHIRT BROOK DIRECTION EN NOIR 9/10 | `69f79bac38c22e9be806efde` | 560 |
+| #10 | T-SHIRT JINBE DIRECTION EN NOIR 10/10 | `69f79bb95da263f75f0457b1` | 560 |
 
 ---
 
@@ -432,10 +464,10 @@ _(9 personnages sans coque)_
 | WANTED FR | 46 | 46 | 46 | 0 | **138** |
 | WANTED EN | 46 | 46 | 46 | 0 | **138** |
 | DIRECTION FR | 10 | 10 | 1 | 0 | **21** |
-| DIRECTION EN | 0 | 0 | 0 | 0 | **0** |
+| DIRECTION EN | 10 | 10 | 0 | 0 | **20** |
 | MYTHOLOGIE | 10 | 10 | 1 | 1 | **22** |
 | HORS COLLECTION | — | — | — | 2 + 1 maillot | **3** |
-| **TOTAL** | **112** | **112** | **94** | **3** | **322** |
+| **TOTAL** | **122** | **122** | **94** | **3** | **342** |
 
 ---
 
@@ -458,12 +490,12 @@ _(9 personnages sans coque)_
 
 | Produit | Quantité | Note |
 |---|---|---|
-| T-shirts EN Light | 10 | Régénération ChatGPT/DALL-E requise |
-| T-shirts EN Dark | 10 | Régénération ChatGPT/DALL-E requise |
+| ~~T-shirts EN Light~~ | ~~10~~ | ✅ Créés le 2026-05-03 |
+| ~~T-shirts EN Dark~~ | ~~10~~ | ✅ Créés le 2026-05-03 |
 | Mugs FR | 9 | Zoro, Nami, Ussop, Sanji, Choper, Franky, Robin, Brook, Jinbe |
 | Mugs EN | 10 | Aucun |
-| Coques | 20 | Aucune (FR + EN) |
-| **Total manquant Direction** | **59** | |
+| Coques FR+EN | 20 | Aucune |
+| **Total manquant Direction** | **39** | |
 
 ### MYTHOLOGIE — manquants
 
