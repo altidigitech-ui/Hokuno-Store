@@ -8,15 +8,15 @@ Hokuno (北の) est une marque streetwear manga française. Designs générés p
 
 ## Collections
 
-**WANTED** — Avis de recherche parodiques. Des personnages de manga vieillis par 30 ans de publication, épuisés, éreintés. Ils veulent juste que ça se termine. (~15 designs)
+**WANTED** — Avis de recherche parodiques. Des personnages de manga vieillis par 30 ans de publication, épuisés, éreintés. Ils veulent juste que ça se termine. 46 personnages FR+EN.
 
-**MYTHOLOGIE** — Silhouettes divines en toge grecque. Chaque personnage dans sa couleur signature, auréole lumineuse. Épique et mystique. (8-10 designs)
+**MYTHOLOGIE** — Silhouettes divines en toge grecque. Chaque personnage dans sa couleur signature, auréole lumineuse. Épique et mystique. 10 personnages, design universel (sans texte).
 
-**DIRECTION** — Silhouettes encrées avec citations motivationnelles. Toujours aller de l'avant. Le cœur de l'identité Hokuno. (8-10 designs)
+**DIRECTION** — Silhouettes encrées avec citations motivationnelles. Toujours aller de l'avant. Le cœur de l'identité Hokuno. 10 personnages FR+EN.
 
-## Produits
+## Produits (342 sur Printify)
 
-Chaque design est décliné en t-shirt, mug et coque de téléphone. Designs disponibles en français et en anglais (Wanted + Direction). Mythologie est universelle (pas de texte).
+Chaque design est décliné en t-shirt (light + dark), mug et coque de téléphone. Wanted + Direction disponibles en français et en anglais. Mythologie est universelle (sans texte).
 
 ## Stack
 
@@ -29,21 +29,29 @@ Chaque design est décliné en t-shirt, mug et coque de téléphone. Designs dis
 
 ```
 ├── CONTEXT.md                        # Brand bible — source de vérité pour Claude Code
+├── CLAUDE.md                         # Instructions Claude Code + état du projet
+├── INVENTAIRE.md                     # Inventaire complet Printify (342 produits + IDs)
+├── TODO.md                           # Feuille de route par phase
 ├── .claude/
 │   └── skills/
 │       └── printify/
-│           └── SKILL.md              # Skill API Printify pour Claude Code
+│           └── SKILLS.md             # Skill API Printify pour Claude Code
 ├── collections/
-│   ├── wanted.json                   # Personnages collection Wanted
-│   ├── direction.json                # Personnages collection Direction
-│   └── mythologie.json               # Personnages collection Mythologie
-├── assets/
-│   └── logos/                        # Logpose + ホクノ typographie
-├── seo/
-│   ├── llms.txt                      # Fichier descriptif pour LLMs (GEO)
-│   └── schemas/                      # Templates JSON-LD
-└── config/
-    └── products.json                 # Specs produits Printify
+│   ├── wanted.json                   # 46 personnages Wanted (FR+EN, tous IDs Printify)
+│   ├── direction.json                # 10 personnages Direction (FR+EN, IDs Printify)
+│   └── mythologie.json               # 10 personnages Mythologie (IDs Printify)
+├── exports/
+│   ├── wanted-fr/                    # Designs Wanted FR (posters 1198×1690)
+│   ├── wanted-en/                    # Designs Wanted EN
+│   ├── direction-fr-dark/            # 10 PNG Direction FR — fond transparent (t-shirts noirs)
+│   ├── direction-fr-light/           # 10 PNG Direction FR — fond transparent (t-shirts clairs)
+│   ├── direction-en-dark/            # 10 PNG Direction EN — fond transparent (t-shirts noirs)
+│   └── direction-en-light/           # 10 PNG Direction EN — fond transparent (t-shirts clairs)
+└── scripts/
+    ├── update_direction_backs.py     # Met à jour le dos des t-shirts Direction FR
+    ├── create_direction_en.py        # Crée les t-shirts Direction EN depuis templates FR
+    ├── restore_front_logo.py         # Restaure le logo front sur les produits Direction
+    └── fix_front_logo_scale.py       # Corrige le scale du logo front
 ```
 
 ## Setup Claude Code
