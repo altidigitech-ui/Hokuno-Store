@@ -11,19 +11,27 @@ Lis `CONTEXT.md` en premier — il contient toute la brand bible : identité, co
 ├── CONTEXT.md                        # Brand bible complète
 ├── .claude/skills/printify/SKILL.md  # Référence API Printify
 ├── collections/
-│   ├── wanted.json                   # Personnages collection Wanted (46 — 17 sur Printify, 29 dans Canva)
+│   ├── wanted.json                   # Personnages collection Wanted (46 — tous sur Printify FR+EN)
 │   ├── direction.json                # Personnages collection Direction (10)
 │   └── mythologie.json               # Personnages collection Mythologie (10)
 ```
 
-## État actuel (2026-05-02)
+## État actuel (2026-05-03)
 
 - **Shop Printify** : ID `22774508`, nom "My new store", **sales channel : disconnected** (à connecter Shopify + TikTok Shop)
-- **Total produits** : 94 (72 t-shirts, 19 mugs, 2 coques, 1 maillot de bain)
-- **Phase 0 TERMINÉE** : titres corrigés (70 renames), catalogue nettoyé
-- **Wanted** : 17 personnages sur Printify (FR uniquement) — 46 personnages dans les JSONs, 49 designs dans Canva (FR + EN)
-- **Direction** : 10 personnages sur Printify (FR uniquement) — versions EN à régénérer avec ChatGPT
-- **Mythologie** : 10 personnages sur Printify (version universelle — pas de texte)
+- **Total produits** : 320 (voir détail ci-dessous)
+- **Wanted** : 46/46 personnages complets FR+EN — 46 t-shirts FR light, 46 FR dark, 46 EN light, 46 EN dark, 46 mugs FR, 46 mugs EN = 276 produits
+  - ⚠️ wanted-018 Bartolomiou Kouma : produits EN nommés "TEST-..." à renommer
+- **Direction** : 10/10 personnages FR (light+dark = 20 t-shirts), 1 mug (Luffy seulement) — versions EN non créées (ChatGPT/DALL-E requis)
+- **Mythologie** : 10/10 version noir, 8/10 version light (Choper et Robin manquent), 1 mug, 1 coque = 20 produits
+- **Hors collections** : 3 produits non référencés dans les JSONs (maillot de bain AOP, étuis kanji otaku, étuis mur brique × THE END)
+
+### Produits restants à créer
+- [ ] **Direction EN** : 10 personnages × 2 versions = 20 t-shirts (régénération complète ChatGPT)
+- [ ] **Direction Mugs** : 9 mugs manquants (tous sauf Luffy)
+- [ ] **Mythologie light** : 2 t-shirts manquants (Choper, Robin)
+- [ ] **Renommer** : 2 produits TEST Bartolomiou Kouma EN → format standard
+- [ ] **Intégrer dans JSON** : 3 produits hors collections (maillot, 2 coques)
 
 ## Projets Canva
 
