@@ -14,7 +14,7 @@ Hokuno (北の) est une marque streetwear manga française. Designs générés p
 
 **DIRECTION** — Silhouettes encrées avec citations motivationnelles. Toujours aller de l'avant. Le cœur de l'identité Hokuno. 10 personnages FR+EN.
 
-## Produits (342 sur Printify)
+## Produits (382 sur Printify)
 
 Chaque design est décliné en t-shirt (light + dark), mug et coque de téléphone. Wanted + Direction disponibles en français et en anglais. Mythologie est universelle (sans texte).
 
@@ -51,7 +51,8 @@ Chaque design est décliné en t-shirt (light + dark), mug et coque de télépho
     ├── update_direction_backs.py     # Met à jour le dos des t-shirts Direction FR
     ├── create_direction_en.py        # Crée les t-shirts Direction EN depuis templates FR
     ├── restore_front_logo.py         # Restaure le logo front sur les produits Direction
-    └── fix_front_logo_scale.py       # Corrige le scale du logo front
+    ├── fix_front_logo_scale.py       # Corrige le scale du logo front
+    └── create_direction_mugs.py      # Crée les 40 mugs Direction (FR+EN, light+dark)
 ```
 
 ## Setup Claude Code

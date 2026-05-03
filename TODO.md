@@ -64,20 +64,20 @@ _IDs complets dans INVENTAIRE.md section 4 et collections/direction.json_
 
 ## PHASE 3 — DIRECTION MUGS & COQUES
 
-### Mugs Direction (Luffy FR seul créé — 0 EN)
+### Mugs Direction (40/40 créés — FR+EN light+dark) ✅
 
-| # | Personnage | Mug FR | Mug EN |
-|---|-----------|--------|--------|
-| 1/10 | Luffy | [x] `684d56c5` | [ ] |
-| 2/10 | Zoro | [ ] | [ ] |
-| 3/10 | Nami | [ ] | [ ] |
-| 4/10 | Ussop | [ ] | [ ] |
-| 5/10 | Sanji | [ ] | [ ] |
-| 6/10 | Choper | [ ] | [ ] |
-| 7/10 | Franky | [ ] | [ ] |
-| 8/10 | Robin | [ ] | [ ] |
-| 9/10 | Brook | [ ] | [ ] |
-| 10/10 | Jinbe | [ ] | [ ] |
+| # | Personnage | Mug FR Light | Mug FR Dark | Mug EN Light | Mug EN Dark |
+|---|-----------|------------|------------|------------|------------|
+| 1/10 | Luffy | [x] `69f7aa5e` | [x] `69f7aaab` | [x] `69f7aaea` | [x] `69f7ab29` |
+| 2/10 | Zoro | [x] `69f7aa64` | [x] `69f7aab2` | [x] `69f7aaf0` | [x] `69f7ab32` |
+| 3/10 | Nami | [x] `69f7aa6b` | [x] `69f7aab7` | [x] `69f7aaf6` | [x] `69f7ab3b` |
+| 4/10 | Ussop | [x] `69f7aa73` | [x] `69f7aabb` | [x] `69f7aafd` | [x] `69f7ab42` |
+| 5/10 | Sanji | [x] `69f7aa83` | [x] `69f7aac2` | [x] `69f7ab04` | [x] `69f7ab47` |
+| 6/10 | Choper | [x] `69f7aa8b` | [x] `69f7aac9` | [x] `69f7ab09` | [x] `69f7ab4d` |
+| 7/10 | Franky | [x] `69f7aa90` | [x] `69f7aad3` | [x] `69f7ab0e` | [x] `69f7ab53` |
+| 8/10 | Robin | [x] `69f7aa98` | [x] `69f7aadb` | [x] `69f7ab12` | [x] `69f7ab59` |
+| 9/10 | Brook | [x] `69f7aa9f` | [x] `69f7aae1` | [x] `69f7ab1c` | [x] `69f7ab60` |
+| 10/10 | Jinbe | [x] `69f7aaa6` | [x] `69f7aae5` | [x] `69f7ab25` | [x] `69f7ab66` |
 
 ### Coques Direction (aucune créée)
 
@@ -94,7 +94,7 @@ _IDs complets dans INVENTAIRE.md section 4 et collections/direction.json_
 | 9/10 | Brook | [ ] | [ ] |
 | 10/10 | Jinbe | [ ] | [ ] |
 
-_Total Phase 3 restant : 39 produits (9 mugs FR + 10 mugs EN + 20 coques FR+EN)_
+_Phase 3 mugs : ✅ TERMINÉ (40/40) — Restant Phase 3 : 20 coques FR+EN_
 
 ---
 
@@ -177,8 +177,8 @@ _Total Phase 5 : 92 coques (46 × FR + 46 × EN)_
 | **1** | Wanted complet FR+EN (t-shirts + mugs) | 276 produits | ✅ FAIT |
 | **1-fix** | Renommer 4 produits Wanted EN | — | ⏳ cosmétique |
 | **2** | Direction EN (t-shirts light+dark) | 20 | ✅ FAIT |
-| **3** | Direction mugs + coques | 39 | ⏳ |
+| **3** | Direction mugs + coques | 39 (mugs ✅, coques ⏳) | ⏳ |
 | **4** | Mythologie mugs + coques + Brook NOIR | 19 | ⏳ |
 | **5** | Wanted coques | 92 | ⏳ priorité basse |
 | **6** | Collection Été | 4 | ⏳ |
-| | **TOTAL restant** | **~154** | |
+| | **TOTAL restant** | **~114** | |

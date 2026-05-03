@@ -32,21 +32,21 @@ Lis `CONTEXT.md` en premier — il contient toute la brand bible : identité, co
 ## État actuel (2026-05-03)
 
 - **Shop Printify** : ID `22774508`, nom "My new store", **sales channel : disconnected** (à connecter Shopify + TikTok Shop)
-- **Total produits** : 342 (322 + 20 Direction EN créés)
+- **Total produits** : 382 (342 + 40 mugs Direction FR+EN créés le 2026-05-03)
 - **Wanted** : 46/46 personnages complets FR+EN — 46 t-shirts FR light, 46 FR dark, 46 EN light, 46 EN dark, 46 mugs FR, 46 mugs EN = 276 produits
   - ⚠️ 4 produits EN à renommer (Lufi ×2 + Bartolomiou Kouma ×2 — titres incorrects, contenu OK)
-- **Direction FR** : 10/10 personnages — 10 light + 10 dark = 20 t-shirts, 1 mug (Luffy seulement)
+- **Direction FR** : 10/10 personnages — 20 t-shirts (light+dark) + 21 mugs (10 light + 10 dark + 1 ancien Luffy) ✅
   - Dos mis à jour avec nouvelles images (exports/direction-fr-dark/ et direction-fr-light/)
   - Logo front restauré (ID `69f79f1270e1b9ced794f3ab`, scale 59.53)
-- **Direction EN** : 10/10 personnages — 10 light + 10 dark = 20 t-shirts ✅ (créés 2026-05-03)
+  - Mugs : blueprint 478 (white) + 479 (black), kanji ID `6846fd1c1a6d958e91819b36`
+- **Direction EN** : 10/10 personnages — 20 t-shirts (light+dark) + 20 mugs (10 light + 10 dark) ✅
   - Dos : exports/direction-en-dark/ et direction-en-light/
   - Logo front identique FR (ID `69f79f1270e1b9ced794f3ab`, scale 59.53)
 - **Mythologie** : 10/10 light, 10/10 dark, 1 mug (Luffy), 1 coque (Zoro) = 22 produits
 - **Hors collections** : 3 produits (maillot de bain AOP, étuis kanji otaku, étuis mur brique × THE END)
 
 ### Produits restants à créer
-- [ ] **Direction Mugs FR** : 9 mugs manquants (Zoro, Nami, Ussop, Sanji, Choper, Franky, Robin, Brook, Jinbe)
-- [ ] **Direction Mugs EN** : 10 mugs manquants (aucun)
+- [ ] **Direction Coques FR+EN** : 20 coques (10 FR + 10 EN)
 - [ ] **Mythologie Mugs** : 9 mugs manquants (tous sauf Luffy)
 - [ ] **Mythologie Coques** : 9 coques manquantes (toutes sauf Zoro)
 - [ ] **Renommer** : 4 produits Wanted EN → format standard (cosmétique)

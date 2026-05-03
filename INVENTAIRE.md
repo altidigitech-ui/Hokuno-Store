@@ -1,7 +1,7 @@
 # INVENTAIRE PRINTIFY — HOKUNO
 
 > Mis à jour le **2026-05-03** — Source : API Printify shop `22774508`
-> **Total : 342 produits** (322 → +20 Direction EN créés)
+> **Total : 382 produits** (342 → +40 mugs Direction FR+EN light+dark)
 
 ---
 
@@ -353,17 +353,43 @@
 | #09 | T-SHIRT BROOK DIRECTION NOIR 9/10 | `684c6b5587f5fc4a810113bf` | 560 |
 | #10 | T-SHIRT JINBE DIRECTION NOIR 10/10 | `684c6b98f3b91cf7810bf40a` | 560 |
 
-### Mugs (1 seul — Luffy uniquement)
+### Mugs Light FR (tasse blanche — blueprint 478)
 
-| # | Titre Printify | Product ID | Variantes |
-|---|---|---|---|
-| #01 | DIRECTION LUFFY Ceramic Mug, (11oz, 15oz) 1/10 | `684d56c509bce0c2370d3254` | 2 |
+| # | Titre Printify | Product ID |
+|---|---|---|
+| #01 | tasse en céramique direction luffy (11oz, 15oz) 1/10 | `69f7aa5e5da263f75f045f9d` |
+| #02 | tasse en céramique direction zoro (11oz, 15oz) 2/10 | `69f7aa64a5ddadd686034776` |
+| #03 | tasse en céramique direction nami (11oz, 15oz) 3/10 | `69f7aa6bffbc831dea07ce13` |
+| #04 | tasse en céramique direction ussop (11oz, 15oz) 4/10 | `69f7aa7309f3b730240173d8` |
+| #05 | tasse en céramique direction sanji (11oz, 15oz) 5/10 | `69f7aa835da263f75f045fb6` |
+| #06 | tasse en céramique direction choper (11oz, 15oz) 6/10 | `69f7aa8ba5ddadd686034784` |
+| #07 | tasse en céramique direction franky (11oz, 15oz) 7/10 | `69f7aa9083a8608fd80e873e` |
+| #08 | tasse en céramique direction robin (11oz, 15oz) 8/10 | `69f7aa98a1a4c45aad04fb10` |
+| #09 | tasse en céramique direction brook (11oz, 15oz) 9/10 | `69f7aa9ff9374ed4f1053f7a` |
+| #10 | tasse en céramique direction jinbe (11oz, 15oz) 10/10 | `69f7aaa6f9374ed4f1053f7d` |
+
+> ⚠️ Ancien mug Luffy (blueprint 478, image 5.png) : `684d56c509bce0c2370d3254` — à supprimer ou conserver
+
+### Mugs Dark FR (tasse noire — blueprint 479)
+
+| # | Titre Printify | Product ID |
+|---|---|---|
+| #01 | tasse en céramique direction luffy noire (11oz, 15oz) 1/10 | `69f7aaab782c77f6f105c843` |
+| #02 | tasse en céramique direction zoro noire (11oz, 15oz) 2/10 | `69f7aab238c22e9be806f7d2` |
+| #03 | tasse en céramique direction nami noire (11oz, 15oz) 3/10 | `69f7aab7a1a4c45aad04fb1c` |
+| #04 | tasse en céramique direction ussop noire (11oz, 15oz) 4/10 | `69f7aabbf9374ed4f1053f84` |
+| #05 | tasse en céramique direction sanji noire (11oz, 15oz) 5/10 | `69f7aac2a7ed52dc8a0c152a` |
+| #06 | tasse en céramique direction choper noire (11oz, 15oz) 6/10 | `69f7aac925819cdf3d04d890` |
+| #07 | tasse en céramique direction franky noire (11oz, 15oz) 7/10 | `69f7aad3782c77f6f105c858` |
+| #08 | tasse en céramique direction robin noire (11oz, 15oz) 8/10 | `69f7aadb2592a8ad8e0e7ef4` |
+| #09 | tasse en céramique direction brook noire (11oz, 15oz) 9/10 | `69f7aae1a7ed52dc8a0c1536` |
+| #10 | tasse en céramique direction jinbe noire (11oz, 15oz) 10/10 | `69f7aae52592a8ad8e0e7ef8` |
 
 ---
 
 ## 4. DIRECTION EN
 
-> **20 produits créés le 2026-05-03** via `scripts/create_direction_en.py` — templates FR copiés, dos EN uploadés depuis `exports/direction-en-dark/` et `direction-en-light/`, logo front identique FR (scale 59.53).
+> **40 produits** (20 t-shirts + 20 mugs) — créés le 2026-05-03 via `scripts/create_direction_en.py` — templates FR copiés, dos EN uploadés depuis `exports/direction-en-dark/` et `direction-en-light/`, logo front identique FR (scale 59.53).
 
 ### T-shirts Light EN
 
@@ -394,6 +420,36 @@
 | #08 | T-SHIRT ROBIN DIRECTION EN NOIR 8/10 | `69f79ba0f9374ed4f1053781` | 560 |
 | #09 | T-SHIRT BROOK DIRECTION EN NOIR 9/10 | `69f79bac38c22e9be806efde` | 560 |
 | #10 | T-SHIRT JINBE DIRECTION EN NOIR 10/10 | `69f79bb95da263f75f0457b1` | 560 |
+
+### Mugs Light EN (tasse blanche — blueprint 478)
+
+| # | Titre Printify | Product ID |
+|---|---|---|
+| #01 | ceramic mug direction luffy (11oz, 15oz) 1/10 | `69f7aaea4c4cd0e2bd0ae795` |
+| #02 | ceramic mug direction zoro (11oz, 15oz) 2/10 | `69f7aaf0e8580fe5eb059fd2` |
+| #03 | ceramic mug direction nami (11oz, 15oz) 3/10 | `69f7aaf6a1a4c45aad04fb38` |
+| #04 | ceramic mug direction ussop (11oz, 15oz) 4/10 | `69f7aafd2592a8ad8e0e7eff` |
+| #05 | ceramic mug direction sanji (11oz, 15oz) 5/10 | `69f7ab04bb69c26a6c04584a` |
+| #06 | ceramic mug direction choper (11oz, 15oz) 6/10 | `69f7ab095da263f75f045fec` |
+| #07 | ceramic mug direction franky (11oz, 15oz) 7/10 | `69f7ab0ef60400c855031311` |
+| #08 | ceramic mug direction robin (11oz, 15oz) 8/10 | `69f7ab12a7ed52dc8a0c1549` |
+| #09 | ceramic mug direction brook (11oz, 15oz) 9/10 | `69f7ab1c4c4cd0e2bd0ae7a8` |
+| #10 | ceramic mug direction jinbe (11oz, 15oz) 10/10 | `69f7ab25e8580fe5eb059fe3` |
+
+### Mugs Dark EN (tasse noire — blueprint 479)
+
+| # | Titre Printify | Product ID |
+|---|---|---|
+| #01 | ceramic mug direction luffy black (11oz, 15oz) 1/10 | `69f7ab29ffbc831dea07ce79` |
+| #02 | ceramic mug direction zoro black (11oz, 15oz) 2/10 | `69f7ab3238c22e9be806f810` |
+| #03 | ceramic mug direction nami black (11oz, 15oz) 3/10 | `69f7ab3be8580fe5eb059ff6` |
+| #04 | ceramic mug direction ussop black (11oz, 15oz) 4/10 | `69f7ab42bb69c26a6c045872` |
+| #05 | ceramic mug direction sanji black (11oz, 15oz) 5/10 | `69f7ab47782c77f6f105c88a` |
+| #06 | ceramic mug direction choper black (11oz, 15oz) 6/10 | `69f7ab4da7ed52dc8a0c1577` |
+| #07 | ceramic mug direction franky black (11oz, 15oz) 7/10 | `69f7ab53ffbc831dea07ce8f` |
+| #08 | ceramic mug direction robin black (11oz, 15oz) 8/10 | `69f7ab59782c77f6f105c88c` |
+| #09 | ceramic mug direction brook black (11oz, 15oz) 9/10 | `69f7ab6025819cdf3d04d8dc` |
+| #10 | ceramic mug direction jinbe black (11oz, 15oz) 10/10 | `69f7ab66ffbc831dea07ce9a` |
 
 ---
 
@@ -463,11 +519,11 @@ _(9 personnages sans coque)_
 |---|---|---|---|---|---|
 | WANTED FR | 46 | 46 | 46 | 0 | **138** |
 | WANTED EN | 46 | 46 | 46 | 0 | **138** |
-| DIRECTION FR | 10 | 10 | 1 | 0 | **21** |
-| DIRECTION EN | 10 | 10 | 0 | 0 | **20** |
+| DIRECTION FR | 10 | 10 | 21 | 0 | **41** |
+| DIRECTION EN | 10 | 10 | 20 | 0 | **40** |
 | MYTHOLOGIE | 10 | 10 | 1 | 1 | **22** |
 | HORS COLLECTION | — | — | — | 2 + 1 maillot | **3** |
-| **TOTAL** | **122** | **122** | **94** | **3** | **342** |
+| **TOTAL** | **122** | **122** | **134** | **3** | **382** |
 
 ---
 
@@ -492,10 +548,12 @@ _(9 personnages sans coque)_
 |---|---|---|
 | ~~T-shirts EN Light~~ | ~~10~~ | ✅ Créés le 2026-05-03 |
 | ~~T-shirts EN Dark~~ | ~~10~~ | ✅ Créés le 2026-05-03 |
-| Mugs FR | 9 | Zoro, Nami, Ussop, Sanji, Choper, Franky, Robin, Brook, Jinbe |
-| Mugs EN | 10 | Aucun |
+| ~~Mugs FR Light~~ | ~~10~~ | ✅ Créés le 2026-05-03 (blueprint 478) |
+| ~~Mugs FR Dark~~ | ~~10~~ | ✅ Créés le 2026-05-03 (blueprint 479) |
+| ~~Mugs EN Light~~ | ~~10~~ | ✅ Créés le 2026-05-03 (blueprint 478) |
+| ~~Mugs EN Dark~~ | ~~10~~ | ✅ Créés le 2026-05-03 (blueprint 479) |
 | Coques FR+EN | 20 | Aucune |
-| **Total manquant Direction** | **39** | |
+| **Total manquant Direction** | **20** | |
 
 ### MYTHOLOGIE — manquants
 
