@@ -46,12 +46,31 @@ Lis `CONTEXT.md` en premier — il contient toute la brand bible : identité, co
   - ⚠️ Luffy mug : variante 15oz désactivée
 - **Hors collections** : 3 produits (maillot de bain AOP, étuis kanji otaku, étuis mur brique × THE END)
 
-### Produits restants à créer
-- [ ] **Direction Coques FR+EN** : 20 coques (10 FR + 10 EN)
+### Produits restants à créer / corriger
+
+#### Priorité haute
+- [ ] **Activer 15oz** : 93 mugs avec variante 15oz désactivée (Wanted FR×46, Wanted EN×46, Mythologie Luffy×1)
+- [ ] **Renommer** : 4 produits Wanted EN au titre incorrect
+  - `69f6032239e419a2dc02e247` → `T-SHIRT LUFI WANTED EN 1/46`
+  - `69f603f5ef66d02ffe02b1ce` → `T-SHIRT LUFI WANTED NOIR EN 1/46`
+  - `69f630759110dda91005f3c6` → `T-SHIRT BARTOLOMIOU KOUMA WANTED EN 18/46`
+  - `69f631d6b3bda8532c0c20f7` → `T-SHIRT BARTOLOMIOU KOUMA WANTED NOIR EN 18/46`
+
+#### Produits à créer
+- [ ] **Direction Coques FR** : 10 coques (1 par personnage — design FR)
+- [ ] **Direction Coques EN** : 10 coques (1 par personnage — design EN)
+- [ ] **Mythologie Coques** : 9 coques manquantes (Luffy, Nami, Ussop, Sanji, Choper, Robin, Franky, Brook, Jinbe)
+- [ ] **Mythologie Brook tshirt_noir standard** : créer la version standard (variante 2 existe : `6849c4469bf7aebaf7048740`)
+
+#### Nettoyage
+- [ ] **Supprimer ou archiver** le doublon Direction Luffy Mug `684d56c509bce0c2370d3254`
+
+#### Déjà fait
 - [x] **Mythologie Mugs** : 10/10 créés (2026-05-04)
-- [ ] **Mythologie Coques** : 9 coques manquantes (toutes sauf Zoro)
-- [ ] **Renommer** : 4 produits Wanted EN → format standard (cosmétique)
-- [ ] **Activer 15oz** : tous les mugs Wanted FR+EN + Mythologie Luffy (93 produits)
+- [x] **Direction Mugs FR** : 20/20 (light + dark) créés
+- [x] **Direction Mugs EN** : 20/20 (light + dark) créés
+- [x] **Direction EN t-shirts** : 20/20 créés
+- [x] **Wanted EN** : 46/46 personnages complets (t-shirts + mugs)
 
 ## Projets Canva
 
@@ -133,6 +152,37 @@ Consulte la section SEO & GEO dans `CONTEXT.md` pour toutes les directives.
 - Noms de variables et commentaires en anglais, contenu utilisateur en FR/EN
 - Pas de `console.log` en production
 - Gestion d'erreurs systématique
+
+## Règle obligatoire — mise à jour systématique
+
+**À chaque fin de session ou après toute action sur Printify (création, modification, suppression de produits) :**
+
+1. **Mettre à jour `INVENTAIRE.md`** — régénérer depuis l'API (script ci-dessous) ou mettre à jour manuellement les sections concernées, avec le bon total et la bonne date
+2. **Mettre à jour `CLAUDE.md` section "État actuel"** — total produits, état par collection, anomalies connues
+3. **Mettre à jour la liste "Produits restants à créer"** — cocher ce qui est fait, ajouter ce qui est découvert
+4. **Mettre à jour les JSON de collection** (`wanted.json`, `direction.json`, `mythologie.json`) — tous les `printify_product_ids` doivent refléter l'état réel
+
+Pour régénérer l'inventaire complet depuis l'API :
+```bash
+python3 - <<'EOF'
+import os, requests, json, time
+TOKEN = os.environ["PRINTIFY_API_TOKEN"]
+SHOP_ID = "22774508"
+HEADERS = {"Authorization": f"Bearer {TOKEN}", "User-Agent": "ClaudeCode-Hokuno/1.0"}
+all_products = []
+for page in range(1, 20):
+    r = requests.get(f"https://api.printify.com/v1/shops/{SHOP_ID}/products.json",
+                     headers=HEADERS, params={"page": page})
+    r.raise_for_status()
+    data = r.json()
+    all_products.extend(data["data"])
+    if page >= data["last_page"]: break
+    time.sleep(0.3)
+with open("/tmp/printify_all_products.json", "w") as f:
+    json.dump(all_products, f)
+print(f"{len(all_products)} produits récupérés")
+EOF
+```
 
 ## Ne jamais faire
 
