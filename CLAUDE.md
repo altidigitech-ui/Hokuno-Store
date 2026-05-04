@@ -46,31 +46,50 @@ Lis `CONTEXT.md` en premier — il contient toute la brand bible : identité, co
   - ⚠️ Luffy mug : variante 15oz désactivée
 - **Hors collections** : 3 produits (maillot de bain AOP, étuis kanji otaku, étuis mur brique × THE END)
 
-### Produits restants à créer / corriger
+### TODO — état complet du projet
 
-#### Priorité haute
-- [ ] **Activer 15oz** : 93 mugs avec variante 15oz désactivée (Wanted FR×46, Wanted EN×46, Mythologie Luffy×1)
-- [ ] **Renommer** : 4 produits Wanted EN au titre incorrect
+#### 🔴 Corrections Printify (urgent)
+- [ ] **Activer variante 15oz** sur 93 mugs désactivés (Wanted FR×46, Wanted EN×46, Mythologie Luffy×1)
+- [ ] **Renommer** 4 produits Wanted EN au titre incorrect :
   - `69f6032239e419a2dc02e247` → `T-SHIRT LUFI WANTED EN 1/46`
   - `69f603f5ef66d02ffe02b1ce` → `T-SHIRT LUFI WANTED NOIR EN 1/46`
   - `69f630759110dda91005f3c6` → `T-SHIRT BARTOLOMIOU KOUMA WANTED EN 18/46`
   - `69f631d6b3bda8532c0c20f7` → `T-SHIRT BARTOLOMIOU KOUMA WANTED NOIR EN 18/46`
+- [ ] **Supprimer** le doublon mug Direction Luffy `684d56c509bce0c2370d3254`
 
-#### Produits à créer
-- [ ] **Direction Coques FR** : 10 coques (1 par personnage — design FR)
-- [ ] **Direction Coques EN** : 10 coques (1 par personnage — design EN)
+#### 🟠 Produits Printify à créer
+- [ ] **Direction Coques FR** : 10 coques (1 par personnage, design light FR)
+- [ ] **Direction Coques EN** : 10 coques (1 par personnage, design light EN)
 - [ ] **Mythologie Coques** : 9 coques manquantes (Luffy, Nami, Ussop, Sanji, Choper, Robin, Franky, Brook, Jinbe)
-- [ ] **Mythologie Brook tshirt_noir standard** : créer la version standard (variante 2 existe : `6849c4469bf7aebaf7048740`)
+- [ ] **Mythologie Brook tshirt_noir standard** : variante 2 existe `6849c4469bf7aebaf7048740`, standard manquant
 
-#### Nettoyage
-- [ ] **Supprimer ou archiver** le doublon Direction Luffy Mug `684d56c509bce0c2370d3254`
+#### 🟡 Plateforme & canaux de vente
+- [ ] **Connecter Shopify** au shop Printify `22774508` (sales channel actuellement disconnected)
+- [ ] **Connecter TikTok Shop** au shop Printify
+- [ ] **Configurer les prix** sur Shopify pour toutes les collections (t-shirts, mugs, coques)
+- [ ] **Configurer la livraison** Shopify (zones FR, EU, international)
 
-#### Déjà fait
-- [x] **Mythologie Mugs** : 10/10 créés (2026-05-04)
-- [x] **Direction Mugs FR** : 20/20 (light + dark) créés
-- [x] **Direction Mugs EN** : 20/20 (light + dark) créés
-- [x] **Direction EN t-shirts** : 20/20 créés
-- [x] **Wanted EN** : 46/46 personnages complets (t-shirts + mugs)
+#### 🟢 Boutique Shopify (à construire)
+- [ ] **Landing page** immersive — Three.js 3D, glassmorphisme, animations GSAP
+- [ ] **Pages collection** — Wanted / Direction / Mythologie avec storytelling
+- [ ] **Pages produit** — backstory personnage, variantes, schema JSON-LD Product
+- [ ] **Fichier `llms.txt`** à la racine
+- [ ] **`robots.txt`** — ne pas bloquer GPTBot, ChatGPT-User, ClaudeBot, PerplexityBot
+- [ ] **Bilingue FR/EN** — routing i18n
+- [ ] **SEO/GEO** — JSON-LD Organization, CollectionPage, BreadcrumbList sur chaque page
+- [ ] **SSR obligatoire** — contenu dans le HTML initial (Next.js ou Remix)
+
+#### ✅ Déjà fait
+- [x] **Wanted FR** : 46/46 t-shirts light + 46/46 t-shirts dark + 46/46 mugs FR = 138 produits
+- [x] **Wanted EN** : 46/46 t-shirts light + 46/46 t-shirts dark + 46/46 mugs EN = 138 produits
+- [x] **Direction FR t-shirts** : 10/10 light + 10/10 dark (dos + logo front restauré, scale 59.53)
+- [x] **Direction FR mugs** : 10/10 light (bp 478) + 10/10 dark (bp 479)
+- [x] **Direction EN t-shirts** : 10/10 light + 10/10 dark
+- [x] **Direction EN mugs** : 10/10 light (bp 478) + 10/10 dark (bp 479)
+- [x] **Mythologie t-shirts** : 10/10 light + 10/10 dark
+- [x] **Mythologie mugs** : 10/10 (bp 478, images réutilisées depuis t-shirts back) — 2026-05-04
+- [x] **Mythologie Zoro coque** : 1 slim phone case
+- [x] **Inventaire complet** : INVENTAIRE.md + JSON collections cross-vérifiés API — 2026-05-04
 
 ## Projets Canva
 
