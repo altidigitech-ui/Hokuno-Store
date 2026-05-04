@@ -492,7 +492,15 @@
 | # | Titre Printify | Product ID | Variantes |
 |---|---|---|---|
 | #01 | MYTHOLOGIE LUFFY Ceramic Mug, (11oz, 15oz) 1/10 | `684d59ac1d7c908d840c9497` | 2 |
-_(9 personnages sans mug)_
+| #02 | MYTHOLOGIE ZORO Ceramic Mug, (11oz, 15oz) 2/10 | `69f867caffbc831dea085700` | 2 |
+| #03 | MYTHOLOGIE NAMI Ceramic Mug, (11oz, 15oz) 3/10 | `69f867cd2592a8ad8e0f076f` | 2 |
+| #04 | MYTHOLOGIE USSOP Ceramic Mug, (11oz, 15oz) 4/10 | `69f867d283a8608fd80f10f1` | 2 |
+| #05 | MYTHOLOGIE SANJI Ceramic Mug, (11oz, 15oz) 5/10 | `69f867d6feed9979d10cf101` | 2 |
+| #06 | MYTHOLOGIE CHOPER Ceramic Mug, (11oz, 15oz) 6/10 | `69f867d8ffbc831dea085705` | 2 |
+| #07 | MYTHOLOGIE FRANKY Ceramic Mug, (11oz, 15oz) 7/10 | `69f867ddf9374ed4f105c870` | 2 |
+| #08 | MYTHOLOGIE ROBIN Ceramic Mug, (11oz, 15oz) 8/10 | `69f867e15da263f75f04e914` | 2 |
+| #09 | MYTHOLOGIE BROOK Ceramic Mug, (11oz, 15oz) 9/10 | `69f867e32592a8ad8e0f077c` | 2 |
+| #10 | MYTHOLOGIE JINBE Ceramic Mug, (11oz, 15oz) 10/10 | `69f867e75da263f75f04e91b` | 2 |
 
 ### Coques
 
@@ -521,9 +529,9 @@ _(9 personnages sans coque)_
 | WANTED EN | 46 | 46 | 46 | 0 | **138** |
 | DIRECTION FR | 10 | 10 | 21 | 0 | **41** |
 | DIRECTION EN | 10 | 10 | 20 | 0 | **40** |
-| MYTHOLOGIE | 10 | 10 | 1 | 1 | **22** |
+| MYTHOLOGIE | 10 | 10 | 10 | 1 | **31** |
 | HORS COLLECTION | — | — | — | 2 + 1 maillot | **3** |
-| **TOTAL** | **122** | **122** | **134** | **3** | **382** |
+| **TOTAL** | **122** | **122** | **143** | **3** | **391** |
 
 ---
 
@@ -560,9 +568,9 @@ _(9 personnages sans coque)_
 | Produit | Quantité | Note |
 |---|---|---|
 | Brook T-shirt NOIR standard | 1 | Seul `tshirt_noir_v2` existe (variante 2) |
-| Mugs | 9 | Zoro, Nami, Ussop, Sanji, Choper, Robin, Franky, Brook, Jinbe |
+| ~~Mugs~~ | ~~9~~ | ✅ Créés le 2026-05-04 (Zoro→Jinbe) |
 | Coques | 9 | Luffy, Nami, Ussop, Sanji, Choper, Robin, Franky, Brook, Jinbe |
-| **Total manquant Mythologie** | **19** | (hors Brook variante) |
+| **Total manquant Mythologie** | **10** | (9 coques + 1 Brook tshirt-noir standard) |
 
 ### HORS COLLECTION — à intégrer dans les JSON
 
