@@ -26,23 +26,24 @@ Lis `CONTEXT.md` en premier — il contient toute la brand bible : identité, co
     ├── update_direction_backs.py     # Met à jour le dos des 20 t-shirts Direction FR
     ├── create_direction_en.py        # Crée les 20 t-shirts Direction EN depuis templates FR
     ├── restore_front_logo.py         # Restaure le logo front sur N produits Direction
-    └── fix_front_logo_scale.py       # Corrige le scale du logo front (59.53 UI = 0.14076 API)
+    ├── fix_front_logo_scale.py       # Corrige le scale du logo front (59.53 UI = 0.14076 API)
+    └── create_mythologie_mugs.py    # Crée les 9 mugs Mythologie manquants (images réutilisées depuis t-shirts)
 ```
 
-## État actuel (2026-05-03)
+## État actuel (2026-05-04)
 
 - **Shop Printify** : ID `22774508`, nom "My new store", **sales channel : disconnected** (à connecter Shopify + TikTok Shop)
-- **Total produits** : 391 (382 + 9 mugs Mythologie créés le 2026-05-04)
+- **Total produits** : 391 (vérifié API le 2026-05-04) — voir INVENTAIRE.md pour le détail complet
 - **Wanted** : 46/46 personnages complets FR+EN — 46 t-shirts FR light, 46 FR dark, 46 EN light, 46 EN dark, 46 mugs FR, 46 mugs EN = 276 produits
   - ⚠️ 4 produits EN à renommer (Lufi ×2 + Bartolomiou Kouma ×2 — titres incorrects, contenu OK)
-- **Direction FR** : 10/10 personnages — 20 t-shirts (light+dark) + 21 mugs (10 light + 10 dark + 1 ancien Luffy) ✅
-  - Dos mis à jour avec nouvelles images (exports/direction-fr-dark/ et direction-fr-light/)
-  - Logo front restauré (ID `69f79f1270e1b9ced794f3ab`, scale 59.53)
-  - Mugs : blueprint 478 (white) + 479 (black), kanji ID `6846fd1c1a6d958e91819b36`
-- **Direction EN** : 10/10 personnages — 20 t-shirts (light+dark) + 20 mugs (10 light + 10 dark) ✅
-  - Dos : exports/direction-en-dark/ et direction-en-light/
-  - Logo front identique FR (ID `69f79f1270e1b9ced794f3ab`, scale 59.53)
-- **Mythologie** : 10/10 light, 10/10 dark, 10/10 mugs ✅, 1 coque (Zoro) = 31 produits
+  - ⚠️ Tous les mugs Wanted (FR+EN) ont la variante 15oz désactivée (1/2v)
+- **Direction FR** : 10/10 — 20 t-shirts + 10 mugs light (bp 478) + 10 mugs dark (bp 479) + 1 ancien mug doublon `684d56c509bce0c2370d3254`
+  - Logo front : ID `69f79f1270e1b9ced794f3ab`, scale 59.53 UI / 0.14076 API
+  - Kanji mug : ID `6846fd1c1a6d958e91819b36`
+- **Direction EN** : 10/10 — 20 t-shirts + 10 mugs light (bp 478) + 10 mugs dark (bp 479)
+- **Mythologie** : 10/10 t-shirts light + 10/10 dark + 10/10 mugs (bp 478) + 1 coque Zoro = 31 produits
+  - ⚠️ Brook : pas de tshirt_noir standard, seule variante 2 (`6849c4469bf7aebaf7048740`)
+  - ⚠️ Luffy mug : variante 15oz désactivée
 - **Hors collections** : 3 produits (maillot de bain AOP, étuis kanji otaku, étuis mur brique × THE END)
 
 ### Produits restants à créer
@@ -50,6 +51,7 @@ Lis `CONTEXT.md` en premier — il contient toute la brand bible : identité, co
 - [x] **Mythologie Mugs** : 10/10 créés (2026-05-04)
 - [ ] **Mythologie Coques** : 9 coques manquantes (toutes sauf Zoro)
 - [ ] **Renommer** : 4 produits Wanted EN → format standard (cosmétique)
+- [ ] **Activer 15oz** : tous les mugs Wanted FR+EN + Mythologie Luffy (93 produits)
 
 ## Projets Canva
 
