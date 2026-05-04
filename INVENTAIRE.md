@@ -1,7 +1,7 @@
 # INVENTAIRE PRINTIFY — HOKUNO
 
 > Mis à jour le **2026-05-04** — Source : API Printify shop `22774508`
-> **Total : 391 produits**
+> **Total : 392 produits**
 
 ---
 
@@ -484,7 +484,8 @@
 | #06 | T-SHIRT CHOPER MYTHOLOGIE NOIR 6/10 | `6849a7517483e9399e0d44ef` | 8/560 |
 | #07 | T-SHIRT ROBIN MYTHOLOGIE NOIR 8/10 | `6849a8397483e9399e0d455d` | 8/560 |
 | #08 | T-SHIRT FRANKY MYTHOLOGIE NOIR 7/10 | `6849bfd6943f652c190bd86d` | 8/560 |
-| #09 | T-SHIRT BROOK MYTHOLOGIE NOIR VARIANTE 2 9/10 | `6849c4469bf7aebaf7048740` | 8/560 | *(variante 2 — standard manquant)*
+| #09 | T-SHIRT BROOK MYTHOLOGIE NOIR 9/10 | `69f87c8cbe136844f0003b0a` | 8/560 |
+| #09v2 | T-SHIRT BROOK MYTHOLOGIE NOIR VARIANTE 2 9/10 | `6849c4469bf7aebaf7048740` | 8/560 |
 | #10 | T-SHIRT JINBE MYTHOLOGIE NOIR 10/10 | `6849c0fc9bf7aebaf704867b` | 8/560 |
 
 ### Mugs (tasse blanche — blueprint 478)

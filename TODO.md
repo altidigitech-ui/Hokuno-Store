@@ -2,7 +2,7 @@
 
 ## État actuel (2026-05-04)
 
-- **391 produits** Printify (shop ID `22774508`, **shop disconnected**) — vérifié API le 2026-05-04
+- **392 produits** Printify (shop ID `22774508`, **shop disconnected**) — vérifié API le 2026-05-04
 - **Phase 0** TERMINÉE : titres corrigés, numérotation N/TOTAL
 - **Phase 1** TERMINÉE : 46/46 personnages Wanted FR+EN × light+dark+mug = 276 produits
 - **Phase 2** TERMINÉE : 10/10 Direction EN light+dark = 20 t-shirts créés
@@ -34,11 +34,11 @@
 - [x] 46 × T-shirt EN dark (560 var) — dont 2 à renommer
 - [x] 46 × Mug FR (2 var)
 - [x] 46 × Mug EN (2 var)
-- [ ] **Renommer** 4 produits *(cosmétique — le contenu est correct)* :
-  - `Copy of T-SHIRT LUFI WANTED EN 1/17` → `T-SHIRT LUFI WANTED EN 1/46`
-  - `Copy of T-SHIRT LUFI WANTED NOIR EN 1/17` → `T-SHIRT LUFI WANTED NOIR EN 1/46`
-  - `TEST-BARTOLOMIOU-KOUMA-WANTED-EN` → `T-SHIRT BARTOLOMIOU KOUMA WANTED EN 18/46`
-  - `TEST-BARTOLOMIOU-KOUMA-WANTED-NOIR-EN` → `T-SHIRT BARTOLOMIOU KOUMA WANTED NOIR EN 18/46`
+- [ ] **Renommer** 2 produits *(API 500 — à faire manuellement dans le dashboard Printify)* :
+  - `Copy of T-SHIRT LUFI WANTED EN 1/17` (`69f6032239e419a2dc02e247`) → `T-SHIRT LUFI WANTED EN 1/46`
+  - `Copy of T-SHIRT LUFI WANTED NOIR EN 1/17` (`69f603f5ef66d02ffe02b1ce`) → `T-SHIRT LUFI WANTED NOIR EN 1/46`
+- [x] `TEST-BARTOLOMIOU-KOUMA-WANTED-EN` → `T-SHIRT BARTOLOMIOU KOUMA WANTED EN 18/46`
+- [x] `TEST-BARTOLOMIOU-KOUMA-WANTED-NOIR-EN` → `T-SHIRT BARTOLOMIOU KOUMA WANTED NOIR EN 18/46`
 
 ---
 
@@ -133,9 +133,9 @@ _Phase 3 mugs : ✅ TERMINÉ (40/40) — Restant Phase 3 : 20 coques FR+EN_
 
 ### Brook T-shirt NOIR standard
 
-- [ ] `T-SHIRT BROOK MYTHOLOGIE NOIR 9/10` — seule la variante 2 existe, créer le standard
+- [x] `T-SHIRT BROOK MYTHOLOGIE NOIR 9/10` — créé le 2026-05-04 → `69f87c8cbe136844f0003b0a`
 
-_Total Phase 4 restant : 10 produits (9 coques + 1 t-shirt Brook NOIR standard)_
+_Total Phase 4 restant : 9 produits (9 coques)_
 
 ---
 
@@ -178,10 +178,10 @@ _Total Phase 5 : 92 coques (46 × FR + 46 × EN)_
 |-------|-------------|-----------------|--------|
 | **0** | Nettoyage + titres | — | ✅ FAIT |
 | **1** | Wanted complet FR+EN (t-shirts + mugs) | 276 produits | ✅ FAIT |
-| **1-fix** | Renommer 4 produits Wanted EN | — | ⏳ cosmétique |
+| **1-fix** | Renommer 2 Lufi EN (API 500 — manuel dashboard) | — | ⏳ cosmétique |
 | **2** | Direction EN (t-shirts light+dark) | 20 | ✅ FAIT |
 | **3** | Direction mugs + coques | 39 (mugs ✅, coques ⏳) | ⏳ |
-| **4** | Mythologie mugs + coques + Brook NOIR | mugs ✅, coques+Brook ⏳ (10) | ⏳ |
+| **4** | Mythologie mugs + coques + Brook NOIR | mugs ✅, Brook ✅, coques ⏳ (9) | ⏳ |
 | **5** | Wanted coques | 92 | ⏳ priorité basse |
 | **6** | Collection Été | 4 | ⏳ |
-| | **TOTAL restant** | **~105** | |
+| | **TOTAL restant** | **~104** | |
