@@ -42,7 +42,7 @@ Lis `CONTEXT.md` en premier — il contient toute la brand bible : identité, co
   - Kanji mug : ID `6846fd1c1a6d958e91819b36`
 - **Direction EN** : 10/10 — 20 t-shirts + 10 mugs light (bp 478) + 10 mugs dark (bp 479)
 - **Mythologie** : 10/10 t-shirts light + 10/10 dark + 10/10 mugs (bp 478) + 1 coque Zoro = 31 produits
-  - ⚠️ Brook : pas de tshirt_noir standard, seule variante 2 (`6849c4469bf7aebaf7048740`)
+  - Brook tshirt_noir standard : `69f87c8cbe136844f0003b0a` (variante 2 supprimée)
   - ⚠️ Luffy mug : variante 15oz désactivée
 - **Hors collections** : 3 produits (maillot de bain AOP, étuis kanji otaku, étuis mur brique × THE END)
 
@@ -50,18 +50,17 @@ Lis `CONTEXT.md` en premier — il contient toute la brand bible : identité, co
 
 #### 🔴 Corrections Printify (urgent)
 - [ ] **Activer variante 15oz** sur 93 mugs désactivés (Wanted FR×46, Wanted EN×46, Mythologie Luffy×1)
-- [ ] **Renommer** 4 produits Wanted EN au titre incorrect :
+- [ ] **Renommer** 2 produits Wanted EN (API 500 — faire manuellement dans le dashboard) :
   - `69f6032239e419a2dc02e247` → `T-SHIRT LUFI WANTED EN 1/46`
   - `69f603f5ef66d02ffe02b1ce` → `T-SHIRT LUFI WANTED NOIR EN 1/46`
-  - `69f630759110dda91005f3c6` → `T-SHIRT BARTOLOMIOU KOUMA WANTED EN 18/46`
-  - `69f631d6b3bda8532c0c20f7` → `T-SHIRT BARTOLOMIOU KOUMA WANTED NOIR EN 18/46`
+- [x] Bartolomiou Kouma ×2 renommés — OK
 - [ ] **Supprimer** le doublon mug Direction Luffy `684d56c509bce0c2370d3254`
 
 #### 🟠 Produits Printify à créer
 - [ ] **Direction Coques FR** : 10 coques (1 par personnage, design light FR)
 - [ ] **Direction Coques EN** : 10 coques (1 par personnage, design light EN)
 - [ ] **Mythologie Coques** : 9 coques manquantes (Luffy, Nami, Ussop, Sanji, Choper, Robin, Franky, Brook, Jinbe)
-- [ ] **Mythologie Brook tshirt_noir standard** : variante 2 existe `6849c4469bf7aebaf7048740`, standard manquant
+- [x] **Mythologie Brook tshirt_noir standard** : créé `69f87c8cbe136844f0003b0a` (variante 2 supprimée)
 
 #### 🟡 Plateforme & canaux de vente
 - [ ] **Connecter Shopify** au shop Printify `22774508` (sales channel actuellement disconnected)

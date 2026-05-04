@@ -2,7 +2,7 @@
 
 ## État actuel (2026-05-04)
 
-- **392 produits** Printify (shop ID `22774508`, **shop disconnected**) — vérifié API le 2026-05-04
+- **391 produits** Printify (shop ID `22774508`, **shop disconnected**) — vérifié API le 2026-05-04
 - **Phase 0** TERMINÉE : titres corrigés, numérotation N/TOTAL
 - **Phase 1** TERMINÉE : 46/46 personnages Wanted FR+EN × light+dark+mug = 276 produits
 - **Phase 2** TERMINÉE : 10/10 Direction EN light+dark = 20 t-shirts créés
