@@ -1,14 +1,16 @@
 # TODO — Hokuno Store
 
-## État actuel (2026-05-03)
+## État actuel (2026-05-04)
 
-- **342 produits** Printify (shop ID `22774508`, **shop disconnected**)
+- **391 produits** Printify (shop ID `22774508`, **shop disconnected**) — vérifié API le 2026-05-04
 - **Phase 0** TERMINÉE : titres corrigés, numérotation N/TOTAL
 - **Phase 1** TERMINÉE : 46/46 personnages Wanted FR+EN × light+dark+mug = 276 produits
 - **Phase 2** TERMINÉE : 10/10 Direction EN light+dark = 20 t-shirts créés
-- 10/10 personnages Direction FR (light+dark) créés, 1 mug (Luffy uniquement)
-- 10/10 personnages Direction EN (light+dark) créés
-- 10/10 personnages Mythologie créés (light+dark+1 mug+1 coque)
+- **Phase 3** TERMINÉE : 40/40 mugs Direction FR+EN (light+dark) créés
+- 10/10 personnages Direction FR (light+dark+mugs) créés
+- 10/10 personnages Direction EN (light+dark+mugs) créés
+- 10/10 personnages Mythologie créés (light+dark+mugs+1 coque Zoro)
+- **Phase 4 mugs** TERMINÉE : 10/10 mugs Mythologie créés (2026-05-04)
 - Aucun canal de vente connecté (Shopify, TikTok Shop)
 
 ---
@@ -100,19 +102,20 @@ _Phase 3 mugs : ✅ TERMINÉ (40/40) — Restant Phase 3 : 20 coques FR+EN_
 
 ## PHASE 4 — MYTHOLOGIE compléments
 
-### Mugs Mythologie manquants (9/10 — Luffy déjà créé)
+### Mugs Mythologie ✅ 10/10 TERMINÉ (2026-05-04)
 
-| # | Personnage | Mug |
-|---|-----------|-----|
-| 2/10 | Zoro | [ ] |
-| 3/10 | Nami | [ ] |
-| 4/10 | Ussop | [ ] |
-| 5/10 | Sanji | [ ] |
-| 6/10 | Choper | [ ] |
-| 7/10 | Franky | [ ] |
-| 8/10 | Robin | [ ] |
-| 9/10 | Brook | [ ] |
-| 10/10 | Jinbe | [ ] |
+| # | Personnage | Mug | Product ID |
+|---|-----------|-----|-----------|
+| 1/10 | Luffy | [x] | `684d59ac1d7c908d840c9497` |
+| 2/10 | Zoro | [x] | `69f867caffbc831dea085700` |
+| 3/10 | Nami | [x] | `69f867cd2592a8ad8e0f076f` |
+| 4/10 | Ussop | [x] | `69f867d283a8608fd80f10f1` |
+| 5/10 | Sanji | [x] | `69f867d6feed9979d10cf101` |
+| 6/10 | Choper | [x] | `69f867d8ffbc831dea085705` |
+| 7/10 | Franky | [x] | `69f867ddf9374ed4f105c870` |
+| 8/10 | Robin | [x] | `69f867e15da263f75f04e914` |
+| 9/10 | Brook | [x] | `69f867e32592a8ad8e0f077c` |
+| 10/10 | Jinbe | [x] | `69f867e75da263f75f04e91b` |
 
 ### Coques Mythologie manquantes (9/10 — Zoro déjà créé)
 
@@ -132,7 +135,7 @@ _Phase 3 mugs : ✅ TERMINÉ (40/40) — Restant Phase 3 : 20 coques FR+EN_
 
 - [ ] `T-SHIRT BROOK MYTHOLOGIE NOIR 9/10` — seule la variante 2 existe, créer le standard
 
-_Total Phase 4 : 19 produits (9 mugs + 9 coques + 1 t-shirt)_
+_Total Phase 4 restant : 10 produits (9 coques + 1 t-shirt Brook NOIR standard)_
 
 ---
 
@@ -178,7 +181,7 @@ _Total Phase 5 : 92 coques (46 × FR + 46 × EN)_
 | **1-fix** | Renommer 4 produits Wanted EN | — | ⏳ cosmétique |
 | **2** | Direction EN (t-shirts light+dark) | 20 | ✅ FAIT |
 | **3** | Direction mugs + coques | 39 (mugs ✅, coques ⏳) | ⏳ |
-| **4** | Mythologie mugs + coques + Brook NOIR | 19 | ⏳ |
+| **4** | Mythologie mugs + coques + Brook NOIR | mugs ✅, coques+Brook ⏳ (10) | ⏳ |
 | **5** | Wanted coques | 92 | ⏳ priorité basse |
 | **6** | Collection Été | 4 | ⏳ |
-| | **TOTAL restant** | **~114** | |
+| | **TOTAL restant** | **~105** | |
