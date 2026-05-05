@@ -10,42 +10,35 @@ Lis `CONTEXT.md` en premier — il contient toute la brand bible : identité, co
 ```
 ├── CONTEXT.md                        # Brand bible complète
 ├── INVENTAIRE.md                     # Inventaire complet Printify (tous IDs)
+├── PRICING.md                        # Prix de vente, coûts, marges par produit
 ├── .claude/skills/printify/SKILLS.md # Référence API Printify
 ├── collections/
 │   ├── wanted.json                   # Personnages collection Wanted (46 — tous sur Printify FR+EN)
 │   ├── direction.json                # Personnages collection Direction (10)
-│   └── mythologie.json               # Personnages collection Mythologie (10)
-├── exports/
-│   ├── wanted-fr/                    # Designs Wanted FR (posters 1198×1690)
-│   ├── wanted-en/                    # Designs Wanted EN
-│   ├── direction-fr-dark/            # 10 PNG Direction FR — silhouette blanche, fond transparent (t-shirts noirs)
-│   ├── direction-fr-light/           # 10 PNG Direction FR — silhouette noire, fond transparent (t-shirts clairs)
-│   ├── direction-en-dark/            # 10 PNG Direction EN — silhouette blanche, fond transparent (t-shirts noirs)
-│   └── direction-en-light/           # 10 PNG Direction EN — silhouette noire, fond transparent (t-shirts clairs)
-└── scripts/
-    ├── update_direction_backs.py     # Met à jour le dos des 20 t-shirts Direction FR
-    ├── create_direction_en.py        # Crée les 20 t-shirts Direction EN depuis templates FR
-    ├── restore_front_logo.py         # Restaure le logo front sur N produits Direction
-    ├── fix_front_logo_scale.py       # Corrige le scale du logo front (59.53 UI = 0.14076 API)
-    └── create_mythologie_mugs.py    # Crée les 9 mugs Mythologie manquants (images réutilisées depuis t-shirts)
+│   └── mythologie.json               # Personnages collection Mythologie (10 + coques)
+├── assets/
+│   └── design-reference/             # Captures UI de référence (landing, collections, produits, mobile)
+└── archive/
+    └── scripts/                      # Scripts Python Printify (archivés — usage historique)
 ```
 
 ## État actuel (2026-05-05)
 
 - **Shop Printify** : ID `22774508`, nom "My new store", **sales channel : disconnected** (à connecter Shopify + TikTok Shop)
-- **Total produits** : 431 — voir INVENTAIRE.md pour le détail complet
-- **Prix Printify** : mis à jour le 2026-05-05 sur 413/431 produits (18 bloqués API 500 — à faire manuellement, listés dans TODO.md)
+- **Total produits** : 430 — voir INVENTAIRE.md pour le détail complet
+- **Prix Printify** : mis à jour le 2026-05-05 sur 413/430 produits (17 bloqués API 500 — à faire manuellement, listés dans TODO.md)
 - **Tailles t-shirts** : XL max — 2XL/3XL/4XL/5XL désactivées sur 44/48 t-shirts (4 à faire manuellement, API 500)
 - **Collection Wanted** : 46/46 personnages × FR+EN × light+dark + mugs = 276 produits
   - ⚠️ 2 produits EN à renommer (Lufi ×2 — titres incorrects, contenu OK)
-  - ⚠️ Tous les mugs Wanted (FR+EN, 92) ont la variante 15oz désactivée
+  - ✅ Variante 15oz activée sur 93 mugs Wanted (2026-05-05)
 - **Collection Direction FR** : 10/10 — 20 t-shirts + 10 mugs light (bp 478) + 10 mugs dark (bp 479)
   - Logo front DARK (74.png) : ID `6849b65d8ee17a5b00c03855`, scale 53.59 UI / 0.21105 API
   - Logo front LIGHT (silhouette) : ID `69f79f1270e1b9ced794f3ab`, scale 59.53 UI / 0.14076 API
   - Kanji mug : ID `6846fd1c1a6d958e91819b36`
-- **Collection Direction EN** : 10/10 — 20 t-shirts + 10 mugs light (bp 478) + 10 mugs dark (bp 479) + 1 doublon `684d56c509bce0c2370d3254` à supprimer
+- **Collection Direction EN** : 10/10 — 20 t-shirts + 10 mugs light (bp 478) + 10 mugs dark (bp 479)
+  - ✅ Doublon `684d56c509bce0c2370d3254` supprimé (2026-05-05)
 - **Collection Mythologie** : 10/10 t-shirts light + 10/10 dark + 10/10 mugs + **10/10 coques** = 40 produits ✅ COMPLET
-  - ⚠️ Luffy mug : variante 15oz désactivée
+  - ✅ Variante 15oz activée sur tous les mugs Mythologie
   - Coques Mythologie : BP 268 / SPOKE (PP 1) — image réutilisée depuis t-shirt back, x=0.5, y=0.605, scale=0.7216, 26 variantes actives (iPhone 11 → iPhone 17)
 - **Collection Design Hokuno** : 13 t-shirts (bp 6+145) + 21 accessoires (casquettes, bobs, claquettes, shorts, polos, coques) = 34 produits
   - ⚠️ 4 t-shirts avec XXL non désactivé (API 500 — faire manuellement)

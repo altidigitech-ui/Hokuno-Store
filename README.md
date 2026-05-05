@@ -14,9 +14,11 @@ Hokuno (北の) est une marque streetwear manga française. Designs générés p
 
 **DIRECTION** — Silhouettes encrées avec citations motivationnelles. Toujours aller de l'avant. Le cœur de l'identité Hokuno. 10 personnages FR+EN.
 
-## Produits (382 sur Printify)
+**Design Hokuno** — 13 t-shirts et 21 accessoires (casquettes, bobs, claquettes, shorts de bain, polos, coques) aux couleurs de la marque.
 
-Chaque design est décliné en t-shirt (light + dark), mug et coque de téléphone. Wanted + Direction disponibles en français et en anglais. Mythologie est universelle (sans texte).
+## Produits (430 sur Printify)
+
+Chaque design est décliné en t-shirt (light + dark), mug, et pour Mythologie en coque de téléphone slim. Wanted + Direction disponibles en français et en anglais. Mythologie est universelle (sans texte).
 
 ## Stack
 
@@ -30,8 +32,9 @@ Chaque design est décliné en t-shirt (light + dark), mug et coque de télépho
 ```
 ├── CONTEXT.md                        # Brand bible — source de vérité pour Claude Code
 ├── CLAUDE.md                         # Instructions Claude Code + état du projet
-├── INVENTAIRE.md                     # Inventaire complet Printify (342 produits + IDs)
+├── INVENTAIRE.md                     # Inventaire complet Printify (430 produits + IDs)
 ├── TODO.md                           # Feuille de route par phase
+├── PRICING.md                        # Prix de vente, coûts, marges par produit
 ├── .claude/
 │   └── skills/
 │       └── printify/
@@ -39,20 +42,11 @@ Chaque design est décliné en t-shirt (light + dark), mug et coque de télépho
 ├── collections/
 │   ├── wanted.json                   # 46 personnages Wanted (FR+EN, tous IDs Printify)
 │   ├── direction.json                # 10 personnages Direction (FR+EN, IDs Printify)
-│   └── mythologie.json               # 10 personnages Mythologie (IDs Printify)
-├── exports/
-│   ├── wanted-fr/                    # Designs Wanted FR (posters 1198×1690)
-│   ├── wanted-en/                    # Designs Wanted EN
-│   ├── direction-fr-dark/            # 10 PNG Direction FR — fond transparent (t-shirts noirs)
-│   ├── direction-fr-light/           # 10 PNG Direction FR — fond transparent (t-shirts clairs)
-│   ├── direction-en-dark/            # 10 PNG Direction EN — fond transparent (t-shirts noirs)
-│   └── direction-en-light/           # 10 PNG Direction EN — fond transparent (t-shirts clairs)
-└── scripts/
-    ├── update_direction_backs.py     # Met à jour le dos des t-shirts Direction FR
-    ├── create_direction_en.py        # Crée les t-shirts Direction EN depuis templates FR
-    ├── restore_front_logo.py         # Restaure le logo front sur les produits Direction
-    ├── fix_front_logo_scale.py       # Corrige le scale du logo front
-    └── create_direction_mugs.py      # Crée les 40 mugs Direction (FR+EN, light+dark)
+│   └── mythologie.json               # 10 personnages Mythologie (IDs Printify + coques)
+├── assets/
+│   └── design-reference/             # Captures UI de référence (landing, collections, produits)
+└── archive/
+    └── scripts/                      # Scripts Python Printify (archivés — usage historique)
 ```
 
 ## Setup Claude Code

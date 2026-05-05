@@ -82,7 +82,7 @@ _(À confirmer/ajuster selon les designs finaux)_
 
 **T-shirts** : Blanc principalement. Version inversée des couleurs disponible pour t-shirts noirs.
 **Couleurs dispo** : Blanc + noir + 6-8 autres couleurs.
-**Nombre de designs** : 8-10 personnages (l'équipage complet).
+**Nombre de designs** : 10 personnages (l'équipage complet de Luffy).
 **Ton** : Épique, mystique, iconique.
 
 ### 3. DIRECTION
@@ -369,24 +369,22 @@ Hokuno utilise Printify comme hub de production central. Les produits sont cré�
 
 ---
 
-## Structure du repo (mise à jour 2026-05-02)
+## Structure du repo (mise à jour 2026-05-05)
 
 ```
 hokuno-store/
 ├── CONTEXT.md                 # Ce fichier — brand bible
-├── INVENTAIRE.md              # Inventaire Printify 97 produits (post Phase 0)
-├── TODO.md                    # Roadmap phases 0→5
+├── INVENTAIRE.md              # Inventaire Printify 430 produits (2026-05-05)
+├── TODO.md                    # Roadmap phases 0→boutique
+├── PRICING.md                 # Prix de vente, coûts, marges
 ├── collections/
-│   ├── wanted.json            # 46 personnages (17 sur Printify FR, 29 dans Canva)
-│   ├── direction.json         # 10 personnages
-│   └── mythologie.json        # 10 personnages
+│   ├── wanted.json            # 46 personnages Wanted (FR+EN, IDs Printify)
+│   ├── direction.json         # 10 personnages Direction (FR+EN, IDs Printify)
+│   └── mythologie.json        # 10 personnages Mythologie (IDs Printify + coques)
 ├── assets/
-│   └── logos/                 # Logpose + ホクノ typographie
-├── seo/
-│   ├── llms.txt               # Fichier descriptif pour les LLMs
-│   └── schemas/               # Templates JSON-LD par type de page
-└── config/
-    └── products.json          # Specs produits Printify (blueprints, print areas)
+│   └── design-reference/      # Captures UI de référence (landing, collections, produits)
+└── archive/
+    └── scripts/               # Scripts Python Printify (archivés)
 ```
 
 ## Notes pour Claude Code

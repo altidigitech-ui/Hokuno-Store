@@ -2,7 +2,7 @@
 
 ## État actuel (2026-05-05)
 
-- **422 produits** Printify (shop ID `22774508`, **shop disconnected**) — vérifié API le 2026-05-05
+- **430 produits** Printify (shop ID `22774508`, **shop disconnected**) — vérifié API le 2026-05-05
 - **Tailles t-shirts** : 2XL–5XL désactivées sur 44/48 t-shirts (4 échecs API 500 — à faire manuellement)
 - **Collection Wanted** : 46/46 personnages × FR+EN × light+dark + mugs = 276 produits ✅
 - **Collection Direction** : 10/10 × FR+EN × light+dark + mugs = 80 produits ✅ (+1 doublon à supprimer)
@@ -41,12 +41,9 @@
   - `6855d1a12c35f6107c040a63` — Coque téléphone Design Hokuno Orbite Dark → 24.99 $
   - `684d613ffef859492303a65a` — Coque de téléphone Dark ZORO MYTHOLOGIE 2/10 → 24.99 $
 
-- [ ] **Activer variante 15oz** sur 93 mugs désactivés :
-  - Wanted FR : 46 mugs (tasse en céramique wanted ...)
-  - Wanted EN : 46 mugs (ceramic mug wanted ...)
-  - Mythologie Luffy : 1 mug (`684d59ac1d7c908d840c9497`)
+- [x] **Activer variante 15oz** sur 93 mugs — fait le 2026-05-05 (Wanted FR+EN + Mythologie)
 
-- [ ] **Supprimer** doublon mug Direction Luffy EN : `684d56c509bce0c2370d3254`
+- [x] **Supprimer** doublon mug Direction Luffy EN : `684d56c509bce0c2370d3254` — fait le 2026-05-05
 
 - [ ] **Renommer** 2 produits Wanted EN (API 500 — faire manuellement dans le dashboard) :
   - `69f6032239e419a2dc02e247` → `T-SHIRT LUFI WANTED EN 1/46`
