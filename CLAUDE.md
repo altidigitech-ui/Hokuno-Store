@@ -33,7 +33,7 @@ Lis `CONTEXT.md` en premier — il contient toute la brand bible : identité, co
 ## État actuel (2026-05-05)
 
 - **Shop Printify** : ID `22774508`, nom "My new store", **sales channel : disconnected** (à connecter Shopify + TikTok Shop)
-- **Total produits** : 422 (vérifié API le 2026-05-05) — voir INVENTAIRE.md pour le détail complet
+- **Total produits** : 431 (422 + 9 coques Mythologie créées le 2026-05-05) — voir INVENTAIRE.md pour le détail complet
 - **Tailles t-shirts** : XL max — 2XL/3XL/4XL/5XL désactivées sur 44/48 t-shirts (4 à faire manuellement, API 500)
 - **Collection Wanted** : 46/46 personnages × FR+EN × light+dark + mugs = 276 produits
   - ⚠️ 2 produits EN à renommer (Lufi ×2 — titres incorrects, contenu OK)
@@ -43,8 +43,9 @@ Lis `CONTEXT.md` en premier — il contient toute la brand bible : identité, co
   - Logo front LIGHT (silhouette) : ID `69f79f1270e1b9ced794f3ab`, scale 59.53 UI / 0.14076 API
   - Kanji mug : ID `6846fd1c1a6d958e91819b36`
 - **Collection Direction EN** : 10/10 — 20 t-shirts + 10 mugs light (bp 478) + 10 mugs dark (bp 479) + 1 doublon `684d56c509bce0c2370d3254` à supprimer
-- **Collection Mythologie** : 10/10 t-shirts light + 10/10 dark + 10/10 mugs + 1 coque Zoro = 31 produits
+- **Collection Mythologie** : 10/10 t-shirts light + 10/10 dark + 10/10 mugs + **10/10 coques** = 40 produits ✅ COMPLET
   - ⚠️ Luffy mug : variante 15oz désactivée
+  - Coques Mythologie : BP 268 / SPOKE (PP 1) — image réutilisée depuis t-shirt back, x=0.5, y=0.605, scale=0.7216, 26 variantes actives (iPhone 11 → iPhone 17)
 - **Collection Design Hokuno** : 13 t-shirts (bp 6+145) + 21 accessoires (casquettes, bobs, claquettes, shorts, polos, coques) = 34 produits
   - ⚠️ 4 t-shirts avec XXL non désactivé (API 500 — faire manuellement)
 

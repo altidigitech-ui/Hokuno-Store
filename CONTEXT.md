@@ -141,7 +141,7 @@ _(À confirmer/ajuster selon les designs finaux)_
 **Supports disponibles par collection :**
 - **T-shirts** : toutes collections
 - **Mugs** : Wanted (FR+EN), Direction (FR+EN, light+dark), Mythologie
-- **Coques téléphone** : **Mythologie uniquement** (10 personnages — Zoro créé, 9 en cours de création)
+- **Coques téléphone** : **Mythologie uniquement** — 10/10 personnages ✅ (BP 268 Slim Phone Cases, iPhone 11 → iPhone 17)
 - **Accessoires** : Design Hokuno uniquement (casquettes, bobs, claquettes, shorts, polos)
 
 ---

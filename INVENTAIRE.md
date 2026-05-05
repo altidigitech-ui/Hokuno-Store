@@ -1,7 +1,7 @@
 # INVENTAIRE PRINTIFY — HOKUNO
 
 > Mis à jour le **2026-05-05** — Source : API Printify shop `22774508`
-> **Total : 422 produits** — Tailles t-shirts limitées à XL maximum (2XL–5XL désactivées)
+> **Total : 431 produits** — Tailles t-shirts limitées à XL maximum (2XL–5XL désactivées)
 
 ---
 
@@ -325,7 +325,7 @@
 
 ### 4. Coques Wanted
 
-*Aucune coque Wanted créée — à faire (Phase 5 : 92 coques = 46 FR + 46 EN)*
+*Aucune coque Wanted — hors scope définitif (abandonnées le 2026-05-05)*
 
 ---
 
@@ -462,7 +462,7 @@
 
 ### 4. Coques Direction
 
-*Aucune coque Direction créée — à faire (20 coques : 10 FR + 10 EN)*
+*Aucune coque Direction — hors scope définitif (abandonnées le 2026-05-05)*
 
 ---
 
@@ -522,12 +522,18 @@
 
 ### 3. Coques Mythologie
 
-
 | # | Titre Printify | Product ID | Variantes actives |
 |---|---|---|---|
-| #01 | Coque de téléphone Dark ZORO MYTHOLOGIE 2/10 | `684d613ffef859492303a65a` | 26 |
-
-*9 coques manquantes : Luffy, Nami, Ussop, Sanji, Choper, Robin, Franky, Brook, Jinbe*
+| #01 | Coque de téléphone Dark LUFFY MYTHOLOGIE 1/10 | `69fa22c0d3f1ce330f0d4ba8` | 26 |
+| #02 | Coque de téléphone Dark ZORO MYTHOLOGIE 2/10 | `684d613ffef859492303a65a` | 26 |
+| #03 | Coque de téléphone Dark NAMI MYTHOLOGIE 3/10 | `69fa22c47d958848720c4094` | 26 |
+| #04 | Coque de téléphone Dark USSOP MYTHOLOGIE 4/10 | `69fa22c8eaf5bab12c098a7b` | 26 |
+| #05 | Coque de téléphone Dark SANJI MYTHOLOGIE 5/10 | `69fa22cb121b59382d0396c9` | 26 |
+| #06 | Coque de téléphone Dark CHOPER MYTHOLOGIE 6/10 | `69fa22cdaf1e4497af0156ce` | 26 |
+| #07 | Coque de téléphone Dark FRANKY MYTHOLOGIE 7/10 | `69fa22d0e9fd0e55490b27a5` | 26 |
+| #08 | Coque de téléphone Dark ROBIN MYTHOLOGIE 8/10 | `69fa22d3121b59382d0396cc` | 26 |
+| #09 | Coque de téléphone Dark BROOK MYTHOLOGIE 9/10 | `69fa22d60b0939323c040cda` | 26 |
+| #10 | Coque de téléphone Dark JINBE MYTHOLOGIE 10/10 | `69fa22d8e5d45903400da7f6` | 26 |
 
 ---
 
@@ -591,9 +597,9 @@
 | **Wanted EN** | 46 | 46 | 46 | 0 | **138** |
 | **Direction FR** | 10 | 10 | 20 (10 light + 10 dark) | 0 | **40** |
 | **Direction EN** | 10 | 10 | 21 (10 light + 10 dark + 1 doublon) | 0 | **41** *(+1 doublon)* |
-| **Mythologie** | 10 | 10 | 10 | 1 | **31** |
+| **Mythologie** | 10 | 10 | 10 | 10 | **40** |
 | **Design Hokuno** | 13 | — | — | (coques incluses) | **34** |
-| **TOTAL** | **135** | **122** | **143** | **1** | **422** *(+1 doublon)* |
+| **TOTAL** | **135** | **122** | **143** | **10** | **431** *(+1 doublon)* |
 
 > Note : Direction EN mugs light = 11 (dont 1 doublon `684d56c509bce0c2370d3254` à supprimer)
 > Note : Design Hokuno inclut 21 accessoires (casquettes, bobs, claquettes, shorts, polos, coques)

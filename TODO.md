@@ -35,21 +35,8 @@
 
 ## 🟠 Produits à créer
 
-> **Total restant à créer : 9 coques Mythologie** (décision 2026-05-05 : coques Direction et Wanted abandonnées — hors scope définitif)
-
-### Coques Mythologie (9 manquantes — Zoro déjà créé)
-
-| # | Personnage | Coque |
-|---|-----------|-------|
-| 1/10 | Luffy | [ ] |
-| 3/10 | Nami | [ ] |
-| 4/10 | Ussop | [ ] |
-| 5/10 | Sanji | [ ] |
-| 6/10 | Choper | [ ] |
-| 7/10 | Franky | [ ] |
-| 8/10 | Robin | [ ] |
-| 9/10 | Brook | [ ] |
-| 10/10 | Jinbe | [ ] |
+> **Aucun produit restant à créer.** Toutes les coques Mythologie sont terminées (2026-05-05).
+> Coques Direction et Wanted : hors scope définitif.
 
 ---
 
@@ -87,7 +74,7 @@
 - [x] **Direction NOIR logo** : corrigé sur 20 t-shirts FR+EN (74.png → scale 53.59 UI)
 - [x] **Mythologie t-shirts** : 10/10 light + 10/10 dark
 - [x] **Mythologie mugs** : 10/10 (bp 478, images réutilisées depuis t-shirts back)
-- [x] **Mythologie Zoro coque** : 1 slim phone case (`684d613ffef859492303a65a`)
+- [x] **Mythologie coques** : 10/10 slim phone cases créées (Zoro + 9 nouveaux)
 - [x] **Mythologie Brook tshirt_noir standard** : créé `69f87c8cbe136844f0003b0a`
 - [x] **Tailles XL max** : 2XL–5XL désactivées sur 44/48 t-shirts via API (2026-05-05)
 - [x] **Inventaire complet** : INVENTAIRE.md restructuré 422 produits — 2026-05-05
@@ -104,7 +91,7 @@
 | **1-fix** | Renommer 2 Lufi EN (API 500 — manuel dashboard) | ⏳ cosmétique |
 | **2** | Direction EN (t-shirts light+dark) | ✅ FAIT |
 | **3** | Direction complet — mugs ✅ / coques abandonnées | ✅ FAIT |
-| **4** | Mythologie mugs (✅) + Brook NOIR (✅) + coques Mythologie (⏳ 9 à créer) | ⏳ |
+| **4** | Mythologie mugs (✅) + Brook NOIR (✅) + coques Mythologie (✅ 10/10) | ✅ FAIT |
 | **XL** | Désactiver 2XL–5XL sur tous les t-shirts | 44/48 ✅ — 4 manuels |
 | **Design** | Collection Design Hokuno inventoriée | ✅ existant |
 | **Shop** | Connexion Shopify + TikTok Shop | ⏳ |
