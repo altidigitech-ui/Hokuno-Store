@@ -1,0 +1,55 @@
+<section class="hk-section" style="position: relative; z-index: 1;">
+  <div class="hk-container">
+
+    <div class="hk-products-header hk-reveal">
+      <div>
+        <span class="hk-label">{{ section.settings.overline | default: 'Sélection' }}</span>
+        <h2 class="hk-heading-xl" style="margin: 8px 0 0;">{{ section.settings.title | default: 'NOUVEAUTÉS' }}</h2>
+      </div>
+      {%- if section.settings.collection != blank -%}
+        <a href="{{ collections[section.settings.collection].url }}" class="hk-btn hk-btn-ghost">
+          Voir tout
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14m-7-7 7 7-7 7"/>
+          </svg>
+        </a>
+      {%- endif -%}
+    </div>
+
+    <div class="hk-products-grid">
+      {%- if section.settings.collection != blank -%}
+        {%- assign featured_coll = collections[section.settings.collection] -%}
+        {%- for product in featured_coll.products limit: section.settings.products_count -%}
+          {% render 'hokuno-product-card', product: product %}
+        {%- endfor -%}
+      {%- else -%}
+        {%- for i in (1..4) -%}
+          <div class="hk-product-card">
+            <div class="hk-product-card-img-wrap">
+              {{ 'product-' | append: i | placeholder_svg_tag }}
+            </div>
+            <div class="hk-product-card-body">
+              <span class="hk-product-card-coll">Collection</span>
+              <h3 class="hk-product-card-title">T-SHIRT EXAMPLE</h3>
+              <span class="hk-product-card-price">34.99€</span>
+            </div>
+          </div>
+        {%- endfor -%}
+      {%- endif -%}
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hokuno Produits Vedettes",
+  "settings": [
+    { "type": "text", "id": "overline", "label": "Surtitre", "default": "Sélection" },
+    { "type": "text", "id": "title", "label": "Titre", "default": "NOUVEAUTÉS" },
+    { "type": "collection", "id": "collection", "label": "Collection à afficher" },
+    { "type": "range", "id": "products_count", "min": 4, "max": 12, "step": 4, "label": "Nombre de produits", "default": 8 }
+  ],
+  "presets": [{ "name": "Hokuno Produits Vedettes" }]
+}
+{% endschema %}
