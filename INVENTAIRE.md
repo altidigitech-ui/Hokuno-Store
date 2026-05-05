@@ -1,6 +1,6 @@
 # INVENTAIRE Hokuno — Printify
 
-**Mis à jour le 2026-05-05** | Shop ID `22774508` | **430 produits** | sales channel : disconnected
+**Audité le 2026-05-05** | Shop ID `22774508` | **430 produits** | sales channel : disconnected
 
 ---
 
@@ -22,16 +22,28 @@
 | Design Hokuno | 13 t-shirts + 21 accessoires | 34 |
 | **TOTAL** | | **430** |
 
-> ⚠️ **Variante 15oz** : Mugs Wanted FR+EN (92) activée 2026-05-05. Luffy Mythologie mug activée.
-> ⚠️ **Tailles 2XL–5XL** désactivées sur 44/48 t-shirts (4 à faire manuellement dans le dashboard).
-> ⚠️ **Prix** : 413/430 mis à jour — 17 bloqués (HTTP 500 persistant, à faire manuellement).
-> ⚠️ **Doublon** supprimé : `684d56c509bce0c2370d3254` (Direction EN Luffy mug — maintenant 430 produits).
+### Anomalies détectées (audit 2026-05-05)
+
+| Catégorie | Problème | Action |
+|---|---|---|
+| A) Prix | 2 produits incorrects (Design Hokuno) | Manuel dashboard |
+| B) Tailles | 4 t-shirts avec 2XL–5XL activées | Manuel dashboard |
+| C) 15oz | ✅ OK — 142 mugs OK | — |
+| D) Titres | 68 Wanted `/17` → `/46` + 2 trailing space | API + manuel |
+| E) Logo front | ✅ OK Wanted+Direction — 7 Design Hokuno custom | À valider |
+| F) Doublons | 1 doublon Target Dark à supprimer | Manuel dashboard |
+
+> ⚠️ **Doublon à supprimer** : `69f9e82ec12ffe54490a4e8d` (T-Shirt hokuno Design Target Dark — créé 2026-05-05)
+> ⚠️ **Target Light anormal** : `69f8c86f09f3b73024023a0e` — 1 seule variante active (White/L $25.96)
+> ⚠️ **68 titres Wanted** : suffix /17 au lieu de /46 (cosmétique — voir TODO.md)
 
 ---
 
 ## Collection Wanted FR
 
 ### T-Shirts Light (46)
+
+> ⚠️ 17 produits avec suffix /17 au lieu de /46 (à corriger)
 
 | ID Printify | Titre | Blueprint |
 |---|---|---|
@@ -83,6 +95,8 @@
 | `69f658bea636140bb10fed2e` | T-SHIRT TRAFALGAR DI LOW WANTED 30/46 | 6 |
 
 ### T-Shirts Dark / NOIR (46)
+
+> ⚠️ 17 produits avec suffix /17 au lieu de /46 (à corriger)
 
 | ID Printify | Titre | Blueprint |
 |---|---|---|
@@ -188,9 +202,10 @@
 
 ### T-Shirts Light (46)
 
+> ⚠️ 17 produits avec suffix /17 au lieu de /46 — dont `69f6032239e419a2dc02e247` (Lufi EN)
+
 | ID Printify | Titre | Blueprint |
 |---|---|---|
-| `69f6032239e419a2dc02e247` | Copy of T-SHIRT LUFI WANTED EN 1/17 | 6 |
 | `69f5ed0d348775ebe705b78d` | T-SHIRT ALABASTARDS WANTED EN 17/17 | 6 |
 | `69f63629db88631ee309eee3` | T-SHIRT AOKIDJI WANTED EN 33/46 | 6 |
 | `69f5ecb3758757bfa3041249` | T-SHIRT BAGGY WANTED EN 12/17 | 6 |
@@ -219,6 +234,7 @@
 | `69f63644ecefd0d57d04ac4b` | T-SHIRT KAKTAKOURY WANTED EN 34/46 | 6 |
 | `69f63541e1b7b9b0b00899d1` | T-SHIRT KOBI WANTED EN 25/46 | 6 |
 | `69f63660e1b7b9b0b0089a86` | T-SHIRT KOUINE WANTED EN 35/46 | 6 |
+| `69f6032239e419a2dc02e247` | T-SHIRT LUFI WANTED EN 1/17 | 6 |
 | `69f637411cc4ed38fb0ba7e1` | T-SHIRT MARKO THE FENIX WANTED EN 44/46 | 6 |
 | `69f5ed3adb88631ee309c14d` | T-SHIRT MARSHAL DI TITTCH WANTED EN 15/17 | 6 |
 | `69f634d149a5e0b8f700367b` | T-SHIRT MOMONOSUCKE WANTED EN 21/46 | 6 |
@@ -239,9 +255,10 @@
 
 ### T-Shirts Dark / NOIR EN (46)
 
+> ⚠️ 17 produits avec suffix /17 au lieu de /46 — dont `69f603f5ef66d02ffe02b1ce` (Lufi NOIR EN)
+
 | ID Printify | Titre | Blueprint |
 |---|---|---|
-| `69f603f5ef66d02ffe02b1ce` | Copy of T-SHIRT LUFI WANTED NOIR EN 1/17 | 6 |
 | `69f5ed13e1b7b9b0b0086c22` | T-SHIRT ALABASTARDS WANTED NOIR EN 17/17 | 6 |
 | `69f636319110dda91005f7c8` | T-SHIRT AOKIDJI WANTED NOIR EN 33/46 | 6 |
 | `69f5ecb9ef66d02ffe02a1db` | T-SHIRT BAGGY WANTED NOIR EN 12/17 | 6 |
@@ -270,6 +287,7 @@
 | `69f6364e1cc4ed38fb0ba715` | T-SHIRT KAKTAKOURY WANTED NOIR EN 34/46 | 6 |
 | `69f6354ba636140bb10fd7be` | T-SHIRT KOBI WANTED NOIR EN 25/46 | 6 |
 | `69f63668e1b7b9b0b0089a8d` | T-SHIRT KOUINE WANTED NOIR EN 35/46 | 6 |
+| `69f603f5ef66d02ffe02b1ce` | T-SHIRT LUFI WANTED NOIR EN 1/17 | 6 |
 | `69f63749b3bda8532c0c24c5` | T-SHIRT MARKO THE FENIX WANTED NOIR EN 44/46 | 6 |
 | `69f5ed40348775ebe705b79f` | T-SHIRT MARSHAL DI TITTCH WANTED NOIR EN 15/17 | 6 |
 | `69f634da49a5e0b8f7003687` | T-SHIRT MOMONOSUCKE WANTED NOIR EN 21/46 | 6 |
@@ -287,8 +305,6 @@
 | `69f5ec5f1cc4ed38fb0b781b` | T-SHIRT SHOPER WANTED NOIR EN 6/17 | 6 |
 | `69f63697e1b7b9b0b0089aa1` | T-SHIRT SMOKERR WANTED NOIR EN 37/46 | 6 |
 | `69f635d849a5e0b8f7003778` | T-SHIRT TRAFALGAR DI LOW WANTED NOIR EN 30/46 | 6 |
-
-> ⚠️ `69f6032239e419a2dc02e247` et `69f603f5ef66d02ffe02b1ce` — titres à corriger manuellement (Lufi 1/46).
 
 ### Mugs EN — ceramic mug (46)
 
@@ -373,7 +389,7 @@
 | `684c6a3fb41682e82d0b4390` | T-SHIRT USSOP DIRECTION NOIR 4/10 | 6 |
 | `684c693fb2d4e68c870de492` | T-SHIRT ZORO DIRECTION NOIR 2/10 | 6 |
 
-### Mugs FR Light — ceramic mug blanc bp478 (10)
+### Mugs Light — ceramic mug blanc bp478 (10)
 
 | ID Printify | Titre | Blueprint |
 |---|---|---|
@@ -388,7 +404,7 @@
 | `69f7aa7309f3b730240173d8` | tasse en céramique direction ussop (11oz, 15oz) 4/10 | 478 |
 | `69f7aa64a5ddadd686034776` | tasse en céramique direction zoro (11oz, 15oz) 2/10 | 478 |
 
-### Mugs FR Dark — ceramic mug noir bp479 (10)
+### Mugs Dark — ceramic mug noir bp479 (10)
 
 | ID Printify | Titre | Blueprint |
 |---|---|---|
@@ -435,7 +451,7 @@
 | `69f79b6ef9374ed4f1053744` | T-SHIRT USSOP DIRECTION EN NOIR 4/10 | 6 |
 | `69f79b5809f3b73024016bab` | T-SHIRT ZORO DIRECTION EN NOIR 2/10 | 6 |
 
-### Mugs EN Light — ceramic mug blanc bp478 (10)
+### Mugs Light — ceramic mug blanc bp478 (10)
 
 | ID Printify | Titre | Blueprint |
 |---|---|---|
@@ -450,7 +466,7 @@
 | `69f7aafd2592a8ad8e0e7eff` | ceramic mug direction ussop (11oz, 15oz) 4/10 | 478 |
 | `69f7aaf0e8580fe5eb059fd2` | ceramic mug direction zoro (11oz, 15oz) 2/10 | 478 |
 
-### Mugs EN Dark — ceramic mug noir bp479 (10)
+### Mugs Dark — ceramic mug noir bp479 (10)
 
 | ID Printify | Titre | Blueprint |
 |---|---|---|
@@ -512,7 +528,7 @@
 | `69f867d283a8608fd80f10f1` | MYTHOLOGIE USSOP Ceramic Mug, (11oz, 15oz) 4/10 | 478 |
 | `69f867caffbc831dea085700` | MYTHOLOGIE ZORO Ceramic Mug, (11oz, 15oz) 2/10 | 478 |
 
-### Coques téléphone slim (10)
+### Coques téléphone slim bp268 (10)
 
 | ID Printify | Titre | Blueprint |
 |---|---|---|
@@ -531,6 +547,8 @@
 
 ### T-Shirts (13)
 
+> ⚠️ 4 t-shirts avec 2XL–5XL activées (API 500). 1 doublon Target Dark. 1 Target Light mal configuré.
+
 | ID Printify | Titre | Blueprint |
 |---|---|---|
 | `69f8c577011b67ecf8078e65` | T-Shirt Design HO KU NO Dark | 6 |
@@ -547,8 +565,6 @@
 | `69f8d13d05bcfe3fcd0460f9` | T-shirt Hokuno Design Empreinte Dark | 6 |
 | `69f9d5cac12ffe54490a4085` | T-shirt Hokuno Design Empreinte Light | 6 |
 
-> ⚠️ 4 t-shirts : 2XL–5XL non désactivées (API 500 — faire manuellement dans le dashboard).
-
 ### Accessoires (21)
 
 | ID Printify | Titre | Blueprint |
@@ -559,7 +575,6 @@
 | `69f88e25f55196f8d00a8975` | Casquette Hokuno Light | 1108 |
 | `69f9237409f3b73024025a60` | Claquette Design Hokuno Dark | 862 |
 | `69f8901b25819cdf3d057d73` | Claquette Design Hokuno Light | 862 |
-| `69f9dc0f7d958848720c19f8` | Copy of Short De Bain Design Hokuno Bleu | 978 |
 | `69f61d909110dda91005e89b` | Coque de téléphone The End sur Brique Saga 1 | 268 |
 | `69f9e0964134c7a9850adc51` | Coque téléphone Design Hokuno Empreinte Dark | 268 |
 | `6855d1a12c35f6107c040a63` | Coque téléphone Design Hokuno Orbite Dark | 268 |
@@ -568,6 +583,7 @@
 | `69f88aadffbc831dea086dc5` | Polo Design Hokuno Boussole Light | 1970 |
 | `69f90ad917b7378b390af4dd` | Polo Design boussole Hokuno Dark | 1970 |
 | `69f907d49f68ab7cf0022012` | Polo Hokuno Signature Dark | 1970 |
+| `69f9dc0f7d958848720c19f8` | Short De Bain Design Hokuno Bleu | 978 |
 | `69f89408feed9979d10d1032` | Short De Bain Design Hokuno Bleu Ciel | 978 |
 | `69f9d20e7d958848720c12c1` | Short De Bain Design Hokuno Jaune | 978 |
 | `69f9d22145e1cbc4b50678a1` | Short De Bain Design Hokuno Rose | 978 |
