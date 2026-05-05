@@ -102,7 +102,8 @@ Détail complet dans l'INVENTAIRE.md ou générable via le script d'audit.
 
 ## 🟡 Plateforme & canaux de vente
 
-- [ ] **Connecter Shopify** au shop Printify `22774508` (sales channel actuellement disconnected)
+- [x] **Connecter Shopify** au shop Printify `22774508` ✅ (sales_channel = "shopify" — 2026-05-05)
+- [x] **Publier les produits** sur Shopify — 430/430 publiés via Printify API ✅ (2026-05-05)
 - [ ] **Connecter TikTok Shop** au shop Printify
 - [ ] **Configurer les prix** sur Shopify pour toutes les collections (t-shirts, mugs, coques, accessoires)
 - [ ] **Configurer la livraison** Shopify (zones FR, EU, international)
@@ -160,5 +161,6 @@ Détail complet dans l'INVENTAIRE.md ou générable via le script d'audit.
 | **Design** | Collection Design Hokuno inventoriée | ✅ existant |
 | **Audit** | Rapport A–F — 430 produits | ✅ 2026-05-05 |
 | **Desc** | Descriptions HTML — 413/430 via API, 17 manuels | ✅ 2026-05-05 |
-| **Shop** | Connexion Shopify + TikTok Shop | ⏳ |
+| **Shop** | Connexion Shopify ✅ + publication 430 produits ✅ | ✅ 2026-05-05 |
+| **TikTok** | Connexion TikTok Shop | ⏳ |
 | **Boutique** | Shopify FR/EN immersif | ⏳ |

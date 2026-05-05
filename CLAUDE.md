@@ -24,7 +24,8 @@ Lis `CONTEXT.md` en premier — il contient toute la brand bible : identité, co
 
 ## État actuel (2026-05-05)
 
-- **Shop Printify** : ID `22774508`, nom "My new store", **sales channel : disconnected** (à connecter Shopify + TikTok Shop)
+- **Shop Printify** : ID `22774508`, nom "My new store", **sales channel : shopify** ✅ (connecté — 2026-05-05)
+- **Publication Shopify** : 430/430 produits publiés via API Printify (2026-05-05)
 - **Total produits** : 430 — voir INVENTAIRE.md pour le détail complet (audité 2026-05-05)
 - **Prix Printify** : mis à jour sur 413/430 produits — 17 bloqués API 500 (à faire manuellement, listés dans TODO.md)
 - **Descriptions HTML** : injectées sur 413/430 produits via API (2026-05-05) — 17 bloqués API 500 (mêmes produits que prix)
