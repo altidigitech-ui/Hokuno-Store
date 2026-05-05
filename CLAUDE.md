@@ -34,63 +34,24 @@ Lis `CONTEXT.md` en premier — il contient toute la brand bible : identité, co
 
 - **Shop Printify** : ID `22774508`, nom "My new store", **sales channel : disconnected** (à connecter Shopify + TikTok Shop)
 - **Total produits** : 422 (vérifié API le 2026-05-05) — voir INVENTAIRE.md pour le détail complet
-- **Wanted** : 46/46 personnages complets FR+EN — 46 t-shirts FR light, 46 FR dark, 46 EN light, 46 EN dark, 46 mugs FR, 46 mugs EN = 276 produits
-  - ⚠️ 4 produits EN à renommer (Lufi ×2 + Bartolomiou Kouma ×2 — titres incorrects, contenu OK)
-  - ⚠️ Tous les mugs Wanted (FR+EN) ont la variante 15oz désactivée (1/2v)
-- **Direction FR** : 10/10 — 20 t-shirts + 10 mugs light (bp 478) + 10 mugs dark (bp 479) + 1 ancien mug doublon `684d56c509bce0c2370d3254`
-  - Logo front DARK (74.png) : ID `6849b65d8ee17a5b00c03855`, scale 53.59 UI / 0.21105 API — ✅ corrigé sur 10 t-shirts dark FR (2026-05-05)
+- **Tailles t-shirts** : XL max — 2XL/3XL/4XL/5XL désactivées sur 44/48 t-shirts (4 à faire manuellement, API 500)
+- **Collection Wanted** : 46/46 personnages × FR+EN × light+dark + mugs = 276 produits
+  - ⚠️ 2 produits EN à renommer (Lufi ×2 — titres incorrects, contenu OK)
+  - ⚠️ Tous les mugs Wanted (FR+EN, 92) ont la variante 15oz désactivée
+- **Collection Direction FR** : 10/10 — 20 t-shirts + 10 mugs light (bp 478) + 10 mugs dark (bp 479)
+  - Logo front DARK (74.png) : ID `6849b65d8ee17a5b00c03855`, scale 53.59 UI / 0.21105 API
   - Logo front LIGHT (silhouette) : ID `69f79f1270e1b9ced794f3ab`, scale 59.53 UI / 0.14076 API
   - Kanji mug : ID `6846fd1c1a6d958e91819b36`
-- **Direction EN** : 10/10 — 20 t-shirts + 10 mugs light (bp 478) + 10 mugs dark (bp 479)
-  - Logo front DARK (74.png) : ✅ corrigé sur 10 t-shirts dark EN (2026-05-05) — scale 53.59 UI / 0.21105 API
-- **Mythologie** : 10/10 t-shirts light + 10/10 dark + 10/10 mugs (bp 478) + 1 coque Zoro = 31 produits
-  - Brook tshirt_noir standard : `69f87c8cbe136844f0003b0a` (variante 2 supprimée)
+- **Collection Direction EN** : 10/10 — 20 t-shirts + 10 mugs light (bp 478) + 10 mugs dark (bp 479) + 1 doublon `684d56c509bce0c2370d3254` à supprimer
+- **Collection Mythologie** : 10/10 t-shirts light + 10/10 dark + 10/10 mugs + 1 coque Zoro = 31 produits
   - ⚠️ Luffy mug : variante 15oz désactivée
-- **Hors collections** : 3 produits (maillot de bain AOP, étuis kanji otaku, étuis mur brique × THE END)
+- **Collection Design Hokuno** : 13 t-shirts (bp 6+145) + 21 accessoires (casquettes, bobs, claquettes, shorts, polos, coques) = 34 produits
+  - ⚠️ 4 t-shirts avec XXL non désactivé (API 500 — faire manuellement)
 
-### TODO — état complet du projet
-
-#### 🔴 Corrections Printify (urgent)
-- [ ] **Activer variante 15oz** sur 93 mugs désactivés (Wanted FR×46, Wanted EN×46, Mythologie Luffy×1)
-- [ ] **Renommer** 2 produits Wanted EN (API 500 — faire manuellement dans le dashboard) :
-  - `69f6032239e419a2dc02e247` → `T-SHIRT LUFI WANTED EN 1/46`
-  - `69f603f5ef66d02ffe02b1ce` → `T-SHIRT LUFI WANTED NOIR EN 1/46`
-- [x] Bartolomiou Kouma ×2 renommés — OK
-- [ ] **Supprimer** le doublon mug Direction Luffy `684d56c509bce0c2370d3254`
-
-#### 🟠 Produits Printify à créer
-- [ ] **Direction Coques FR** : 10 coques (1 par personnage, design light FR)
-- [ ] **Direction Coques EN** : 10 coques (1 par personnage, design light EN)
-- [ ] **Mythologie Coques** : 9 coques manquantes (Luffy, Nami, Ussop, Sanji, Choper, Robin, Franky, Brook, Jinbe)
-- [x] **Mythologie Brook tshirt_noir standard** : créé `69f87c8cbe136844f0003b0a` (variante 2 supprimée)
-
-#### 🟡 Plateforme & canaux de vente
-- [ ] **Connecter Shopify** au shop Printify `22774508` (sales channel actuellement disconnected)
-- [ ] **Connecter TikTok Shop** au shop Printify
-- [ ] **Configurer les prix** sur Shopify pour toutes les collections (t-shirts, mugs, coques)
-- [ ] **Configurer la livraison** Shopify (zones FR, EU, international)
-
-#### 🟢 Boutique Shopify (à construire)
-- [ ] **Landing page** immersive — Three.js 3D, glassmorphisme, animations GSAP
-- [ ] **Pages collection** — Wanted / Direction / Mythologie avec storytelling
-- [ ] **Pages produit** — backstory personnage, variantes, schema JSON-LD Product
-- [ ] **Fichier `llms.txt`** à la racine
-- [ ] **`robots.txt`** — ne pas bloquer GPTBot, ChatGPT-User, ClaudeBot, PerplexityBot
-- [ ] **Bilingue FR/EN** — routing i18n
-- [ ] **SEO/GEO** — JSON-LD Organization, CollectionPage, BreadcrumbList sur chaque page
-- [ ] **SSR obligatoire** — contenu dans le HTML initial (Next.js ou Remix)
-
-#### ✅ Déjà fait
-- [x] **Wanted FR** : 46/46 t-shirts light + 46/46 t-shirts dark + 46/46 mugs FR = 138 produits
-- [x] **Wanted EN** : 46/46 t-shirts light + 46/46 t-shirts dark + 46/46 mugs EN = 138 produits
-- [x] **Direction FR t-shirts** : 10/10 light + 10/10 dark (dos + logo front restauré, scale 59.53)
-- [x] **Direction FR mugs** : 10/10 light (bp 478) + 10/10 dark (bp 479)
-- [x] **Direction EN t-shirts** : 10/10 light + 10/10 dark
-- [x] **Direction EN mugs** : 10/10 light (bp 478) + 10/10 dark (bp 479)
-- [x] **Mythologie t-shirts** : 10/10 light + 10/10 dark
-- [x] **Mythologie mugs** : 10/10 (bp 478, images réutilisées depuis t-shirts back) — 2026-05-04
-- [x] **Mythologie Zoro coque** : 1 slim phone case
-- [x] **Inventaire complet** : INVENTAIRE.md + JSON collections cross-vérifiés API — 2026-05-04
+### Logos Design Hokuno (référence)
+- **Logo front DARK (74.png)** : `6849b65d8ee17a5b00c03855` — scale 53.59 UI / 0.21105 API (t-shirts NOIR)
+- **Logo front LIGHT (silhouette Direction)** : `69f79f1270e1b9ced794f3ab` — scale 59.53 UI / 0.14076 API
+- **Kanji mug Direction** : `6846fd1c1a6d958e91819b36`
 
 ## Projets Canva
 

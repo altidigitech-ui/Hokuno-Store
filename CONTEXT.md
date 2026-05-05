@@ -102,19 +102,47 @@ _(À confirmer/ajuster selon les designs finaux)_
 **Nombre de designs** : 10 personnages (équipage complet).
 **Ton** : Motivationnel, inspirant, force tranquille.
 
-### 4. COLLECTION ÉTÉ
+### 4. DESIGN HOKUNO
 
-**Concept** : Produits saisonniers avec le logo Hokuno (Logpose + ホクノ). Accessoires et vêtements d'été pour étendre la marque au-delà des t-shirts.
+**Concept** : Produits portant le branding Hokuno directement — le logo Logpose, le katakana ホクノ, ou les motifs signature de la marque (empreinte, orbite, target, boussole). Ces produits existent indépendamment des collections manga.
 
-**Produits** :
-- Bob / bucket hat
-- Casquette / dad cap
-- Short / boardshort
-- Débardeur
+**T-shirts Design Hokuno** (blueprint 6 / 145) :
+- T-Shirt Design HO KU NO (Light + Dark)
+- T-Shirt Design Hokuno (Light + Dark)
+- T-Shirt Design Orbite Hokuno (Light + Dark)
+- T-Shirt Design Target Hokuno (Light + Dark)
+- T-Shirt Design Empreinte Hokuno (Light + Dark)
+- T-Shirt Sport Design Hokuno (Light + Dark)
 
-**Design** : Logo Hokuno — Logpose + ホクノ en katakana.
-**Note** : Vérifier les blueprints Printify disponibles avant de créer les designs.
-**Ton** : Décontracté, été, identité de marque.
+**Accessoires Hokuno** :
+- Bob / Bucket hat (blueprint 1698)
+- Casquettes (blueprint 1108)
+- Claquettes (blueprint 862)
+- Shorts de bain (blueprints 978 / 589)
+- Polos (blueprint 1970)
+- Coques de téléphone Design Hokuno (blueprint 268)
+- Maillot de bain (blueprint 978)
+
+**Design** : Logo Hokuno — Logpose + ホクノ en katakana. Variantes Light (fond clair) et Dark (fond noir).
+**Ton** : Décontracté, identité de marque, été.
+
+---
+
+### COLLECTION ÉTÉ (vue d'ensemble)
+
+**La Collection Été réunit les 4 collections de la marque :**
+1. **Wanted** — Avis de recherche parodiques (46 personnages × FR+EN)
+2. **Mythologie** — Silhouettes divines en toge grecque (10 personnages, universel)
+3. **Direction** — Silhouettes + citation motivationnelle (10 personnages × FR+EN)
+4. **Design Hokuno** — Branding Hokuno pur (t-shirts + accessoires)
+
+**Taille maximum : XL** — Les tailles 2XL, 3XL, 4XL, 5XL sont désactivées sur tous les t-shirts.
+
+**Supports disponibles par collection :**
+- **T-shirts** : toutes collections
+- **Mugs** : Wanted (FR+EN), Direction (FR+EN, light+dark), Mythologie
+- **Coques téléphone** : Mythologie (Zoro seulement — 9 manquantes), Design Hokuno, Wanted (à créer), Direction (à créer)
+- **Accessoires** : Design Hokuno uniquement (casquettes, bobs, claquettes, shorts, polos)
 
 ---
 
