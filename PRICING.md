@@ -90,9 +90,9 @@
 | 🇺🇸 USA | 8.99 $ | 3.99 $ | |
 | 🇨🇦 Canada | 14.99 $ | 6.99 $ | |
 | 🇦🇺 Australie | 17.99 $ | 8.39 $ | |
-| 🇫🇷 France / 🇪🇺 EU / 🌍 Monde | **17.99 $** | **8.39 $** | ⚠️ Très élevé — à intégrer au prix de vente EU |
+| 🇫🇷 France / 🇪🇺 EU / 🌍 Monde | **17.99 $** | **8.39 $** | ⚠️ Très élevé — absorbé dans le prix de vente EU |
 
-> ⚠️ **Impact majeur** : Un mug blanc 11oz (production 4.99 $) livré en France coûte **22.98 $ au total** (4.99 + 17.99). À convertir : **~21.14 €** rien que pour le prix de revient. Fixer le prix de vente mugs EU en conséquence.
+> ⚠️ **Impact majeur** : Un mug blanc 11oz (production 4.99 $) livré en France coûte **22.98 $ au total** (4.99 + 17.99). À convertir : **~21.14 €** rien que pour le prix de revient. Prix fixé à 29.99 € pour absorber ce coût.
 
 ---
 
@@ -137,83 +137,106 @@
 
 ---
 
-## 4. PRIX DE VENTE CONSEILLÉ
+## 4. PRIX DE VENTE DÉFINITIFS
 
-> *À remplir ensemble*
+> Arrêtés le **2026-05-05**. "Coût total FR" = production + livraison France (1er article) × 0.92. "Marge EN" = prix $ − coût total USA $.
 
-| Produit | Prix de vente FR (€) | Prix de vente EN (€/$) | Marge brute FR | Marge brute EN | Notes |
-|---------|---------------------|----------------------|----------------|----------------|-------|
-| T-shirt Gildan light (Wanted) | | | | | |
-| T-shirt Gildan dark (Wanted) | | | | | |
-| T-shirt Gildan light (Direction) | | | | | |
-| T-shirt Gildan dark (Direction) | | | | | |
-| T-shirt Gildan light (Mythologie) | | | | | |
-| T-shirt Gildan dark (Mythologie) | | | | | |
-| Mug blanc 11oz | | | | | |
-| Mug blanc 15oz | | | | | |
-| Mug noir 11oz | | | | | |
-| Coque iPhone | | | | | |
-| Coque Samsung | | | | | |
-| Casquette | | | | | |
-| Bob | | | | | |
-| Short de bain | | | | | |
-| Polo | | | | | |
+| Produit | Prix FR (€) | Prix EN ($) | Coût total FR (€) | Marge FR (€) | Marge FR % | Marge EN ($) |
+|---------|:----------:|:----------:|:-----------------:|:-----------:|:---------:|:-----------:|
+| **T-shirt Gildan light** (toutes collections) | **34.99** | **37.99** | 23.54 | **11.45** | 32.7 % | 14.42 |
+| **T-shirt Gildan dark/NOIR** (toutes collections) | **34.99** | **37.99** | 24.24 | **10.75** | 30.7 % | 13.65 |
+| **Mug blanc 11oz** | **29.99** | **19.99** | 21.14 | **8.85** | 29.5 % | 6.01 |
+| **Mug blanc 15oz** | **34.99** | **24.99** | 22.54 | **12.45** | 35.6 % | 9.49 |
+| **Mug noir 11oz** | **34.99** | **24.99** | 23.23 | **11.76** | 33.6 % | 8.74 |
+| **Coque iPhone** (Mythologie uniquement) | **24.99** | **24.99** | 22.60 | **2.39** ⚠️ | 9.6 % | 8.12 |
+| **Casquette** | **29.99** | **29.99** | 22.40 | **7.59** | 25.3 % | 10.74 |
+| **Bob / Bucket Hat** | **39.99** | **39.99** | 28.23 | **11.76** | 29.4 % | 14.42 |
+| **Polo** (S–M) | **44.99** | **44.99** | 30.61 | **14.38** | 32.0 % | 16.53 |
+| **Short de bain** | **49.99** | **49.99** | 28.20 | **21.79** | 43.6 % | 17.25 |
+| **Claquette / Slide Sandals** | **54.99** | **54.99** | 41.80 | **13.19** | 24.0 % | 9.55 |
+
+> **Notes :**
+> - **Coque iPhone EU** : marge très faible (2.39 €). Avec Printify Premium : 4.61 € (18.5%). Coques disponibles **Mythologie uniquement**.
+> - **Short de bain** : basé sur BP978 Mid-Length AOP (livraison EU 3.60 $). La variante BP589 Swim Trunks EU = 17.59 $ de livraison — marge EU < 7 € à ce prix.
+> - **Polo** : taille S–M de référence. XL : coût FR ~32.12 €, marge ~12.87 €.
+> - **Bob** : coût FR = (20.68 + 10.00) × 0.92 = 28.23 €. Livraison EU via PP 217 = 10.00 $.
 
 ---
 
-## 5. MARGE PAR PRODUIT
+## 5. MARGE PAR PRODUIT — DÉTAIL AVEC PRINTIFY PREMIUM
 
-> *À remplir ensemble*
+> Comparaison marge standard vs marge avec Printify Premium (−20% sur production uniquement, livraison inchangée).
 
-| Produit | Coût total FR (€) | Prix vente (€) | Marge brute (€) | Marge % | Marge Premium % |
-|---------|-----------------|----------------|-----------------|---------|-----------------|
-| | | | | | |
+| Produit | Coût FR (€) | Prix (€) | Marge (€) | Marge % | Coût FR Premium (€) | Marge Premium (€) | Marge Premium % |
+|---------|------------:|--------:|----------:|-------:|--------------------:|------------------:|---------------:|
+| T-shirt Gildan light | 23.54 | 34.99 | **11.45** | 32.7 % | 20.66 | **14.33** | 41.0 % |
+| T-shirt Gildan dark | 24.24 | 34.99 | **10.75** | 30.7 % | 21.23 | **13.76** | 39.3 % |
+| Mug blanc 11oz | 21.14 | 29.99 | **8.85** | 29.5 % | 20.22 | **9.77** | 32.6 % |
+| Mug blanc 15oz | 22.54 | 34.99 | **12.45** | 35.6 % | 21.34 | **13.65** | 39.0 % |
+| Mug noir 11oz | 23.23 | 34.99 | **11.76** | 33.6 % | 21.90 | **13.09** | 37.4 % |
+| Coque iPhone | 22.60 | 24.99 | **2.39** ⚠️ | 9.6 % | 20.38 | **4.61** | 18.5 % |
+| Casquette | 22.40 | 29.99 | **7.59** | 25.3 % | 19.76 | **10.23** | 34.1 % |
+| Bob / Bucket Hat | 28.23 | 39.99 | **11.76** | 29.4 % | 24.42 | **15.57** | 38.9 % |
+| Polo (S–M) | 30.61 | 44.99 | **14.38** | 32.0 % | 26.33 | **18.66** | 41.5 % |
+| Short de bain (Mid) | 28.20 | 49.99 | **21.79** | 43.6 % | 23.22 | **26.77** | 53.5 % |
+| Claquette | 41.80 | 54.99 | **13.19** | 24.0 % | 35.01 | **19.98** | 36.3 % |
+
+> **Coût FR Premium** = (production × 0.80 + livraison EU) × 0.92.
+> **Impact Premium** : +2.88 € sur t-shirt light, +3.01 € sur dark. Économie quasi nulle sur les mugs (livraison EU domine).
 
 ---
 
 ## 6. REMISE DE LANCEMENT
 
-> *À définir ensemble*
+- **Code** : `HOKUNO15`
+- **Réduction** : −15%
+- **Durée** : 2 semaines à partir du lancement
+- **Produits éligibles** : Tous les produits de la boutique *(voir exception coque ci-dessous)*
 
-- Discount code lancement :
-- Durée :
-- Montant / % :
-- Produits éligibles :
-- Marge minimum visée avec remise :
+| Produit | Prix normal (€) | Prix HOKUNO15 (€) | Marge avec remise, sans Premium (€) | Marge avec remise + Premium (€) |
+|---------|---------------:|------------------:|------------------------------------:|--------------------------------:|
+| T-shirt Gildan light | 34.99 | **29.74** | 6.20 | 9.08 |
+| T-shirt Gildan dark | 34.99 | **29.74** | 5.50 | 8.51 |
+| Mug blanc 11oz | 29.99 | **25.49** | 4.35 | 5.27 |
+| Mug blanc 15oz | 34.99 | **29.74** | 7.20 | 8.40 |
+| Mug noir 11oz | 34.99 | **29.74** | 6.51 | 7.84 |
+| Coque iPhone | 24.99 | **21.24** | **−1.36 ❌** | 0.86 |
+| Casquette | 29.99 | **25.49** | 3.09 | 5.73 |
+
+> **Marge minimale avec remise** : ~5.50 € sans Premium / ~8.51 € avec Premium (t-shirt dark, pire cas).
+> ❌ **Coque iPhone + remise −15% = marge négative** (−1.36 €) sans Premium. **Exclure la coque du code HOKUNO15**, ou ne l'activer qu'une fois Printify Premium souscrit (marge = +0.86 €, encore très faible).
 
 ---
 
 ## 7. STRATÉGIE PRICING FR / EN / INTERNATIONAL
 
-> *À définir ensemble*
+- **Marché FR (Europe)** : prix en euros. T-shirt 34.99 €, marge ~11 € sur couleurs claires / ~10.75 € sur NOIR.
+- **Marché EN (USA/UK/CA/AU)** : prix en dollars. T-shirt 37.99 $, marge USA ~14 $ (frais de livraison inférieurs = meilleure marge qu'en EU).
+- **Livraison offerte à partir de** : **60 €** (environ 2 t-shirts) — encourage les commandes multi-articles et améliore la marge nette.
+- **En dessous de 60 €** : livraison à la charge du client, affichée clairement au checkout.
+- **Bundle / lot** : le 2e article supp. coûte seulement 4.00 $ de livraison vs 10.00 $ pour le 1er (t-shirts). Promouvoir activement les bundles 2+ articles.
+- **Printify Premium** : activer dès que les ventes atteignent **10 t-shirts/mois** (seuil de rentabilité).
 
-- **Marché FR** :
-- **Marché EN (UK/US/CA/AU)** :
-- **Livraison offerte à partir de** :
-- **Bundle / lot** :
-- **Printify Premium** : à activer si volume > X commandes/mois (seuil de rentabilité à calculer)
-
-> Seuil de rentabilité Printify Premium (29 $/mois) :
-> Avec économie de 20% sur production, le Premium est rentable dès que les économies > 29 $/mois.
-> Ex. : économie sur t-shirt Gildan standard = 15.58 × 20% = 3.12 $/produit → rentable dès **10 t-shirts/mois**.
+> **Seuil de rentabilité Printify Premium (29 $/mois) :**
+> Économie sur Gildan standard = 15.58 × 20 % = **3.12 $/t-shirt**
+> Rentable dès **10 t-shirts/mois** (3.12 × 10 = 31.20 $ > 29 $)
+> À 30 t-shirts/mois → économie 93.60 $ − 29 $ abonnement = **+64.60 $/mois** de marge supplémentaire.
 
 ---
 
 ## 8. NOTES STRATÉGIQUES
 
-### ⚠️ Livraison mugs EU — problème majeur
-La livraison mugs vers France/EU (17.99 $ = ~16.55 €) est disproportionnée par rapport au coût de production (4.99 $). Options :
-- Passer à un provider EU pour les mugs (ex. Printify Choice peut router vers un provider local)
-- Fixer un prix de vente mugs élevé pour absorber le shipping (>35-40 €)
-- Ne proposer les mugs qu'en "bundle" avec un t-shirt (livraison mutualisée = 8.39 $ supp.)
+### ✅ T-shirts — stratégie validée
+Prix 34.99 € FR / 37.99 $ EN. Marge EU 10.75–11.45 €, marge USA 13.65–14.42 $. Avec remise lancement (−15%) : marge minimum ~5.50 € sans Premium, ~8.51 € avec Premium. Équilibre viable dès le lancement.
 
-### ✅ T-shirts — bon équilibre
-Coût total France ~23.54 € pour un Gildan standard. Marge correcte possible à 35-40 €.
+### ✅ Mugs — prix EU compensent le shipping élevé
+Mug blanc 11oz à 29.99 € : marge 8.85 € (29.5%) malgré livraison EU 17.99 $. Mug 15oz et noir à 34.99 € : marges 11–12 €. Stratégie de bundle recommandée (2e mug = +8.39 $ livraison seulement).
+
+### ⚠️ Coque iPhone — marge EU critique
+Marge EU 2.39 € seulement (9.6%). Produit rentable principalement sur le marché USA (marge 8.12 $). **Ne pas inclure dans la remise de lancement** sans Printify Premium. Disponible Mythologie uniquement.
 
 ### 📦 Commandes multi-articles
-La livraison supplémentaire (add.) est nettement moins chère que le premier article.
-Encourager les bundles augmente significativement la marge nette.
+Livraison supp. t-shirt = 4.00 $ vs 10.00 $ first. Un client qui commande 2 t-shirts : livraison totale 14.00 $ au lieu de 20.00 $ → +6 $ de marge. Livraison offerte dès 60 € (= 2 t-shirts) = incitation directe au double achat.
 
 ### 💡 Printify Premium
-Rentable dès ~10 t-shirts/mois (économie 3.12 $/t-shirt vs 29 $/mois d'abonnement).
-Priorité dès que les ventes démarrent.
+Rentable dès ~10 t-shirts/mois. Priorité dès que ce seuil est atteint. Impact maximal sur les accessoires (polo, short de bain, claquettes) où l'économie de production est proportionnellement plus importante.

@@ -141,8 +141,47 @@ _(À confirmer/ajuster selon les designs finaux)_
 **Supports disponibles par collection :**
 - **T-shirts** : toutes collections
 - **Mugs** : Wanted (FR+EN), Direction (FR+EN, light+dark), Mythologie
-- **Coques téléphone** : Mythologie (Zoro seulement — 9 manquantes), Design Hokuno, Wanted (à créer), Direction (à créer)
+- **Coques téléphone** : **Mythologie uniquement** (10 personnages — Zoro créé, 9 en cours de création)
 - **Accessoires** : Design Hokuno uniquement (casquettes, bobs, claquettes, shorts, polos)
+
+---
+
+## Pricing
+
+> Stratégie arrêtée le 2026-05-05. Détail complet dans `PRICING.md`.
+
+### Prix de vente
+
+| Produit | Prix FR (€) | Prix EN ($) |
+|---------|:----------:|:----------:|
+| T-shirt (toutes collections, light et dark) | **34.99** | **37.99** |
+| Mug blanc 11oz | **29.99** | **19.99** |
+| Mug blanc 15oz | **34.99** | **24.99** |
+| Mug noir 11oz | **34.99** | **24.99** |
+| Coque iPhone (Mythologie) | **24.99** | **24.99** |
+| Casquette | **29.99** | **29.99** |
+| Bob / Bucket Hat | **39.99** | **39.99** |
+| Polo | **44.99** | **44.99** |
+| Short de bain | **49.99** | **49.99** |
+| Claquette / Slide Sandals | **54.99** | **54.99** |
+
+### Remise de lancement
+
+- **Code** : `HOKUNO15` — −15% — 2 semaines après lancement — tous produits éligibles (sauf coque iPhone sans Printify Premium)
+- T-shirt avec remise : **29.74 €** / Mug 11oz : **25.49 €** / Coque : **21.24 €**
+
+### Règles livraison
+
+- **Livraison offerte** à partir de **60 € / ~2 t-shirts**
+- En dessous de 60 € : livraison à la charge du client
+
+### Tailles
+
+- **Taille maximum : XL** — 2XL, 3XL, 4XL, 5XL désactivées sur tous les t-shirts.
+
+### Printify Premium
+
+- Rentable dès **10 t-shirts/mois** (économie 3.12 $/t-shirt × 10 = 31.20 $ > 29 $/mois d'abonnement)
 
 ---
 

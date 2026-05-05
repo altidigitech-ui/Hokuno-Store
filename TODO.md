@@ -35,20 +35,7 @@
 
 ## 🟠 Produits à créer
 
-### Coques Direction (20 manquantes)
-
-| # | Personnage | Coque FR | Coque EN |
-|---|-----------|---------|---------|
-| 1/10 | Luffy | [ ] | [ ] |
-| 2/10 | Zoro | [ ] | [ ] |
-| 3/10 | Nami | [ ] | [ ] |
-| 4/10 | Ussop | [ ] | [ ] |
-| 5/10 | Sanji | [ ] | [ ] |
-| 6/10 | Choper | [ ] | [ ] |
-| 7/10 | Franky | [ ] | [ ] |
-| 8/10 | Robin | [ ] | [ ] |
-| 9/10 | Brook | [ ] | [ ] |
-| 10/10 | Jinbe | [ ] | [ ] |
+> **Total restant à créer : 9 coques Mythologie** (décision 2026-05-05 : coques Direction et Wanted abandonnées — hors scope définitif)
 
 ### Coques Mythologie (9 manquantes — Zoro déjà créé)
 
@@ -63,10 +50,6 @@
 | 8/10 | Robin | [ ] |
 | 9/10 | Brook | [ ] |
 | 10/10 | Jinbe | [ ] |
-
-### Coques Wanted (92 manquantes — priorité basse)
-
-*46 personnages × FR + 46 × EN = 92 coques*
 
 ---
 
@@ -120,9 +103,8 @@
 | **1** | Wanted complet FR+EN (t-shirts + mugs) — 276 produits | ✅ FAIT |
 | **1-fix** | Renommer 2 Lufi EN (API 500 — manuel dashboard) | ⏳ cosmétique |
 | **2** | Direction EN (t-shirts light+dark) | ✅ FAIT |
-| **3** | Direction mugs (✅) + coques Direction (⏳ 20 manquantes) | ⏳ |
-| **4** | Mythologie mugs (✅) + Brook NOIR (✅) + coques Mythologie (⏳ 9) | ⏳ |
-| **5** | Wanted coques | ⏳ priorité basse (92 coques) |
+| **3** | Direction complet — mugs ✅ / coques abandonnées | ✅ FAIT |
+| **4** | Mythologie mugs (✅) + Brook NOIR (✅) + coques Mythologie (⏳ 9 à créer) | ⏳ |
 | **XL** | Désactiver 2XL–5XL sur tous les t-shirts | 44/48 ✅ — 4 manuels |
 | **Design** | Collection Design Hokuno inventoriée | ✅ existant |
 | **Shop** | Connexion Shopify + TikTok Shop | ⏳ |
