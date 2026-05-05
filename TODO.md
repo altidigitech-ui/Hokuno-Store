@@ -26,6 +26,7 @@ Ces 4 produits Design Hokuno sont bloqués en API 500 sur toute opération PUT :
   - `69f8febcbd4ffcafc502864d` → `T-Shirt Design Orbite Hokuno Dark` (supprimer espace en fin)
   - `69f8c689c7a7db441d0c58fc` → `T-Shirt Design Hokuno Dark` (supprimer espace en fin)
 
+- [ ] **Mettre à jour la description** manuellement sur ces 17 produits (même liste que prix) — API 500 permanents
 - [ ] **Mettre à jour les prix** sur 17 produits bloqués :
   *(413/430 déjà mis à jour via script le 2026-05-05)*
   - `69f90268ad402ce2b4035348` — Maillot De Bain Design Hokuno Dark → 49.99 $
@@ -141,6 +142,7 @@ Détail complet dans l'INVENTAIRE.md ou générable via le script d'audit.
 - [x] **Inventaire complet** : INVENTAIRE.md régénéré depuis API — 430 produits (2026-05-05)
 - [x] **Collection Design Hokuno** : inventoriée — 13 t-shirts + 21 accessoires
 - [x] **Audit complet** : rapport A–F généré (2026-05-05)
+- [x] **Descriptions produit** : 413/430 injectées via API (2026-05-05) — 17 bloqués API 500 (manuels)
 
 ---
 
@@ -157,5 +159,6 @@ Détail complet dans l'INVENTAIRE.md ou générable via le script d'audit.
 | **XL** | Désactiver 2XL–5XL sur tous les t-shirts | 44/48 ✅ — 4 manuels |
 | **Design** | Collection Design Hokuno inventoriée | ✅ existant |
 | **Audit** | Rapport A–F — 430 produits | ✅ 2026-05-05 |
+| **Desc** | Descriptions HTML — 413/430 via API, 17 manuels | ✅ 2026-05-05 |
 | **Shop** | Connexion Shopify + TikTok Shop | ⏳ |
 | **Boutique** | Shopify FR/EN immersif | ⏳ |

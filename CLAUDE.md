@@ -27,6 +27,7 @@ Lis `CONTEXT.md` en premier — il contient toute la brand bible : identité, co
 - **Shop Printify** : ID `22774508`, nom "My new store", **sales channel : disconnected** (à connecter Shopify + TikTok Shop)
 - **Total produits** : 430 — voir INVENTAIRE.md pour le détail complet (audité 2026-05-05)
 - **Prix Printify** : mis à jour sur 413/430 produits — 17 bloqués API 500 (à faire manuellement, listés dans TODO.md)
+- **Descriptions HTML** : injectées sur 413/430 produits via API (2026-05-05) — 17 bloqués API 500 (mêmes produits que prix)
 - **Tailles t-shirts** : XL max — 2XL/3XL/4XL/5XL désactivées sur 44/48 t-shirts (4 bloqués API 500)
 - **Collection Wanted** : 46/46 personnages × FR+EN × light+dark + mugs = 276 produits
   - ⚠️ 68 titres avec suffix `/17` au lieu de `/46` (cosmétique — correction via API planifiée)
