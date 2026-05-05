@@ -20,6 +20,27 @@
   - `69f8c577011b67ecf8078e65` — T-Shirt Design HO KU NO Dark
   - `69f8959bfeed9979d10d1130` — T-Shirt Sport Design Hokuno Light
 
+- [ ] **Mettre à jour les prix manuellement** sur 18 produits bloqués (API 500 persistant) :
+  *(413/431 déjà mis à jour via script le 2026-05-05)*
+  - `69f90268ad402ce2b4035348` — Maillot De Bain Design Hokuno Dark → 49.99 $
+  - `69f8febcbd4ffcafc502864d` — T-Shirt Design Orbite Hokuno Dark → 37.99 $
+  - `69f8ce23b2e670c7080e5639` — Bob Hokuno Design Dark → 39.99 $
+  - `69f8cc729822413bd1037c27` — Casquette Design Hokuno Dark → 29.99 $
+  - `69f8c86f09f3b73024023a0e` — T-Shirt hokuno Design Target Light → 37.99 $
+  - `69f8c689c7a7db441d0c58fc` — T-Shirt Design Hokuno Dark → 37.99 $
+  - `69f8c577011b67ecf8078e65` — T-Shirt Design HO KU NO Dark → 37.99 $
+  - `69f8959bfeed9979d10d1130` — T-Shirt Sport Design Hokuno Light → 37.99 $
+  - `69f89408feed9979d10d1032` — Short De Bain Design Hokuno Bleu Ciel → 49.99 $
+  - `69f8901b25819cdf3d057d73` — Claquette Design Hokuno Light → 54.99 $
+  - `69f88e25f55196f8d00a8975` — Casquette Hokuno Light → 29.99 $
+  - `69f88aadffbc831dea086dc5` — Polo Design Hokuno Boussole Light → 44.99 $
+  - `69f61d909110dda91005e89b` — Coque de téléphone The End sur Brique Saga 1 → 24.99 $
+  - `69f603f5ef66d02ffe02b1ce` — Copy of T-SHIRT LUFI WANTED NOIR EN 1/17 → 37.99 $
+  - `69f6032239e419a2dc02e247` — Copy of T-SHIRT LUFI WANTED EN 1/17 → 37.99 $
+  - `6855d70f8454e3a28e01200a` — Short de bain Design Hokuno Pattern Light → 49.99 $
+  - `6855d1a12c35f6107c040a63` — Coque téléphone Design Hokuno Orbite Dark → 24.99 $
+  - `684d613ffef859492303a65a` — Coque de téléphone Dark ZORO MYTHOLOGIE 2/10 → 24.99 $
+
 - [ ] **Activer variante 15oz** sur 93 mugs désactivés :
   - Wanted FR : 46 mugs (tasse en céramique wanted ...)
   - Wanted EN : 46 mugs (ceramic mug wanted ...)

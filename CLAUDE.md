@@ -33,7 +33,8 @@ Lis `CONTEXT.md` en premier — il contient toute la brand bible : identité, co
 ## État actuel (2026-05-05)
 
 - **Shop Printify** : ID `22774508`, nom "My new store", **sales channel : disconnected** (à connecter Shopify + TikTok Shop)
-- **Total produits** : 431 (422 + 9 coques Mythologie créées le 2026-05-05) — voir INVENTAIRE.md pour le détail complet
+- **Total produits** : 431 — voir INVENTAIRE.md pour le détail complet
+- **Prix Printify** : mis à jour le 2026-05-05 sur 413/431 produits (18 bloqués API 500 — à faire manuellement, listés dans TODO.md)
 - **Tailles t-shirts** : XL max — 2XL/3XL/4XL/5XL désactivées sur 44/48 t-shirts (4 à faire manuellement, API 500)
 - **Collection Wanted** : 46/46 personnages × FR+EN × light+dark + mugs = 276 produits
   - ⚠️ 2 produits EN à renommer (Lufi ×2 — titres incorrects, contenu OK)
