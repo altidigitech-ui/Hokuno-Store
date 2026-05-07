@@ -33,12 +33,13 @@
 - [ ] Créer les 4 collections automatiques sur My Store 5
 - [ ] Vérifier que les produits sont dans les bonnes collections
 - [ ] Corriger les 68 titres /17→/46 pendant la migration
+- [ ] Renommer la coque Printify `69f61d909110dda91005e89b` : "Coque de téléphone The End sur Brique Saga 1" → "Coque Wanted The End Brique Saga 1"
 
 ---
 
 ## 🟢 Boutique Shopify (specs en cours de rédaction)
 
-- [ ] Rédiger les 18 fichiers specs dans `specs/`
+- [x] Rédiger les 18 fichiers specs dans `specs/` ✅ (2026-05-08)
 - [ ] Landing page immersive
 - [ ] Pages collection
 - [ ] Pages produit
@@ -69,7 +70,7 @@
 - [x] Wanted complet FR+EN (276 produits)
 - [x] Direction complet FR+EN (80 produits)
 - [x] Mythologie complet (40 produits)
-- [x] Design Hokuno complet (34 produits)
+- [x] Design Hokuno complet (34 produits → 33 après renommage coque The End Brique vers Wanted)
 - [x] Tailles XL max sur 48/48 t-shirts
 - [x] Variante 15oz activée sur 142 mugs
 - [x] Logo front correct sur tous les dark Wanted (92) + Direction (20)
