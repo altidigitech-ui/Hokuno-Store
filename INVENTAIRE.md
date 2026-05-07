@@ -1,6 +1,6 @@
 # INVENTAIRE Hokuno — Printify
 
-**Audité le 2026-05-05** | Shop ID `22774508` | **430 produits** | sales channel : disconnected
+**Audité le 2026-05-07** | Shop ID `22774508` | **430 produits** | Connecté à storemdtesttt via app Printify
 
 ---
 
@@ -22,20 +22,17 @@
 | Design Hokuno | 13 t-shirts + 21 accessoires | 34 |
 | **TOTAL** | | **430** |
 
-### Anomalies détectées (audit 2026-05-05)
+### État des anomalies (2026-05-07)
 
-| Catégorie | Problème | Action |
+| Catégorie | Problème | Statut |
 |---|---|---|
-| A) Prix | 2 produits incorrects (Design Hokuno) | Manuel dashboard |
-| B) Tailles | 4 t-shirts avec 2XL–5XL activées | Manuel dashboard |
-| C) 15oz | ✅ OK — 142 mugs OK | — |
-| D) Titres | 68 Wanted `/17` → `/46` + 2 trailing space | API + manuel |
-| E) Logo front | ✅ OK Wanted+Direction — 7 Design Hokuno custom | À valider |
-| F) Doublons | 1 doublon Target Dark à supprimer | Manuel dashboard |
-
-> ⚠️ **Doublon à supprimer** : `69f9e82ec12ffe54490a4e8d` (T-Shirt hokuno Design Target Dark — créé 2026-05-05)
-> ⚠️ **Target Light anormal** : `69f8c86f09f3b73024023a0e` — 1 seule variante active (White/L $25.96)
-> ⚠️ **68 titres Wanted** : suffix /17 au lieu de /46 (cosmétique — voir TODO.md)
+| A) Prix | ~~17 produits incorrects~~ | ✅ Corrigé |
+| B) Tailles | ~~4 t-shirts avec 2XL–5XL activées~~ | ✅ Corrigé |
+| C) 15oz | 142 mugs OK | ✅ |
+| D) Titres | 68 Wanted `/17` → `/46` | ⏳ Planifié migration |
+| E) Logo front | Wanted+Direction OK, 7 Design Hokuno = intentionnel | ✅ Validé |
+| F) Doublons | ~~1 doublon Target Dark~~ | ✅ Supprimé |
+| G) Target Light | ~~1 seule variante active~~ | ✅ Reconfiguré |
 
 ---
 

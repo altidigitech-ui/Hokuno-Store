@@ -22,38 +22,41 @@ Lis `CONTEXT.md` en premier — il contient toute la brand bible : identité, co
     └── scripts/                      # Scripts Python Printify (archivés — usage historique)
 ```
 
-## État actuel (2026-05-05)
+## État actuel (2026-05-07)
 
-- **Shop Printify** : ID `22774508`, nom "My new store", **sales channel : shopify** ✅ (connecté — 2026-05-05)
-- **Publication Shopify** : 430/430 produits publiés via API Printify (2026-05-05)
-- **Total produits** : 430 — voir INVENTAIRE.md pour le détail complet (audité 2026-05-05)
-- **Prix Printify** : mis à jour sur 413/430 produits — 17 bloqués API 500 (à faire manuellement, listés dans TODO.md)
-- **Descriptions HTML** : injectées sur 413/430 produits via API (2026-05-05) — 17 bloqués API 500 (mêmes produits que prix)
-- **Tailles t-shirts** : XL max — 2XL/3XL/4XL/5XL désactivées sur 44/48 t-shirts (4 bloqués API 500)
-- **Collection Wanted** : 46/46 personnages × FR+EN × light+dark + mugs = 276 produits
+- **Shop Printify** : ID `22774508`, nom "My new store", connecté à storemdtesttt via app Printify ✅
+- **Publication Shopify** : 430/430 produits publiés sur storemdtesttt via Printify (2026-05-05)
+- **Total produits** : 430 — voir INVENTAIRE.md pour le détail complet
+- **Prix Printify** : ✅ 430/430 à jour
+- **Descriptions HTML** : ✅ 430/430 à jour
+- **Tailles t-shirts** : ✅ XL max — 2XL/3XL/4XL/5XL désactivées sur 48/48 t-shirts
+- **Collection Wanted** : 46/46 personnages × FR+EN × light+dark + mugs = 276 produits ✅
   - ⚠️ 68 titres avec suffix `/17` au lieu de `/46` (cosmétique — correction via API planifiée)
   - ✅ Variante 15oz activée sur 142 mugs (Wanted FR+EN, Direction FR+EN, Mythologie)
   - ✅ Logo front 74.png correct sur tous les t-shirts dark Wanted (92/92)
-- **Collection Direction FR** : 10/10 — 20 t-shirts + 10 mugs light (bp 478) + 10 mugs dark (bp 479)
+- **Collection Direction FR** : 10/10 — 20 t-shirts + 10 mugs light (bp 478) + 10 mugs dark (bp 479) ✅
   - Logo front DARK (74.png) : ID `6849b65d8ee17a5b00c03855`, scale 53.59 UI / 0.21105 API
   - Logo front LIGHT (silhouette) : ID `69f79f1270e1b9ced794f3ab`, scale 59.53 UI / 0.14076 API
   - Kanji mug : ID `6846fd1c1a6d958e91819b36`
-- **Collection Direction EN** : 10/10 — 20 t-shirts + 10 mugs light (bp 478) + 10 mugs dark (bp 479)
-  - ✅ Doublon `684d56c509bce0c2370d3254` supprimé (2026-05-05)
+- **Collection Direction EN** : 10/10 — 20 t-shirts + 10 mugs light (bp 478) + 10 mugs dark (bp 479) ✅
   - ✅ Logo front 74.png correct sur tous les t-shirts dark Direction (20/20)
-- **Collection Mythologie** : 10/10 t-shirts light + 10/10 dark + 10/10 mugs + **10/10 coques** = 40 produits ✅ COMPLET
+- **Collection Mythologie** : 10/10 t-shirts light + 10/10 dark + 10/10 mugs + 10/10 coques = 40 produits ✅ COMPLET
   - ✅ Variante 15oz activée sur tous les mugs Mythologie
   - Coques Mythologie : BP 268 / SPOKE (PP 1) — image réutilisée depuis t-shirt back, x=0.5, y=0.605, scale=0.7216, 26 variantes actives (iPhone 11 → iPhone 17)
-- **Collection Design Hokuno** : 13 t-shirts (bp 6+145) + 21 accessoires = 34 produits
-  - ⚠️ 4 t-shirts avec XXL non désactivé (API 500 — faire manuellement)
-  - ⚠️ 1 doublon Target Dark à supprimer : `69f9e82ec12ffe54490a4e8d`
-  - ⚠️ Target Light `69f8c86f09f3b73024023a0e` : 1 seule variante active (White/L $25.96) — à reconfigurer
-  - ℹ️ 7 t-shirts dark ont un design front custom (pas le logo 74.png) — à valider si intentionnel
+- **Collection Design Hokuno** : 13 t-shirts (bp 6+145) + 21 accessoires = 34 produits ✅
+  - ✅ Tailles, prix, variantes — tout corrigé
+  - ✅ Pas de doublons
+  - ℹ️ 7 t-shirts dark ont un design front custom (pas le logo 74.png) — **intentionnel** (designs spécifiques à la collection)
 
 ### Logos Design Hokuno (référence)
 - **Logo front DARK (74.png)** : `6849b65d8ee17a5b00c03855` — scale 53.59 UI / 0.21105 API (t-shirts NOIR)
 - **Logo front LIGHT (silhouette Direction)** : `69f79f1270e1b9ced794f3ab` — scale 59.53 UI / 0.14076 API
 - **Kanji mug Direction** : `6846fd1c1a6d958e91819b36`
+
+### Migration en cours
+- **Store actuel** : storemdtesttt (store dev avec limitations)
+- **Store cible** : My Store 5 (vrai store Shopify)
+- **Actions requises** : connecter Printify à My Store 5, republier les 430 produits, pousser le thème
 
 ## Projets Canva
 
@@ -114,7 +117,7 @@ Respecte le ton et le style décrits dans `CONTEXT.md` pour chaque collection.
 
 ### Construire la boutique Shopify
 
-- Landing page immersive avec Three.js (3D), glassmorphisme, animations GSAP
+- Landing page immersive : glassmorphisme, animations CSS/JS vanilla, tout dans theme.liquid (pas de framework)
 - Navigation par collection avec storytelling
 - Pages produit riches avec backstory du personnage
 - Schema JSON-LD sur chaque page (Product, Organization, CollectionPage, BreadcrumbList)
@@ -129,9 +132,7 @@ Consulte la section SEO & GEO dans `CONTEXT.md` pour toutes les directives.
 
 ## Conventions de code
 
-- TypeScript strict pour le frontend
-- Tailwind CSS pour le styling
-- Composants React fonctionnels avec hooks
+- Liquid + CSS + JS vanilla (pas de framework frontend)
 - Noms de variables et commentaires en anglais, contenu utilisateur en FR/EN
 - Pas de `console.log` en production
 - Gestion d'erreurs systématique
