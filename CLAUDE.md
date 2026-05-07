@@ -8,19 +8,73 @@ Lis `CONTEXT.md` en premier — il contient toute la brand bible : identité, co
 ## Structure
 
 ```
+├── CLAUDE.md                         # CE FICHIER — instructions pour Claude Code
 ├── CONTEXT.md                        # Brand bible complète
 ├── INVENTAIRE.md                     # Inventaire complet Printify (tous IDs)
 ├── PRICING.md                        # Prix de vente, coûts, marges par produit
+├── SETUP-CLAUDE-CODE.md              # Guide d'installation des outils, plugins et env vars
+├── TODO.md                           # Tâches restantes
 ├── .claude/skills/printify/SKILLS.md # Référence API Printify
+├── specs/                            # 18 fichiers de spécification (CONTRATS)
+│   ├── ARCHITECTURE.md               # Stores, stack, structure thème, conventions
+│   ├── NAVIGATION.md                 # Navbar, mobile menu, bottom nav, footer, breadcrumbs, cart AJAX
+│   ├── COLLECTIONS.md                # 4 collections, conditions auto, filtres, tri, pagination, tags
+│   ├── PAGES.md                      # Toutes les pages du site, contenu FR+EN, templates
+│   ├── PRODUIT.md                    # Galerie, swatches, tailles, variantes, accordéons, similaires
+│   ├── MOCKUPS.md                    # Ordre images 430 produits, Claude Chrome prompt
+│   ├── MIGRATION.md                  # Plan complet storemdtesttt → My Store 5
+│   ├── THEME.md                      # Design system CSS complet, toutes les valeurs
+│   ├── SEO.md                        # Meta, JSON-LD, Open Graph, robots.txt, llms.txt, GEO
+│   ├── CONFIG-SHOPIFY.md             # Paiements, livraison, promo, taxes, marchés, checkout
+│   ├── MOBILE.md                     # Touch, font-size, hover, safe areas, CSS consolidé
+│   ├── CHECKLIST.md                  # 154 checks pré-lancement
+│   ├── ANALYTICS.md                  # GA4, Meta Pixel, TikTok, RGPD consent
+│   ├── EMAILS.md                     # 8 emails transactionnels FR+EN, newsletter
+│   ├── LEGAL.md                      # Bannière cookies, CGV, RGPD, retours, expédition
+│   ├── MULTILINGUE.md                # fr.json + en.json (107 clés), stratégie bilingue
+│   ├── DOMAINE.md                    # Choix domaine, DNS, SSL, email pro
+│   └── SOCIAL.md                     # TikTok Shop, Instagram Shopping, favicon, partage
 ├── collections/
-│   ├── wanted.json                   # Personnages collection Wanted (46 — tous sur Printify FR+EN)
+│   ├── wanted.json                   # Personnages collection Wanted (46)
 │   ├── direction.json                # Personnages collection Direction (10)
-│   └── mythologie.json               # Personnages collection Mythologie (10 + coques)
+│   └── mythologie.json               # Personnages collection Mythologie (10)
+├── shopify-theme/                    # Thème Shopify à recoder selon les specs
+│   ├── layout/theme.liquid
+│   ├── templates/
+│   ├── config/
+│   └── assets/
 ├── assets/
-│   └── design-reference/             # Captures UI de référence (landing, collections, produits, mobile)
+│   ├── theme/                        # Images du thème (hero, cards, logos)
+│   ├── originals/                    # PNGs sources haute résolution
+│   └── design-reference/             # Captures UI de référence
 └── archive/
-    └── scripts/                      # Scripts Python Printify (archivés — usage historique)
+    └── scripts/                      # Scripts Python archivés
 ```
+
+## Specs — Mode d'emploi
+
+Le dossier `specs/` contient **18 fichiers de spécification**. Ce sont des **contrats** — chaque valeur CSS, chaque composant, chaque comportement est défini. Claude Code ne doit JAMAIS improviser en dehors de ce qui est spécifié.
+
+**Ordre de lecture recommandé pour coder le thème :**
+1. `ARCHITECTURE.md` — comprendre la stack et la structure
+2. `THEME.md` — toutes les valeurs CSS (couleurs, typo, espacements)
+3. `NAVIGATION.md` — navbar, footer, breadcrumbs, cart AJAX
+4. `PAGES.md` — chaque page du site
+5. `PRODUIT.md` — page produit complète
+6. `COLLECTIONS.md` — pages collection, filtres, pagination
+7. `MOBILE.md` — comportement mobile, CSS consolidé
+8. `SEO.md` — meta tags, JSON-LD, Open Graph
+9. `MULTILINGUE.md` — fichiers fr.json et en.json
+10. Les autres specs selon les besoins
+
+**Règles :**
+- Lire la spec AVANT de coder le composant correspondant
+- Si un doute existe, la spec fait autorité
+- Ne pas ajouter de fonctionnalités non spécifiées
+- Si une incohérence est trouvée entre specs, signaler avant de coder
+
+**Installation de l'environnement :**
+Lire `SETUP-CLAUDE-CODE.md` à la racine du repo — il contient tous les outils, plugins, skills et variables d'environnement à configurer.
 
 ## État actuel (2026-05-07)
 
@@ -43,7 +97,7 @@ Lis `CONTEXT.md` en premier — il contient toute la brand bible : identité, co
 - **Collection Mythologie** : 10/10 t-shirts light + 10/10 dark + 10/10 mugs + 10/10 coques = 40 produits ✅ COMPLET
   - ✅ Variante 15oz activée sur tous les mugs Mythologie
   - Coques Mythologie : BP 268 / SPOKE (PP 1) — image réutilisée depuis t-shirt back, x=0.5, y=0.605, scale=0.7216, 26 variantes actives (iPhone 11 → iPhone 17)
-- **Collection Design Hokuno** : 13 t-shirts (bp 6+145) + 21 accessoires = 34 produits ✅
+- **Collection Design Hokuno** : 13 t-shirts (bp 6+145) + 21 accessoires = 34 produits (→ 33 après renommage coque The End Brique vers Wanted)
   - ✅ Tailles, prix, variantes — tout corrigé
   - ✅ Pas de doublons
   - ℹ️ 7 t-shirts dark ont un design front custom (pas le logo 74.png) — **intentionnel** (designs spécifiques à la collection)
@@ -57,6 +111,7 @@ Lis `CONTEXT.md` en premier — il contient toute la brand bible : identité, co
 - **Store actuel** : storemdtesttt (store dev avec limitations)
 - **Store cible** : My Store 5 (vrai store Shopify)
 - **Actions requises** : connecter Printify à My Store 5, republier les 430 produits, pousser le thème
+- **Action manuelle requise** : renommer sur Printify `69f61d909110dda91005e89b` "Coque de téléphone The End sur Brique Saga 1" → "Coque Wanted The End Brique Saga 1" (pour qu'elle tombe dans la collection Wanted au lieu de Design Hokuno)
 
 ## Projets Canva
 
