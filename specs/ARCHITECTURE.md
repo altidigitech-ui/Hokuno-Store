@@ -32,7 +32,7 @@ C'est le store final. Tout le travail de thème et de configuration se fait dess
 |-----|--------|
 | Shop ID | `22774508` |
 | Nom | "My new store" |
-| Connexion actuelle | storemdtesttt via app Printify |
+| Connexion actuelle | s6btxa-q0 (My Store 5) via app Printify |
 | Action requise | Connecter aussi à My Store 5 via Printify → Add store → Shopify |
 
 ---

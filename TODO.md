@@ -29,7 +29,7 @@
 
 - [x] Créer l'app dev sur My Store 5, récupérer le token atkn_ ✅ (2026-05-08)
 - [x] Connecter Printify à My Store 5 (Printify → Add store → Shopify) ✅ (2026-05-08)
-- [ ] Republier les 430 produits vers My Store 5
+- [x] Republier les 430 produits vers My Store 5 ✅ (2026-05-08)
 - [ ] Créer les 4 collections automatiques sur My Store 5
 - [ ] Vérifier que les produits sont dans les bonnes collections
 - [ ] Corriger les 68 titres /17→/46 pendant la migration
