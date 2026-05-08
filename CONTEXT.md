@@ -260,7 +260,7 @@ Le SEO pose les fondations (crawlabilité, autorité de domaine). Le GEO ajoute 
 - `llms.txt` : fichier à la racine du site qui décrit la structure du site pour les LLMs (standard émergent 2026)
 
 **Performance :**
-- Core Web Vitals optimisés (LCP < 2.5s, CLS < 0.1) — critique avec les effets 3D/glassmorphisme
+- Core Web Vitals optimisés (LCP < 2.5s, CLS < 0.1) — critique avec les effets glassmorphism CSS
 - Images : WebP/AVIF, lazy loading, srcset responsive
 - Rendu serveur (SSR) pour que le contenu soit lisible par les crawlers (pas de JS-only)
 
@@ -375,6 +375,8 @@ Hokuno utilise Printify comme hub de production central. Les produits sont cré�
 hokuno-store/
 ├── CONTEXT.md                 # Ce fichier — brand bible
 ├── INVENTAIRE.md              # Inventaire Printify 430 produits (2026-05-05)
+├── SETUP-CLAUDE-CODE.md       # Guide d'installation outils, plugins, env vars
+├── specs/                     # 18 fichiers de spécification (contrats pour Claude Code)
 ├── TODO.md                    # Roadmap phases 0→boutique
 ├── PRICING.md                 # Prix de vente, coûts, marges
 ├── collections/
@@ -392,7 +394,7 @@ hokuno-store/
 - Ce repo sert de source de vérité pour construire la boutique Shopify
 - Chaque JSON de collection contient tous les personnages avec : nom, backstory, description visuelle, punchline
 - Les designs sont déjà prêts dans Printify — la synchro se fait via API Printify → Shopify
-- La boutique doit refléter l'univers Hokuno : landing page immersive, 3D, glassmorphisme, navigation par collection
+- La boutique doit refléter l'univers Hokuno : landing page immersive, glassmorphisme CSS, animations vanilla JS, navigation par collection
 - Ton du site : premium streetwear, pas fast fashion. Chaque produit a une histoire.
 - Multilingue : FR/EN sur les designs (Wanted + Direction), fiches produit et pages du site en FR et EN
 - **SEO/GEO obligatoire** : chaque page générée doit inclure le schema JSON-LD approprié, le contenu structuré pour l'extraction IA, et les meta tags optimisés
