@@ -11,9 +11,9 @@
 | Clé | Valeur |
 |-----|--------|
 | Nom interne Shopify | My Store 5 |
-| URL admin | `mystore5.myshopify.com/admin` |
-| Variable d'env | `SHOPIFY_STORE=mystore5.myshopify.com` |
-| Token API | `SHOPIFY_ACCESS_TOKEN=shpat_xxxxxxxxxx` |
+| URL admin | `s6btxa-q0.myshopify.com/admin` |
+| Variable d'env | `SHOPIFY_STORE=s6btxa-q0.myshopify.com` |
+| Token API | `SHOPIFY_ACCESS_TOKEN=atkn_xxxxxxxxxx` |
 | Statut | À configurer — app dev à créer |
 
 C'est le store final. Tout le travail de thème et de configuration se fait dessus.
@@ -273,8 +273,8 @@ hokuno-store/
 
 ```bash
 # Depuis le dossier shopify-theme/
-shopify theme dev --store=mystore5.myshopify.com    # Preview local
-shopify theme push --store=mystore5.myshopify.com   # Push en mode dev
+shopify theme dev --store=s6btxa-q0.myshopify.com    # Preview local
+shopify theme push --store=s6btxa-q0.myshopify.com   # Push en mode dev
 shopify theme publish                                # Publier en production
 ```
 

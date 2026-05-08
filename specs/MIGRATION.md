@@ -41,7 +41,7 @@ Ces actions nécessitent un accès humain au dashboard. Claude Code ne peut pas 
 
 ### Étape 1.1 — Créer l'app développeur sur My Store 5
 
-1. Aller sur `mystore5.myshopify.com/admin`
+1. Aller sur le Dev Dashboard Shopify Partners
 2. Settings → Apps → Develop apps → Create an app
 3. Nom de l'app : `Hokuno Admin`
 4. Configurer les Admin API scopes :
@@ -59,14 +59,14 @@ read_publications, write_publications
 ```
 
 5. Install app
-6. Copier le token `shpat_xxxxxxxxxx`
+6. Copier le token `atkn_xxxxxxxxxx`
 7. **Ne jamais partager ce token ni le commit dans le repo**
 
 ### Étape 1.2 — Connecter Printify à My Store 5
 
 1. Aller sur `printify.com/app/stores`
 2. "Add store" → Shopify
-3. Entrer l'URL : `mystore5.myshopify.com`
+3. Entrer l'URL : `s6btxa-q0.myshopify.com`
 4. Autoriser la connexion
 5. Vérifier que le shop apparaît dans Printify avec le bon nom
 
@@ -88,8 +88,8 @@ Raison : la condition auto de la collection Wanted est `titre contient "wanted"`
 
 ```bash
 export PRINTIFY_API_TOKEN=ton_token_printify
-export SHOPIFY_ACCESS_TOKEN=shpat_xxxxxxxxxx
-export SHOPIFY_STORE=mystore5.myshopify.com
+export SHOPIFY_ACCESS_TOKEN=atkn_xxxxxxxxxx
+export SHOPIFY_STORE=s6btxa-q0.myshopify.com
 ```
 
 Vérification :
@@ -165,7 +165,7 @@ HEADERS = {"Authorization": f"Bearer {TOKEN}", "Content-Type": "application/json
 
 # 1. Récupérer le shop_id de My Store 5
 shops = requests.get("https://api.printify.com/v1/shops.json", headers=HEADERS).json()
-new_shop = next(s for s in shops if "my store 5" in s["title"].lower() or "mystore5" in s.get("sales_channel_url", "").lower())
+new_shop = next(s for s in shops if "my store 5" in s["title"].lower() or "s6btxa" in s.get("sales_channel_url", "").lower())
 NEW_SHOP_ID = str(new_shop["id"])
 print(f"My Store 5 shop ID: {NEW_SHOP_ID}")
 
@@ -486,7 +486,7 @@ shopify theme publish --store=$SHOPIFY_STORE
 
 ```
 PHASE 1 — Pré-migration (toi, manuel)
-  1.1 Créer app dev My Store 5 → token shpat_
+  1.1 Créer app dev My Store 5 → token atkn_
   1.2 Connecter Printify → My Store 5
   1.3 Renommer coque The End Brique
   ✓ CHECKPOINT : token OK, Printify connecté

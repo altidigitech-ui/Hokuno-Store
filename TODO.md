@@ -27,13 +27,13 @@
 
 ## 🟠 Migration storemdtesttt → My Store 5
 
-- [ ] Créer l'app dev sur My Store 5, récupérer le token shpat_
-- [ ] Connecter Printify à My Store 5 (Printify → Add store → Shopify)
+- [x] Créer l'app dev sur My Store 5, récupérer le token atkn_ ✅ (2026-05-08)
+- [x] Connecter Printify à My Store 5 (Printify → Add store → Shopify) ✅ (2026-05-08)
 - [ ] Republier les 430 produits vers My Store 5
 - [ ] Créer les 4 collections automatiques sur My Store 5
 - [ ] Vérifier que les produits sont dans les bonnes collections
 - [ ] Corriger les 68 titres /17→/46 pendant la migration
-- [ ] Renommer la coque Printify `69f61d909110dda91005e89b` : "Coque de téléphone The End sur Brique Saga 1" → "Coque Wanted The End Brique Saga 1"
+- [x] Renommer la coque Printify → "Coque Wanted The End Brique Saga 1" ✅ (2026-05-08)
 
 ---
 
