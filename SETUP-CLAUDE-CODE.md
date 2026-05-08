@@ -257,22 +257,23 @@ export PRINTIFY_API_TOKEN=ton_token_printify
 ### 6.2 Token Shopify Admin API (My Store 5)
 
 ```bash
-export SHOPIFY_ACCESS_TOKEN=shpat_xxxxxxxxxx
-export SHOPIFY_STORE=mystore5.myshopify.com
+export SHOPIFY_ACCESS_TOKEN=atkn_xxxxxxxxxx
+export SHOPIFY_STORE=s6btxa-q0.myshopify.com
 ```
 
 **Où le trouver :**
-1. Aller sur `mystore5.myshopify.com/admin`
+1. Aller sur le Dev Dashboard Shopify (https://partners.shopify.com)
 2. Settings → Apps → Develop apps
 3. "Create an app" → nom : `Hokuno Admin`
 4. Configurer les Admin API scopes (voir section 7)
 5. "Install app"
-6. Copier le token `shpat_xxxxxxxxxx` qui apparaît
+6. Copier le token `atkn_xxxxxxxxxx` qui apparaît
 
 **⚠️ IMPORTANT :**
 - Le token n'est affiché qu'UNE SEULE FOIS. Le copier immédiatement.
 - Ne JAMAIS commiter le token dans le repo. Toujours en variable d'environnement.
 - Si perdu, il faut supprimer l'app et en recréer une.
+- Le token s'appelle "Jeton d'automatisation d'appli" (format atkn_)
 
 ### 6.3 Configuration dans le Codespace
 
@@ -281,8 +282,8 @@ Ajouter dans `~/.bashrc` ou `~/.zshrc` (ou dans les secrets du Codespace) :
 ```bash
 # Hokuno — API tokens
 export PRINTIFY_API_TOKEN="eyJhbGci..."
-export SHOPIFY_ACCESS_TOKEN="shpat_..."
-export SHOPIFY_STORE="mystore5.myshopify.com"
+export SHOPIFY_ACCESS_TOKEN="atkn_..."
+export SHOPIFY_STORE="s6btxa-q0.myshopify.com"
 ```
 
 Puis recharger :
@@ -363,7 +364,7 @@ curl -s -H "X-Shopify-Access-Token: $SHOPIFY_ACCESS_TOKEN" \
 ```
 ÉTAPE 1 — Toi (manuel, avant Claude Code)
   ├── Créer l'app dev sur My Store 5 (section 6.2)
-  ├── Copier le token shpat_
+  ├── Copier le token atkn_
   ├── Connecter Printify à My Store 5 (Printify → Add store)
   └── Renommer la coque "The End Brique" sur Printify
 
@@ -402,8 +403,8 @@ curl -s -H "X-Shopify-Access-Token: $SHOPIFY_ACCESS_TOKEN" \
 | 9 | Karim Tarek CLAUDE.md | gist à télécharger | Manuel via navigateur | 🟡 Best practices Liquid |
 | 10 | Printify skill | déjà dans le repo | `.claude/skills/printify/SKILLS.md` | ✅ Déjà prêt |
 | 11 | PRINTIFY_API_TOKEN | env var | `export PRINTIFY_API_TOKEN=...` | 🔴 Oui |
-| 12 | SHOPIFY_ACCESS_TOKEN | env var | `export SHOPIFY_ACCESS_TOKEN=shpat_...` | 🔴 Oui |
-| 13 | SHOPIFY_STORE | env var | `export SHOPIFY_STORE=mystore5.myshopify.com` | 🔴 Oui |
+| 12 | SHOPIFY_ACCESS_TOKEN | env var | `export SHOPIFY_ACCESS_TOKEN=atkn_...` | 🔴 Oui |
+| 13 | SHOPIFY_STORE | env var | `export SHOPIFY_STORE=s6btxa-q0.myshopify.com` | 🔴 Oui |
 
 **🔴 Critique** = le projet ne peut pas avancer sans.
 **🟡 Important** = tenter l'installation, continuer sans si échoue. L'API REST/GraphQL Shopify couvre tous les besoins même sans plugins.
