@@ -20,6 +20,12 @@
       {% endfor %}
     </div>
   {% else %}
-    <p class="blog-empty">{{ 'blog.empty' | t }}</p>
+    <div class="blog-empty">
+      <p class="blog-empty-katakana" aria-hidden="true">ホクノ</p>
+      <h2 class="blog-empty-title">{{ 'blog.empty_title' | t }}</h2>
+      <p class="blog-empty-subtitle">{{ 'blog.empty_subtitle' | t }}</p>
+      <p class="blog-empty-text">{{ 'blog.empty_text' | t }}</p>
+      <a href="/collections" class="btn-gold blog-empty-cta">{{ 'blog.empty_cta' | t }} →</a>
+    </div>
   {% endif %}
 </div>

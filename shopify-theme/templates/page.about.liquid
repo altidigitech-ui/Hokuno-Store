@@ -1,0 +1,45 @@
+<!-- templates/page.about.liquid — À propos / About (contenu hardcodé bilingue) -->
+<div class="page-wrap">
+  {% render 'breadcrumbs' %}
+  <h1 class="page-title">{{ page.title }}</h1>
+
+  <div class="page-content about-content">
+    {% if request.locale.iso_code == 'en' %}
+      <h2>ホクノ — Towards the North</h2>
+      <p>Hokuno (北の) means "Towards the North" in Japanese. It's a philosophy before it's a brand: always moving forward, never stopping.</p>
+
+      <h3>Our Story</h3>
+      <p>Born in 2026, Hokuno is a French streetwear brand that reimagines the manga universe through parody, the passage of time, and mythology. Each design tells a story — of characters transformed, aged, deified, or reduced to their silhouette.</p>
+
+      <h3>Our Collections</h3>
+      <p><strong>Wanted</strong> — Reimagined wanted posters. 30 years of manga, and they're exhausted. Dark humor guaranteed.</p>
+      <p><strong>Direction</strong> — Inked silhouettes with a universal quote: "I don't need a plan… just a direction."</p>
+      <p><strong>Mythology</strong> — The crew reimagined as Greek deities. Each character in their signature color.</p>
+      <p><strong>Design Hokuno</strong> — Pure branding. The logpose, the katakana, the signature patterns.</p>
+
+      <h3>Our Approach</h3>
+      <p>Every product is made to order (print on demand) — zero waste, zero dead stock. Designs are AI-generated and refined to professional graphic quality.</p>
+
+      <h3>Contact</h3>
+      <p>A question, an idea, a collaboration? Write to us at <a href="mailto:altidigitech@gmail.com">altidigitech@gmail.com</a> or via our <a href="/pages/contact">contact form</a>.</p>
+    {% else %}
+      <h2>ホクノ — Vers le Nord</h2>
+      <p>Hokuno (北の) signifie « Vers le Nord » en japonais. C'est une philosophie avant d'être une marque : toujours aller de l'avant, ne jamais s'arrêter.</p>
+
+      <h3>Notre histoire</h3>
+      <p>Née en 2026, Hokuno est une marque streetwear française qui revisite l'univers du manga à travers la parodie, le temps qui passe et la mythologie. Chaque design raconte une histoire — celle de personnages transformés, vieillis, divinisés ou réduits à leur silhouette.</p>
+
+      <h3>Nos collections</h3>
+      <p><strong>Wanted</strong> — Des avis de recherche revisités. 30 ans de manga, et ils sont épuisés. Humour noir garanti.</p>
+      <p><strong>Direction</strong> — Des silhouettes encrées avec une citation universelle : « Je n'ai pas besoin d'un plan… juste d'une direction. »</p>
+      <p><strong>Mythologie</strong> — L'équipage réinventé en divinités grecques. Chaque personnage dans sa couleur signature.</p>
+      <p><strong>Design Hokuno</strong> — Le branding pur. Le logpose, le katakana, les motifs signature.</p>
+
+      <h3>Notre démarche</h3>
+      <p>Chaque produit est fabriqué à la commande (print on demand) — zéro gaspillage, zéro stock mort. Les designs sont générés par IA et retravaillés pour atteindre une qualité graphique professionnelle.</p>
+
+      <h3>Contact</h3>
+      <p>Une question, une idée, une collaboration ? Écrivez-nous à <a href="mailto:altidigitech@gmail.com">altidigitech@gmail.com</a> ou via notre <a href="/pages/contact">formulaire de contact</a>.</p>
+    {% endif %}
+  </div>
+</div>

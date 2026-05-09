@@ -1,0 +1,177 @@
+<!-- templates/page.faq.liquid — FAQ avec accordéons (contenu hardcodé bilingue) -->
+<div class="page-wrap">
+  {% render 'breadcrumbs' %}
+  <h1 class="page-title">{{ page.title }}</h1>
+
+  <div class="page-content">
+    {% if request.locale.iso_code == 'en' %}
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            How are your products made?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Every product is made to order (print on demand) by our printing partners. Zero stock — your item is printed especially for you after your order is placed.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            What are the delivery times?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Production: 3-7 business days. Shipping France/EU: 5-10 business days after dispatch. International: 7-15 business days. You will receive a tracking number by email as soon as your order ships.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Is shipping free?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes, on orders of €60 or more. Below that, shipping costs are calculated at checkout based on your destination.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Can I return a product?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes, you have 30 days from receipt to return an unworn, unwashed item with its original tag. Contact us at altidigitech@gmail.com to start a return.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            How do I use a promo code?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Enter your code in the "Discount code" field at checkout. The code HOKUNO15 gives you -15% off your order.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Which sizes are available?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Our t-shirts come in sizes S to XL. Check the size guide on each product page to find your ideal fit.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Are the designs original?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. Each design is created by our team, AI-generated and refined. They are original artistic parodies, never direct reproductions.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Do you ship internationally?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes, we ship worldwide. Costs and delays vary by destination.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            How can I contact you?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>By email at altidigitech@gmail.com or via our contact form. We respond within 24-48 hours.</p>
+          </div>
+        </div>
+      </div>
+    {% else %}
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Comment sont fabriqués vos produits ?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Chaque produit est fabriqué à la commande (print on demand) par nos partenaires d'impression. Aucun stock — votre article est imprimé spécialement pour vous après votre commande.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Quels sont les délais de livraison ?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Fabrication : 3-7 jours ouvrés. Livraison France/EU : 5-10 jours ouvrés après expédition. International : 7-15 jours ouvrés. Vous recevez un numéro de suivi par email dès l'expédition.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            La livraison est-elle gratuite ?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Oui, à partir de 60€ de commande. En dessous, les frais de livraison sont calculés au checkout selon votre destination.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Puis-je retourner un produit ?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Oui, vous disposez de 30 jours après réception pour retourner un produit non porté, non lavé, avec son étiquette. Contactez-nous à altidigitech@gmail.com pour initier un retour.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Comment utiliser un code promo ?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Entrez votre code dans le champ « Code de réduction » au moment du checkout. Le code HOKUNO15 offre -15% sur votre commande.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Quelles tailles sont disponibles ?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Nos t-shirts sont disponibles du S au XL. Consultez le guide des tailles sur chaque page produit pour trouver votre taille idéale.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Les designs sont-ils originaux ?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Oui. Chaque design est créé par notre équipe, généré par IA et retravaillé. Ce sont des parodies artistiques originales, jamais des reproductions directes.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Livrez-vous à l'international ?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Oui, nous livrons dans le monde entier. Les frais et délais varient selon la destination.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Comment vous contacter ?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Par email à altidigitech@gmail.com ou via notre formulaire de contact. Nous répondons sous 24-48h.</p>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</div>

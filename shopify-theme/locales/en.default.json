@@ -102,7 +102,10 @@
     "read_more": "Read more",
     "previous": "Previous article",
     "next": "Next article",
-    "empty": "No articles yet. Come back soon!"
+    "empty_title": "COMING SOON",
+    "empty_subtitle": "The Hokuno journal is opening its pages.",
+    "empty_text": "We'll share the behind-the-scenes: how collections come to life, manga inspirations, the craft of print-on-demand. Follow along.",
+    "empty_cta": "EXPLORE THE COLLECTIONS"
   },
   "contact": {
     "title": "Contact",

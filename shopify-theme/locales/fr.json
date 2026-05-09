@@ -102,7 +102,10 @@
     "read_more": "Lire la suite",
     "previous": "Article précédent",
     "next": "Article suivant",
-    "empty": "Aucun article pour le moment. Revenez bientôt !"
+    "empty_title": "BIENTÔT",
+    "empty_subtitle": "Le journal Hokuno ouvre ses pages.",
+    "empty_text": "On y partagera l'envers du décor : la création des collections, les inspirations manga, les coulisses de l'impression à la demande. Suivez-nous pour ne rien manquer.",
+    "empty_cta": "EXPLORER LES COLLECTIONS"
   },
   "contact": {
     "title": "Contact",

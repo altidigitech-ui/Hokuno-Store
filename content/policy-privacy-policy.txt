@@ -1,0 +1,86 @@
+POLITIQUE DE CONFIDENTIALITÉ — HOKUNO
+
+Dernière mise à jour : 2026-05-09
+
+HOKUNO (ci-après « nous ») s'engage à protéger vos données personnelles conformément au Règlement Général sur la Protection des Données (RGPD - Règlement UE 2016/679).
+
+1. DONNÉES COLLECTÉES
+
+Nous collectons les données suivantes :
+- Données d'identification : nom, prénom, adresse email
+- Données de livraison : adresse postale, téléphone
+- Données de paiement : traitées directement par Shopify Payments (nous ne stockons pas vos données bancaires)
+- Données de navigation : pages visitées, durée de visite (uniquement si vous acceptez les cookies)
+
+2. FINALITÉS DU TRAITEMENT
+
+Vos données sont utilisées pour :
+- Traiter et livrer vos commandes (base légale : exécution du contrat)
+- Vous envoyer les emails transactionnels liés à votre commande (base légale : exécution du contrat)
+- Vous envoyer la newsletter (base légale : consentement — inscription volontaire)
+- Mesurer l'audience du site via Google Analytics et Meta Pixel (base légale : consentement — acceptation des cookies)
+- Améliorer nos services et notre site (base légale : intérêt légitime)
+
+3. PARTAGE DES DONNÉES
+
+Vos données sont partagées avec :
+- Printify (fabrication et expédition des commandes) — sous-traitant basé en Lettonie/USA
+- Transporteurs (livraison) — DHL, USPS, ou autre selon la destination
+- Shopify Inc. (hébergement de la boutique) — basé au Canada
+- Google Analytics (mesure d'audience) — uniquement si cookies acceptés
+- Meta / Facebook (publicité et mesure) — uniquement si cookies acceptés
+
+Nous ne vendons jamais vos données à des tiers.
+
+4. DURÉE DE CONSERVATION
+
+- Données de commande : 5 ans (obligation comptable et fiscale)
+- Données de compte client : jusqu'à suppression du compte par le client
+- Données de newsletter : jusqu'à désinscription
+- Données de navigation (cookies) : 13 mois maximum (recommandation CNIL)
+
+5. VOS DROITS (RGPD)
+
+Vous disposez des droits suivants :
+- Droit d'accès : obtenir une copie de vos données personnelles
+- Droit de rectification : corriger des données inexactes
+- Droit à l'effacement : demander la suppression de vos données
+- Droit à la portabilité : recevoir vos données dans un format structuré
+- Droit d'opposition : vous opposer au traitement de vos données
+- Droit à la limitation : demander la restriction du traitement
+
+Pour exercer ces droits, contactez-nous à : altidigitech@gmail.com
+
+Délai de réponse : 30 jours maximum.
+
+6. COOKIES
+
+Notre site utilise des cookies :
+- Cookies essentiels : fonctionnement du panier, session client (toujours actifs)
+- Cookies analytiques : Google Analytics — mesure d'audience (soumis à consentement)
+- Cookies marketing : Meta Pixel, TikTok Pixel — publicité ciblée (soumis à consentement)
+
+Vous pouvez accepter ou refuser les cookies non essentiels via la bannière affichée à votre première visite. Votre choix est conservé et peut être modifié à tout moment en effaçant les cookies de votre navigateur.
+
+7. SÉCURITÉ
+
+Vos données sont protégées par :
+- Chiffrement SSL/TLS sur toutes les pages du site
+- Hébergement sécurisé par Shopify (certifié PCI DSS Level 1)
+- Accès restreint aux données (seul le responsable du site y a accès)
+
+8. TRANSFERTS HORS UE
+
+Certains de nos sous-traitants sont basés hors de l'Union Européenne (Shopify au Canada, Printify aux USA/Lettonie, Google et Meta aux USA). Ces transferts sont encadrés par les Clauses Contractuelles Types de la Commission Européenne et/ou les décisions d'adéquation applicables.
+
+9. RÉCLAMATION
+
+Si vous estimez que le traitement de vos données n'est pas conforme, vous pouvez introduire une réclamation auprès de la CNIL :
+Commission Nationale de l'Informatique et des Libertés
+3 place de Fontenoy, 75007 Paris
+www.cnil.fr
+
+10. CONTACT
+
+Pour toute question relative à vos données personnelles :
+Email : altidigitech@gmail.com

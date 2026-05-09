@@ -1,0 +1,71 @@
+<!-- templates/page.mentions-legales.liquid — Mentions légales (FR uniquement, juridiction française) -->
+<div class="page-wrap">
+  {% render 'breadcrumbs' %}
+  <h1 class="page-title">{{ page.title }}</h1>
+
+  <div class="page-content legal-content">
+    {% if request.locale.iso_code == 'en' %}
+      <h2>Legal Notice</h2>
+
+      <h3>Site Editor</h3>
+      <p>
+        <strong>HOKUNO</strong><br>
+        [Owner full name]<br>
+        [Postal address]<br>
+        [ZIP code] [City], France<br>
+        Email: <a href="mailto:altidigitech@gmail.com">altidigitech@gmail.com</a><br>
+        SIRET: [SIRET number]<br>
+        Intra-community VAT: [VAT number, or "Not applicable — micro-enterprise scheme"]
+      </p>
+
+      <h3>Publication Director</h3>
+      <p>[Owner full name]</p>
+
+      <h3>Hosting</h3>
+      <p>
+        <strong>Shopify Inc.</strong><br>
+        151 O'Connor Street, Ground Floor<br>
+        Ottawa, Ontario, K2P 2L8, Canada<br>
+        <a href="https://www.shopify.com" rel="noopener noreferrer" target="_blank">www.shopify.com</a>
+      </p>
+
+      <h3>Intellectual Property</h3>
+      <p>All content on this site (texts, images, designs, logos, the HOKUNO and ホクノ trademarks) is protected by copyright and trademark law. Any reproduction, even partial, is prohibited without prior written authorization.</p>
+      <p>The designs sold on this site are original creations. They constitute artistic parodies within the meaning of article L.122-5 of the French Intellectual Property Code.</p>
+
+      <h3>Personal Data</h3>
+      <p>See our <a href="/policies/privacy-policy">Privacy Policy</a> for details about the collection and processing of your personal data.</p>
+    {% else %}
+      <h2>Mentions légales</h2>
+
+      <h3>Éditeur du site</h3>
+      <p>
+        <strong>HOKUNO</strong><br>
+        [Nom et prénom du responsable]<br>
+        [Adresse postale complète]<br>
+        [Code postal] [Ville], France<br>
+        Email : <a href="mailto:altidigitech@gmail.com">altidigitech@gmail.com</a><br>
+        SIRET : [numéro SIRET]<br>
+        TVA intracommunautaire : [numéro TVA, ou « Non applicable — régime micro-entreprise »]
+      </p>
+
+      <h3>Directeur de la publication</h3>
+      <p>[Nom et prénom du responsable]</p>
+
+      <h3>Hébergeur</h3>
+      <p>
+        <strong>Shopify Inc.</strong><br>
+        151 O'Connor Street, Ground Floor<br>
+        Ottawa, Ontario, K2P 2L8, Canada<br>
+        <a href="https://www.shopify.com" rel="noopener noreferrer" target="_blank">www.shopify.com</a>
+      </p>
+
+      <h3>Propriété intellectuelle</h3>
+      <p>L'ensemble du contenu de ce site (textes, images, designs, logos, marque HOKUNO et ホクノ) est protégé par le droit d'auteur et le droit des marques. Toute reproduction, même partielle, est interdite sans autorisation écrite préalable.</p>
+      <p>Les designs vendus sur ce site sont des créations originales. Ils constituent des parodies artistiques au sens de l'article L.122-5 du Code de la propriété intellectuelle.</p>
+
+      <h3>Données personnelles</h3>
+      <p>Consultez notre <a href="/policies/privacy-policy">Politique de confidentialité</a> pour en savoir plus sur la collecte et le traitement de vos données personnelles.</p>
+    {% endif %}
+  </div>
+</div>
