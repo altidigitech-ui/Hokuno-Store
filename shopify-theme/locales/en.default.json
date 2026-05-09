@@ -1,0 +1,176 @@
+{
+  "general": {
+    "404": {
+      "title": "This page doesn't exist.",
+      "subtitle": "Lost? North is this way.",
+      "back": "BACK TO HOME"
+    }
+  },
+  "nav": {
+    "home": "HOME",
+    "collections": "COLLECTIONS",
+    "new_arrivals": "NEW ARRIVALS",
+    "about": "ABOUT",
+    "journal": "JOURNAL",
+    "search": "SEARCH",
+    "account": "ACCOUNT",
+    "cart": "CART"
+  },
+  "hero": {
+    "title_line1": "ALWAYS",
+    "title_line2": "MOVING",
+    "title_line3": "FORWARD",
+    "cta_primary": "DISCOVER THE COLLECTION",
+    "cta_secondary": "NEW ARRIVALS",
+    "featured_label": "FEATURED PRODUCTS"
+  },
+  "trust": {
+    "shipping": {
+      "label": "International Shipping",
+      "sub": "Free from €60"
+    },
+    "returns": {
+      "label": "Easy Returns",
+      "sub": "30 days to change your mind"
+    },
+    "payment": {
+      "label": "Secure Payments",
+      "sub": "Encrypted and protected"
+    }
+  },
+  "home": {
+    "collections": {
+      "title": "EXPLORE OUR WORLDS",
+      "subtitle": "Collections designed as stories. Inspired by culture, symbolism and movement."
+    },
+    "featured": "FEATURED PRODUCTS"
+  },
+  "collections": {
+    "discover": "DISCOVER",
+    "products": "products",
+    "sort": {
+      "relevance": "Relevance",
+      "price_asc": "Price: Low to High",
+      "price_desc": "Price: High to Low",
+      "newest": "Newest",
+      "name_az": "Name A-Z"
+    },
+    "filters": "FILTERS",
+    "filters_apply": "APPLY",
+    "filters_reset": "Reset"
+  },
+  "product": {
+    "color": "Color",
+    "size": "Size",
+    "add_to_cart": "ADD TO CART",
+    "sold_out": "SOLD OUT",
+    "add_to_wishlist": "Add to wishlist",
+    "description": "Description",
+    "details": "Product details",
+    "size_guide": "Size guide",
+    "size_guide_advice": "Our t-shirts have a regular fit. When in doubt, size up.",
+    "size_guide_na": "Size guide not available for this product type.",
+    "related": "YOU MIGHT ALSO LIKE",
+    "share": "SHARE",
+    "copy_link": "Copy link",
+    "badge_shipping": "International shipping — Free from €60",
+    "badge_returns": "Easy returns — 30 days",
+    "badge_payment": "Secure payments — Encrypted and protected",
+    "cart_notification": "✓ Added to cart"
+  },
+  "cart": {
+    "title": "CART",
+    "empty": "Your cart is empty.",
+    "discover": "DISCOVER OUR COLLECTIONS",
+    "subtotal": "Subtotal",
+    "checkout": "PROCEED TO CHECKOUT",
+    "shipping_free": "✓ Free shipping!",
+    "shipping_remaining": "Only {{ amount }} more for free shipping!"
+  },
+  "breadcrumbs": {
+    "home": "Home"
+  },
+  "pagination": {
+    "previous": "Previous",
+    "next": "Next"
+  },
+  "blog": {
+    "read_more": "Read more",
+    "previous": "Previous article",
+    "next": "Next article"
+  },
+  "contact": {
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "send": "SEND",
+    "success": "✓ Message sent! We'll reply within 24-48h."
+  },
+  "customer": {
+    "login": {
+      "title": "LOGIN",
+      "email": "Email",
+      "password": "Password",
+      "submit": "LOG IN",
+      "no_account": "Don't have an account?",
+      "create_account": "Create account",
+      "forgot_password": "Forgot password?"
+    },
+    "register": {
+      "title": "CREATE ACCOUNT",
+      "first_name": "First name",
+      "last_name": "Last name",
+      "email": "Email",
+      "password": "Password",
+      "submit": "CREATE MY ACCOUNT"
+    },
+    "account": {
+      "title": "MY ACCOUNT",
+      "orders": "Order history",
+      "logout": "LOG OUT"
+    },
+    "recover": {
+      "title": "FORGOT PASSWORD",
+      "subtitle": "Enter your email address and we'll send you a reset link.",
+      "submit": "SEND RESET LINK",
+      "back_to_login": "Back to login"
+    }
+  },
+  "footer": {
+    "tagline": "ホクノ — Always moving forward",
+    "col_collections": "Collections",
+    "col_information": "Information",
+    "col_legal": "Legal",
+    "terms": "Terms & Conditions",
+    "privacy": "Privacy Policy",
+    "refunds": "Returns",
+    "legal_notice": "Legal Notice",
+    "newsletter": {
+      "text": "Join the crew — 15% off your first order",
+      "placeholder": "Your email address",
+      "submit": "SUBSCRIBE",
+      "success": "✓ Subscribed! Check your inbox."
+    },
+    "copyright": "© 2026 HOKUNO. All rights reserved."
+  },
+  "gift_cards": {
+    "title": "Gift card",
+    "expires": "Expires on",
+    "no_expiry": "No expiration date",
+    "shop_now": "SHOP NOW"
+  },
+  "cookie": {
+    "text": "This site uses cookies to improve your experience and measure audience.",
+    "learn_more": "Learn more",
+    "accept": "Accept",
+    "refuse": "Refuse"
+  },
+  "search": {
+    "title": "SEARCH",
+    "placeholder": "Search for a product, a collection...",
+    "submit": "SEARCH",
+    "results": "{{ count }} results for \"{{ terms }}\"",
+    "no_results": "No results for \"{{ terms }}\".",
+    "no_results_suggestion": "Try another keyword or explore our collections."
+  }
+}

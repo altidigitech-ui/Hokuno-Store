@@ -1,0 +1,176 @@
+{
+  "general": {
+    "404": {
+      "title": "Cette page n'existe pas.",
+      "subtitle": "Vous vous êtes perdu ? Le Nord est par là.",
+      "back": "RETOUR À L'ACCUEIL"
+    }
+  },
+  "nav": {
+    "home": "ACCUEIL",
+    "collections": "COLLECTIONS",
+    "new_arrivals": "NOUVEAUTÉS",
+    "about": "À PROPOS",
+    "journal": "JOURNAL",
+    "search": "RECHERCHE",
+    "account": "COMPTE",
+    "cart": "PANIER"
+  },
+  "hero": {
+    "title_line1": "TOUJOURS",
+    "title_line2": "ALLER",
+    "title_line3": "DE L'AVANT",
+    "cta_primary": "DÉCOUVRIR LA COLLECTION",
+    "cta_secondary": "NOUVEAUTÉS",
+    "featured_label": "PRODUITS PHARES"
+  },
+  "trust": {
+    "shipping": {
+      "label": "Livraison Internationale",
+      "sub": "Offerte dès 60€"
+    },
+    "returns": {
+      "label": "Retours Faciles",
+      "sub": "30 jours pour changer d'avis"
+    },
+    "payment": {
+      "label": "Paiements Sécurisés",
+      "sub": "Cryptés et protégés"
+    }
+  },
+  "home": {
+    "collections": {
+      "title": "EXPLOREZ NOS UNIVERS",
+      "subtitle": "Des collections pensées comme des récits. Inspirées par la culture, le symbole et le mouvement."
+    },
+    "featured": "PRODUITS PHARES"
+  },
+  "collections": {
+    "discover": "DÉCOUVRIR",
+    "products": "produits",
+    "sort": {
+      "relevance": "Pertinence",
+      "price_asc": "Prix croissant",
+      "price_desc": "Prix décroissant",
+      "newest": "Plus récent",
+      "name_az": "Nom A-Z"
+    },
+    "filters": "FILTRES",
+    "filters_apply": "APPLIQUER",
+    "filters_reset": "Réinitialiser"
+  },
+  "product": {
+    "color": "Couleur",
+    "size": "Taille",
+    "add_to_cart": "AJOUTER AU PANIER",
+    "sold_out": "ÉPUISÉ",
+    "add_to_wishlist": "Ajouter aux favoris",
+    "description": "Description",
+    "details": "Infos produit",
+    "size_guide": "Guide des tailles",
+    "size_guide_advice": "Nos t-shirts taillent normalement. En cas de doute, prenez la taille au-dessus.",
+    "size_guide_na": "Guide des tailles non disponible pour ce type de produit.",
+    "related": "VOUS POURRIEZ AUSSI AIMER",
+    "share": "PARTAGER",
+    "copy_link": "Copier le lien",
+    "badge_shipping": "Livraison internationale — Offerte dès 60€",
+    "badge_returns": "Retours faciles — 30 jours",
+    "badge_payment": "Paiements sécurisés — Cryptés et protégés",
+    "cart_notification": "✓ Ajouté au panier"
+  },
+  "cart": {
+    "title": "PANIER",
+    "empty": "Votre panier est vide.",
+    "discover": "DÉCOUVRIR NOS COLLECTIONS",
+    "subtotal": "Sous-total",
+    "checkout": "PASSER LA COMMANDE",
+    "shipping_free": "✓ Livraison gratuite !",
+    "shipping_remaining": "Plus que {{ amount }} pour la livraison gratuite !"
+  },
+  "breadcrumbs": {
+    "home": "Accueil"
+  },
+  "pagination": {
+    "previous": "Précédent",
+    "next": "Suivant"
+  },
+  "blog": {
+    "read_more": "Lire la suite",
+    "previous": "Article précédent",
+    "next": "Article suivant"
+  },
+  "contact": {
+    "name": "Nom",
+    "email": "Email",
+    "message": "Message",
+    "send": "ENVOYER",
+    "success": "✓ Message envoyé ! Nous vous répondons sous 24-48h."
+  },
+  "customer": {
+    "login": {
+      "title": "CONNEXION",
+      "email": "Email",
+      "password": "Mot de passe",
+      "submit": "SE CONNECTER",
+      "no_account": "Pas encore de compte ?",
+      "create_account": "Créer un compte",
+      "forgot_password": "Mot de passe oublié ?"
+    },
+    "register": {
+      "title": "CRÉER UN COMPTE",
+      "first_name": "Prénom",
+      "last_name": "Nom",
+      "email": "Email",
+      "password": "Mot de passe",
+      "submit": "CRÉER MON COMPTE"
+    },
+    "account": {
+      "title": "MON COMPTE",
+      "orders": "Historique des commandes",
+      "logout": "SE DÉCONNECTER"
+    },
+    "recover": {
+      "title": "MOT DE PASSE OUBLIÉ",
+      "subtitle": "Entrez votre adresse email, nous vous enverrons un lien de réinitialisation.",
+      "submit": "ENVOYER LE LIEN",
+      "back_to_login": "Retour à la connexion"
+    }
+  },
+  "footer": {
+    "tagline": "ホクノ — Toujours aller de l'avant",
+    "col_collections": "Collections",
+    "col_information": "Information",
+    "col_legal": "Légal",
+    "terms": "Conditions générales",
+    "privacy": "Confidentialité",
+    "refunds": "Retours",
+    "legal_notice": "Mentions légales",
+    "newsletter": {
+      "text": "Rejoignez l'équipage — 15% sur votre première commande",
+      "placeholder": "Votre adresse email",
+      "submit": "S'INSCRIRE",
+      "success": "✓ Inscrit ! Vérifiez votre boîte mail."
+    },
+    "copyright": "© 2026 HOKUNO. Tous droits réservés."
+  },
+  "gift_cards": {
+    "title": "Carte cadeau",
+    "expires": "Expire le",
+    "no_expiry": "Pas de date d'expiration",
+    "shop_now": "ACHETER MAINTENANT"
+  },
+  "cookie": {
+    "text": "Ce site utilise des cookies pour améliorer votre expérience et mesurer l'audience.",
+    "learn_more": "En savoir plus",
+    "accept": "Accepter",
+    "refuse": "Refuser"
+  },
+  "search": {
+    "title": "RECHERCHE",
+    "placeholder": "Rechercher un produit, une collection...",
+    "submit": "RECHERCHER",
+    "results": "{{ count }} résultats pour \"{{ terms }}\"",
+    "no_results": "Aucun résultat pour \"{{ terms }}\".",
+    "no_results_suggestion": "Essayez un autre mot-clé ou explorez nos collections."
+  }
+}

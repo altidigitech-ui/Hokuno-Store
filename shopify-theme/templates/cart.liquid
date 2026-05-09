@@ -1,1 +1,66 @@
-{{ content_for_layout }}
+<!-- templates/cart.liquid — Panier -->
+<div class="page-wrap">
+  <h1 class="page-title">{{ 'cart.title' | t }}</h1>
+
+  {% if cart.item_count > 0 %}
+    <div id="cart-items-wrap">
+
+      <div class="cart-items">
+        {% for item in cart.items %}
+          <div class="cart-item" data-item-key="{{ item.key }}">
+            <a href="{{ item.url }}" class="cart-item-img-link">
+              {% if item.image %}
+                <img src="{{ item.image | image_url: width: 200 }}" alt="{{ item.title }}" class="cart-item-img" width="100" height="100" loading="lazy">
+              {% endif %}
+            </a>
+            <div class="cart-item-details">
+              <h4 class="cart-item-title"><a href="{{ item.url }}">{{ item.product.title }}</a></h4>
+              {% unless item.variant.title == 'Default Title' %}
+                <p class="cart-item-variant">{{ item.variant.title }}</p>
+              {% endunless %}
+              <p class="cart-item-price">{{ item.original_line_price | money }}</p>
+            </div>
+            <div class="cart-item-qty">
+              <button class="qty-btn" data-cart-minus="{{ item.key }}" aria-label="Diminuer">−</button>
+              <span class="qty-val" data-cart-qty="{{ item.key }}">{{ item.quantity }}</span>
+              <button class="qty-btn" data-cart-plus="{{ item.key }}" aria-label="Augmenter">+</button>
+            </div>
+            <button class="cart-item-remove" data-cart-remove="{{ item.key }}" aria-label="Supprimer {{ item.title | escape }}">&times;</button>
+          </div>
+        {% endfor %}
+      </div>
+
+      <!-- Shipping progress -->
+      {% assign threshold = 6000 %}
+      {% assign remaining = threshold | minus: cart.total_price %}
+      <div class="cart-shipping-wrap">
+        {% if remaining > 0 %}
+          <p class="cart-shipping" id="shipping-progress-msg" data-remaining="{{ 'cart.shipping_remaining' | t }}">
+            {{ 'cart.shipping_remaining' | t: amount: remaining | money }}
+          </p>
+        {% else %}
+          <p class="cart-shipping cart-shipping-free">{{ 'cart.shipping_free' | t }}</p>
+        {% endif %}
+        <div class="cart-progress">
+          <div class="cart-progress-bar" id="shipping-progress-bar" data-cart-total="{{ cart.total_price }}" style="width:{{ cart.total_price | times: 100 | divided_by: threshold | at_most: 100 }}%"></div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="cart-footer">
+        <div class="cart-subtotal-row">
+          <span class="cart-subtotal-label">{{ 'cart.subtotal' | t }}</span>
+          <span class="cart-subtotal-price" id="cart-subtotal">{{ cart.total_price | money }}</span>
+        </div>
+        <a href="/checkout" class="btn-gold cart-checkout-btn">{{ 'cart.checkout' | t }} →</a>
+        <p class="cart-legal-note">TVA incluse — Livraison calculée au checkout</p>
+      </div>
+    </div>
+
+  {% else %}
+    <div class="cart-empty" id="cart-empty">
+      <p class="cart-empty-text">{{ 'cart.empty' | t }}</p>
+      <a href="/collections" class="btn-gold">{{ 'cart.discover' | t }}</a>
+    </div>
+  {% endif %}
+</div>

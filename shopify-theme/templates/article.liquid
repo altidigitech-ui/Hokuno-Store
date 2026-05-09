@@ -1,1 +1,28 @@
-{{ content_for_layout }}
+<!-- templates/article.liquid — Article de blog -->
+<div class="page-wrap">
+  {% render 'breadcrumbs' %}
+
+  <article class="article">
+    <time class="article-date" datetime="{{ article.published_at | date: '%Y-%m-%d' }}">{{ article.published_at | date: "%d %B %Y" }}</time>
+    <h1 class="article-title">{{ article.title }}</h1>
+
+    {% if article.image %}
+      <img class="article-hero" src="{{ article.image | image_url: width: 1200 }}" alt="{{ article.title }}" width="1200" height="600" loading="lazy">
+    {% endif %}
+
+    <div class="article-body">
+      {{ article.content }}
+    </div>
+
+    <div class="article-nav">
+      {% if blog.previous_article %}
+        <a href="{{ blog.previous_article }}" class="article-nav-prev">← {{ 'blog.previous' | t }}</a>
+      {% else %}
+        <span></span>
+      {% endif %}
+      {% if blog.next_article %}
+        <a href="{{ blog.next_article }}" class="article-nav-next">{{ 'blog.next' | t }} →</a>
+      {% endif %}
+    </div>
+  </article>
+</div>

@@ -1,1 +1,48 @@
-[{"name":"theme_info","theme_name":"Hokuno","theme_version":"1.0.0","theme_author":"Hokuno","theme_documentation_url":"https://hokuno.com","theme_support_url":"https://hokuno.com"}]
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Hokuno",
+    "theme_version": "1.0.0",
+    "theme_author": "Hokuno",
+    "theme_documentation_url": "https://hokuno.com",
+    "theme_support_url": "https://hokuno.com"
+  },
+  {
+    "name": "Analytics",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Google Analytics 4"
+      },
+      {
+        "type": "text",
+        "id": "ga4_id",
+        "label": "GA4 Measurement ID",
+        "placeholder": "G-XXXXXXXXXX",
+        "info": "Your Google Analytics 4 Measurement ID (starts with G-)"
+      },
+      {
+        "type": "header",
+        "content": "Meta Pixel"
+      },
+      {
+        "type": "text",
+        "id": "meta_pixel_id",
+        "label": "Meta Pixel ID",
+        "placeholder": "XXXXXXXXXXXXXXXXXX",
+        "info": "Your Facebook/Meta Pixel ID (numbers only)"
+      },
+      {
+        "type": "header",
+        "content": "TikTok Pixel"
+      },
+      {
+        "type": "text",
+        "id": "tiktok_pixel_id",
+        "label": "TikTok Pixel ID",
+        "placeholder": "XXXXXXXXXXXXXXXXXX",
+        "info": "Your TikTok Pixel ID"
+      }
+    ]
+  }
+]

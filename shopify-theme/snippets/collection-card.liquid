@@ -1,0 +1,15 @@
+{% comment %} snippets/collection-card.liquid — Usage: {% raw %}{% render 'collection-card', collection: collection %}{% endraw %} {% endcomment %}
+<a href="{{ collection.url }}" class="col-card" aria-label="Collection {{ collection.title }}">
+  {% assign card_img = collection.handle | prepend: 'card-' | append: '.png' %}
+  <img
+    src="{{ card_img | asset_url }}"
+    alt="{{ collection.title }}"
+    width="800"
+    height="600"
+    loading="lazy">
+  <div class="col-card-info">
+    <h3>{{ collection.title | upcase }}</h3>
+    <p>{{ collection.description | strip_html | truncate: 80 }}</p>
+    <span class="col-btn">{{ 'collections.discover' | t }} ↗</span>
+  </div>
+</a>

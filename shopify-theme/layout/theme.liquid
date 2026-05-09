@@ -1,497 +1,335 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="{{ request.locale.iso_code | default: 'fr' }}">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>{% if page_title %}{{ page_title }} — {% endif %}HOKUNO ホクノ</title>
-<meta name="description" content="{{ page_description | default: 'HOKUNO — ホクノ — Streetwear manga japonais. Toujours aller de l avant.' }}">
-{{ content_for_header }}
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-<style>
-/* ═══ RESET ═══ */
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{background:#000000;color:#fff;font-family:'Inter',sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
-a{color:#fff;text-decoration:none;transition:color .3s ease}
-a:hover{color:#D4A853}
-img{max-width:100%;display:block}
-::selection{background:#D4A853;color:#000000}
-button{font-family:'Inter',sans-serif;cursor:pointer}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-/* ═══ NAVBAR — glassmorphism flottante ═══ */
-.nav{position:fixed;top:20px;left:50%;transform:translateX(-50%);width:calc(100% - 48px);max-width:1440px;z-index:9999;display:flex;align-items:center;justify-content:space-between;padding:16px 32px;background:rgba(255,255,255,0.04);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,0.08);border-radius:14px;transition:all .3s ease}
-.nav-logo{display:flex;align-items:center;gap:0}
-.nav-logo img{height:65px;mix-blend-mode:screen;filter:brightness(1.2);background:transparent}
-.nav-links{display:flex;align-items:center;gap:36px}
-.nav-links a{font-size:12.5px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.85);transition:color .3s}
-.nav-links a:hover{color:#D4A853}
-.nav-right{display:flex;align-items:center;gap:28px;font-size:12.5px;font-weight:500;letter-spacing:1px}
-.nav-right a,.nav-right span{color:rgba(255,255,255,0.75);transition:color .3s}
-.nav-right a:hover{color:#D4A853}
-.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}
-.nav-hamburger span{display:block;width:22px;height:1.5px;background:#fff;transition:all .3s}
+  <!-- Title -->
+  <title>
+    {%- if template == 'index' -%}
+      HOKUNO ホクノ — Streetwear Manga Japonais
+    {%- elsif page_title -%}
+      {{ page_title }} — HOKUNO ホクノ
+    {%- else -%}
+      HOKUNO ホクノ
+    {%- endif -%}
+  </title>
 
-/* ═══ HERO — plein écran ═══ */
-.hero{min-height:100vh;display:flex;align-items:center;padding:0 64px;padding-top:90px;position:relative;overflow:hidden}
-.hero-left{flex:0 0 45%;z-index:3;padding-right:20px}
-.hero-title{font-size:76px;font-weight:900;line-height:1.02;text-transform:uppercase;letter-spacing:-1px;color:#fff}
-.hero-katakana{font-size:52px;color:#D4A853;margin-top:20px;font-weight:300;letter-spacing:8px}
-.hero-buttons{display:flex;gap:16px;margin-top:36px;flex-wrap:wrap}
-.btn-gold{display:inline-flex;align-items:center;gap:8px;background:#D4A853;color:#000000;padding:18px 36px;font-weight:700;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;border:none;border-radius:4px;transition:all .3s}
-.btn-gold:hover{background:#c49a3d;color:#000000;transform:translateY(-1px)}
-.btn-outline{display:inline-flex;align-items:center;background:transparent;color:#fff;padding:18px 36px;font-weight:600;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;border:1px solid rgba(255,255,255,0.25);border-radius:4px;transition:all .3s}
-.btn-outline:hover{border-color:#D4A853;color:#D4A853}
+  <!-- Meta description -->
+  <meta name="description" content="{% if template == 'index' %}Hokuno (ホクノ) — Marque streetwear manga française. T-shirts, mugs et accessoires avec des designs originaux inspirés de l'univers manga. Livraison internationale.{% elsif page_description != blank %}{{ page_description | strip_html | truncate: 155 }}{% else %}HOKUNO — ホクノ — Streetwear manga japonais. Toujours aller de l'avant.{% endif %}">
 
-/* Hero droite — image composite (t-shirt + boussole + glow + particules) */
-.hero-right{flex:0 0 55%;display:flex;justify-content:center;align-items:center;z-index:2;position:relative}
-.hero-img-wrap{position:relative;width:100%;display:flex;justify-content:center}
-.hero-img{max-height:90vh;margin-top:-40px;width:auto;object-fit:contain}
-/* Fondu des bords de l'image dans le fond noir */
-.hero-img-wrap::after{content:'';position:absolute;inset:-4px;background:radial-gradient(ellipse at center,transparent 55%,#000000 100%);pointer-events:none;z-index:3}
-
-/* ═══ TEXTES VERTICAUX ═══ */
-.v-left{position:absolute;left:20px;top:50%;transform:translateY(-50%);writing-mode:vertical-rl;z-index:1;display:flex;flex-direction:column;gap:0;font-size:10px;letter-spacing:5px;text-transform:uppercase;color:rgba(255,255,255,0.25);font-weight:500}
-.v-left .v-spacer{height:32px}
-.v-right{position:absolute;right:20px;top:50%;transform:translateY(-50%);writing-mode:vertical-rl;z-index:1;text-align:center}
-.v-right-jp{font-size:13px;letter-spacing:6px;color:#D4A853;opacity:0.55;font-weight:400}
-.v-right-coord{font-size:9px;letter-spacing:2px;color:rgba(255,255,255,0.2);margin-top:20px;display:block}
-
-/* ═══ BARRE DE CONFIANCE ═══ */
-.trust{display:flex;justify-content:center;gap:20px;padding:32px 64px;position:relative;z-index:4}
-.trust-card{flex:1;max-width:340px;background:rgba(255,255,255,0.03);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:22px 28px;display:flex;align-items:flex-start;gap:16px}
-.trust-icon{font-size:22px;flex-shrink:0;margin-top:2px}
-.trust-label{font-size:11.5px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:rgba(255,255,255,0.9)}
-.trust-sub{font-size:11px;color:rgba(255,255,255,0.4);margin-top:4px;font-weight:400}
-
-/* ═══ PRODUITS PHARES (bas de hero) ═══ */
-.hero-products{position:absolute;bottom:20px;right:64px;z-index:5;display:flex;gap:12px;align-items:flex-end}
-.hero-products-label{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:12px}
-.hp-card{width:100px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:10px;overflow:hidden;transition:all .3s}
-.hp-card:hover{border-color:rgba(212,168,83,0.4)}
-.hp-card img{width:100%;height:60px;object-fit:cover}
-.hp-card-info{padding:6px 8px}
-.hp-card-title{font-size:9px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;color:rgba(255,255,255,0.8);line-height:1.3}
-.hp-card-price{font-size:13px;font-weight:700;color:#D4A853;margin-top:4px}
-.hp-nav{display:flex;gap:8px;align-self:flex-end;margin-bottom:8px}
-.hp-nav button{width:32px;height:32px;border-radius:50%;border:1px solid rgba(255,255,255,0.15);background:transparent;color:#fff;font-size:14px;display:flex;align-items:center;justify-content:center;transition:all .3s}
-.hp-nav button:hover{border-color:#D4A853;color:#D4A853}
-
-/* ═══ SECTION COLLECTIONS ═══ */
-.cols{padding:100px 64px 80px;text-align:center}
-.cols-label{font-size:13px;color:#D4A853;letter-spacing:4px;text-transform:uppercase;font-weight:500}
-.cols-title{font-size:52px;font-weight:900;margin-top:16px;letter-spacing:-1px;line-height:1.1}
-.cols-sub{font-size:15px;color:rgba(255,255,255,0.45);margin-top:16px;max-width:580px;margin-left:auto;margin-right:auto;line-height:1.6;font-weight:300}
-.cols-icon{width:36px;height:36px;margin:28px auto;opacity:0.6}
-.cols-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:40px}
-.col-card{border-radius:14px;overflow:hidden;position:relative;transition:transform .35s ease,box-shadow .35s ease;cursor:pointer;border:1px solid rgba(255,255,255,0.05);background:#111;text-decoration:none;display:block}
-.col-card:hover{transform:scale(1.015);box-shadow:0 8px 40px rgba(212,168,83,0.08)}
-.col-card img{width:100%;height:420px;object-fit:cover;transition:transform .5s ease}
-.col-card:hover img{transform:scale(1.03)}
-.col-card-info{padding:28px;background:rgba(0,0,0,0.75);backdrop-filter:blur(10px);text-align:left}
-.col-card-info h3{font-size:17px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#fff;position:relative;padding-bottom:12px}
-.col-card-info h3::after{content:'';position:absolute;bottom:0;left:0;width:30px;height:2px;background:#D4A853}
-.col-card-info p{font-size:13px;color:rgba(255,255,255,0.45);margin-top:12px;line-height:1.6;font-weight:300}
-.col-btn{display:inline-block;margin-top:18px;padding:10px 22px;border:1px solid rgba(212,168,83,0.5);color:#D4A853;font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;border-radius:4px;transition:all .3s}
-.col-btn:hover{background:#D4A853;color:#000000}
-
-/* ═══ PRODUITS VEDETTES SECTION ═══ */
-.feat{padding:80px 64px 100px}
-.feat-title{font-size:14px;font-weight:600;letter-spacing:3px;text-transform:uppercase;text-align:center;margin-bottom:48px;color:rgba(255,255,255,0.7)}
-.feat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-.prod-card{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:12px;overflow:hidden;transition:all .35s ease;text-decoration:none;display:block}
-.prod-card:hover{border-color:rgba(212,168,83,0.35);transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,0.3)}
-.prod-card img{width:100%;height:320px;object-fit:cover;transition:transform .5s ease}
-.prod-card:hover img{transform:scale(1.04)}
-.prod-info{padding:18px 20px}
-.prod-info h4{font-size:13px;font-weight:600;letter-spacing:.5px;color:rgba(255,255,255,0.85);line-height:1.3}
-.prod-price{color:#D4A853;font-size:17px;font-weight:700;margin-top:8px}
-
-/* ═══ COLLECTION PAGE ═══ */
-.page-wrap{padding:120px 64px 80px;min-height:80vh}
-.page-title{font-size:42px;font-weight:900;text-transform:uppercase;letter-spacing:1px;margin-bottom:40px}
-.products-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-
-/* ═══ PRODUCT PAGE ═══ */
-.product-wrap{padding:120px 64px 60px;display:flex;gap:48px;min-height:80vh}
-.product-images{flex:0 0 55%;position:relative}
-.product-images img{width:100%;border-radius:12px;background:#111}
-.product-details{flex:1;position:relative}
-.product-collection{font-size:12px;color:rgba(255,255,255,0.4);letter-spacing:2px;text-transform:uppercase;font-weight:500}
-.product-name{font-size:36px;font-weight:900;margin-top:8px;text-transform:uppercase;line-height:1.1}
-.product-price-tag{font-size:28px;font-weight:700;color:#D4A853;margin-top:16px}
-.product-desc{color:rgba(255,255,255,0.6);font-size:14px;line-height:1.7;margin-top:20px}
-.product-sizes{display:flex;gap:10px;margin-top:24px}
-.size-btn{padding:12px 20px;border:1px solid rgba(255,255,255,0.15);background:transparent;color:#fff;font-size:14px;font-weight:600;border-radius:4px;transition:all .3s;min-width:52px;text-align:center}
-.size-btn:hover,.size-btn.active{border-color:#D4A853;color:#D4A853}
-.add-cart{width:100%;padding:18px;background:#D4A853;color:#000000;border:none;font-size:15px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;border-radius:6px;margin-top:24px;transition:all .3s;display:flex;align-items:center;justify-content:center;gap:10px}
-.add-cart:hover{background:#c49a3d;transform:translateY(-1px)}
-.product-badges{display:flex;flex-direction:column;gap:12px;margin-top:28px}
-.product-badge{display:flex;align-items:center;gap:10px;font-size:12px;color:rgba(255,255,255,0.5);letter-spacing:.5px}
-
-/* ═══ FOOTER ═══ */
-.foot{background:#050505;padding:64px;margin-top:0;border-top:1px solid rgba(255,255,255,0.05)}
-.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:48px}
-.foot-logo img{height:28px;margin-bottom:14px;filter:brightness(1.1);mix-blend-mode:screen}
-.foot-kata{color:#D4A853;font-size:13px;font-weight:300;letter-spacing:1px}
-.foot h5{font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:18px;color:rgba(255,255,255,0.45)}
-.foot-col a{display:block;font-size:13.5px;margin-bottom:12px;color:rgba(255,255,255,0.4);font-weight:400;transition:color .3s}
-.foot-col a:hover{color:#D4A853}
-.foot-copy{text-align:center;padding-top:40px;margin-top:40px;border-top:1px solid rgba(255,255,255,0.05);font-size:11px;color:rgba(255,255,255,0.2);letter-spacing:1px}
-
-/* ═══ MOBILE ═══ */
-@media(max-width:1024px){
-.hero-title{font-size:56px}
-.cols-grid{grid-template-columns:repeat(2,1fr)}
-.feat-grid{grid-template-columns:repeat(2,1fr)}
-.products-grid{grid-template-columns:repeat(2,1fr)}
-.hero-products{display:none}
-}
-@media(max-width:768px){
-.nav{padding:12px 20px;top:12px;width:calc(100% - 24px);border-radius:10px}
-.nav-links{display:none}
-.nav-right{display:none}
-.nav-hamburger{display:flex}
-.hero{flex-direction:column;padding:100px 24px 40px;min-height:auto;gap:32px}
-.hero-left{flex:1;padding-right:0;text-align:left}
-.hero-right{flex:1;width:100%}
-.hero-img{max-height:50vh}
-.hero-title{font-size:38px;letter-spacing:0}
-.hero-katakana{font-size:30px}
-.hero-buttons{flex-direction:column;gap:12px}
-.btn-gold,.btn-outline{width:100%;justify-content:center;padding:16px 24px}
-.v-left,.v-right{display:none}
-.trust{flex-direction:column;padding:20px 24px;gap:10px}
-.trust-card{max-width:100%}
-.cols{padding:60px 24px}
-.cols-title{font-size:30px}
-.cols-grid{grid-template-columns:1fr 1fr;gap:12px}
-.col-card img{height:260px}
-.col-card-info{padding:18px}
-.feat{padding:60px 24px}
-.feat-grid{grid-template-columns:1fr 1fr;gap:12px}
-.prod-card img{height:220px}
-.product-wrap{flex-direction:column;padding:100px 24px 40px;gap:24px}
-.product-name{font-size:28px}
-.foot{padding:40px 24px}
-.foot-grid{grid-template-columns:1fr;gap:32px}
-.hero-products{display:none}
-.products-grid{grid-template-columns:1fr 1fr;gap:12px}
-/* Bottom nav mobile */
-.mobile-nav{display:flex}
-.page-wrap{padding:100px 24px 100px}
-}
-@media(min-width:769px){.mobile-nav{display:none}}
-
-/* ═══ MOBILE BOTTOM NAV ═══ */
-.mobile-nav{position:fixed;bottom:0;left:0;right:0;z-index:9999;background:rgba(10,10,10,0.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-top:1px solid rgba(255,255,255,0.06);padding:10px 0 max(10px,env(safe-area-inset-bottom));justify-content:space-around;align-items:center}
-.mobile-nav a{display:flex;flex-direction:column;align-items:center;gap:4px;font-size:10px;font-weight:500;letter-spacing:.5px;color:rgba(255,255,255,0.5);text-transform:uppercase;text-decoration:none;padding:6px 12px}
-.mobile-nav a:hover,.mobile-nav a.active{color:#D4A853}
-.mobile-nav-icon{font-size:18px}
-
-/* ═══ ANIMATIONS ═══ */
-@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
-.hero-left{animation:fadeUp .8s ease-out}
-.hero-right{animation:fadeUp .8s ease-out .15s both}
-</style>
-</head>
-<body>
-
-<!-- ══ NAVBAR ══ -->
-<nav class="nav">
-  <div class="nav-logo"><a href="/"><img src="{{ 'logo-hokuno-transparent.png' | asset_url }}" alt="HOKUNO"></a></div>
-  <div class="nav-links">
-    <a href="/collections">COLLECTIONS</a>
-    <a href="/collections">NOUVEAUTÉS</a>
-    <a href="/pages/about">À PROPOS</a>
-    <a href="/blogs/journal">JOURNAL</a>
-  </div>
-  <div class="nav-right">
-    <span>FR</span>
-    <a href="/search">Q RECHERCHE</a>
-    <a href="/account">COMPTE</a>
-    <a href="/cart">PANIER ({{ cart.item_count }})</a>
-  </div>
-  <div class="nav-hamburger" onclick="document.querySelector('.nav-links').classList.toggle('show-mobile')">
-    <span></span><span></span><span></span>
-  </div>
-</nav>
-
-{% if template == 'index' %}
-<!-- ════════════════════════════════════════ -->
-<!-- ══        LANDING PAGE               ══ -->
-<!-- ════════════════════════════════════════ -->
-
-<!-- HERO -->
-<section class="hero">
-  <!-- Texte vertical gauche -->
-  <div class="v-left">HOKUNO<div class="v-spacer"></div>STREETWEAR<div class="v-spacer"></div><div class="v-spacer"></div>001</div>
-
-  <!-- Partie gauche -->
-  <div class="hero-left">
-    <h1 class="hero-title">TOUJOURS<br>ALLER<br>DE L'AVANT</h1>
-    <p class="hero-katakana">ホクノ</p>
-    <div class="hero-buttons">
-      <a href="/collections" class="btn-gold">DÉCOUVRIR LA COLLECTION →</a>
-      <a href="/collections" class="btn-outline">NOUVEAUTÉS</a>
-    </div>
-  </div>
-
-  <!-- Partie droite — image composite du t-shirt avec boussole et glow -->
-  <div class="hero-right">
-    <div class="hero-img-wrap">
-      <img class="hero-img" src="{{ 'hero-tshirt.png' | asset_url }}" alt="HOKUNO — T-shirt Wanted">
-    </div>
-  </div>
-
-  <!-- Texte vertical droit -->
-  <div class="v-right">
-    <span class="v-right-jp">北へ向かって</span>
-    <span class="v-right-coord">35.6895°N, 139.6917°E</span>
-  </div>
-
-  <!-- Produits phares en bas à droite du hero -->
-  <div class="hero-products">
-    <div>
-      <p class="hero-products-label">PRODUITS PHARES</p>
-      <div style="display:flex;gap:12px">
-        {% for product in collections.all.products limit: 3 %}
-        <a href="{{ product.url }}" class="hp-card">
-          <img src="{{ product.featured_image | image_url: width: 400 }}" alt="{{ product.title }}">
-          <div class="hp-card-info">
-            <div class="hp-card-title">{{ product.title | truncate: 30 }}</div>
-            <div class="hp-card-price">{{ product.price | money }}</div>
-          </div>
-        </a>
-        {% endfor %}
-      </div>
-    </div>
-    <div class="hp-nav">
-      <button>‹</button>
-      <button>›</button>
-    </div>
-  </div>
-</section>
-
-<!-- BARRE DE CONFIANCE -->
-<section class="trust">
-  <div class="trust-card">
-    <div class="trust-icon">🌐</div>
-    <div><div class="trust-label">Livraison Internationale</div><div class="trust-sub">Offerte dès 60€</div></div>
-  </div>
-  <div class="trust-card">
-    <div class="trust-icon">↩️</div>
-    <div><div class="trust-label">Retours Faciles</div><div class="trust-sub">30 jours pour changer d'avis</div></div>
-  </div>
-  <div class="trust-card">
-    <div class="trust-icon">🔒</div>
-    <div><div class="trust-label">Paiements Sécurisés</div><div class="trust-sub">Cryptés et protégés</div></div>
-  </div>
-</section>
-
-<!-- COLLECTIONS -->
-<section class="cols">
-  <p class="cols-label">COLLECTIONS</p>
-  <h2 class="cols-title">EXPLOREZ NOS UNIVERS</h2>
-  <p class="cols-sub">Des collections pensées comme des récits. Inspirées par la culture, le symbole et le mouvement.</p>
-  <img class="cols-icon" src="{{ 'boussole-gold.png' | asset_url }}" alt="">
-  <div class="cols-grid">
-    <a href="/collections/wanted" class="col-card">
-      <img src="{{ 'card-wanted.png' | asset_url }}" alt="Collection Wanted">
-      <div class="col-card-info">
-        <h3>WANTED</h3>
-        <p>Une traque. Un héritage.<br>Une esthétique vintage.</p>
-        <span class="col-btn">DÉCOUVRIR ↗</span>
-      </div>
-    </a>
-    <a href="/collections/direction" class="col-card">
-      <img src="{{ 'card-direction.png' | asset_url }}" alt="Collection Direction">
-      <div class="col-card-info">
-        <h3>DIRECTION</h3>
-        <p>Toujours aller de l'avant.<br>Le chemin est la raison.</p>
-        <span class="col-btn">DÉCOUVRIR ↗</span>
-      </div>
-    </a>
-    <a href="/collections/mythologie" class="col-card">
-      <img src="{{ 'card-mythologie.png' | asset_url }}" alt="Collection Mythologie">
-      <div class="col-card-info">
-        <h3>MYTHOLOGIE</h3>
-        <p>Dieux. Héros. Légendes.<br>Le mythe continue.</p>
-        <span class="col-btn">DÉCOUVRIR ↗</span>
-      </div>
-    </a>
-    <a href="/collections/design-hokuno" class="col-card">
-      <img src="{{ 'card-design-hokuno.png' | asset_url }}" alt="Design Hokuno">
-      <div class="col-card-info">
-        <h3>DESIGN HOKUNO</h3>
-        <p>L'identité. Le symbole.<br>Le design comme signature.</p>
-        <span class="col-btn">DÉCOUVRIR ↗</span>
-      </div>
-    </a>
-  </div>
-</section>
-
-<!-- PRODUITS VEDETTES -->
-<section class="feat">
-  <h2 class="feat-title">PRODUITS PHARES</h2>
-  <div class="feat-grid">
-    {% for product in collections.all.products limit: 8 %}
-    <a href="{{ product.url }}" class="prod-card">
-      <img src="{{ product.featured_image | image_url: width: 600 }}" alt="{{ product.title }}">
-      <div class="prod-info">
-        <h4>{{ product.title | truncate: 40 }}</h4>
-        <p class="prod-price">{{ product.price | money }}</p>
-      </div>
-    </a>
-    {% endfor %}
-  </div>
-</section>
-
-{% elsif template == 'collection' %}
-<!-- ════════════════════════════════════════ -->
-<!-- ══        PAGE COLLECTION            ══ -->
-<!-- ════════════════════════════════════════ -->
-<div class="page-wrap">
-  <h1 class="page-title">{{ collection.title }}</h1>
-  {% if collection.description != blank %}
-  <p style="color:rgba(255,255,255,0.5);margin-bottom:40px;max-width:600px;line-height:1.6">{{ collection.description }}</p>
+  <!-- Noindex on non-indexable pages -->
+  {% if template == 'cart' or template == 'search' or template contains 'customers' %}
+    <meta name="robots" content="noindex, nofollow">
   {% endif %}
-  <div class="products-grid">
-    {% for product in collection.products %}
-    <a href="{{ product.url }}" class="prod-card">
-      <img src="{{ product.featured_image | image_url: width: 600 }}" alt="{{ product.title }}">
-      <div class="prod-info">
-        <h4>{{ product.title | truncate: 40 }}</h4>
-        <p class="prod-price">{{ product.price | money }}</p>
-      </div>
-    </a>
+
+  <!-- Canonical -->
+  <link rel="canonical" href="{{ canonical_url }}">
+
+  <!-- Hreflang -->
+  {% if request.locale %}
+    {% for locale in shop.published_locales %}
+      <link rel="alternate" hreflang="{{ locale.iso_code }}" href="{{ canonical_url | replace: request.locale.root_url, locale.root_url }}">
     {% endfor %}
-  </div>
-  {% if paginate %}
-  <div style="text-align:center;margin-top:40px">{{ paginate | default_pagination }}</div>
+    <link rel="alternate" hreflang="x-default" href="{{ canonical_url | replace: request.locale.root_url, '/' }}">
   {% endif %}
-</div>
 
-{% elsif template == 'product' %}
-<!-- ════════════════════════════════════════ -->
-<!-- ══        PAGE PRODUIT               ══ -->
-<!-- ════════════════════════════════════════ -->
-<div class="product-wrap">
-  <div class="product-images">
-    {% if product.featured_image %}
-    <img src="{{ product.featured_image | image_url: width: 1200 }}" alt="{{ product.title }}">
-    {% endif %}
-    <div style="display:flex;gap:8px;margin-top:12px">
-      {% for image in product.images limit: 4 %}
-      <img src="{{ image | image_url: width: 200 }}" alt="" style="width:80px;height:80px;object-fit:cover;border-radius:6px;border:1px solid rgba(255,255,255,0.1);cursor:pointer">
-      {% endfor %}
-    </div>
-  </div>
-  <div class="product-details">
-    <p class="product-collection">{% for col in product.collections %}{{ col.title }}{% unless forloop.last %} · {% endunless %}{% endfor %}</p>
-    <h1 class="product-name">{{ product.title }}</h1>
-    <p class="product-price-tag">{{ product.price | money }}</p>
-    <div class="product-desc">{{ product.description }}</div>
-
-    {% form 'product', product %}
-    <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
-    {% if product.has_only_default_variant == false %}
-    {% for option in product.options_with_values %}
-    <p style="font-size:13px;font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-top:24px;margin-bottom:10px;color:rgba(255,255,255,0.6)">{{ option.name }}</p>
-    <div class="product-sizes">
-      {% for value in option.values %}
-      <button type="button" class="size-btn" onclick="this.parentElement.querySelectorAll('.size-btn').forEach(b=>b.classList.remove('active'));this.classList.add('active')">{{ value }}</button>
-      {% endfor %}
-    </div>
-    {% endfor %}
-    {% endif %}
-    <button type="submit" class="add-cart">AJOUTER AU PANIER 🛒</button>
-    {% endform %}
-
-    <div class="product-badges">
-      <div class="product-badge">🌐 Livraison internationale — Offerte dès 60€</div>
-      <div class="product-badge">↩️ Retours faciles — 30 jours</div>
-      <div class="product-badge">🔒 Paiements sécurisés — Cryptés et protégés</div>
-    </div>
-  </div>
-</div>
-
-{% elsif template == 'cart' %}
-<!-- ════════════════════════════════════════ -->
-<!-- ══          PANIER                   ══ -->
-<!-- ════════════════════════════════════════ -->
-<div class="page-wrap">
-  <h1 class="page-title">PANIER</h1>
-  {% if cart.item_count > 0 %}
-  {% for item in cart.items %}
-  <div style="display:flex;gap:24px;padding:24px 0;border-bottom:1px solid rgba(255,255,255,0.06);align-items:center">
-    <img src="{{ item.image | image_url: width: 200 }}" alt="{{ item.title }}" style="width:100px;height:100px;object-fit:cover;border-radius:8px">
-    <div style="flex:1">
-      <h4 style="font-weight:600">{{ item.product.title }}</h4>
-      <p style="color:rgba(255,255,255,0.5);font-size:13px;margin-top:4px">{{ item.variant.title }}</p>
-      <p style="color:#D4A853;font-weight:700;margin-top:8px">{{ item.line_price | money }}</p>
-    </div>
-    <p style="color:rgba(255,255,255,0.5)">Qté: {{ item.quantity }}</p>
-  </div>
-  {% endfor %}
-  <div style="text-align:right;margin-top:32px">
-    <p style="font-size:14px;color:rgba(255,255,255,0.5)">Sous-total</p>
-    <p style="font-size:28px;font-weight:700;color:#D4A853;margin-top:4px">{{ cart.total_price | money }}</p>
-    <a href="/checkout" class="btn-gold" style="margin-top:20px;display:inline-block">PASSER LA COMMANDE →</a>
-  </div>
+  <!-- Open Graph -->
+  <meta property="og:site_name" content="HOKUNO ホクノ">
+  <meta property="og:url" content="{{ canonical_url }}">
+  {% if template == 'product' %}
+    <meta property="og:type" content="product">
+    <meta property="og:title" content="{{ product.title }} — HOKUNO ホクノ">
+    <meta property="og:description" content="{{ product.description | strip_html | truncate: 200 }}">
+    <meta property="og:image" content="{{ product.featured_image | image_url: width: 1200 }}">
+    <meta property="product:price:amount" content="{{ product.price | money_without_currency }}">
+    <meta property="product:price:currency" content="{{ cart.currency.iso_code }}">
+  {% elsif template == 'article' %}
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="{{ article.title }} — HOKUNO ホクノ">
+    <meta property="og:description" content="{{ article.excerpt_or_content | strip_html | truncate: 200 }}">
+    {% if article.image %}<meta property="og:image" content="{{ article.image | image_url: width: 1200 }}">{% endif %}
+  {% elsif template == 'collection' %}
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ collection.title }} — HOKUNO ホクノ">
+    <meta property="og:description" content="{{ collection.description | strip_html | truncate: 200 }}">
+    <meta property="og:image" content="{{ collection.handle | prepend: 'card-' | append: '.png' | asset_url }}">
   {% else %}
-  <p style="color:rgba(255,255,255,0.5);margin-top:20px">Votre panier est vide.</p>
-  <a href="/collections" class="btn-gold" style="display:inline-block;margin-top:20px">DÉCOUVRIR NOS COLLECTIONS</a>
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ page_title | default: 'HOKUNO ホクノ' }}">
+    <meta property="og:description" content="{{ page_description | default: 'HOKUNO — ホクノ — Streetwear manga japonais.' | strip_html | truncate: 200 }}">
+    <meta property="og:image" content="{{ 'hero-tshirt.png' | asset_url }}">
   {% endif %}
-</div>
 
-{% else %}
-<!-- ════════════════════════════════════════ -->
-<!-- ══        AUTRES PAGES               ══ -->
-<!-- ════════════════════════════════════════ -->
-<div class="page-wrap">
-  {{ content_for_layout }}
-</div>
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ page_title | default: 'HOKUNO ホクノ' }}">
+  <meta name="twitter:description" content="{{ page_description | default: 'Streetwear manga japonais' | strip_html | truncate: 200 }}">
+  {% if template == 'product' %}
+    <meta name="twitter:image" content="{{ product.featured_image | image_url: width: 1200 }}">
+  {% elsif template == 'article' and article.image %}
+    <meta name="twitter:image" content="{{ article.image | image_url: width: 1200 }}">
+  {% else %}
+    <meta name="twitter:image" content="{{ 'hero-tshirt.png' | asset_url }}">
+  {% endif %}
 
-{% endif %}
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" as="style">
+  {% if template == 'index' %}
+    <link rel="preload" href="{{ 'hero-tshirt.png' | asset_url }}" as="image">
+  {% endif %}
 
-<!-- ══ FOOTER ══ -->
-<footer class="foot">
-  <div class="foot-grid">
-    <div>
-      <div class="foot-logo"><img src="{{ 'logo-hokuno-transparent.png' | asset_url }}" alt="Hokuno"></div>
-      <p class="foot-kata">ホクノ — Toujours aller de l'avant</p>
+  <!-- Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap">
+
+  <!-- Theme CSS -->
+  <link rel="stylesheet" href="{{ 'hokuno.css' | asset_url }}">
+
+  <!-- Favicon -->
+  {% if settings.favicon %}
+    <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
+  {% endif %}
+
+  <!-- JSON-LD schemas -->
+  {% render 'seo-jsonld' %}
+
+  <!-- Analytics config -->
+  <script>
+    window.hokuno_ga4_id = {{ settings.ga4_id | json }};
+    window.hokuno_meta_pixel_id = {{ settings.meta_pixel_id | json }};
+    window.hokuno_tiktok_pixel_id = {{ settings.tiktok_pixel_id | json }};
+    window.hokuno_free_shipping_threshold = 6000;
+  </script>
+
+  {{ content_for_header }}
+</head>
+
+<body class="template-{{ template | replace: '/', '-' | replace: '.', '-' | strip }}">
+
+  <!-- ============================================================
+       NAVBAR
+       ============================================================ -->
+  <nav class="nav" role="navigation" aria-label="Navigation principale">
+    <div class="nav-inner">
+
+      <a href="/" class="nav-logo" aria-label="HOKUNO — Accueil">
+        <img
+          src="{{ 'logo-hokuno-transparent.png' | asset_url }}"
+          alt="HOKUNO"
+          class="nav-logo-img"
+          width="130"
+          height="65">
+      </a>
+
+      <ul class="nav-links" role="list">
+        <li>
+          <a href="/collections" class="nav-link{% if template == 'list-collections' or template == 'collection' %} nav-active{% endif %}">
+            {{ 'nav.collections' | t }}
+          </a>
+        </li>
+        <li>
+          <a href="/collections/all?sort_by=created-descending" class="nav-link">
+            {{ 'nav.new_arrivals' | t }}
+          </a>
+        </li>
+        <li>
+          <a href="/pages/about" class="nav-link{% if template == 'page' and page.handle == 'about' %} nav-active{% endif %}">
+            {{ 'nav.about' | t }}
+          </a>
+        </li>
+        <li>
+          <a href="/blogs/journal" class="nav-link{% if template == 'blog' or template == 'article' %} nav-active{% endif %}">
+            {{ 'nav.journal' | t }}
+          </a>
+        </li>
+      </ul>
+
+      <div class="nav-right">
+        <div class="lang-selector" role="group" aria-label="Langue">
+          {% if request.locale.iso_code == 'fr' %}
+            <span class="lang-active">FR</span>
+            <span class="lang-sep">|</span>
+            <a href="/en{{ request.path }}" class="lang-link">EN</a>
+          {% else %}
+            <a href="/fr{{ request.path }}" class="lang-link">FR</a>
+            <span class="lang-sep">|</span>
+            <span class="lang-active">EN</span>
+          {% endif %}
+        </div>
+
+        <a href="/search" class="nav-action" aria-label="{{ 'nav.search' | t }}">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </a>
+
+        <a href="/account" class="nav-action" aria-label="{{ 'nav.account' | t }}">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </a>
+
+        <a href="/cart" class="nav-action nav-cart" aria-label="{{ 'nav.cart' | t }}">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <span class="cart-count" {% if cart.item_count == 0 %}style="display:none"{% endif %}>{{ cart.item_count }}</span>
+        </a>
+
+        <button class="nav-hamburger" id="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
     </div>
-    <div class="foot-col">
-      <h5>Collections</h5>
-      <a href="/collections/wanted">Wanted</a>
-      <a href="/collections/direction">Direction</a>
-      <a href="/collections/mythologie">Mythologie</a>
-      <a href="/collections/design-hokuno">Design Hokuno</a>
-    </div>
-    <div class="foot-col">
-      <h5>Information</h5>
-      <a href="/pages/about">À propos</a>
-      <a href="/pages/faq">FAQ</a>
-      <a href="/pages/contact">Contact</a>
-    </div>
-    <div class="foot-col">
-      <h5>Légal</h5>
-      <a href="/policies/terms-of-service">Conditions générales</a>
-      <a href="/policies/privacy-policy">Politique de confidentialité</a>
-      <a href="/policies/refund-policy">Retours & remboursements</a>
+  </nav>
+
+  <!-- ============================================================
+       MOBILE MENU OVERLAY
+       ============================================================ -->
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Menu de navigation">
+    <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Fermer le menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <nav class="mobile-menu-nav" aria-label="Menu mobile">
+      <a href="/collections" class="mobile-menu-link{% if template == 'list-collections' or template == 'collection' %} active{% endif %}">{{ 'nav.collections' | t }}</a>
+      <a href="/collections/all?sort_by=created-descending" class="mobile-menu-link">{{ 'nav.new_arrivals' | t }}</a>
+      <a href="/pages/about" class="mobile-menu-link{% if template == 'page' and page.handle == 'about' %} active{% endif %}">{{ 'nav.about' | t }}</a>
+      <a href="/blogs/journal" class="mobile-menu-link{% if template == 'blog' or template == 'article' %} active{% endif %}">{{ 'nav.journal' | t }}</a>
+      <a href="/search" class="mobile-menu-link">{{ 'nav.search' | t }}</a>
+      <a href="/account" class="mobile-menu-link{% if template contains 'customers' %} active{% endif %}">{{ 'nav.account' | t }}</a>
+    </nav>
+    <div class="mobile-menu-lang">
+      {% if request.locale.iso_code == 'fr' %}
+        <span class="lang-active">FR</span>
+        <span class="lang-sep">|</span>
+        <a href="/en{{ request.path }}" class="lang-link">EN</a>
+      {% else %}
+        <a href="/fr{{ request.path }}" class="lang-link">FR</a>
+        <span class="lang-sep">|</span>
+        <span class="lang-active">EN</span>
+      {% endif %}
     </div>
   </div>
-  <p class="foot-copy">© 2025 HOKUNO. Tous droits réservés.</p>
-</footer>
 
-<!-- MOBILE BOTTOM NAV -->
-<nav class="mobile-nav">
-  <a href="/"><span class="mobile-nav-icon">🏠</span>ACCUEIL</a>
-  <a href="/collections"><span class="mobile-nav-icon">📦</span>COLLECTIONS</a>
-  <a href="/cart"><span class="mobile-nav-icon">🛒</span>PANIER</a>
-  <a href="/account"><span class="mobile-nav-icon">👤</span>COMPTE</a>
-</nav>
+  <!-- ============================================================
+       CART NOTIFICATION
+       ============================================================ -->
+  <div class="cart-notification" id="cart-notification" role="status" aria-live="polite">
+    <span class="cart-notif-title">{{ 'product.cart_notification' | t }}</span>
+    <button class="cart-notif-close" aria-label="Fermer">&times;</button>
+  </div>
+
+  <!-- ============================================================
+       PAGE CONTENT
+       ============================================================ -->
+  {{ content_for_layout }}
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="foot" role="contentinfo">
+    <div class="foot-inner">
+      <div class="foot-grid">
+
+        <div class="foot-col foot-col--brand">
+          <a href="/" aria-label="HOKUNO — Accueil">
+            <img src="{{ 'logo-hokuno-transparent.png' | asset_url }}" alt="HOKUNO" class="foot-logo" width="120" height="60" loading="lazy">
+          </a>
+          <p class="foot-tagline">{{ 'footer.tagline' | t }}</p>
+          <div class="foot-social">
+            <a href="https://www.tiktok.com/@hokuno" class="foot-social-link" aria-label="TikTok Hokuno" rel="noopener noreferrer" target="_blank">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.32 6.32 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.73a8.14 8.14 0 004.77 1.52V6.82a4.85 4.85 0 01-1-.13z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/hokuno" class="foot-social-link" aria-label="Instagram Hokuno" rel="noopener noreferrer" target="_blank">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="foot-col">
+          <h5 class="foot-col-title">{{ 'footer.col_collections' | t }}</h5>
+          <ul class="foot-links" role="list">
+            <li><a href="/collections/wanted" class="foot-link">Wanted</a></li>
+            <li><a href="/collections/direction" class="foot-link">Direction</a></li>
+            <li><a href="/collections/mythologie" class="foot-link">Mythologie</a></li>
+            <li><a href="/collections/design-hokuno" class="foot-link">Design Hokuno</a></li>
+          </ul>
+        </div>
+
+        <div class="foot-col">
+          <h5 class="foot-col-title">{{ 'footer.col_information' | t }}</h5>
+          <ul class="foot-links" role="list">
+            <li><a href="/pages/about" class="foot-link">{{ 'nav.about' | t }}</a></li>
+            <li><a href="/pages/faq" class="foot-link">FAQ</a></li>
+            <li><a href="/pages/contact" class="foot-link">Contact</a></li>
+            <li><a href="/blogs/journal" class="foot-link">{{ 'nav.journal' | t }}</a></li>
+          </ul>
+        </div>
+
+        <div class="foot-col">
+          <h5 class="foot-col-title">{{ 'footer.col_legal' | t }}</h5>
+          <ul class="foot-links" role="list">
+            <li><a href="/policies/terms-of-service" class="foot-link">{{ 'footer.terms' | t }}</a></li>
+            <li><a href="/policies/privacy-policy" class="foot-link">{{ 'footer.privacy' | t }}</a></li>
+            <li><a href="/policies/refund-policy" class="foot-link">{{ 'footer.refunds' | t }}</a></li>
+            <li><a href="/pages/mentions-legales" class="foot-link">{{ 'footer.legal_notice' | t }}</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="foot-newsletter">
+        {% render 'newsletter-form' %}
+      </div>
+
+      <p class="foot-copy">{{ 'footer.copyright' | t }}</p>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       BOTTOM NAV MOBILE
+       ============================================================ -->
+  <nav class="mobile-nav" role="navigation" aria-label="Navigation rapide">
+    <a href="/" class="mobile-nav-item{% if template == 'index' %} active{% endif %}" aria-label="{{ 'nav.home' | t }}">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      <span class="mobile-nav-label">{{ 'nav.home' | t }}</span>
+    </a>
+    <a href="/collections" class="mobile-nav-item{% if template == 'collection' or template == 'list-collections' %} active{% endif %}" aria-label="{{ 'nav.collections' | t }}">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h6"/><path d="M16 12h6"/><path d="M16 16h6"/></svg>
+      <span class="mobile-nav-label">{{ 'nav.collections' | t }}</span>
+    </a>
+    <a href="/cart" class="mobile-nav-item mobile-nav-cart{% if template == 'cart' %} active{% endif %}" aria-label="{{ 'nav.cart' | t }}">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+      {% if cart.item_count > 0 %}<span class="cart-badge cart-count">{{ cart.item_count }}</span>{% endif %}
+      <span class="mobile-nav-label">{{ 'nav.cart' | t }}</span>
+    </a>
+    <a href="/account" class="mobile-nav-item{% if template contains 'customers' %} active{% endif %}" aria-label="{{ 'nav.account' | t }}">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      <span class="mobile-nav-label">{{ 'nav.account' | t }}</span>
+    </a>
+  </nav>
+
+  <!-- ============================================================
+       COOKIE BANNER
+       ============================================================ -->
+  <div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Consentement cookies" style="display:none">
+    <div class="cookie-banner-content">
+      <p class="cookie-text">
+        {{ 'cookie.text' | t }}
+        <a href="/policies/privacy-policy" class="cookie-learn-more">{{ 'cookie.learn_more' | t }}</a>
+      </p>
+      <div class="cookie-actions">
+        <button class="btn-ghost cookie-btn" onclick="refuseCookies()">{{ 'cookie.refuse' | t }}</button>
+        <button class="btn-gold cookie-btn" onclick="acceptCookies()">{{ 'cookie.accept' | t }}</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Back to top -->
+  <button class="back-to-top" id="back-to-top" aria-label="Retour en haut de page">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <script src="{{ 'hokuno.js' | asset_url }}" defer></script>
 
 </body>
 </html>

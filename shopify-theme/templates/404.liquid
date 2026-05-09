@@ -1,1 +1,8 @@
-<div style="padding:120px 60px;min-height:60vh;text-align:center"><h1 style="font-size:48px;font-weight:900">404</h1><p style="color:rgba(255,255,255,0.5);margin-top:16px">Page non trouvée</p><a href="/" style="color:#D4A853;margin-top:24px;display:inline-block">Retour à l accueil</a></div>
+<!-- templates/404.liquid — Page non trouvée -->
+<div class="page-wrap error-page">
+  <h1 class="error-code">404</h1>
+  <p class="error-katakana">ホクノ</p>
+  <p class="error-msg">{{ 'general.404.title' | t }}</p>
+  <p class="error-sub">{{ 'general.404.subtitle' | t }}</p>
+  <a href="/" class="btn-gold">{{ 'general.404.back' | t }}</a>
+</div>

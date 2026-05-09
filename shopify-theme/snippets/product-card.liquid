@@ -1,0 +1,25 @@
+{% comment %} snippets/product-card.liquid — Usage: {% raw %}{% render 'product-card', product: product %}{% endraw %} {% endcomment %}
+<a href="{{ product.url }}" class="prod-card" aria-label="{{ product.title }}">
+  <div class="prod-card-img">
+    {% if product.featured_image %}
+      <img
+        src="{{ product.featured_image | image_url: width: 600 }}"
+        alt="{{ product.title }}"
+        width="600"
+        height="600"
+        loading="lazy">
+    {% endif %}
+    {% unless product.available %}
+      <span class="prod-card-badge">{{ 'product.sold_out' | t }}</span>
+    {% endunless %}
+  </div>
+  <div class="prod-info">
+    <h4>{{ product.title | truncate: 40 }}</h4>
+    <p class="prod-price">
+      {% if product.compare_at_price > product.price %}
+        <span class="prod-price-compare">{{ product.compare_at_price | money }}</span>
+      {% endif %}
+      {{ product.price | money }}
+    </p>
+  </div>
+</a>

@@ -1,1 +1,30 @@
-{{ content_for_layout }}
+<!-- templates/customers/register.liquid — Création de compte -->
+<div class="page-wrap">
+  <div class="auth-wrap">
+    <h1 class="auth-title">{{ 'customer.register.title' | t }}</h1>
+
+    {% form 'create_customer' %}
+      {% if form.errors %}
+        <div class="form-error">{{ form.errors | default_errors }}</div>
+      {% endif %}
+
+      <label for="reg-firstname" class="form-label">{{ 'customer.register.first_name' | t }}</label>
+      <input type="text" id="reg-firstname" name="customer[first_name]" class="form-input" autocomplete="given-name">
+
+      <label for="reg-lastname" class="form-label">{{ 'customer.register.last_name' | t }}</label>
+      <input type="text" id="reg-lastname" name="customer[last_name]" class="form-input" autocomplete="family-name">
+
+      <label for="reg-email" class="form-label">{{ 'customer.register.email' | t }}</label>
+      <input type="email" id="reg-email" name="customer[email]" class="form-input" autocomplete="email" required>
+
+      <label for="reg-password" class="form-label">{{ 'customer.register.password' | t }}</label>
+      <input type="password" id="reg-password" name="customer[password]" class="form-input" autocomplete="new-password" required>
+
+      <button type="submit" class="btn-gold auth-submit">{{ 'customer.register.submit' | t }}</button>
+    {% endform %}
+
+    <p class="auth-link">
+      <a href="/account/login">← {{ 'customer.recover.back_to_login' | t }}</a>
+    </p>
+  </div>
+</div>

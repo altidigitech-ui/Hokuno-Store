@@ -1,1 +1,48 @@
-{{ content_for_layout }}
+<!-- templates/customers/account.liquid — Mon compte -->
+<div class="page-wrap">
+
+  <div class="account-header">
+    <h1 class="page-title">{{ 'customer.account.title' | t }}</h1>
+    <a href="/account/logout" class="btn-ghost account-logout">{{ 'customer.account.logout' | t }}</a>
+  </div>
+
+  <div class="account-info">
+    <p class="account-name">{{ customer.name }}</p>
+    <p class="account-email">{{ customer.email }}</p>
+  </div>
+
+  <h2 class="account-orders-title">{{ 'customer.account.orders' | t }}</h2>
+
+  {% if customer.orders.size > 0 %}
+    <div class="orders-table-wrap">
+      <table class="orders-table">
+        <thead>
+          <tr>
+            <th>Commande</th>
+            <th>Date</th>
+            <th>Statut</th>
+            <th>Total</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for order in customer.orders %}
+            <tr class="order-row">
+              <td class="order-number">{{ order.name }}</td>
+              <td class="order-date">{{ order.created_at | date: "%d/%m/%Y" }}</td>
+              <td class="order-status">
+                <span class="order-badge order-badge--{{ order.financial_status }}">{{ order.financial_status }}</span>
+              </td>
+              <td class="order-total">{{ order.total_price | money }}</td>
+              <td><a href="{{ order.customer_url }}" class="order-link">Voir</a></td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  {% else %}
+    <p class="orders-empty">Aucune commande pour l'instant.</p>
+    <a href="/collections" class="btn-gold" style="margin-top:24px;display:inline-block">{{ 'cart.discover' | t }}</a>
+  {% endif %}
+
+</div>

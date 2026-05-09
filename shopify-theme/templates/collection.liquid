@@ -1,1 +1,73 @@
-{{ content_for_layout }}
+<!-- templates/collection.liquid — Page collection -->
+<div class="page-wrap">
+  {% render 'breadcrumbs' %}
+
+  <div class="collection-header">
+    <h1 class="page-title">{{ collection.title }}</h1>
+    {% if collection.description != blank %}
+      <p class="collection-desc">{{ collection.description }}</p>
+    {% endif %}
+    <p class="collection-count">{{ collection.products_count }} {{ 'collections.products' | t }}</p>
+  </div>
+
+  <!-- Filtres + tri -->
+  <div class="collection-toolbar">
+    {% if collection.filters.size > 0 %}
+      <form class="filter-form" id="filter-form" action="{{ collection.url }}" method="get">
+        <input type="hidden" name="sort_by" value="{{ collection.sort_by | default: 'manual' }}">
+
+        <div class="filter-bar">
+          {% for filter in collection.filters %}
+            <div class="filter-group">
+              <span class="filter-title">{{ filter.label }}</span>
+              <div class="filter-options">
+                {% for value in filter.values %}
+                  <label class="filter-option{% if value.active %} active{% endif %}">
+                    <input type="checkbox"
+                           name="{{ value.param_name }}"
+                           value="{{ value.value }}"
+                           {% if value.active %}checked{% endif %}
+                           onchange="document.getElementById('filter-form').submit()">
+                    <span>{{ value.label }} ({{ value.count }})</span>
+                  </label>
+                {% endfor %}
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+
+        {% if collection.filters | map: 'active_values' | join: '' != '' %}
+          <a href="{{ collection.url }}" class="filter-reset">{{ 'collections.filters_reset' | t }}</a>
+        {% endif %}
+      </form>
+    {% endif %}
+
+    <div class="sort-wrap">
+      <select
+        class="sort-select"
+        id="sort-select"
+        aria-label="Trier par"
+        onchange="window.location.href='{{ collection.url }}?sort_by='+this.value">
+        <option value="manual" {% if collection.sort_by == 'manual' %}selected{% endif %}>{{ 'collections.sort.relevance' | t }}</option>
+        <option value="price-ascending" {% if collection.sort_by == 'price-ascending' %}selected{% endif %}>{{ 'collections.sort.price_asc' | t }}</option>
+        <option value="price-descending" {% if collection.sort_by == 'price-descending' %}selected{% endif %}>{{ 'collections.sort.price_desc' | t }}</option>
+        <option value="created-descending" {% if collection.sort_by == 'created-descending' %}selected{% endif %}>{{ 'collections.sort.newest' | t }}</option>
+        <option value="title-ascending" {% if collection.sort_by == 'title-ascending' %}selected{% endif %}>{{ 'collections.sort.name_az' | t }}</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Grille produits + pagination -->
+  {% paginate collection.products by 24 %}
+    <div class="products-grid">
+      {% for product in collection.products %}
+        {% render 'product-card', product: product %}
+      {% endfor %}
+    </div>
+
+    {% if paginate.pages > 1 %}
+      {% render 'pagination', paginate: paginate %}
+    {% endif %}
+  {% endpaginate %}
+
+</div>

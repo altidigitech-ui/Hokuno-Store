@@ -1,0 +1,38 @@
+{% comment %} snippets/pagination.liquid — Usage: {% raw %}{% render 'pagination', paginate: paginate %}{% endraw %} {% endcomment %}
+{% if paginate.pages > 1 %}
+<nav class="pagination" aria-label="Pagination">
+  {% if paginate.previous %}
+    <a href="{{ paginate.previous.url }}" class="pagination-btn pagination-prev">
+      &larr; {{ 'pagination.previous' | t }}
+    </a>
+  {% else %}
+    <span class="pagination-btn pagination-prev pagination-btn--disabled" aria-disabled="true">
+      &larr; {{ 'pagination.previous' | t }}
+    </span>
+  {% endif %}
+
+  <div class="pagination-parts">
+    {% for part in paginate.parts %}
+      {% if part.is_link %}
+        <a href="{{ part.url }}" class="pagination-part{% if part.title == paginate.current_page %} pagination-part--active{% endif %}">
+          {{ part.title }}
+        </a>
+      {% elsif part.title == paginate.current_page %}
+        <span class="pagination-part pagination-part--active" aria-current="page">{{ part.title }}</span>
+      {% else %}
+        <span class="pagination-part pagination-part--ellipsis">{{ part.title }}</span>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  {% if paginate.next %}
+    <a href="{{ paginate.next.url }}" class="pagination-btn pagination-next">
+      {{ 'pagination.next' | t }} &rarr;
+    </a>
+  {% else %}
+    <span class="pagination-btn pagination-next pagination-btn--disabled" aria-disabled="true">
+      {{ 'pagination.next' | t }} &rarr;
+    </span>
+  {% endif %}
+</nav>
+{% endif %}

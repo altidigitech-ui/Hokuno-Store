@@ -1,1 +1,11 @@
-{{ content_for_layout }}
+<!-- templates/list-collections.liquid — Grille des 4 collections -->
+<div class="page-wrap">
+  <h1 class="page-title">{{ 'nav.collections' | t }}</h1>
+  <div class="cols-grid cols-grid--full">
+    {% assign col_handles = 'wanted,direction,mythologie,design-hokuno' | split: ',' %}
+    {% for handle in col_handles %}
+      {% assign col = collections[handle] %}
+      {% if col %}{% render 'collection-card', collection: col %}{% endif %}
+    {% endfor %}
+  </div>
+</div>

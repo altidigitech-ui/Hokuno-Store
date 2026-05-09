@@ -1,0 +1,51 @@
+<!-- snippets/breadcrumbs.liquid -->
+{% unless template == 'index' or template == 'cart' or template == 'search' or template == '404' or template == 'password' or template == 'list-collections' %}
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <ol class="breadcrumbs-list">
+    <li class="breadcrumbs-item">
+      <a href="/" class="breadcrumbs-link">{{ 'breadcrumbs.home' | t }}</a>
+    </li>
+
+    {% if template == 'collection' %}
+      <li class="breadcrumbs-item breadcrumbs-sep" aria-hidden="true">/</li>
+      <li class="breadcrumbs-item">
+        <span>{{ collection.title }}</span>
+      </li>
+
+    {% elsif template == 'product' %}
+      {% if product.collections.size > 0 %}
+        <li class="breadcrumbs-item breadcrumbs-sep" aria-hidden="true">/</li>
+        <li class="breadcrumbs-item">
+          <a href="{{ product.collections.first.url }}" class="breadcrumbs-link">{{ product.collections.first.title }}</a>
+        </li>
+      {% endif %}
+      <li class="breadcrumbs-item breadcrumbs-sep" aria-hidden="true">/</li>
+      <li class="breadcrumbs-item">
+        <span>{{ product.title }}</span>
+      </li>
+
+    {% elsif template == 'page' %}
+      <li class="breadcrumbs-item breadcrumbs-sep" aria-hidden="true">/</li>
+      <li class="breadcrumbs-item">
+        <span>{{ page.title }}</span>
+      </li>
+
+    {% elsif template == 'blog' %}
+      <li class="breadcrumbs-item breadcrumbs-sep" aria-hidden="true">/</li>
+      <li class="breadcrumbs-item">
+        <span>{{ blog.title }}</span>
+      </li>
+
+    {% elsif template == 'article' %}
+      <li class="breadcrumbs-item breadcrumbs-sep" aria-hidden="true">/</li>
+      <li class="breadcrumbs-item">
+        <a href="{{ blog.url }}" class="breadcrumbs-link">{{ blog.title }}</a>
+      </li>
+      <li class="breadcrumbs-item breadcrumbs-sep" aria-hidden="true">/</li>
+      <li class="breadcrumbs-item">
+        <span>{{ article.title }}</span>
+      </li>
+    {% endif %}
+  </ol>
+</nav>
+{% endunless %}

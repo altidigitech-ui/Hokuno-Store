@@ -1,1 +1,8 @@
-{{ content_for_layout }}
+<!-- templates/page.liquid — Pages statiques (about, faq, mentions légales) -->
+<div class="page-wrap">
+  {% render 'breadcrumbs' %}
+  <h1 class="page-title">{{ page.title }}</h1>
+  <div class="page-content">
+    {{ page.content }}
+  </div>
+</div>

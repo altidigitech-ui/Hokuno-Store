@@ -1,1 +1,321 @@
-{{ content_for_layout }}
+<!-- templates/product.liquid — Page produit -->
+<div class="page-wrap product-page">
+  {% render 'breadcrumbs' %}
+
+  <!-- ============================================================
+       ZONE PRINCIPALE : GALERIE + INFOS
+       ============================================================ -->
+  <div class="product-wrap">
+
+    <!-- Galerie -->
+    <div class="product-images" id="gallery-main">
+      <img
+        id="main-product-image"
+        src="{{ product.selected_or_first_available_variant.image | default: product.featured_image | image_url: width: 1200 }}"
+        alt="{{ product.title }}"
+        class="product-main-img"
+        width="600"
+        height="600">
+
+      <div class="product-thumbs">
+        {% for image in product.images %}
+          <img
+            class="gallery-thumb{% if forloop.first %} active{% endif %}"
+            src="{{ image | image_url: width: 200 }}"
+            data-src="{{ image | image_url: width: 1200 }}"
+            alt="{{ product.title }} — vue {{ forloop.index }}"
+            width="80"
+            height="80"
+            loading="lazy">
+        {% endfor %}
+      </div>
+    </div>
+
+    <!-- Infos produit -->
+    <div class="product-details">
+
+      <!-- Collection -->
+      <p class="product-collection">
+        {% assign main_col = nil %}
+        {% for col in product.collections %}
+          {% unless col.handle == 'all' or col.handle == 'frontpage' %}
+            {% if main_col == nil %}{% assign main_col = col %}{% endif %}
+          {% endunless %}
+        {% endfor %}
+        {% if main_col %}
+          <a href="{{ main_col.url }}">{{ main_col.title }}</a>
+        {% endif %}
+      </p>
+
+      <h1 class="product-name">{{ product.title }}</h1>
+
+      <!-- Prix -->
+      <div class="product-pricing">
+        {% if product.compare_at_price > product.price %}
+          <span class="product-price-compare">{{ product.compare_at_price | money }}</span>
+          <span class="product-price-tag product-price-sale" id="product-price">{{ product.price | money }}</span>
+          <span class="product-price-badge">-{{ product.compare_at_price | minus: product.price | times: 100 | divided_by: product.compare_at_price }}%</span>
+        {% else %}
+          <span class="product-price-tag" id="product-price">{{ product.price | money }}</span>
+        {% endif %}
+        <span class="product-price-compare" id="product-compare-price" style="display:none"></span>
+      </div>
+
+      <!-- Formulaire variants + ajout panier -->
+      <div id="product-form"
+           data-variants="{{ product.variants | json | escape }}"
+           data-product-title="{{ product.title | escape }}">
+
+        <!-- Swatches couleur -->
+        {% assign color_option_index = nil %}
+        {% for option in product.options %}
+          {% assign option_down = option | downcase %}
+          {% if option_down == 'color' or option_down == 'colour' or option_down == 'couleur' %}
+            {% assign color_option_index = forloop.index0 %}
+          {% endif %}
+        {% endfor %}
+        {% if color_option_index != nil %}
+          <p class="option-label">{{ 'product.color' | t }}</p>
+          <div class="color-swatches">
+            {% assign seen_colors = "" %}
+            {% for variant in product.variants %}
+              {% assign color = variant.options[color_option_index] %}
+              {% unless seen_colors contains color %}
+                {% assign seen_colors = seen_colors | append: color | append: ',' %}
+                <button type="button"
+                        class="color-swatch{% if forloop.first %} active{% endif %}"
+                        data-value="{{ color }}"
+                        title="{{ color }}"
+                        aria-label="{{ color }}">
+                </button>
+              {% endunless %}
+            {% endfor %}
+          </div>
+        {% endif %}
+
+        <!-- Boutons taille -->
+        {% assign size_option_index = nil %}
+        {% for option in product.options %}
+          {% assign option_down = option | downcase %}
+          {% if option_down == 'size' or option_down == 'taille' %}
+            {% assign size_option_index = forloop.index0 %}
+          {% endif %}
+        {% endfor %}
+        {% if size_option_index != nil %}
+          <p class="option-label">{{ 'product.size' | t }}</p>
+          <div class="size-buttons">
+            {% assign seen_sizes = "" %}
+            {% for variant in product.variants %}
+              {% assign size = variant.options[size_option_index] %}
+              {% unless seen_sizes contains size %}
+                {% assign seen_sizes = seen_sizes | append: size | append: ',' %}
+                <button type="button"
+                        class="size-btn{% if forloop.first %} active{% endif %}{% unless variant.available %} disabled{% endunless %}"
+                        data-value="{{ size }}"
+                        {% unless variant.available %}disabled{% endunless %}
+                        aria-label="{{ size }}">
+                  {{ size }}
+                </button>
+              {% endunless %}
+            {% endfor %}
+          </div>
+        {% endif %}
+
+        <!-- Variante unique (pas de couleur ni taille) -->
+        {% if product.has_only_default_variant %}
+          <input type="hidden" name="id" id="variant-id" value="{{ product.selected_or_first_available_variant.id }}">
+        {% else %}
+          <input type="hidden" name="id" id="variant-id" value="{{ product.selected_or_first_available_variant.id }}">
+        {% endif %}
+
+        <!-- Quantité -->
+        <div class="product-qty">
+          <button type="button" class="qty-btn" onclick="changeQty(-1)" aria-label="Diminuer">−</button>
+          <input type="number" class="qty-input" id="qty-input" name="quantity" value="1" min="1" max="10" aria-label="Quantité">
+          <button type="button" class="qty-btn" onclick="changeQty(1)" aria-label="Augmenter">+</button>
+        </div>
+
+        <!-- Actions : panier + favoris -->
+        <div class="product-actions">
+          <button type="button"
+                  class="add-cart"
+                  id="add-to-cart-btn"
+                  data-variant-id="{{ product.selected_or_first_available_variant.id }}"
+                  {% unless product.available %}disabled{% endunless %}>
+            {% if product.available %}
+              {{ 'product.add_to_cart' | t }}
+            {% else %}
+              {{ 'product.sold_out' | t }}
+            {% endif %}
+          </button>
+          <button type="button"
+                  class="wishlist-btn"
+                  id="wishlist-btn"
+                  data-product-id="{{ product.id }}"
+                  aria-label="{{ 'product.add_to_wishlist' | t }}"
+                  aria-pressed="false">
+            ♡
+          </button>
+        </div>
+      </div>
+
+      <!-- Badges de confiance -->
+      <div class="product-badges">
+        <div class="product-badge">🌐 {{ 'product.badge_shipping' | t }}</div>
+        <div class="product-badge">↩️ {{ 'product.badge_returns' | t }}</div>
+        <div class="product-badge">🔒 {{ 'product.badge_payment' | t }}</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ============================================================
+       ACCORDÉONS PLEINE LARGEUR
+       ============================================================ -->
+  <div class="product-accordions">
+
+    <!-- Description / Backstory -->
+    <div class="accord-item open">
+      <button class="accord-header" aria-expanded="true">
+        {{ 'product.description' | t }}
+        <span class="accord-icon">−</span>
+      </button>
+      <div class="accord-body">
+        {{ product.description }}
+      </div>
+    </div>
+
+    <!-- Infos produit -->
+    <div class="accord-item">
+      <button class="accord-header" aria-expanded="false">
+        {{ 'product.details' | t }}
+        <span class="accord-icon">+</span>
+      </button>
+      <div class="accord-body">
+        {% assign prod_type_lower = product.type | downcase %}
+        {% if prod_type_lower contains 't-shirt' or prod_type_lower contains 'tshirt' %}
+          <p><strong>Matière :</strong> 100% coton (Gildan Heavy Cotton 5000)</p>
+          <p><strong>Grammage :</strong> 180 g/m²</p>
+          <p><strong>Coupe :</strong> Regular fit — Unisexe</p>
+          <p><strong>Impression :</strong> DTG (Direct-to-Garment) haute définition</p>
+          <p><strong>Entretien :</strong> Lavage machine 30°C — Ne pas javelliser — Séchage basse température — Repassage côté envers</p>
+          <p><strong>Fabrication :</strong> Print on Demand — Fabriqué à la commande</p>
+        {% elsif prod_type_lower contains 'mug' or prod_type_lower contains 'tasse' %}
+          <p><strong>Matière :</strong> Céramique</p>
+          <p><strong>Contenance :</strong> 11oz (325 ml) / 15oz (440 ml)</p>
+          <p><strong>Impression :</strong> Sublimation haute définition</p>
+          <p><strong>Entretien :</strong> Compatible lave-vaisselle et micro-ondes</p>
+          <p><strong>Fabrication :</strong> Print on Demand — Fabriqué à la commande</p>
+        {% elsif prod_type_lower contains 'coque' or prod_type_lower contains 'case' %}
+          <p><strong>Type :</strong> Coque slim (Slim Case)</p>
+          <p><strong>Matière :</strong> Polycarbonate rigide</p>
+          <p><strong>Protection :</strong> Protège dos et côtés — Accès à tous les ports et boutons</p>
+          <p><strong>Impression :</strong> UV haute définition</p>
+          <p><strong>Compatibilité :</strong> iPhone 11 → iPhone 17</p>
+        {% else %}
+          <p><strong>Fabrication :</strong> Print on Demand — Fabriqué à la commande</p>
+        {% endif %}
+      </div>
+    </div>
+
+    <!-- Guide des tailles -->
+    <div class="accord-item">
+      <button class="accord-header" aria-expanded="false">
+        {{ 'product.size_guide' | t }}
+        <span class="accord-icon">+</span>
+      </button>
+      <div class="accord-body">
+        {% assign prod_type_lower = product.type | downcase %}
+        {% if prod_type_lower contains 't-shirt' or prod_type_lower contains 'tshirt' %}
+          <table class="size-guide-table">
+            <thead>
+              <tr>
+                <th>Taille</th>
+                <th>Largeur (cm)</th>
+                <th>Longueur (cm)</th>
+                <th>Tour poitrine (cm)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>S</td><td>46</td><td>71</td><td>92</td></tr>
+              <tr><td>M</td><td>51</td><td>74</td><td>102</td></tr>
+              <tr><td>L</td><td>56</td><td>76</td><td>112</td></tr>
+              <tr><td>XL</td><td>61</td><td>79</td><td>122</td></tr>
+            </tbody>
+          </table>
+          <p class="size-guide-advice">{{ 'product.size_guide_advice' | t }}</p>
+        {% else %}
+          <p class="size-guide-na">{{ 'product.size_guide_na' | t }}</p>
+        {% endif %}
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ============================================================
+       PRODUITS SIMILAIRES
+       ============================================================ -->
+  {% assign related_col = nil %}
+  {% for col in product.collections %}
+    {% unless col.handle == 'all' or col.handle == 'frontpage' %}
+      {% if related_col == nil %}{% assign related_col = col %}{% endif %}
+    {% endunless %}
+  {% endfor %}
+
+  {% if related_col %}
+    <section class="related">
+      <h2 class="related-title">{{ 'product.related' | t }}</h2>
+      <div class="related-grid">
+        {% assign shown = 0 %}
+        {% for item in related_col.products limit: 5 %}
+          {% if item.id != product.id and shown < 4 %}
+            {% render 'product-card', product: item %}
+            {% assign shown = shown | plus: 1 %}
+          {% endif %}
+        {% endfor %}
+      </div>
+    </section>
+  {% endif %}
+
+  <!-- ============================================================
+       PARTAGE SOCIAL
+       ============================================================ -->
+  <div class="product-share">
+    <span class="share-label">{{ 'product.share' | t }}</span>
+    <button class="share-btn" onclick="shareOnTikTok()" title="TikTok" aria-label="Partager sur TikTok">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.32 6.32 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.73a8.14 8.14 0 004.77 1.52V6.82a4.85 4.85 0 01-1-.13z"/></svg>
+    </button>
+    <button class="share-btn" onclick="shareOnInstagram()" title="Instagram" aria-label="Partager sur Instagram">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+    </button>
+    <button class="share-btn" onclick="copyLink()" title="{{ 'product.copy_link' | t }}" aria-label="{{ 'product.copy_link' | t }}">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+    </button>
+  </div>
+
+</div>
+
+<script>
+function copyLink() {
+  navigator.clipboard.writeText(window.location.href).catch(function() {
+    var el = document.createElement('textarea');
+    el.value = window.location.href;
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand('copy');
+    document.body.removeChild(el);
+  });
+  var btn = event.target.closest('.share-btn');
+  if (btn) {
+    btn.classList.add('copied');
+    setTimeout(function() { btn.classList.remove('copied'); }, 2000);
+  }
+}
+function shareOnTikTok() {
+  window.open('https://www.tiktok.com/share?url=' + encodeURIComponent(window.location.href), '_blank');
+}
+function shareOnInstagram() {
+  navigator.clipboard.writeText(window.location.href).catch(function() {});
+  window.open('https://www.instagram.com/', '_blank');
+}
+</script>

@@ -1,1 +1,93 @@
-{{ content_for_layout }}
+<!-- templates/index.liquid — Page d'accueil Hokuno -->
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="v-left" aria-hidden="true">
+    <span>HOKUNO</span><span class="v-spacer"></span><span>STREETWEAR</span><span class="v-spacer"></span><span>001</span>
+  </div>
+
+  <div class="hero-left">
+    <h1 class="hero-title">{{ 'hero.title_line1' | t }}<br>{{ 'hero.title_line2' | t }}<br>{{ 'hero.title_line3' | t }}</h1>
+    <p class="hero-katakana">ホクノ</p>
+    <div class="hero-buttons">
+      <a href="/collections" class="btn-gold">{{ 'hero.cta_primary' | t }} →</a>
+      <a href="/collections/all?sort_by=created-descending" class="btn-outline">{{ 'hero.cta_secondary' | t }}</a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-img-wrap">
+      <img src="{{ 'hero-tshirt.png' | asset_url }}" alt="HOKUNO — T-shirt Wanted" class="hero-img" width="700" height="800">
+    </div>
+  </div>
+
+  <div class="v-right" aria-hidden="true">
+    <span class="v-right-jp">北へ向かって</span>
+    <span class="v-right-coord">35.6895°N, 139.6917°E</span>
+  </div>
+
+  <div class="hero-products" aria-hidden="true">
+    <p class="hp-label">{{ 'hero.featured_label' | t }}</p>
+    {% for product in collections.all.products limit: 3 %}
+      <a href="{{ product.url }}" class="hp-card">
+        {% if product.featured_image %}
+          <img src="{{ product.featured_image | image_url: width: 200 }}" alt="{{ product.title }}" width="60" height="60" loading="lazy">
+        {% endif %}
+        <div>
+          <div class="hp-card-title">{{ product.title | truncate: 30 }}</div>
+          <div class="hp-card-price">{{ product.price | money }}</div>
+        </div>
+      </a>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<section class="trust" aria-label="{{ 'trust.shipping.label' | t }}">
+  <div class="trust-card">
+    <div class="trust-icon" aria-hidden="true">🌐</div>
+    <div>
+      <div class="trust-label">{{ 'trust.shipping.label' | t }}</div>
+      <div class="trust-sub">{{ 'trust.shipping.sub' | t }}</div>
+    </div>
+  </div>
+  <div class="trust-card">
+    <div class="trust-icon" aria-hidden="true">↩️</div>
+    <div>
+      <div class="trust-label">{{ 'trust.returns.label' | t }}</div>
+      <div class="trust-sub">{{ 'trust.returns.sub' | t }}</div>
+    </div>
+  </div>
+  <div class="trust-card">
+    <div class="trust-icon" aria-hidden="true">🔒</div>
+    <div>
+      <div class="trust-label">{{ 'trust.payment.label' | t }}</div>
+      <div class="trust-sub">{{ 'trust.payment.sub' | t }}</div>
+    </div>
+  </div>
+</section>
+
+<!-- COLLECTIONS SECTION -->
+<section class="cols animate-on-scroll" aria-labelledby="cols-title">
+  <p class="cols-label">{{ 'nav.collections' | t }}</p>
+  <h2 class="cols-title" id="cols-title">{{ 'home.collections.title' | t }}</h2>
+  <p class="cols-sub">{{ 'home.collections.subtitle' | t }}</p>
+  <img class="cols-icon" src="{{ 'boussole-gold.png' | asset_url }}" alt="" aria-hidden="true" width="36" height="36" loading="lazy">
+  <div class="cols-grid">
+    {% assign col_handles = 'wanted,direction,mythologie,design-hokuno' | split: ',' %}
+    {% for handle in col_handles %}
+      {% assign col = collections[handle] %}
+      {% if col.handle == handle %}{% render 'collection-card', collection: col %}{% endif %}
+    {% endfor %}
+  </div>
+</section>
+
+<!-- FEATURED PRODUCTS -->
+<section class="feat animate-on-scroll" aria-labelledby="feat-title">
+  <h2 class="feat-title" id="feat-title">{{ 'home.featured' | t }}</h2>
+  <div class="feat-grid">
+    {% for product in collections.all.products limit: 8 %}
+      {% render 'product-card', product: product %}
+    {% endfor %}
+  </div>
+</section>

@@ -1,1 +1,67 @@
-{{ content_for_layout }}
+<!-- templates/customers/order.liquid — Détail commande -->
+<div class="page-wrap">
+
+  <div class="order-detail-header">
+    <a href="/account" class="order-back">← Mon compte</a>
+    <h1 class="page-title">Commande {{ order.name }}</h1>
+    <p class="order-detail-date">{{ order.created_at | date: "%d %B %Y" }}</p>
+  </div>
+
+  <!-- Articles commandés -->
+  <div class="order-items">
+    {% for line_item in order.line_items %}
+      <div class="order-item">
+        {% if line_item.image %}
+          <img src="{{ line_item.image | image_url: width: 200 }}" alt="{{ line_item.title }}" class="order-item-img" width="80" height="80" loading="lazy">
+        {% endif %}
+        <div class="order-item-details">
+          <h4 class="order-item-title">{{ line_item.product.title }}</h4>
+          {% unless line_item.variant.title == 'Default Title' %}
+            <p class="order-item-variant">{{ line_item.variant.title }}</p>
+          {% endunless %}
+          <p class="order-item-qty">Qté : {{ line_item.quantity }}</p>
+        </div>
+        <p class="order-item-price">{{ line_item.final_line_price | money }}</p>
+      </div>
+    {% endfor %}
+  </div>
+
+  <!-- Totaux -->
+  <div class="order-totals">
+    <div class="order-total-row">
+      <span>Sous-total</span>
+      <span>{{ order.subtotal_price | money }}</span>
+    </div>
+    {% for shipping_method in order.shipping_methods %}
+      <div class="order-total-row">
+        <span>{{ shipping_method.title }}</span>
+        <span>{{ shipping_method.price | money }}</span>
+      </div>
+    {% endfor %}
+    {% for discount_application in order.discount_applications %}
+      <div class="order-total-row order-total-row--discount">
+        <span>Réduction ({{ discount_application.title }})</span>
+        <span>−{{ discount_application.total_allocated_amount | money }}</span>
+      </div>
+    {% endfor %}
+    <div class="order-total-row order-total-row--total">
+      <span>Total</span>
+      <span>{{ order.total_price | money }}</span>
+    </div>
+  </div>
+
+  <!-- Adresse de livraison -->
+  {% if order.shipping_address %}
+    <div class="order-shipping-address">
+      <h3>Adresse de livraison</h3>
+      <address>
+        {{ order.shipping_address.name }}<br>
+        {{ order.shipping_address.address1 }}<br>
+        {% if order.shipping_address.address2 != blank %}{{ order.shipping_address.address2 }}<br>{% endif %}
+        {{ order.shipping_address.zip }} {{ order.shipping_address.city }}<br>
+        {{ order.shipping_address.country }}
+      </address>
+    </div>
+  {% endif %}
+
+</div>

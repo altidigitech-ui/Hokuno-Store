@@ -1,0 +1,22 @@
+<!-- snippets/newsletter-form.liquid -->
+<div class="newsletter">
+  <p class="newsletter-text">{{ 'footer.newsletter.text' | t }}</p>
+  {% form 'customer', id: 'newsletter-form' %}
+    {{ form.errors | default_errors }}
+    <input type="hidden" name="contact[tags]" value="newsletter">
+    <div class="newsletter-row">
+      <input type="email"
+             name="contact[email]"
+             class="newsletter-input"
+             placeholder="{{ 'footer.newsletter.placeholder' | t }}"
+             required
+             autocomplete="email">
+      <button type="submit" class="btn-gold newsletter-btn">
+        {{ 'footer.newsletter.submit' | t }}
+      </button>
+    </div>
+    {% if form.posted_successfully? %}
+      <p class="newsletter-success">{{ 'footer.newsletter.success' | t }}</p>
+    {% endif %}
+  {% endform %}
+</div>

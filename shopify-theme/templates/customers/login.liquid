@@ -1,1 +1,55 @@
-{{ content_for_layout }}
+<!-- templates/customers/login.liquid — Connexion + récupération mot de passe -->
+<div class="page-wrap">
+
+  <!-- Formulaire de connexion -->
+  <div class="auth-wrap" id="customer-login-form">
+    <h1 class="auth-title">{{ 'customer.login.title' | t }}</h1>
+
+    {% form 'customer_login' %}
+      {% if form.errors %}
+        <div class="form-error">{{ form.errors | default_errors }}</div>
+      {% endif %}
+
+      <label for="login-email" class="form-label">{{ 'customer.login.email' | t }}</label>
+      <input type="email" id="login-email" name="customer[email]" class="form-input" autocomplete="email" required>
+
+      <label for="login-password" class="form-label">{{ 'customer.login.password' | t }}</label>
+      <input type="password" id="login-password" name="customer[password]" class="form-input" autocomplete="current-password" required>
+
+      <button type="submit" class="btn-gold auth-submit">{{ 'customer.login.submit' | t }}</button>
+    {% endform %}
+
+    <p class="auth-link">
+      {{ 'customer.login.no_account' | t }}
+      <a href="/account/register">{{ 'customer.login.create_account' | t }}</a>
+    </p>
+    <p class="auth-link">
+      <a href="/account/login#recover" id="recover-link">{{ 'customer.login.forgot_password' | t }}</a>
+    </p>
+  </div>
+
+  <!-- Formulaire de récupération de mot de passe -->
+  <div class="auth-wrap" id="recover-password-form" style="display:none">
+    <h2 class="auth-title">{{ 'customer.recover.title' | t }}</h2>
+    <p class="auth-subtitle">{{ 'customer.recover.subtitle' | t }}</p>
+
+    {% form 'recover_customer_password' %}
+      {% if form.posted_successfully? %}
+        <p class="form-success">Un email de réinitialisation a été envoyé.</p>
+      {% endif %}
+      {% if form.errors %}
+        <div class="form-error">{{ form.errors | default_errors }}</div>
+      {% endif %}
+
+      <label for="recover-email" class="form-label">{{ 'customer.login.email' | t }}</label>
+      <input type="email" id="recover-email" name="email" class="form-input" autocomplete="email" required>
+
+      <button type="submit" class="btn-gold auth-submit">{{ 'customer.recover.submit' | t }}</button>
+    {% endform %}
+
+    <p class="auth-link">
+      <a href="/account/login" id="back-to-login">← {{ 'customer.recover.back_to_login' | t }}</a>
+    </p>
+  </div>
+
+</div>
