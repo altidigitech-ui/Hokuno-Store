@@ -57,6 +57,25 @@
     </div>
   </div>
 
+  <!-- Filtres par type de produit -->
+  {%- assign types = "" -%}
+  {%- for product in collection.products -%}
+    {%- unless types contains product.type -%}
+      {%- if types != "" -%}{%- assign types = types | append: "," -%}{%- endif -%}
+      {%- assign types = types | append: product.type -%}
+    {%- endunless -%}
+  {%- endfor -%}
+  {%- assign type_list = types | split: "," -%}
+
+  {% if type_list.size > 1 %}
+    <div class="filter-types" role="tablist" aria-label="{{ 'collections.filters' | t }}">
+      <button type="button" class="filter-type-btn active" data-type="all">{{ 'collections.all' | t }}</button>
+      {% for type in type_list %}
+        <button type="button" class="filter-type-btn" data-type="{{ type | handleize }}">{{ type }}</button>
+      {% endfor %}
+    </div>
+  {% endif %}
+
   <!-- Grille produits + pagination -->
   {% paginate collection.products by 24 %}
     <div class="products-grid">

@@ -46,6 +46,7 @@
     "featured": "FEATURED PRODUCTS"
   },
   "collections": {
+    "all": "ALL",
     "discover": "DISCOVER",
     "products": "products",
     "sort": {

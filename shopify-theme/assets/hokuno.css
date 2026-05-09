@@ -725,6 +725,34 @@ body.menu-open .mobile-nav { display: none; }
   cursor: pointer;
   text-decoration: underline;
 }
+.filter-types {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 32px;
+  padding: 0 64px;
+}
+.filter-type-btn {
+  padding: 10px 22px;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: transparent;
+  color: rgba(255,255,255,0.6);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-family: 'Inter', sans-serif;
+  white-space: nowrap;
+}
+.filter-type-btn:hover,
+.filter-type-btn.active {
+  background: #D4A853;
+  color: #000;
+  border-color: #D4A853;
+}
 
 /* ═══ 14. PRODUCT PAGE ═══ */
 
@@ -2038,6 +2066,17 @@ textarea::placeholder { color: rgba(255,255,255,0.3); }
 
   .filter-bar { display: none; }
   .filter-mobile-btn { display: flex; }
+
+  .filter-types {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 0 24px;
+    margin-bottom: 24px;
+  }
+  .filter-types::-webkit-scrollbar { display: none; }
+  .filter-type-btn { flex-shrink: 0; }
 
   .breadcrumbs { font-size: 14px; }
   .page-num { min-width: 44px; min-height: 44px; height: 44px; }

@@ -46,6 +46,7 @@
     "featured": "PRODUITS PHARES"
   },
   "collections": {
+    "all": "TOUT",
     "discover": "DÉCOUVRIR",
     "products": "produits",
     "sort": {
