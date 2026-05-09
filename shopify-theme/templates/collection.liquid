@@ -60,33 +60,23 @@
     </div>
   </div>
 
-  <!-- Filtres par type de produit (Shopify native) -->
-  {%- assign type_filter = nil -%}
-  {%- for filter in collection.filters -%}
-    {%- if filter.param_name == 'filter.p.product_type' -%}
-      {%- assign type_filter = filter -%}
-    {%- endif -%}
-  {%- endfor -%}
-
-  {% if type_filter and type_filter.values.size > 1 %}
-    {%- assign type_active = false -%}
-    {%- for value in type_filter.values -%}
-      {%- if value.active -%}{%- assign type_active = true -%}{%- endif -%}
-    {%- endfor -%}
-
-    <div class="filter-types" aria-label="{{ 'collections.filters' | t }}">
-      <a href="{% if type_active %}{{ type_filter.url_to_remove }}{% else %}{{ collection.url }}{% endif %}"
-         class="filter-type-btn {% unless type_active %}active{% endunless %}">
-        {{ 'collections.all' | t }}
-      </a>
-      {% for value in type_filter.values %}
-        <a href="{{ value.url_to_add }}"
-           class="filter-type-btn {% if value.active %}active{% endif %}">
-          {{ value.label }} ({{ value.count }})
+  <!-- Filtres par type de produit (Shopify native, single-select) -->
+  {% for filter in collection.filters %}
+    {% if filter.param_name == 'filter.p.product_type' and filter.values.size > 1 %}
+      <div class="filter-types" aria-label="{{ 'collections.filters' | t }}">
+        <a href="{{ collection.url }}"
+           class="filter-type-btn {% unless filter.active_values.size > 0 %}active{% endunless %}">
+          {{ 'collections.all' | t }}
         </a>
-      {% endfor %}
-    </div>
-  {% endif %}
+        {% for value in filter.values %}
+          <a href="{{ collection.url }}?filter.p.product_type={{ value.value | url_encode }}"
+             class="filter-type-btn {% if value.active %}active{% endif %}">
+            {{ value.label }} ({{ value.count }})
+          </a>
+        {% endfor %}
+      </div>
+    {% endif %}
+  {% endfor %}
 
   <!-- Grille produits + pagination -->
   {% paginate collection.products by 24 %}
