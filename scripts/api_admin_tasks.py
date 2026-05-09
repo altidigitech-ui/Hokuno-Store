@@ -187,8 +187,12 @@ def iter_collection_products(handle: str):
 
 
 def is_english_title(title: str) -> bool:
-    """A title is English if it contains ' EN ' or ends with ' EN'."""
+    """A title is English if it contains ' EN ', ends with ' EN', or starts
+    with 'ceramic mug ' (Direction EN mugs use English naming instead of an
+    EN marker)."""
     t = title.strip()
+    if t.lower().startswith("ceramic mug "):
+        return True
     return " EN " in f" {t} " or t.endswith(" EN")
 
 
