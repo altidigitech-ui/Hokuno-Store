@@ -21,11 +21,11 @@
               <p class="cart-item-price">{{ item.original_line_price | money }}</p>
             </div>
             <div class="cart-item-qty">
-              <button class="qty-btn" data-cart-minus="{{ item.key }}" aria-label="Diminuer">−</button>
+              <button class="qty-btn" data-cart-minus="{{ item.key }}" aria-label="{{ 'cart.qty_decrease' | t }}">−</button>
               <span class="qty-val" data-cart-qty="{{ item.key }}">{{ item.quantity }}</span>
-              <button class="qty-btn" data-cart-plus="{{ item.key }}" aria-label="Augmenter">+</button>
+              <button class="qty-btn" data-cart-plus="{{ item.key }}" aria-label="{{ 'cart.qty_increase' | t }}">+</button>
             </div>
-            <button class="cart-item-remove" data-cart-remove="{{ item.key }}" aria-label="Supprimer {{ item.title | escape }}">&times;</button>
+            <button class="cart-item-remove" data-cart-remove="{{ item.key }}" aria-label="{{ 'cart.remove' | t }} {{ item.title | escape }}">&times;</button>
           </div>
         {% endfor %}
       </div>
@@ -53,7 +53,7 @@
           <span class="cart-subtotal-price" id="cart-subtotal">{{ cart.total_price | money }}</span>
         </div>
         <a href="/checkout" class="btn-gold cart-checkout-btn">{{ 'cart.checkout' | t }} →</a>
-        <p class="cart-legal-note">TVA incluse — Livraison calculée au checkout</p>
+        <p class="cart-legal-note">{{ 'cart.legal_note' | t }}</p>
       </div>
     </div>
 

@@ -85,7 +85,11 @@
     "subtotal": "Subtotal",
     "checkout": "PROCEED TO CHECKOUT",
     "shipping_free": "✓ Free shipping!",
-    "shipping_remaining": "Only {{ amount }} more for free shipping!"
+    "shipping_remaining": "Only {{ amount }} more for free shipping!",
+    "legal_note": "VAT included — Shipping calculated at checkout",
+    "qty_decrease": "Decrease",
+    "qty_increase": "Increase",
+    "remove": "Remove"
   },
   "breadcrumbs": {
     "home": "Home"
@@ -97,9 +101,12 @@
   "blog": {
     "read_more": "Read more",
     "previous": "Previous article",
-    "next": "Next article"
+    "next": "Next article",
+    "empty": "No articles yet. Come back soon!"
   },
   "contact": {
+    "title": "Contact",
+    "intro": "A question, a suggestion, a collaboration? We'll reply within 24-48h.",
     "name": "Name",
     "email": "Email",
     "message": "Message",
@@ -127,13 +134,29 @@
     "account": {
       "title": "MY ACCOUNT",
       "orders": "Order history",
-      "logout": "LOG OUT"
+      "logout": "LOG OUT",
+      "no_orders": "No orders yet.",
+      "order_number": "Order",
+      "order_date": "Date",
+      "order_status": "Status",
+      "order_total": "Total",
+      "order_view": "View"
+    },
+    "order": {
+      "back": "My account",
+      "title": "Order",
+      "qty": "Qty",
+      "subtotal": "Subtotal",
+      "discount": "Discount",
+      "total": "Total",
+      "shipping_address": "Shipping address"
     },
     "recover": {
       "title": "FORGOT PASSWORD",
       "subtitle": "Enter your email address and we'll send you a reset link.",
       "submit": "SEND RESET LINK",
-      "back_to_login": "Back to login"
+      "back_to_login": "Back to login",
+      "success": "A reset email has been sent."
     }
   },
   "footer": {

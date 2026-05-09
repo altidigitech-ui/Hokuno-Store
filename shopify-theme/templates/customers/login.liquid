@@ -35,7 +35,7 @@
 
     {% form 'recover_customer_password' %}
       {% if form.posted_successfully? %}
-        <p class="form-success">Un email de réinitialisation a été envoyé.</p>
+        <p class="form-success">{{ 'customer.recover.success' | t }}</p>
       {% endif %}
       {% if form.errors %}
         <div class="form-error">{{ form.errors | default_errors }}</div>

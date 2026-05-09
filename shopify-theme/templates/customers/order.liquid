@@ -2,8 +2,8 @@
 <div class="page-wrap">
 
   <div class="order-detail-header">
-    <a href="/account" class="order-back">← Mon compte</a>
-    <h1 class="page-title">Commande {{ order.name }}</h1>
+    <a href="/account" class="order-back">← {{ 'customer.order.back' | t }}</a>
+    <h1 class="page-title">{{ 'customer.order.title' | t }} {{ order.name }}</h1>
     <p class="order-detail-date">{{ order.created_at | date: "%d %B %Y" }}</p>
   </div>
 
@@ -19,7 +19,7 @@
           {% unless line_item.variant.title == 'Default Title' %}
             <p class="order-item-variant">{{ line_item.variant.title }}</p>
           {% endunless %}
-          <p class="order-item-qty">Qté : {{ line_item.quantity }}</p>
+          <p class="order-item-qty">{{ 'customer.order.qty' | t }} : {{ line_item.quantity }}</p>
         </div>
         <p class="order-item-price">{{ line_item.final_line_price | money }}</p>
       </div>
@@ -29,7 +29,7 @@
   <!-- Totaux -->
   <div class="order-totals">
     <div class="order-total-row">
-      <span>Sous-total</span>
+      <span>{{ 'customer.order.subtotal' | t }}</span>
       <span>{{ order.subtotal_price | money }}</span>
     </div>
     {% for shipping_method in order.shipping_methods %}
@@ -40,12 +40,12 @@
     {% endfor %}
     {% for discount_application in order.discount_applications %}
       <div class="order-total-row order-total-row--discount">
-        <span>Réduction ({{ discount_application.title }})</span>
+        <span>{{ 'customer.order.discount' | t }} ({{ discount_application.title }})</span>
         <span>−{{ discount_application.total_allocated_amount | money }}</span>
       </div>
     {% endfor %}
     <div class="order-total-row order-total-row--total">
-      <span>Total</span>
+      <span>{{ 'customer.order.total' | t }}</span>
       <span>{{ order.total_price | money }}</span>
     </div>
   </div>
@@ -53,7 +53,7 @@
   <!-- Adresse de livraison -->
   {% if order.shipping_address %}
     <div class="order-shipping-address">
-      <h3>Adresse de livraison</h3>
+      <h3>{{ 'customer.order.shipping_address' | t }}</h3>
       <address>
         {{ order.shipping_address.name }}<br>
         {{ order.shipping_address.address1 }}<br>

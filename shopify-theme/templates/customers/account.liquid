@@ -18,10 +18,10 @@
       <table class="orders-table">
         <thead>
           <tr>
-            <th>Commande</th>
-            <th>Date</th>
-            <th>Statut</th>
-            <th>Total</th>
+            <th>{{ 'customer.account.order_number' | t }}</th>
+            <th>{{ 'customer.account.order_date' | t }}</th>
+            <th>{{ 'customer.account.order_status' | t }}</th>
+            <th>{{ 'customer.account.order_total' | t }}</th>
             <th></th>
           </tr>
         </thead>
@@ -34,14 +34,14 @@
                 <span class="order-badge order-badge--{{ order.financial_status }}">{{ order.financial_status }}</span>
               </td>
               <td class="order-total">{{ order.total_price | money }}</td>
-              <td><a href="{{ order.customer_url }}" class="order-link">Voir</a></td>
+              <td><a href="{{ order.customer_url }}" class="order-link">{{ 'customer.account.order_view' | t }}</a></td>
             </tr>
           {% endfor %}
         </tbody>
       </table>
     </div>
   {% else %}
-    <p class="orders-empty">Aucune commande pour l'instant.</p>
+    <p class="orders-empty">{{ 'customer.account.no_orders' | t }}</p>
     <a href="/collections" class="btn-gold" style="margin-top:24px;display:inline-block">{{ 'cart.discover' | t }}</a>
   {% endif %}
 

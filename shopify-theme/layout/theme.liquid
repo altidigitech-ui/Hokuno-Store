@@ -150,15 +150,14 @@
 
       <div class="nav-right">
         <div class="lang-selector" role="group" aria-label="Langue">
-          {% if request.locale.iso_code == 'fr' %}
-            <span class="lang-active">FR</span>
-            <span class="lang-sep">|</span>
-            <a href="/en{{ request.path }}" class="lang-link">EN</a>
-          {% else %}
-            <a href="/fr{{ request.path }}" class="lang-link">FR</a>
-            <span class="lang-sep">|</span>
-            <span class="lang-active">EN</span>
-          {% endif %}
+          {% for locale in shop.published_locales %}
+            {% if locale.iso_code == request.locale.iso_code %}
+              <span class="lang-active">{{ locale.iso_code | upcase }}</span>
+            {% else %}
+              <a href="{{ locale.root_url }}" class="lang-link" hreflang="{{ locale.iso_code }}">{{ locale.iso_code | upcase }}</a>
+            {% endif %}
+            {% unless forloop.last %}<span class="lang-sep">|</span>{% endunless %}
+          {% endfor %}
         </div>
 
         <a href="/search" class="nav-action" aria-label="{{ 'nav.search' | t }}">
@@ -199,15 +198,14 @@
       <a href="/account" class="mobile-menu-link{% if template contains 'customers' %} active{% endif %}">{{ 'nav.account' | t }}</a>
     </nav>
     <div class="mobile-menu-lang">
-      {% if request.locale.iso_code == 'fr' %}
-        <span class="lang-active">FR</span>
-        <span class="lang-sep">|</span>
-        <a href="/en{{ request.path }}" class="lang-link">EN</a>
-      {% else %}
-        <a href="/fr{{ request.path }}" class="lang-link">FR</a>
-        <span class="lang-sep">|</span>
-        <span class="lang-active">EN</span>
-      {% endif %}
+      {% for locale in shop.published_locales %}
+        {% if locale.iso_code == request.locale.iso_code %}
+          <span class="lang-active">{{ locale.iso_code | upcase }}</span>
+        {% else %}
+          <a href="{{ locale.root_url }}" class="lang-link" hreflang="{{ locale.iso_code }}">{{ locale.iso_code | upcase }}</a>
+        {% endif %}
+        {% unless forloop.last %}<span class="lang-sep">|</span>{% endunless %}
+      {% endfor %}
     </div>
   </div>
 

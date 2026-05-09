@@ -85,7 +85,11 @@
     "subtotal": "Sous-total",
     "checkout": "PASSER LA COMMANDE",
     "shipping_free": "✓ Livraison gratuite !",
-    "shipping_remaining": "Plus que {{ amount }} pour la livraison gratuite !"
+    "shipping_remaining": "Plus que {{ amount }} pour la livraison gratuite !",
+    "legal_note": "TVA incluse — Livraison calculée au checkout",
+    "qty_decrease": "Diminuer",
+    "qty_increase": "Augmenter",
+    "remove": "Supprimer"
   },
   "breadcrumbs": {
     "home": "Accueil"
@@ -97,9 +101,12 @@
   "blog": {
     "read_more": "Lire la suite",
     "previous": "Article précédent",
-    "next": "Article suivant"
+    "next": "Article suivant",
+    "empty": "Aucun article pour le moment. Revenez bientôt !"
   },
   "contact": {
+    "title": "Contact",
+    "intro": "Une question, une suggestion, une collaboration ? On vous répond sous 24-48h.",
     "name": "Nom",
     "email": "Email",
     "message": "Message",
@@ -127,13 +134,29 @@
     "account": {
       "title": "MON COMPTE",
       "orders": "Historique des commandes",
-      "logout": "SE DÉCONNECTER"
+      "logout": "SE DÉCONNECTER",
+      "no_orders": "Aucune commande pour l'instant.",
+      "order_number": "Commande",
+      "order_date": "Date",
+      "order_status": "Statut",
+      "order_total": "Total",
+      "order_view": "Voir"
+    },
+    "order": {
+      "back": "Mon compte",
+      "title": "Commande",
+      "qty": "Qté",
+      "subtotal": "Sous-total",
+      "discount": "Réduction",
+      "total": "Total",
+      "shipping_address": "Adresse de livraison"
     },
     "recover": {
       "title": "MOT DE PASSE OUBLIÉ",
       "subtitle": "Entrez votre adresse email, nous vous enverrons un lien de réinitialisation.",
       "submit": "ENVOYER LE LIEN",
-      "back_to_login": "Retour à la connexion"
+      "back_to_login": "Retour à la connexion",
+      "success": "Un email de réinitialisation a été envoyé."
     }
   },
   "footer": {
