@@ -68,10 +68,15 @@
   {%- assign type_list = types | split: "," -%}
 
   {% if type_list.size > 1 %}
-    <div class="filter-types" role="tablist" aria-label="{{ 'collections.filters' | t }}">
-      <button type="button" class="filter-type-btn active" data-type="all">{{ 'collections.all' | t }}</button>
+    <div class="filter-types" aria-label="{{ 'collections.filters' | t }}">
+      <a href="{{ collection.url }}" class="filter-type-btn {% unless current_tags or request.url contains 'filter' %}active{% endunless %}">
+        {{ 'collections.all' | t }}
+      </a>
       {% for type in type_list %}
-        <button type="button" class="filter-type-btn" data-type="{{ type | handleize }}">{{ type }}</button>
+        <a href="{{ collection.url }}?filter.p.product_type={{ type | url_encode }}"
+           class="filter-type-btn {% if request.url contains type %}active{% endif %}">
+          {{ type }}
+        </a>
       {% endfor %}
     </div>
   {% endif %}

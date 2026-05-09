@@ -1,5 +1,5 @@
 {% comment %} snippets/product-card.liquid — Usage: {% raw %}{% render 'product-card', product: product %}{% endraw %} {% endcomment %}
-<a href="{{ product.url }}" class="prod-card" aria-label="{{ product.title }}" data-type="{{ product.type | handleize }}">
+<a href="{{ product.url }}" class="prod-card" aria-label="{{ product.title }}">
   <div class="prod-card-img">
     {% if product.featured_image %}
       <img

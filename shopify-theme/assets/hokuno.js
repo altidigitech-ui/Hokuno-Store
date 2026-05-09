@@ -663,25 +663,6 @@ function initCollectionFilter() {
       window.location.href = url.toString();
     });
   });
-
-  // Product-type filter buttons (client-side card show/hide)
-  var typeBtns = document.querySelectorAll('.filter-type-btn');
-  if (typeBtns.length) {
-    typeBtns.forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        typeBtns.forEach(function (b) { b.classList.remove('active'); });
-        btn.classList.add('active');
-        var type = btn.dataset.type;
-        document.querySelectorAll('.prod-card').forEach(function (card) {
-          if (type === 'all' || card.dataset.type === type) {
-            card.style.display = '';
-          } else {
-            card.style.display = 'none';
-          }
-        });
-      });
-    });
-  }
 }
 
 /* ============================================================
