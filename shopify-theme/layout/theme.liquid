@@ -90,9 +90,9 @@
   <link rel="stylesheet" href="{{ 'hokuno.css' | asset_url }}">
 
   <!-- Favicon -->
-  {% if settings.favicon %}
-    <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
-  {% endif %}
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ 'favicon-32x32.png' | asset_url }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ 'favicon-16x16.png' | asset_url }}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ 'apple-touch-icon.png' | asset_url }}">
 
   <!-- JSON-LD schemas -->
   {% render 'seo-jsonld' %}
