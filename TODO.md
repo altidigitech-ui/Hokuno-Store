@@ -34,6 +34,7 @@
 - [ ] Vérifier que les produits sont dans les bonnes collections
 - [ ] Corriger les 68 titres /17→/46 pendant la migration
 - [x] Renommer la coque Printify → "Coque Wanted The End Brique Saga 1" ✅ (2026-05-08)
+- [ ] **Action manuelle Shopify Admin — installer "Search & Discovery"** (App Store Shopify, gratuit, par Shopify). Sans cette app, `collection.filters` retourne vide et la barre de filtres par type sur les pages collection ne s'affiche pas. Une fois installée : Apps → Search & Discovery → Filters → activer le filtre **Product type** sur toutes les collections. Non automatisable via API : l'installation d'app passe obligatoirement par OAuth merchant.
 
 ---
 

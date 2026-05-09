@@ -18,21 +18,24 @@
 
         <div class="filter-bar">
           {% for filter in collection.filters %}
-            <div class="filter-group">
-              <span class="filter-title">{{ filter.label }}</span>
-              <div class="filter-options">
-                {% for value in filter.values %}
-                  <label class="filter-option{% if value.active %} active{% endif %}">
-                    <input type="checkbox"
-                           name="{{ value.param_name }}"
-                           value="{{ value.value }}"
-                           {% if value.active %}checked{% endif %}
-                           onchange="document.getElementById('filter-form').submit()">
-                    <span>{{ value.label }} ({{ value.count }})</span>
-                  </label>
-                {% endfor %}
+            {%- comment -%} product_type is rendered as button bar below {%- endcomment -%}
+            {% unless filter.param_name == 'filter.p.product_type' %}
+              <div class="filter-group">
+                <span class="filter-title">{{ filter.label }}</span>
+                <div class="filter-options">
+                  {% for value in filter.values %}
+                    <label class="filter-option{% if value.active %} active{% endif %}">
+                      <input type="checkbox"
+                             name="{{ value.param_name }}"
+                             value="{{ value.value }}"
+                             {% if value.active %}checked{% endif %}
+                             onchange="document.getElementById('filter-form').submit()">
+                      <span>{{ value.label }} ({{ value.count }})</span>
+                    </label>
+                  {% endfor %}
+                </div>
               </div>
-            </div>
+            {% endunless %}
           {% endfor %}
         </div>
 
@@ -57,25 +60,29 @@
     </div>
   </div>
 
-  <!-- Filtres par type de produit -->
-  {%- assign types = "" -%}
-  {%- for product in collection.products -%}
-    {%- unless types contains product.type -%}
-      {%- if types != "" -%}{%- assign types = types | append: "," -%}{%- endif -%}
-      {%- assign types = types | append: product.type -%}
-    {%- endunless -%}
+  <!-- Filtres par type de produit (Shopify native) -->
+  {%- assign type_filter = nil -%}
+  {%- for filter in collection.filters -%}
+    {%- if filter.param_name == 'filter.p.product_type' -%}
+      {%- assign type_filter = filter -%}
+    {%- endif -%}
   {%- endfor -%}
-  {%- assign type_list = types | split: "," -%}
 
-  {% if type_list.size > 1 %}
+  {% if type_filter and type_filter.values.size > 1 %}
+    {%- assign type_active = false -%}
+    {%- for value in type_filter.values -%}
+      {%- if value.active -%}{%- assign type_active = true -%}{%- endif -%}
+    {%- endfor -%}
+
     <div class="filter-types" aria-label="{{ 'collections.filters' | t }}">
-      <a href="{{ collection.url }}" class="filter-type-btn {% unless current_tags or request.url contains 'filter' %}active{% endunless %}">
+      <a href="{% if type_active %}{{ type_filter.url_to_remove }}{% else %}{{ collection.url }}{% endif %}"
+         class="filter-type-btn {% unless type_active %}active{% endunless %}">
         {{ 'collections.all' | t }}
       </a>
-      {% for type in type_list %}
-        <a href="{{ collection.url }}?filter.p.product_type={{ type | url_encode }}"
-           class="filter-type-btn {% if request.url contains type %}active{% endif %}">
-          {{ type }}
+      {% for value in type_filter.values %}
+        <a href="{{ value.url_to_add }}"
+           class="filter-type-btn {% if value.active %}active{% endif %}">
+          {{ value.label }} ({{ value.count }})
         </a>
       {% endfor %}
     </div>
