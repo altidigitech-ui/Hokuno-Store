@@ -17,3 +17,9 @@ node_modules/
 
 # Claude Code local state
 .claude/scheduled_tasks.lock
+
+# Mockup pipeline
+output/
+*.pyc
+__pycache__/
+*.bak
