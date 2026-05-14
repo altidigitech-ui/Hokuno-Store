@@ -1,0 +1,148 @@
+<!-- templates/collection.liquid — Page collection -->
+<div class="page-wrap">
+  {% render 'breadcrumbs' %}
+
+  <div class="collection-header">
+    <h1 class="page-title">{{ collection.title }}</h1>
+    {% if collection.description != blank %}
+      <p class="collection-desc">{{ collection.description }}</p>
+    {% endif %}
+    <p class="collection-count">{{ collection.products_count }} {{ 'collections.products' | t }}</p>
+  </div>
+
+  {%- comment -%}
+    Sub-category cards — derived from Shopify's product_type filter.
+    Counts come from the filter (accurate across all pages); representative
+    images are picked from the current page of collection.products (cheap,
+    no extra query). Cards link to the type-filtered collection URL.
+  {%- endcomment -%}
+  {%- for filter in collection.filters -%}
+    {%- if filter.param_name == 'filter.p.product_type' and filter.values.size > 1 -%}
+      <div class="subcat-grid" aria-label="Sous-catégories">
+        <a href="{{ collection.url }}"
+           class="subcat-card subcat-all{% if filter.active_values.size == 0 %} is-active{% endif %}"
+           aria-label="{{ 'collections.all' | t }}">
+          <div class="subcat-card-media">
+            {%- if collection.image -%}
+              <img src="{{ collection.image | image_url: width: 400 }}" alt="" loading="lazy" width="200" height="200">
+            {%- else -%}
+              {%- assign first_prod = collection.products | first -%}
+              {%- if first_prod and first_prod.featured_image -%}
+                <img src="{{ first_prod.featured_image | image_url: width: 400 }}" alt="" loading="lazy" width="200" height="200">
+              {%- endif -%}
+            {%- endif -%}
+          </div>
+          <div class="subcat-card-body">
+            <span class="subcat-card-name">{{ 'collections.all' | t }}</span>
+            <span class="subcat-card-count">{{ collection.products_count }}</span>
+          </div>
+        </a>
+        {%- for value in filter.values -%}
+          {%- if value.count > 0 -%}
+            {%- assign rep_img = blank -%}
+            {%- for product in collection.products -%}
+              {%- if product.type == value.value and rep_img == blank -%}
+                {%- assign rep_img = product.featured_image -%}
+              {%- endif -%}
+            {%- endfor -%}
+            <a href="{{ collection.url }}?filter.p.product_type={{ value.value | url_encode }}"
+               class="subcat-card{% if value.active %} is-active{% endif %}"
+               aria-label="{{ value.label }}">
+              <div class="subcat-card-media">
+                {%- if rep_img != blank -%}
+                  <img src="{{ rep_img | image_url: width: 400 }}" alt="" loading="lazy" width="200" height="200">
+                {%- endif -%}
+              </div>
+              <div class="subcat-card-body">
+                <span class="subcat-card-name">{{ value.label }}</span>
+                <span class="subcat-card-count">{{ value.count }}</span>
+              </div>
+            </a>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  {%- endfor -%}
+
+  <!-- Filtres + tri -->
+  <div class="collection-toolbar">
+    {% if collection.filters.size > 0 %}
+      <form class="filter-form" id="filter-form" action="{{ collection.url }}" method="get">
+        <input type="hidden" name="sort_by" value="{{ collection.sort_by | default: 'manual' }}">
+
+        <div class="filter-bar">
+          {% for filter in collection.filters %}
+            {%- comment -%} product_type is rendered as button bar below {%- endcomment -%}
+            {% unless filter.param_name == 'filter.p.product_type' %}
+              <div class="filter-group">
+                <span class="filter-title">{{ filter.label }}</span>
+                <div class="filter-options">
+                  {% for value in filter.values %}
+                    <label class="filter-option{% if value.active %} active{% endif %}">
+                      <input type="checkbox"
+                             name="{{ value.param_name }}"
+                             value="{{ value.value }}"
+                             {% if value.active %}checked{% endif %}
+                             onchange="document.getElementById('filter-form').submit()">
+                      <span>{{ value.label }} ({{ value.count }})</span>
+                    </label>
+                  {% endfor %}
+                </div>
+              </div>
+            {% endunless %}
+          {% endfor %}
+        </div>
+
+        {% if collection.filters | map: 'active_values' | join: '' != '' %}
+          <a href="{{ collection.url }}" class="filter-reset">{{ 'collections.filters_reset' | t }}</a>
+        {% endif %}
+      </form>
+    {% endif %}
+
+    <div class="sort-wrap">
+      <select
+        class="sort-select"
+        id="sort-select"
+        aria-label="Trier par"
+        onchange="window.location.href='{{ collection.url }}?sort_by='+this.value">
+        <option value="manual" {% if collection.sort_by == 'manual' %}selected{% endif %}>{{ 'collections.sort.relevance' | t }}</option>
+        <option value="price-ascending" {% if collection.sort_by == 'price-ascending' %}selected{% endif %}>{{ 'collections.sort.price_asc' | t }}</option>
+        <option value="price-descending" {% if collection.sort_by == 'price-descending' %}selected{% endif %}>{{ 'collections.sort.price_desc' | t }}</option>
+        <option value="created-descending" {% if collection.sort_by == 'created-descending' %}selected{% endif %}>{{ 'collections.sort.newest' | t }}</option>
+        <option value="title-ascending" {% if collection.sort_by == 'title-ascending' %}selected{% endif %}>{{ 'collections.sort.name_az' | t }}</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Filtres par type de produit (Shopify native, single-select) -->
+  {% for filter in collection.filters %}
+    {% if filter.param_name == 'filter.p.product_type' and filter.values.size > 1 %}
+      <div class="filter-types" aria-label="{{ 'collections.filters' | t }}">
+        <a href="{{ collection.url }}"
+           class="filter-type-btn {% unless filter.active_values.size > 0 %}active{% endunless %}">
+          {{ 'collections.all' | t }}
+        </a>
+        {% for value in filter.values %}
+          <a href="{{ collection.url }}?filter.p.product_type={{ value.value | url_encode }}"
+             class="filter-type-btn {% if value.active %}active{% endif %}">
+            {{ value.label }} ({{ value.count }})
+          </a>
+        {% endfor %}
+      </div>
+    {% endif %}
+  {% endfor %}
+
+  <!-- Grille produits + pagination -->
+  {% paginate collection.products by 24 %}
+    <div class="products-grid">
+      {% for product in collection.products %}
+        {% render 'product-card', product: product %}
+      {% endfor %}
+    </div>
+
+    {% if paginate.pages > 1 %}
+      {% render 'pagination', paginate: paginate %}
+    {% endif %}
+  {% endpaginate %}
+
+</div>

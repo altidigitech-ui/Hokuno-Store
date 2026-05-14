@@ -1,4 +1,4 @@
-<!-- templates/collection.liquid — Page collection -->
+<!-- templates/collection.liquid — Character-driven navigation -->
 <div class="page-wrap">
   {% render 'breadcrumbs' %}
 
@@ -10,85 +10,334 @@
     <p class="collection-count">{{ collection.products_count }} {{ 'collections.products' | t }}</p>
   </div>
 
-  <!-- Filtres + tri -->
-  <div class="collection-toolbar">
-    {% if collection.filters.size > 0 %}
-      <form class="filter-form" id="filter-form" action="{{ collection.url }}" method="get">
-        <input type="hidden" name="sort_by" value="{{ collection.sort_by | default: 'manual' }}">
-
-        <div class="filter-bar">
-          {% for filter in collection.filters %}
-            {%- comment -%} product_type is rendered as button bar below {%- endcomment -%}
-            {% unless filter.param_name == 'filter.p.product_type' %}
-              <div class="filter-group">
-                <span class="filter-title">{{ filter.label }}</span>
-                <div class="filter-options">
-                  {% for value in filter.values %}
-                    <label class="filter-option{% if value.active %} active{% endif %}">
-                      <input type="checkbox"
-                             name="{{ value.param_name }}"
-                             value="{{ value.value }}"
-                             {% if value.active %}checked{% endif %}
-                             onchange="document.getElementById('filter-form').submit()">
-                      <span>{{ value.label }} ({{ value.count }})</span>
-                    </label>
-                  {% endfor %}
-                </div>
-              </div>
-            {% endunless %}
-          {% endfor %}
-        </div>
-
-        {% if collection.filters | map: 'active_values' | join: '' != '' %}
-          <a href="{{ collection.url }}" class="filter-reset">{{ 'collections.filters_reset' | t }}</a>
-        {% endif %}
-      </form>
-    {% endif %}
-
-    <div class="sort-wrap">
-      <select
-        class="sort-select"
-        id="sort-select"
-        aria-label="Trier par"
-        onchange="window.location.href='{{ collection.url }}?sort_by='+this.value">
-        <option value="manual" {% if collection.sort_by == 'manual' %}selected{% endif %}>{{ 'collections.sort.relevance' | t }}</option>
-        <option value="price-ascending" {% if collection.sort_by == 'price-ascending' %}selected{% endif %}>{{ 'collections.sort.price_asc' | t }}</option>
-        <option value="price-descending" {% if collection.sort_by == 'price-descending' %}selected{% endif %}>{{ 'collections.sort.price_desc' | t }}</option>
-        <option value="created-descending" {% if collection.sort_by == 'created-descending' %}selected{% endif %}>{{ 'collections.sort.newest' | t }}</option>
-        <option value="title-ascending" {% if collection.sort_by == 'title-ascending' %}selected{% endif %}>{{ 'collections.sort.name_az' | t }}</option>
-      </select>
-    </div>
+  <div id="character-nav" class="char-nav"
+       data-collection-handle="{{ collection.handle | escape }}"
+       data-collection-title="{{ collection.title | escape }}">
+    <p class="char-nav-loading">CHARGEMENT…</p>
   </div>
-
-  <!-- Filtres par type de produit (Shopify native, single-select) -->
-  {% for filter in collection.filters %}
-    {% if filter.param_name == 'filter.p.product_type' and filter.values.size > 1 %}
-      <div class="filter-types" aria-label="{{ 'collections.filters' | t }}">
-        <a href="{{ collection.url }}"
-           class="filter-type-btn {% unless filter.active_values.size > 0 %}active{% endunless %}">
-          {{ 'collections.all' | t }}
-        </a>
-        {% for value in filter.values %}
-          <a href="{{ collection.url }}?filter.p.product_type={{ value.value | url_encode }}"
-             class="filter-type-btn {% if value.active %}active{% endif %}">
-            {{ value.label }} ({{ value.count }})
-          </a>
-        {% endfor %}
-      </div>
-    {% endif %}
-  {% endfor %}
-
-  <!-- Grille produits + pagination -->
-  {% paginate collection.products by 24 %}
-    <div class="products-grid">
-      {% for product in collection.products %}
-        {% render 'product-card', product: product %}
-      {% endfor %}
-    </div>
-
-    {% if paginate.pages > 1 %}
-      {% render 'pagination', paginate: paginate %}
-    {% endif %}
-  {% endpaginate %}
-
 </div>
+
+{%- comment -%}
+  Asset path bootstrap — we extract the assets/ base URL from a known sentinel,
+  so JS can build `mockup-{handle}.webp` URLs without 430 inline strings.
+{%- endcomment -%}
+<script>
+(function () {
+  var sentinel = {{ 'character-map.json' | asset_url | json }};
+  var qIdx = sentinel.indexOf('?');
+  var path  = qIdx >= 0 ? sentinel.substring(0, qIdx) : sentinel;
+  var query = qIdx >= 0 ? sentinel.substring(qIdx)    : '';
+  window.HOKUNO_ASSETS_BASE  = path.substring(0, path.lastIndexOf('/') + 1);
+  window.HOKUNO_ASSETS_QUERY = query;   // ?v=... — appended to every mockup URL so
+                                        // each new theme push invalidates the CDN+browser cache.
+  window.HOKUNO_MAP_URL = sentinel;
+  window.HOKUNO_PRODUCT_PATH = '{{ routes.collections_url | default: "/collections" | replace: "/collections", "" }}/products/';
+})();
+</script>
+
+<script>
+(function () {
+  var root = document.getElementById('character-nav');
+  if (!root) return;
+
+  // Resolve which character-map.json key to use, robust to admin renaming.
+  var KEYS_BY_HANDLE = {
+    'wanted':         'WANTED',
+    'direction':      'DIRECTION',
+    'mythologie':     'MYTHOLOGIE',
+    'design-hokuno':  'DESIGN HOKUNO',
+    'designhokuno':   'DESIGN HOKUNO',
+    'hokuno':         'DESIGN HOKUNO'
+  };
+  function normalize(s) {
+    return (s || '').toUpperCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  }
+  var handle = (root.dataset.collectionHandle || '').toLowerCase();
+  var title  = normalize(root.dataset.collectionTitle);
+  var collectionKey = KEYS_BY_HANDLE[handle] || null;
+  if (!collectionKey) {
+    // Title fallback (handles legacy admin renames)
+    var candidates = ['WANTED', 'DIRECTION', 'MYTHOLOGIE', 'DESIGN HOKUNO'];
+    for (var i = 0; i < candidates.length; i++) {
+      if (title.indexOf(candidates[i]) !== -1) { collectionKey = candidates[i]; break; }
+    }
+  }
+
+  var i18n = {
+    products: 'produits',
+    product:  'produit',
+    backToChars: 'Retour aux personnages',
+    backToDesigns: 'Retour aux designs',
+    empty: 'Aucun produit dans cette catégorie.',
+    loadError: 'Impossible de charger la liste des produits.'
+  };
+
+  function assetUrl(filename) {
+    return window.HOKUNO_ASSETS_BASE + filename;
+  }
+  function productUrl(handle) {
+    return window.HOKUNO_PRODUCT_PATH + handle;
+  }
+  function mockupUrl(handle) {
+    return assetUrl('mockup-' + handle + '.webp') + (window.HOKUNO_ASSETS_QUERY || '');
+  }
+  function escapeHtml(s) {
+    return String(s || '').replace(/[&<>"']/g, function (c) {
+      return { '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[c];
+    });
+  }
+
+  // ─── Title cleanup for product cards ────────────────────────────────
+  //   "ceramic mug wanted alabastards (11oz, 15oz) 17/17" → "Mug Alabastards"
+  //   "T-SHIRT SANDJI WANTED NOIR 5/17"                  → "T-Shirt Sandji Noir"
+  //   "T-SHIRT SANDJI WANTED EN NOIR 5/17"               → "T-Shirt Sandji Noir"
+  //   "tasse en céramique direction brook noire (11oz, 15oz) 9/10" → "Tasse Brook Noir"
+  //   "Coque de téléphone Dark BROOK MYTHOLOGIE 9/10"    → "Coque Brook Noir"
+  function titleCaseWord(w) {
+    return w.split(/(-|\.)/).map(function (part) {
+      if (part === '-' || part === '.') return part;
+      if (!part) return '';
+      if (part.length === 1) return part.toUpperCase();
+      return part.charAt(0).toUpperCase() + part.slice(1).toLowerCase();
+    }).join('');
+  }
+  function cleanTitle(raw) {
+    var t = ' ' + (raw || '').replace(/\s+/g, ' ').trim() + ' ';
+    // 1. Parens content (sizes etc.)
+    t = t.replace(/\s*\([^)]*\)/g, ' ');
+    // 2. Series numbers like 5/17, 17/17, 9/10
+    t = t.replace(/\s\d+\/\d+(?=\s|,|$)/g, ' ');
+    // 3. Product-type word swaps (longest-first to avoid partial matches)
+    t = t.replace(/\bceramic\s+mug\b/gi, 'Mug');
+    t = t.replace(/\btasse\s+en\s+c[eé]ramique\b/gi, 'Tasse');
+    t = t.replace(/\bcoque\s+de\s+t[eé]l[eé]phone(\s+dark)?\b/gi, 'Coque');
+    t = t.replace(/\bcoque\s+t[eé]l[eé]phone\b/gi, 'Coque');
+    // 4. Trailing comma cleanup from "Ceramic Mug, (11oz…)" pattern
+    t = t.replace(/,/g, ' ');
+    // 5. Color/language tags → drop language, normalize color → "Noir"
+    //    Order matters: capture multi-word patterns first.
+    t = t.replace(/\bnoir\s+en\b/gi, 'Noir');
+    t = t.replace(/\ben\s+noir\b/gi, 'Noir');
+    t = t.replace(/\b(noir|noire|black|dark)\b/gi, 'Noir');
+    t = t.replace(/\b(light)\b/gi, '');
+    t = t.replace(/\b(en|fr)\b/gi, '');
+    // 6. Collection name pollution (already implied by section context)
+    t = t.replace(/\b(wanted|direction|mythologie|mythology|hokuno)\b/gi, '');
+    // 7. Collapse, trim, title-case
+    t = t.replace(/\s+/g, ' ').trim();
+    return t.split(' ').filter(Boolean).map(titleCaseWord).join(' ');
+  }
+
+  // Map state
+  var data = null;   // full character-map.json
+  var col  = null;   // payload for this collection
+
+  function entriesByLetter(entries) {
+    var byLetter = {};
+    Object.keys(entries).sort().forEach(function (slug) {
+      var e = entries[slug];
+      var letter = (e.name || slug).charAt(0).toUpperCase();
+      if (!byLetter[letter]) byLetter[letter] = [];
+      byLetter[letter].push({ slug: slug, entry: e });
+    });
+    return byLetter;
+  }
+
+  function totalItems(entry, groups) {
+    var t = 0;
+    groups.forEach(function (g) { t += (entry[g.key] || []).length; });
+    return t;
+  }
+
+  // ─── INDEX VIEW : alphabet + character grid ─────────────────────────
+  function renderIndex() {
+    if (!col) return;
+    var groups = col.groups;
+    var entries = col.entries;
+    var slugs = Object.keys(entries).sort(function (a, b) {
+      return entries[a].name.localeCompare(entries[b].name, 'fr');
+    });
+
+    var html = '<div class="view view-index">';
+
+    // Alphabet bar (only when alphabet=true)
+    if (col.alphabet) {
+      var letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+      var activeLetters = {};
+      slugs.forEach(function (s) {
+        var L = (entries[s].name || s).charAt(0).toUpperCase();
+        activeLetters[L] = true;
+      });
+      html += '<nav class="alphabet-bar" aria-label="Navigation alphabétique">';
+      letters.forEach(function (L) {
+        if (activeLetters[L]) {
+          html += '<button class="alphabet-letter is-active" data-letter="' + L + '" type="button">' + L + '</button>';
+        } else {
+          html += '<span class="alphabet-letter">' + L + '</span>';
+        }
+      });
+      html += '</nav>';
+    }
+
+    // Sections grouped by letter (or one flat section if no alphabet)
+    if (col.alphabet) {
+      var byLetter = entriesByLetter(entries);
+      Object.keys(byLetter).sort().forEach(function (L) {
+        html += '<section class="char-section" id="letter-' + L + '">';
+        html += '<h2 class="char-section-letter">' + L + '</h2>';
+        byLetter[L].forEach(function (rec) {
+          html += renderCharRow(rec.slug, rec.entry, groups);
+        });
+        html += '</section>';
+      });
+    } else {
+      html += '<section class="char-section">';
+      slugs.forEach(function (slug) {
+        html += renderCharRow(slug, entries[slug], groups);
+      });
+      html += '</section>';
+    }
+
+    html += '</div>';
+    root.innerHTML = html;
+
+    // Wire alphabet bar
+    root.querySelectorAll('.alphabet-letter.is-active').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var L = btn.dataset.letter;
+        var target = document.getElementById('letter-' + L);
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+
+    // Wire character cards
+    root.querySelectorAll('.char-card[data-slug]').forEach(function (card) {
+      card.addEventListener('click', function () {
+        var slug = card.dataset.slug;
+        var group = card.dataset.group;
+        location.hash = '#/' + group + '/' + slug;
+      });
+    });
+  }
+
+  function renderCharRow(slug, entry, groups) {
+    var html = '<div class="char-row" id="char-' + slug + '">';
+    html += '<h3 class="char-row-name">' + escapeHtml(entry.name) + '</h3>';
+    html += '<div class="char-cards">';
+    groups.forEach(function (g) {
+      var bucket = entry[g.key] || {};
+      var items = bucket.items || [];
+      if (!items.length) return;
+      var imgUrl = bucket.image_handle ? mockupUrl(bucket.image_handle) : '';
+      html += ''
+        + '<button class="char-card" type="button" '
+        + 'data-slug="' + escapeHtml(slug) + '" '
+        + 'data-group="' + escapeHtml(g.key) + '" '
+        + 'aria-label="' + escapeHtml(entry.name + ' ' + g.label) + '">'
+        + '<div class="char-card-media">'
+        +   (imgUrl ? '<img src="' + imgUrl + '" alt="" loading="lazy" width="400" height="400">' : '')
+        + '</div>'
+        + '<div class="char-card-body">'
+        +   '<div class="char-card-label">'
+        +     '<span class="char-card-group">' + escapeHtml(g.label) + '</span>'
+        +     '<span class="char-card-name">' + escapeHtml(entry.name) + '</span>'
+        +   '</div>'
+        +   '<span class="char-card-count">' + items.length + '</span>'
+        + '</div>'
+        + '</button>';
+    });
+    html += '</div></div>';
+    return html;
+  }
+
+  // ─── GROUP VIEW : product grid ──────────────────────────────────────
+  function renderGroup(groupKey, slug) {
+    var entries = col.entries;
+    var entry = entries[slug];
+    if (!entry) { location.hash = ''; return; }
+    var groupMeta = col.groups.filter(function (g) { return g.key === groupKey; })[0];
+    if (!groupMeta) { location.hash = ''; return; }
+    var bucket = entry[groupKey] || {};
+    var items = bucket.items || [];
+
+    var backLabel = col.alphabet ? i18n.backToChars : i18n.backToDesigns;
+    var html = '<div class="view view-group">';
+    html += '<div class="char-products-view">';
+    html += '<div class="char-products-header">';
+    html += '<h2 class="char-products-title">'
+         + escapeHtml(entry.name) + ' — <em>' + escapeHtml(groupMeta.label) + '</em></h2>';
+    html += '<button class="char-back-btn" type="button" id="char-back-btn">' + backLabel + '</button>';
+    html += '</div>';
+
+    if (!items.length) {
+      html += '<p class="char-nav-loading">' + i18n.empty + '</p>';
+    } else {
+      html += '<div class="char-product-grid">';
+      items.forEach(function (it) {
+        var display = cleanTitle(it.title);
+        html += ''
+          + '<a class="char-product" href="' + productUrl(it.handle) + '">'
+          + '  <div class="char-product-media">'
+          + '    <img src="' + mockupUrl(it.handle) + '" alt="' + escapeHtml(display) + '" loading="lazy" width="600" height="600">'
+          + '  </div>'
+          + '  <div class="char-product-body">'
+          + '    <div class="char-product-title">' + escapeHtml(display) + '</div>'
+          + '    <div class="char-product-price">' + escapeHtml(it.price) + '</div>'
+          + '  </div>'
+          + '</a>';
+      });
+      html += '</div>';
+    }
+    html += '</div></div>';
+    root.innerHTML = html;
+
+    var back = document.getElementById('char-back-btn');
+    if (back) back.addEventListener('click', function () {
+      // Restore index view + scroll back to the character we came from
+      location.hash = '#char-' + slug;
+    });
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // ─── Router on hash ─────────────────────────────────────────────────
+  function route() {
+    var h = location.hash || '';
+    // Format: #/{group}/{slug} OR #char-{slug} OR ''
+    var m = h.match(/^#\/([^\/]+)\/([^\/]+)/);
+    if (m) {
+      renderGroup(decodeURIComponent(m[1]), decodeURIComponent(m[2]));
+      return;
+    }
+    renderIndex();
+    var charMatch = h.match(/^#char-(.+)/);
+    if (charMatch) {
+      var el = document.getElementById('char-' + decodeURIComponent(charMatch[1]));
+      if (el) setTimeout(function () {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 50);
+    }
+  }
+
+  // ─── Bootstrap: fetch the map then render ───────────────────────────
+  fetch(window.HOKUNO_MAP_URL, { cache: 'force-cache' })
+    .then(function (r) {
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      return r.json();
+    })
+    .then(function (json) {
+      data = json;
+      col = data[collectionKey];
+      if (!col) {
+        root.innerHTML = '<p class="char-nav-loading">' + i18n.empty + '</p>';
+        return;
+      }
+      window.addEventListener('hashchange', route);
+      route();
+    })
+    .catch(function (err) {
+      console.error('[hokuno] char-map load failed', err);
+      root.innerHTML = '<p class="char-nav-loading">' + i18n.loadError + '</p>';
+    });
+})();
+</script>
