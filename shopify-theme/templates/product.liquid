@@ -465,24 +465,37 @@
 
       <div class="product-thumbs">
         {%- comment -%}
-          Hide Printify "flat front" + "flat back" mockups for BP 6 t-shirts.
-          Pattern Shopify (N couleurs, total = 4*N) : [0..N-1] = flat fronts ;
-          puis groupes de 3 (back-flat, front-2, back-2) par couleur. On garde
-          uniquement front-2 + back-2. Discriminateur "T-SHIRT " majuscules
-          pour ne pas toucher BP 145 "T-Shirt Sport ..." (cameras différentes).
+          Hide Printify flat-fronts, flat-backs, mannequins, folded and size-chart
+          mockups. Two-stage filter:
+            1) printify-keep-positions snippet sets `keep_positions` (CSV of 1-indexed
+               positions to render) for products with non-standard mockup mixes —
+               including all mixed-case "T-Shirt …" Design Hokuno products, which
+               the case-sensitive Liquid `contains` can't catch in stage 2.
+            2) Modulo-4 fallback for uppercase "T-SHIRT " products: Shopify lays out
+               4N images as [N flat-fronts, then N × (back-flat, front-2, back-2)] —
+               keep only front-2 / back-2.
+          Otherwise render all images unchanged.
         {%- endcomment -%}
+        {%- capture keep_positions -%}{%- render 'printify-keep-positions', product: product -%}{%- endcapture -%}
+        {%- assign keep_positions = keep_positions | strip -%}
         {%- assign __pf_total = product.images.size -%}
-        {%- assign __pf_apply = false -%}
-        {%- if product.title contains 'T-SHIRT ' and __pf_total >= 4 -%}
+        {%- assign __pf_mode = 'all' -%}
+        {%- if keep_positions != blank -%}
+          {%- assign __pf_mode = 'whitelist' -%}
+          {%- assign __pf_keep_csv = ',' | append: keep_positions | append: ',' -%}
+        {%- elsif product.title contains 'T-SHIRT ' and __pf_total >= 4 -%}
           {%- assign __pf_rem = __pf_total | modulo: 4 -%}
           {%- if __pf_rem == 0 -%}
-            {%- assign __pf_apply = true -%}
+            {%- assign __pf_mode = 'mod4' -%}
             {%- assign __pf_n_colors = __pf_total | divided_by: 4 -%}
           {%- endif -%}
         {%- endif -%}
         {%- assign __pf_rendered = 0 -%}
         {% for image in product.images %}
-          {%- if __pf_apply -%}
+          {%- if __pf_mode == 'whitelist' -%}
+            {%- assign __pf_probe = ',' | append: forloop.index | append: ',' -%}
+            {%- unless __pf_keep_csv contains __pf_probe -%}{%- continue -%}{%- endunless -%}
+          {%- elsif __pf_mode == 'mod4' -%}
             {%- assign __pf_i = forloop.index0 -%}
             {%- if __pf_i < __pf_n_colors -%}{%- continue -%}{%- endif -%}
             {%- assign __pf_rel = __pf_i | minus: __pf_n_colors -%}
