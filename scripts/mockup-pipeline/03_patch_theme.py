@@ -1,8 +1,8 @@
-"""Patch product-card.liquid + templates/product.liquid with the mockup handle list, then push.
+"""Patch product-card.liquid + templates/product.liquid + templates/index.liquid with the mockup handle list, then push.
 
 Architecture inline (no separate snippet) car Shopify Liquid interdit `{% include %}`
 dans un snippet rendu via `{% render %}`. La liste des handles est dupliquée
-dans les 2 fichiers entre les marqueurs HOKUNO-MOCKUP-LIST:START / :END,
+dans les 3 fichiers entre les marqueurs HOKUNO-MOCKUP-LIST:START / :END,
 gérés par ce script.
 
 Idempotent : si les marqueurs existent déjà, la liste est remplacée. Sinon, le bloc
@@ -29,6 +29,7 @@ SHOPIFY_THEME_ID = "198885507415"  # Hokuno Preview (live)
 
 PRODUCT_CARD = config.SHOPIFY_SNIPPETS_DIR / "product-card.liquid"
 PRODUCT_TEMPLATE = config.SHOPIFY_THEME_DIR / "templates" / "product.liquid"
+INDEX_TEMPLATE = config.SHOPIFY_THEME_DIR / "templates" / "index.liquid"
 
 LIST_START = "{%- comment -%}HOKUNO-MOCKUP-LIST:START (auto-géré){%- endcomment -%}"
 LIST_END = "{%- comment -%}HOKUNO-MOCKUP-LIST:END{%- endcomment -%}"
@@ -82,6 +83,7 @@ def update_list(new_handles: list[str]) -> tuple[list[str], list[str]]:
 
     patch_file_list(PRODUCT_CARD, indent="    ", all_handles=merged)
     patch_file_list(PRODUCT_TEMPLATE, indent="      ", all_handles=merged)
+    patch_file_list(INDEX_TEMPLATE, indent="    ", all_handles=merged)
     return merged, added
 
 
@@ -117,6 +119,7 @@ def run() -> int:
 
     print(f"  product-card.liquid : {len(merged)} handles ({len(added)} added)")
     print(f"  templates/product.liquid : {len(merged)} handles ({len(added)} added)")
+    print(f"  templates/index.liquid : {len(merged)} handles ({len(added)} added)")
 
     rc = push_theme()
 
@@ -135,7 +138,7 @@ def run() -> int:
         print(f"  [{c['collection']:<14}] {prod_url}")
         print(f"  {'':16} (collection : {col_url})")
     print("\n⚠  Si tu vois encore les anciennes images : Ctrl+Shift+R pour vider le cache navigateur.")
-    print("Pour rollback : restore product-card.liquid.bak + product.liquid.bak + re-push.")
+    print("Pour rollback : restore product-card.liquid.bak + product.liquid.bak + index.liquid.bak + re-push.")
     print("=" * 70)
     return rc
 
