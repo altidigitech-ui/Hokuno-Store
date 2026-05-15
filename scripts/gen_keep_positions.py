@@ -4,8 +4,8 @@ gallery positions to KEEP for t-shirt products whose image layout the simple
 modulo-4 filter can't handle (non-conforming Printify mockup mixes:
 mannequins, folded, size-chart, etc.).
 
-Rule for what to keep: Printify camera_label == "front-2" or "back-2"
-(i.e. the realistic with-folds mockups). Everything else is hidden.
+Rule for what to keep: Printify camera_label in {"front-2", "back-2", "folded"}
+(realistic with-folds mockups + the folded-t-shirt view). Everything else is hidden.
 
 Shopify position ordering (verified): images sorted by
   (is_default desc, original_printify_index asc)
@@ -28,7 +28,7 @@ from pathlib import Path
 import requests
 
 SHOP_ID = "22774508"
-KEEP_LABELS = {"front-2", "back-2"}
+KEEP_LABELS = {"front-2", "back-2", "folded"}
 REPO_ROOT = Path(__file__).resolve().parents[1]
 SNIPPET_PATH = REPO_ROOT / "shopify-theme" / "snippets" / "printify-keep-positions.liquid"
 
