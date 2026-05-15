@@ -464,15 +464,40 @@
       {%- endif -%}
 
       <div class="product-thumbs">
+        {%- comment -%}
+          Hide Printify "flat front" + "flat back" mockups for BP 6 t-shirts.
+          Pattern Shopify (N couleurs, total = 4*N) : [0..N-1] = flat fronts ;
+          puis groupes de 3 (back-flat, front-2, back-2) par couleur. On garde
+          uniquement front-2 + back-2. Discriminateur "T-SHIRT " majuscules
+          pour ne pas toucher BP 145 "T-Shirt Sport ..." (cameras différentes).
+        {%- endcomment -%}
+        {%- assign __pf_total = product.images.size -%}
+        {%- assign __pf_apply = false -%}
+        {%- if product.title contains 'T-SHIRT ' and __pf_total >= 4 -%}
+          {%- assign __pf_rem = __pf_total | modulo: 4 -%}
+          {%- if __pf_rem == 0 -%}
+            {%- assign __pf_apply = true -%}
+            {%- assign __pf_n_colors = __pf_total | divided_by: 4 -%}
+          {%- endif -%}
+        {%- endif -%}
+        {%- assign __pf_rendered = 0 -%}
         {% for image in product.images %}
+          {%- if __pf_apply -%}
+            {%- assign __pf_i = forloop.index0 -%}
+            {%- if __pf_i < __pf_n_colors -%}{%- continue -%}{%- endif -%}
+            {%- assign __pf_rel = __pf_i | minus: __pf_n_colors -%}
+            {%- assign __pf_mod3 = __pf_rel | modulo: 3 -%}
+            {%- if __pf_mod3 == 0 -%}{%- continue -%}{%- endif -%}
+          {%- endif -%}
           <img
-            class="gallery-thumb{% if forloop.first %} active{% endif %}"
+            class="gallery-thumb{% if __pf_rendered == 0 %} active{% endif %}"
             src="{{ image | image_url: width: 200 }}"
             data-src="{{ image | image_url: width: 1200 }}"
-            alt="{{ product.title }} — vue {{ forloop.index }}"
+            alt="{{ product.title }} — vue {{ __pf_rendered | plus: 1 }}"
             width="80"
             height="80"
             loading="lazy">
+          {%- assign __pf_rendered = __pf_rendered | plus: 1 -%}
         {% endfor %}
       </div>
     </div>

@@ -22,4 +22,4 @@ node_modules/
 output/
 *.pyc
 __pycache__/
-*.bak
+*.bak*
