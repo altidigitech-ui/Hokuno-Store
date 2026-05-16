@@ -75,7 +75,7 @@ def handle_from_product(p: dict) -> str | None:
 
 
 def is_tshirt_title(title: str) -> bool:
-    return "T-SHIRT " in title or "T-Shirt " in title
+    return "t-shirt " in title.lower()
 
 
 def keep_positions_for(p: dict) -> list[int]:
