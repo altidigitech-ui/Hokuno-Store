@@ -68,6 +68,7 @@
     product:  'produit',
     backToChars: 'Retour aux personnages',
     backToDesigns: 'Retour aux designs',
+    backToCategories: 'Retour aux catégories',
     empty: 'Aucun produit dans cette catégorie.',
     loadError: 'Impossible de charger la liste des produits.'
   };
@@ -300,9 +301,177 @@
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
+  // ─── 3-LEVEL TYPE NAVIGATION (Design Hokuno only) ──────────────────
+  //   Level 1 — root           : 4 type cards (T-SHIRT, POLO, ACCESSOIRES, SHORT)
+  //   Level 2 — #/type/{cat}   : design cards (one per design × dark/light bucket)
+  //   Level 3 — #/type/{cat}/{bucket}/{group} : product grid
+  function renderTypesRoot() {
+    var html = '<div class="view view-index view-types">';
+    html += '<section class="char-section">';
+    html += '<div class="char-cards">';
+    (col.type_order || []).forEach(function (cat) {
+      var t = (col.types || {})[cat];
+      if (!t) return;
+      var imgUrl = t.image_handle ? mockupUrl(t.image_handle) : '';
+      var count = 0;
+      Object.keys(t.designs || {}).forEach(function (ds) {
+        var d = t.designs[ds];
+        if (d.dark && d.dark.items)  count += d.dark.items.length;
+        if (d.light && d.light.items) count += d.light.items.length;
+      });
+      html += ''
+        + '<button class="char-card type-card" type="button" '
+        + 'data-type="' + escapeHtml(cat) + '" '
+        + 'aria-label="' + escapeHtml(t.label) + '">'
+        + '<div class="char-card-media">'
+        +   (imgUrl ? '<img src="' + imgUrl + '" alt="" loading="lazy" width="400" height="400">' : '')
+        + '</div>'
+        + '<div class="char-card-body">'
+        +   '<div class="char-card-label">'
+        +     '<span class="char-card-name">' + escapeHtml(t.label) + '</span>'
+        +   '</div>'
+        +   '<span class="char-card-count">' + count + '</span>'
+        + '</div>'
+        + '</button>';
+    });
+    html += '</div></section></div>';
+    root.innerHTML = html;
+    root.querySelectorAll('.type-card[data-type]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        location.hash = '#/type/' + btn.dataset.type;
+      });
+    });
+  }
+
+  function renderTypeIndex(cat) {
+    var t = (col.types || {})[cat];
+    if (!t) { location.hash = ''; return; }
+    var html = '<div class="view view-group">';
+    html += '<div class="char-products-view">';
+    html += '<div class="char-products-header">';
+    html += '<h2 class="char-products-title">' + escapeHtml(t.label) + '</h2>';
+    html += '<button class="char-back-btn" type="button" id="char-back-btn">' + i18n.backToCategories + '</button>';
+    html += '</div>';
+    html += '<section class="char-section">';
+    Object.keys(t.designs || {}).forEach(function (ds) {
+      var d = t.designs[ds];
+      html += '<div class="char-row" id="design-' + escapeHtml(ds) + '">';
+      html += '<h3 class="char-row-name">' + escapeHtml(d.name) + '</h3>';
+      html += '<div class="char-cards">';
+      ['dark', 'light'].forEach(function (grpKey) {
+        var bucket = d[grpKey];
+        if (!bucket || !bucket.items || !bucket.items.length) return;
+        var grpLabel = grpKey === 'dark' ? 'Dark' : 'Light';
+        var imgUrl = bucket.image_handle ? mockupUrl(bucket.image_handle) : '';
+        html += ''
+          + '<button class="char-card" type="button" '
+          + 'data-type="' + escapeHtml(cat) + '" '
+          + 'data-design="' + escapeHtml(ds) + '" '
+          + 'data-group="' + escapeHtml(grpKey) + '" '
+          + 'aria-label="' + escapeHtml(d.name + ' ' + grpLabel) + '">'
+          + '<div class="char-card-media">'
+          +   (imgUrl ? '<img src="' + imgUrl + '" alt="" loading="lazy" width="400" height="400">' : '')
+          + '</div>'
+          + '<div class="char-card-body">'
+          +   '<div class="char-card-label">'
+          +     '<span class="char-card-group">' + grpLabel + '</span>'
+          +     '<span class="char-card-name">' + escapeHtml(d.name) + '</span>'
+          +   '</div>'
+          +   '<span class="char-card-count">' + bucket.items.length + '</span>'
+          + '</div>'
+          + '</button>';
+      });
+      html += '</div></div>';
+    });
+    html += '</section></div></div>';
+    root.innerHTML = html;
+
+    var back = document.getElementById('char-back-btn');
+    if (back) back.addEventListener('click', function () { location.hash = ''; });
+
+    root.querySelectorAll('.char-card[data-design]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        location.hash = '#/type/' + btn.dataset.type
+          + '/' + btn.dataset.design + '/' + btn.dataset.group;
+      });
+    });
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function renderProductsForType(cat, dsSlug, grpKey) {
+    var t = (col.types || {})[cat];
+    if (!t) { location.hash = ''; return; }
+    var d = (t.designs || {})[dsSlug];
+    if (!d) { location.hash = '#/type/' + cat; return; }
+    var bucket = d[grpKey];
+    if (!bucket) { location.hash = '#/type/' + cat; return; }
+    var items = bucket.items || [];
+    var grpLabel = grpKey === 'dark' ? 'Dark' : 'Light';
+
+    var html = '<div class="view view-group">';
+    html += '<div class="char-products-view">';
+    html += '<div class="char-products-header">';
+    html += '<h2 class="char-products-title">'
+         + escapeHtml(d.name) + ' — <em>' + escapeHtml(grpLabel) + '</em></h2>';
+    html += '<button class="char-back-btn" type="button" id="char-back-btn">← ' + escapeHtml(t.label) + '</button>';
+    html += '</div>';
+
+    if (!items.length) {
+      html += '<p class="char-nav-loading">' + i18n.empty + '</p>';
+    } else {
+      html += '<div class="char-product-grid">';
+      items.forEach(function (it) {
+        var display = cleanTitle(it.title);
+        html += ''
+          + '<a class="char-product" href="' + productUrl(it.handle) + '">'
+          + '  <div class="char-product-media">'
+          + '    <img src="' + mockupUrl(it.handle) + '" alt="' + escapeHtml(display) + '" loading="lazy" width="600" height="600">'
+          + '  </div>'
+          + '  <div class="char-product-body">'
+          + '    <div class="char-product-title">' + escapeHtml(display) + '</div>'
+          + '    <div class="char-product-price">' + escapeHtml(it.price) + '</div>'
+          + '  </div>'
+          + '</a>';
+      });
+      html += '</div>';
+    }
+    html += '</div></div>';
+    root.innerHTML = html;
+
+    var back = document.getElementById('char-back-btn');
+    if (back) back.addEventListener('click', function () {
+      location.hash = '#/type/' + cat;
+    });
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
   // ─── Router on hash ─────────────────────────────────────────────────
   function route() {
     var h = location.hash || '';
+
+    // 3-level navigation for collections with type_navigation=true
+    if (col.type_navigation) {
+      var m3 = h.match(/^#\/type\/([^\/]+)\/([^\/]+)\/([^\/]+)/);
+      if (m3) {
+        renderProductsForType(
+          decodeURIComponent(m3[1]),
+          decodeURIComponent(m3[2]),
+          decodeURIComponent(m3[3])
+        );
+        return;
+      }
+      var m2 = h.match(/^#\/type\/([^\/]+)/);
+      if (m2) {
+        renderTypeIndex(decodeURIComponent(m2[1]));
+        return;
+      }
+      renderTypesRoot();
+      return;
+    }
+
+    // 2-level navigation (Wanted / Direction / Mythologie)
     // Format: #/{group}/{slug} OR #char-{slug} OR ''
     var m = h.match(/^#\/([^\/]+)\/([^\/]+)/);
     if (m) {

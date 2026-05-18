@@ -4469,6 +4469,7 @@
     }
   },
   "DESIGN HOKUNO": {
+    "type_navigation": true,
     "alphabet": false,
     "groups": [
       {
@@ -4480,363 +4481,420 @@
         "label": "Light"
       }
     ],
-    "entries": {
-      "boussole": {
-        "name": "Boussole",
-        "slug": "boussole",
-        "dark": {
-          "image_handle": "polo-design-boussole-hokuno-dark",
-          "items": [
-            {
-              "handle": "polo-design-boussole-hokuno-dark",
-              "title": "Polo Design boussole Hokuno Dark",
-              "price": "44,99 €",
-              "dark": true,
-              "ptype": "default"
+    "types": {
+      "tshirt": {
+        "label": "T-SHIRT",
+        "slug": "tshirt",
+        "image_handle": "t-shirt-hokuno-design-target-hkn-dark",
+        "designs": {
+          "empreinte": {
+            "name": "Empreinte",
+            "slug": "empreinte",
+            "dark": {
+              "image_handle": "t-shirt-hokuno-design-empreinte-dark",
+              "items": [
+                {
+                  "handle": "t-shirt-hokuno-design-empreinte-dark",
+                  "title": "T-shirt Hokuno Design Empreinte Dark",
+                  "price": "37,99 €",
+                  "dark": true
+                }
+              ]
+            },
+            "light": {
+              "image_handle": "t-shirt-hokuno-design-empreinte-light",
+              "items": [
+                {
+                  "handle": "t-shirt-hokuno-design-empreinte-light",
+                  "title": "T-shirt Hokuno Design Empreinte Light",
+                  "price": "37,99 €",
+                  "dark": false
+                }
+              ]
             }
-          ]
-        },
-        "light": {
-          "image_handle": "polo-design-hokuno-boussole-light",
-          "items": [
-            {
-              "handle": "polo-design-hokuno-boussole-light",
-              "title": "Polo Design Hokuno Boussole Light",
-              "price": "44,99 €",
-              "dark": false,
-              "ptype": "default"
+          },
+          "ho-ku-no": {
+            "name": "Ho Ku No",
+            "slug": "ho-ku-no",
+            "dark": {
+              "image_handle": "t-shirt-design-ho-ku-no-dark",
+              "items": [
+                {
+                  "handle": "t-shirt-design-ho-ku-no-dark",
+                  "title": "T-Shirt Design HO KU NO Dark",
+                  "price": "37,99 €",
+                  "dark": true
+                }
+              ]
+            },
+            "light": {
+              "image_handle": "t-shirt-design-ho-ku-no-light",
+              "items": [
+                {
+                  "handle": "t-shirt-design-ho-ku-no-light",
+                  "title": "T-Shirt Design HO KU NO Light",
+                  "price": "37,99 €",
+                  "dark": false
+                }
+              ]
             }
-          ]
+          },
+          "orbite": {
+            "name": "Orbite",
+            "slug": "orbite",
+            "dark": {
+              "image_handle": "t-shirt-design-orbite-hokuno-dark",
+              "items": [
+                {
+                  "handle": "t-shirt-design-orbite-hokuno-dark",
+                  "title": "T-Shirt Design Orbite Hokuno Dark",
+                  "price": "37,99 €",
+                  "dark": true
+                }
+              ]
+            },
+            "light": {
+              "image_handle": "t-shirt-design-orbite-hokuno-light",
+              "items": [
+                {
+                  "handle": "t-shirt-design-orbite-hokuno-light",
+                  "title": "T-Shirt Design Orbite Hokuno Light",
+                  "price": "37,99 €",
+                  "dark": false
+                }
+              ]
+            }
+          },
+          "sport": {
+            "name": "Sport",
+            "slug": "sport",
+            "dark": {
+              "image_handle": "t-shirt-sport-design-hokuno-dark",
+              "items": [
+                {
+                  "handle": "t-shirt-sport-design-hokuno-dark",
+                  "title": "T-Shirt Sport Design Hokuno Dark",
+                  "price": "37,99 €",
+                  "dark": true
+                }
+              ]
+            },
+            "light": {
+              "image_handle": "t-shirt-sport-design-hokuno-light",
+              "items": [
+                {
+                  "handle": "t-shirt-sport-design-hokuno-light",
+                  "title": "T-Shirt Sport Design Hokuno Light",
+                  "price": "37,99 €",
+                  "dark": false
+                }
+              ]
+            }
+          },
+          "target": {
+            "name": "Target",
+            "slug": "target",
+            "dark": {
+              "image_handle": "t-shirt-hokuno-design-target-hkn-dark",
+              "items": [
+                {
+                  "handle": "t-shirt-hokuno-design-target-hkn-dark",
+                  "title": "T-Shirt Hokuno Design Target HKN Dark",
+                  "price": "37,99 €",
+                  "dark": true
+                },
+                {
+                  "handle": "t-shirt-hokuno-design-target-dark",
+                  "title": "T-Shirt hokuno Design Target Dark",
+                  "price": "37,99 €",
+                  "dark": true
+                }
+              ]
+            },
+            "light": {
+              "image_handle": "t-shirt-hokuno-design-target-light",
+              "items": [
+                {
+                  "handle": "t-shirt-hokuno-design-target-light",
+                  "title": "T-Shirt hokuno Design Target Light",
+                  "price": "25,96 €",
+                  "dark": false
+                }
+              ]
+            }
+          },
+          "hokuno": {
+            "name": "Hokuno",
+            "slug": "hokuno",
+            "dark": {
+              "image_handle": "t-shirt-design-hokuno-dark",
+              "items": [
+                {
+                  "handle": "t-shirt-design-hokuno-dark",
+                  "title": "T-Shirt Design Hokuno Dark",
+                  "price": "37,99 €",
+                  "dark": true
+                }
+              ]
+            },
+            "light": {
+              "image_handle": "t-shirt-design-hokuno-ligth",
+              "items": [
+                {
+                  "handle": "t-shirt-design-hokuno-ligth",
+                  "title": "T-Shirt Design Hokuno Ligth",
+                  "price": "37,99 €",
+                  "dark": false
+                }
+              ]
+            }
+          }
         }
       },
-      "empreinte": {
-        "name": "Empreinte",
-        "slug": "empreinte",
-        "dark": {
-          "image_handle": "t-shirt-hokuno-design-empreinte-dark",
-          "items": [
-            {
-              "handle": "coque-telephone-design-hokuno-empreinte-dark",
-              "title": "Coque téléphone Design Hokuno Empreinte Dark",
-              "price": "24,99 €",
-              "dark": true,
-              "ptype": "phonecase"
+      "polo": {
+        "label": "POLO",
+        "slug": "polo",
+        "image_handle": "polo-design-boussole-hokuno-dark",
+        "designs": {
+          "boussole": {
+            "name": "Boussole",
+            "slug": "boussole",
+            "dark": {
+              "image_handle": "polo-design-boussole-hokuno-dark",
+              "items": [
+                {
+                  "handle": "polo-design-boussole-hokuno-dark",
+                  "title": "Polo Design boussole Hokuno Dark",
+                  "price": "44,99 €",
+                  "dark": true
+                }
+              ]
             },
-            {
-              "handle": "t-shirt-hokuno-design-empreinte-dark",
-              "title": "T-shirt Hokuno Design Empreinte Dark",
-              "price": "37,99 €",
-              "dark": true,
-              "ptype": "tshirt"
+            "light": {
+              "image_handle": "polo-design-hokuno-boussole-light",
+              "items": [
+                {
+                  "handle": "polo-design-hokuno-boussole-light",
+                  "title": "Polo Design Hokuno Boussole Light",
+                  "price": "44,99 €",
+                  "dark": false
+                }
+              ]
             }
-          ]
-        },
-        "light": {
-          "image_handle": "t-shirt-hokuno-design-empreinte-light",
-          "items": [
-            {
-              "handle": "t-shirt-hokuno-design-empreinte-light",
-              "title": "T-shirt Hokuno Design Empreinte Light",
-              "price": "37,99 €",
-              "dark": false,
-              "ptype": "tshirt"
+          },
+          "signature": {
+            "name": "Signature",
+            "slug": "signature",
+            "dark": {
+              "image_handle": "polo-hokuno-signature-dark",
+              "items": [
+                {
+                  "handle": "polo-hokuno-signature-dark",
+                  "title": "Polo Hokuno Signature Dark",
+                  "price": "44,99 €",
+                  "dark": true
+                }
+              ]
             }
-          ]
+          }
         }
       },
-      "ho-ku-no": {
-        "name": "Ho Ku No",
-        "slug": "ho-ku-no",
-        "dark": {
-          "image_handle": "t-shirt-design-ho-ku-no-dark",
-          "items": [
-            {
-              "handle": "t-shirt-design-ho-ku-no-dark",
-              "title": "T-Shirt Design HO KU NO Dark",
-              "price": "37,99 €",
-              "dark": true,
-              "ptype": "tshirt"
+      "accessoires": {
+        "label": "ACCESSOIRES",
+        "slug": "accessoires",
+        "image_handle": "casquette-hokuno-dark",
+        "designs": {
+          "bob": {
+            "name": "Bob",
+            "slug": "bob",
+            "dark": {
+              "image_handle": "bob-hokuno-design-dark",
+              "items": [
+                {
+                  "handle": "bob-hokuno-design-dark",
+                  "title": "Bob Hokuno Design Dark",
+                  "price": "39,99 €",
+                  "dark": true
+                }
+              ]
             }
-          ]
-        },
-        "light": {
-          "image_handle": "t-shirt-design-ho-ku-no-light",
-          "items": [
-            {
-              "handle": "t-shirt-design-ho-ku-no-light",
-              "title": "T-Shirt Design HO KU NO Light",
-              "price": "37,99 €",
-              "dark": false,
-              "ptype": "tshirt"
+          },
+          "casquette": {
+            "name": "Casquette",
+            "slug": "casquette",
+            "dark": {
+              "image_handle": "casquette-design-hokuno-dark",
+              "items": [
+                {
+                  "handle": "casquette-design-hokuno-dark",
+                  "title": "Casquette Design Hokuno Dark",
+                  "price": "29,99 €",
+                  "dark": true
+                },
+                {
+                  "handle": "casquette-hokuno-dark",
+                  "title": "Casquette Hokuno Dark",
+                  "price": "29,99 €",
+                  "dark": true
+                }
+              ]
+            },
+            "light": {
+              "image_handle": "casquette-hokuno-light",
+              "items": [
+                {
+                  "handle": "casquette-hokuno-light",
+                  "title": "Casquette Hokuno Light",
+                  "price": "29,99 €",
+                  "dark": false
+                }
+              ]
             }
-          ]
+          },
+          "claquette": {
+            "name": "Claquette",
+            "slug": "claquette",
+            "dark": {
+              "image_handle": "claquette-design-hokuno-dark",
+              "items": [
+                {
+                  "handle": "claquette-design-hokuno-dark",
+                  "title": "Claquette Design Hokuno Dark",
+                  "price": "54,99 €",
+                  "dark": true
+                }
+              ]
+            },
+            "light": {
+              "image_handle": "claquette-design-hokuno-light",
+              "items": [
+                {
+                  "handle": "claquette-design-hokuno-light",
+                  "title": "Claquette Design Hokuno Light",
+                  "price": "54,99 €",
+                  "dark": false
+                }
+              ]
+            }
+          },
+          "coque": {
+            "name": "Coque",
+            "slug": "coque",
+            "dark": {
+              "image_handle": "coque-telephone-design-hokuno-empreinte-dark",
+              "items": [
+                {
+                  "handle": "coque-telephone-design-hokuno-empreinte-dark",
+                  "title": "Coque téléphone Design Hokuno Empreinte Dark",
+                  "price": "24,99 €",
+                  "dark": true
+                },
+                {
+                  "handle": "coque-telephone-design-hokuno-orbite-dark",
+                  "title": "Coque téléphone Design Hokuno Orbite Dark",
+                  "price": "24,99 €",
+                  "dark": true
+                },
+                {
+                  "handle": "coque-telephone-design-hokuno-target-dark",
+                  "title": "Coque téléphone Design Hokuno Target Dark",
+                  "price": "24,99 €",
+                  "dark": true
+                }
+              ]
+            }
+          },
+          "maillot": {
+            "name": "Maillot",
+            "slug": "maillot",
+            "dark": {
+              "image_handle": "maillot-de-bain-design-hokuno-dark",
+              "items": [
+                {
+                  "handle": "maillot-de-bain-design-hokuno-dark",
+                  "title": "Maillot De Bain Design Hokuno Dark",
+                  "price": "49,99 €",
+                  "dark": true
+                }
+              ]
+            }
+          }
         }
       },
-      "hokuno": {
-        "name": "Hokuno",
-        "slug": "hokuno",
-        "dark": {
-          "image_handle": "t-shirt-design-hokuno-dark",
-          "items": [
-            {
-              "handle": "bob-hokuno-design-dark",
-              "title": "Bob Hokuno Design Dark",
-              "price": "39,99 €",
-              "dark": true,
-              "ptype": "casquette"
-            },
-            {
-              "handle": "casquette-design-hokuno-dark",
-              "title": "Casquette Design Hokuno Dark",
-              "price": "29,99 €",
-              "dark": true,
-              "ptype": "casquette"
-            },
-            {
-              "handle": "casquette-hokuno-dark",
-              "title": "Casquette Hokuno Dark",
-              "price": "29,99 €",
-              "dark": true,
-              "ptype": "casquette"
-            },
-            {
-              "handle": "claquette-design-hokuno-dark",
-              "title": "Claquette Design Hokuno Dark",
-              "price": "54,99 €",
-              "dark": true,
-              "ptype": "default"
-            },
-            {
-              "handle": "maillot-de-bain-design-hokuno-dark",
-              "title": "Maillot De Bain Design Hokuno Dark",
-              "price": "49,99 €",
-              "dark": true,
-              "ptype": "default"
-            },
-            {
-              "handle": "t-shirt-design-hokuno-dark",
-              "title": "T-Shirt Design Hokuno Dark",
-              "price": "37,99 €",
-              "dark": true,
-              "ptype": "tshirt"
+      "short": {
+        "label": "SHORT",
+        "slug": "short",
+        "image_handle": "short-de-bain-design-hokuno-bleu",
+        "designs": {
+          "pattern": {
+            "name": "Pattern",
+            "slug": "pattern",
+            "light": {
+              "image_handle": "short-de-bain-design-hokuno-pattern-light",
+              "items": [
+                {
+                  "handle": "short-de-bain-design-hokuno-pattern-light",
+                  "title": "Short de bain Design Hokuno Pattern Light",
+                  "price": "49,65 €",
+                  "dark": false
+                }
+              ]
             }
-          ]
-        },
-        "light": {
-          "image_handle": "t-shirt-design-hokuno-ligth",
-          "items": [
-            {
-              "handle": "casquette-hokuno-light",
-              "title": "Casquette Hokuno Light",
-              "price": "29,99 €",
-              "dark": false,
-              "ptype": "casquette"
-            },
-            {
-              "handle": "claquette-design-hokuno-light",
-              "title": "Claquette Design Hokuno Light",
-              "price": "54,99 €",
-              "dark": false,
-              "ptype": "default"
-            },
-            {
-              "handle": "t-shirt-design-hokuno-ligth",
-              "title": "T-Shirt Design Hokuno Ligth",
-              "price": "37,99 €",
-              "dark": false,
-              "ptype": "tshirt"
+          },
+          "hokuno": {
+            "name": "Hokuno",
+            "slug": "hokuno",
+            "light": {
+              "image_handle": "short-de-bain-design-hokuno-bleu",
+              "items": [
+                {
+                  "handle": "short-de-bain-design-hokuno-bleu",
+                  "title": "Short De Bain Design Hokuno Bleu",
+                  "price": "49,99 €",
+                  "dark": false
+                },
+                {
+                  "handle": "short-de-bain-design-hokuno-bleu-ciel",
+                  "title": "Short De Bain Design Hokuno Bleu Ciel",
+                  "price": "49,99 €",
+                  "dark": false
+                },
+                {
+                  "handle": "short-de-bain-design-hokuno-jaune",
+                  "title": "Short De Bain Design Hokuno Jaune",
+                  "price": "49,99 €",
+                  "dark": false
+                },
+                {
+                  "handle": "short-de-bain-design-hokuno-rose",
+                  "title": "Short De Bain Design Hokuno Rose",
+                  "price": "49,99 €",
+                  "dark": false
+                },
+                {
+                  "handle": "short-de-bain-design-hokuno-rouge",
+                  "title": "Short De Bain Design Hokuno Rouge",
+                  "price": "49,99 €",
+                  "dark": false
+                },
+                {
+                  "handle": "short-de-bain-design-hokuno-vert",
+                  "title": "Short De Bain Design Hokuno Vert",
+                  "price": "49,99 €",
+                  "dark": false
+                }
+              ]
             }
-          ]
-        }
-      },
-      "orbite": {
-        "name": "Orbite",
-        "slug": "orbite",
-        "dark": {
-          "image_handle": "t-shirt-design-orbite-hokuno-dark",
-          "items": [
-            {
-              "handle": "coque-telephone-design-hokuno-orbite-dark",
-              "title": "Coque téléphone Design Hokuno Orbite Dark",
-              "price": "24,99 €",
-              "dark": true,
-              "ptype": "phonecase"
-            },
-            {
-              "handle": "t-shirt-design-orbite-hokuno-dark",
-              "title": "T-Shirt Design Orbite Hokuno Dark",
-              "price": "37,99 €",
-              "dark": true,
-              "ptype": "tshirt"
-            }
-          ]
-        },
-        "light": {
-          "image_handle": "t-shirt-design-orbite-hokuno-light",
-          "items": [
-            {
-              "handle": "t-shirt-design-orbite-hokuno-light",
-              "title": "T-Shirt Design Orbite Hokuno Light",
-              "price": "37,99 €",
-              "dark": false,
-              "ptype": "tshirt"
-            }
-          ]
-        }
-      },
-      "short-de-bain": {
-        "name": "Short de Bain",
-        "slug": "short-de-bain",
-        "dark": {
-          "image_handle": null,
-          "items": []
-        },
-        "light": {
-          "image_handle": "short-de-bain-design-hokuno-bleu",
-          "items": [
-            {
-              "handle": "short-de-bain-design-hokuno-bleu",
-              "title": "Short De Bain Design Hokuno Bleu",
-              "price": "49,99 €",
-              "dark": false,
-              "ptype": "default"
-            },
-            {
-              "handle": "short-de-bain-design-hokuno-bleu-ciel",
-              "title": "Short De Bain Design Hokuno Bleu Ciel",
-              "price": "49,99 €",
-              "dark": false,
-              "ptype": "default"
-            },
-            {
-              "handle": "short-de-bain-design-hokuno-jaune",
-              "title": "Short De Bain Design Hokuno Jaune",
-              "price": "49,99 €",
-              "dark": false,
-              "ptype": "default"
-            },
-            {
-              "handle": "short-de-bain-design-hokuno-rose",
-              "title": "Short De Bain Design Hokuno Rose",
-              "price": "49,99 €",
-              "dark": false,
-              "ptype": "default"
-            },
-            {
-              "handle": "short-de-bain-design-hokuno-rouge",
-              "title": "Short De Bain Design Hokuno Rouge",
-              "price": "49,99 €",
-              "dark": false,
-              "ptype": "default"
-            },
-            {
-              "handle": "short-de-bain-design-hokuno-vert",
-              "title": "Short De Bain Design Hokuno Vert",
-              "price": "49,99 €",
-              "dark": false,
-              "ptype": "default"
-            },
-            {
-              "handle": "short-de-bain-design-hokuno-pattern-light",
-              "title": "Short de bain Design Hokuno Pattern Light",
-              "price": "49,65 €",
-              "dark": false,
-              "ptype": "default"
-            }
-          ]
-        }
-      },
-      "signature": {
-        "name": "Signature",
-        "slug": "signature",
-        "dark": {
-          "image_handle": "polo-hokuno-signature-dark",
-          "items": [
-            {
-              "handle": "polo-hokuno-signature-dark",
-              "title": "Polo Hokuno Signature Dark",
-              "price": "44,99 €",
-              "dark": true,
-              "ptype": "default"
-            }
-          ]
-        },
-        "light": {
-          "image_handle": null,
-          "items": []
-        }
-      },
-      "sport": {
-        "name": "Sport",
-        "slug": "sport",
-        "dark": {
-          "image_handle": "t-shirt-sport-design-hokuno-dark",
-          "items": [
-            {
-              "handle": "t-shirt-sport-design-hokuno-dark",
-              "title": "T-Shirt Sport Design Hokuno Dark",
-              "price": "37,99 €",
-              "dark": true,
-              "ptype": "tshirt"
-            }
-          ]
-        },
-        "light": {
-          "image_handle": "t-shirt-sport-design-hokuno-light",
-          "items": [
-            {
-              "handle": "t-shirt-sport-design-hokuno-light",
-              "title": "T-Shirt Sport Design Hokuno Light",
-              "price": "37,99 €",
-              "dark": false,
-              "ptype": "tshirt"
-            }
-          ]
-        }
-      },
-      "target": {
-        "name": "Target",
-        "slug": "target",
-        "dark": {
-          "image_handle": "t-shirt-hokuno-design-target-hkn-dark",
-          "items": [
-            {
-              "handle": "coque-telephone-design-hokuno-target-dark",
-              "title": "Coque téléphone Design Hokuno Target Dark",
-              "price": "24,99 €",
-              "dark": true,
-              "ptype": "phonecase"
-            },
-            {
-              "handle": "t-shirt-hokuno-design-target-hkn-dark",
-              "title": "T-Shirt Hokuno Design Target HKN Dark",
-              "price": "37,99 €",
-              "dark": true,
-              "ptype": "tshirt"
-            },
-            {
-              "handle": "t-shirt-hokuno-design-target-dark",
-              "title": "T-Shirt hokuno Design Target Dark",
-              "price": "37,99 €",
-              "dark": true,
-              "ptype": "tshirt"
-            }
-          ]
-        },
-        "light": {
-          "image_handle": "t-shirt-hokuno-design-target-light",
-          "items": [
-            {
-              "handle": "t-shirt-hokuno-design-target-light",
-              "title": "T-Shirt hokuno Design Target Light",
-              "price": "25,96 €",
-              "dark": false,
-              "ptype": "tshirt"
-            }
-          ]
+          }
         }
       }
-    }
+    },
+    "type_order": [
+      "tshirt",
+      "polo",
+      "accessoires",
+      "short"
+    ]
   },
-  "_cache_bust": "2026-05-18T15:09:08Z"
+  "_cache_bust": "2026-05-18T16:10:10Z"
 }

@@ -298,14 +298,221 @@ COLLECTION_LAYOUT = {
             {"key": "accessories", "label": "Accessoires"},
         ],
     },
-    "DESIGN HOKUNO": {
+    # DESIGN HOKUNO uses a 3-level type/design/group structure, built
+    # separately by build_design_hokuno_block() and spliced into the output.
+}
+
+
+# ─── DESIGN HOKUNO — 3-level type navigation ───────────────────────────────
+DH_CATEGORY_LABEL = {
+    "tshirt":      "T-SHIRT",
+    "polo":        "POLO",
+    "short":       "SHORT",
+    "accessoires": "ACCESSOIRES",
+}
+DH_CATEGORY_ORDER = ["tshirt", "polo", "accessoires", "short"]
+
+
+def _dh_categorize(title: str) -> str:
+    u = title.upper()
+    if "POLO" in u:                                     return "polo"
+    if "SHORT" in u:                                    return "short"
+    if "COQUE" in u or " CASE" in u:                    return "accessoires"
+    if "CASQUETTE" in u or re.search(r"\bBOB\b", u):    return "accessoires"
+    if "CLAQUETTE" in u or "MAILLOT" in u:              return "accessoires"
+    if re.search(r"\bT[- ]?SHIRT\b", u):                return "tshirt"
+    return "accessoires"
+
+
+_DH_ACCESSORY_SUBTYPE_RULES: list[tuple[str, str, str]] = [
+    (r"\bBOB\b",        "bob",       "Bob"),
+    (r"\bCASQUETTE\b",  "casquette", "Casquette"),
+    (r"\bCLAQUETTE\b",  "claquette", "Claquette"),
+    (r"\bMAILLOT\b",    "maillot",   "Maillot"),
+    (r"\bCOQUE\b",      "coque",     "Coque"),
+    (r"\bCASE\b",       "coque",     "Coque"),
+]
+
+
+def _dh_accessory_subtype(title: str) -> tuple[str, str]:
+    u = title.upper()
+    for pattern, slug, label in _DH_ACCESSORY_SUBTYPE_RULES:
+        if re.search(pattern, u):
+            return slug, label
+    return "hokuno", "Hokuno"
+
+
+_DH_DESIGN_TOKENS: list[tuple[str, str, str]] = [
+    ("HO KU NO",  "ho-ku-no",  "Ho Ku No"),
+    ("EMPREINTE", "empreinte", "Empreinte"),
+    ("SIGNATURE", "signature", "Signature"),
+    ("BOUSSOLE",  "boussole",  "Boussole"),
+    ("PATTERN",   "pattern",   "Pattern"),
+    ("ORBITE",    "orbite",    "Orbite"),
+    ("TARGET",    "target",    "Target"),
+    ("SPORT",     "sport",     "Sport"),
+    ("HKN",       "target",    "Target"),
+]
+
+
+def _dh_design(title: str) -> tuple[str, str]:
+    u = title.upper()
+    for needle, slug, label in _DH_DESIGN_TOKENS:
+        if needle in u:
+            return slug, label
+    return "hokuno", "Hokuno"
+
+
+def _dh_parse_product(product: dict) -> dict | None:
+    title = (product.get("title") or "").strip()
+    if collection_detector.detect_collection(product) != "DESIGN HOKUNO":
+        return None
+    handle = _normalize_handle((product.get("external") or {}).get("handle"))
+    if not handle:
+        return None
+    category = _dh_categorize(title)
+    if category == "accessoires":
+        bucket_slug, bucket_label = _dh_accessory_subtype(title)
+    else:
+        bucket_slug, bucket_label = _dh_design(title)
+    enabled = [v for v in product.get("variants", []) if v.get("is_enabled")]
+    cents = min((v.get("price", 0) or 0 for v in enabled), default=0)
+    euros = cents / 100.0
+    price = f"{euros:,.2f}".replace(",", " ").replace(".", ",") + " €"
+    return {
+        "handle":       handle,
+        "title":        title,
+        "category":     category,
+        "bucket_slug":  bucket_slug,
+        "bucket_label": bucket_label,
+        "dark":         mockup_selector.is_dark_product(product),
+        "price":        price,
+    }
+
+
+def _dh_pick_category_image(category: str, items: list[dict]) -> str | None:
+    """Level-1 card image for a category."""
+    if not items:
+        return None
+    if category == "accessoires":
+        # Per design spec: ACCESSOIRES card uses a dark casquette
+        for it in items:
+            if it["bucket_slug"] == "casquette" and it["dark"]:
+                return it["handle"]
+        for it in items:
+            if it["bucket_slug"] == "casquette":
+                return it["handle"]
+    for it in items:
+        if it["dark"]:
+            return it["handle"]
+    return items[0]["handle"]
+
+
+def _dh_pick_bucket_image(items: list[dict], dark: bool) -> str | None:
+    for it in items:
+        if it["dark"] == dark:
+            return it["handle"]
+    return None
+
+
+def build_design_hokuno_block(products: list[dict]) -> dict:
+    """Return the 3-level type-navigation structure for DESIGN HOKUNO.
+
+    Shape:
+      {
+        "type_navigation": true,
+        "alphabet": false,
+        "groups": [{"key":"dark","label":"Dark"},{"key":"light","label":"Light"}],
+        "type_order": ["tshirt","polo","accessoires","short"],
+        "types": {
+          "tshirt": {
+            "label": "T-SHIRT",
+            "slug":  "tshirt",
+            "image_handle": "...",
+            "designs": {
+              "empreinte": {
+                "name": "Empreinte",
+                "slug": "empreinte",
+                "dark":  {"image_handle": "...", "items": [...]},  // omitted if 0 items
+                "light": {"image_handle": "...", "items": [...]}   // omitted if 0 items
+              },
+              ...
+            }
+          },
+          "accessoires": {...designs keyed by sub-type (bob/casquette/.../coque)...},
+          ...
+        }
+      }
+    """
+    parsed = [p for p in (_dh_parse_product(pr) for pr in products) if p]
+
+    by_cat: dict[str, dict[str, list[dict]]] = {c: {} for c in DH_CATEGORY_ORDER}
+    for p in parsed:
+        by_cat[p["category"]].setdefault(p["bucket_slug"], []).append(p)
+
+    out: dict = {
+        "type_navigation": True,
         "alphabet": False,
         "groups": [
             {"key": "dark",  "label": "Dark"},
             {"key": "light", "label": "Light"},
         ],
-    },
-}
+        "types": {},
+    }
+    type_order: list[str] = []
+    for cat in DH_CATEGORY_ORDER:
+        buckets = by_cat[cat]
+        if not buckets:
+            continue
+        type_order.append(cat)
+
+        all_items_in_cat = [it for bk in buckets.values() for it in bk]
+        cat_image = _dh_pick_category_image(cat, all_items_in_cat)
+
+        buckets_out: dict = {}
+        sorted_bucket_slugs = sorted(
+            buckets.keys(),
+            key=lambda s: (s == "hokuno", buckets[s][0]["bucket_label"].lower()),
+        )
+        for bs in sorted_bucket_slugs:
+            items = sorted(buckets[bs], key=lambda x: (x["dark"], x["title"]))
+            dark_items  = [i for i in items if i["dark"]]
+            light_items = [i for i in items if not i["dark"]]
+            bucket_payload: dict = {
+                "name": items[0]["bucket_label"],
+                "slug": bs,
+            }
+            # Only emit sub-groups that actually have products — hides empty
+            # Dark/Light cards in the niveau 2 view (e.g. Signature is dark-only).
+            if dark_items:
+                bucket_payload["dark"] = {
+                    "image_handle": _dh_pick_bucket_image(items, dark=True),
+                    "items": [
+                        {"handle": it["handle"], "title": it["title"],
+                         "price": it["price"], "dark": True}
+                        for it in dark_items
+                    ],
+                }
+            if light_items:
+                bucket_payload["light"] = {
+                    "image_handle": _dh_pick_bucket_image(items, dark=False),
+                    "items": [
+                        {"handle": it["handle"], "title": it["title"],
+                         "price": it["price"], "dark": False}
+                        for it in light_items
+                    ],
+                }
+            buckets_out[bs] = bucket_payload
+
+        out["types"][cat] = {
+            "label":        DH_CATEGORY_LABEL[cat],
+            "slug":         cat,
+            "image_handle": cat_image,
+            "designs":      buckets_out,
+        }
+
+    out["type_order"] = type_order
+    return out
 
 
 def _pick_image_for_group(items: list[dict], group_key: str) -> str | None:
@@ -377,6 +584,9 @@ def build_map(products: list[dict]) -> tuple[dict, list[dict]]:
     unmatched: list[dict] = []
 
     for product in products:
+        # DESIGN HOKUNO is built separately via build_design_hokuno_block().
+        if collection_detector.detect_collection(product) == "DESIGN HOKUNO":
+            continue
         parsed = parse_product(product)
         if not parsed:
             unmatched.append({
@@ -432,6 +642,9 @@ def build_map(products: list[dict]) -> tuple[dict, list[dict]]:
             "entries": entries_out,
         }
 
+    # Splice in the 3-level Design Hokuno block.
+    out["DESIGN HOKUNO"] = build_design_hokuno_block(products)
+
     return out, unmatched
 
 
@@ -451,13 +664,25 @@ def run() -> int:
     print("\n=== Stats per collection ===")
     total_items = 0
     for col, payload in char_map.items():
-        n_entries = len(payload["entries"])
-        n_items = sum(
-            len(e[g["key"]]["items"]) for e in payload["entries"].values() for g in payload["groups"]
-        )
+        if payload.get("type_navigation"):
+            n_types = len(payload.get("types") or {})
+            n_items = sum(
+                len(bk.get("items") or [])
+                for t in payload["types"].values()
+                for ds in t["designs"].values()
+                for grp_key in ("dark", "light")
+                for bk in [ds.get(grp_key)] if bk
+            )
+            type_labels = ", ".join(payload["types"][c]["label"] for c in payload["type_order"])
+            print(f"  {col:<14} types={n_types:>3}  items={n_items:>3}  [{type_labels}]  type_navigation=True")
+        else:
+            n_entries = len(payload["entries"])
+            n_items = sum(
+                len(e[g["key"]]["items"]) for e in payload["entries"].values() for g in payload["groups"]
+            )
+            groups = ", ".join(g["label"] for g in payload["groups"])
+            print(f"  {col:<14} entries={n_entries:>3}  items={n_items:>3}  groups=[{groups}]  alphabet={payload['alphabet']}")
         total_items += n_items
-        groups = ", ".join(g["label"] for g in payload["groups"])
-        print(f"  {col:<14} entries={n_entries:>3}  items={n_items:>3}  groups=[{groups}]  alphabet={payload['alphabet']}")
     print(f"\nTotal items mapped: {total_items}  /  Printify total: {len(products)}")
     print(f"Unmatched: {len(unmatched)}")
     if unmatched:
@@ -469,6 +694,15 @@ def run() -> int:
     print("\n=== Entry samples (3 per collection) ===")
     for col, payload in char_map.items():
         print(f"\n--- {col} ---")
+        if payload.get("type_navigation"):
+            for cat in payload["type_order"]:
+                t = payload["types"][cat]
+                print(f"  [{cat}] {t['label']}  image={t['image_handle']}")
+                for ds_slug, ds in t["designs"].items():
+                    n_dark = len((ds.get("dark") or {}).get("items") or [])
+                    n_light = len((ds.get("light") or {}).get("items") or [])
+                    print(f"      └─ {ds_slug:<12} {ds['name']:<14} dark={n_dark} light={n_light}")
+            continue
         slugs = list(payload["entries"].keys())[:3]
         for slug in slugs:
             e = payload["entries"][slug]
