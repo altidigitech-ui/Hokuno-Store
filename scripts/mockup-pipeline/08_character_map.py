@@ -114,20 +114,6 @@ def _apply_name_override(collection: str, slug: str, parsed_name: str) -> str:
     return NAME_OVERRIDES_BY_COLLECTION.get(collection, {}).get(slug, parsed_name)
 
 
-# Slugs where the FR tee files on Printify have the wrong character design
-# uploaded (data quality issue at the source). As a thumbnail workaround we
-# point the FR card's image to the corresponding EN tee handle (which has the
-# correct artwork). The products inside the FR group are left untouched —
-# they remain accessible but the product page on Shopify will still show the
-# bad artwork until the design is re-uploaded on Printify.
-FR_CARD_IMAGE_USE_EN: dict[str, set[str]] = {
-    "WANTED": {
-        "bartolomiou-kouma", "boha-ancock", "crocockdile", "dracule-miok",
-        "eustash-cap-kid", "gayko-mauria", "harllong", "iamato", "iwankoff",
-        "kobi", "momonosucke", "monki-di-dragone", "portgas-di-ase",
-        "sabot", "trafalgar-di-low",
-    }
-}
 
 
 def detect_language(title: str) -> str | None:
@@ -415,7 +401,6 @@ def build_map(products: list[dict]) -> tuple[dict, list[dict]]:
     for col, layout in COLLECTION_LAYOUT.items():
         entries_in = raw.get(col, {})
         entries_out: dict = {}
-        broken_fr = FR_CARD_IMAGE_USE_EN.get(col, set())
         for slug in sorted(entries_in.keys()):
             entry = entries_in[slug]
             display_name = _apply_name_override(col, slug, entry["_name"])
@@ -439,21 +424,6 @@ def build_map(products: list[dict]) -> tuple[dict, list[dict]]:
                         for it in items_sorted
                     ],
                 }
-            # FR thumbnail workaround for Printify design-mismatch products:
-            # use the EN light tee's correct artwork as the FR card image.
-            if slug in broken_fr and payload.get("fr") and payload.get("en"):
-                en_items = payload["en"]["items"]
-                substitute = None
-                for it in en_items:
-                    if it["ptype"] == "tshirt" and not it["dark"]:
-                        substitute = it["handle"]; break
-                if not substitute:
-                    for it in en_items:
-                        if it["ptype"] == "tshirt":
-                            substitute = it["handle"]; break
-                if substitute:
-                    payload["fr"]["image_handle"] = substitute
-                    payload["fr"]["image_substituted"] = True
             entries_out[slug] = payload
 
         out[col] = {
