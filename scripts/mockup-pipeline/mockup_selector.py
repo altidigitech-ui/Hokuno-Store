@@ -104,6 +104,16 @@ TSHIRT_BACK_ANGLE_IDS = ("102006", "92571")
 # blueprints via the position field; on BP 6 it only lives in URL camera_label).
 TSHIRT_POSITION_PRIORITY = ("back-2", "back_2", "back2", "back-1", "back")
 
+# Sport tees (BP 145) carry the design on the FRONT (no back print) — invert
+# the default back-preference and pick a front view instead.
+TSHIRT_FRONT_POSITION_PRIORITY = ("front-2", "front_2", "front2", "front")
+
+
+def _is_front_print_tshirt(product: dict) -> bool:
+    """True if the t-shirt has its design on the front (e.g. Sport BP 145)."""
+    title = (product.get("title") or "").upper()
+    return "SPORT" in title
+
 
 def _url_camera_label(src: str) -> str:
     """Extract the camera_label query param from a Printify mockup URL."""
@@ -175,12 +185,17 @@ def pick_source_mockup(product: dict, ptype: str, color_variant_ids: list[int] |
 
 
 def pick_source_mockup_tshirt(product: dict, color_variant_ids: list[int] | None = None) -> dict:
-    """Pick a t-shirt back mockup, preferring the wrinkled back-2 angle.
+    """Pick a t-shirt mockup. Default = back-2 (wrinkled back lay) for tees
+    with a back print; Sport tees flip to front because the design lives there.
 
-    Priority:
+    Priority (back-print tees):
       1. Position / camera_label matches in order: back-2, back_2, back2, back-1, back
       2. Known back angle IDs in URL (102006 before 92571) — for products labeled 'other'
       3. is_default → first image
+
+    Priority (front-print tees, e.g. Sport BP 145):
+      1. Position / camera_label matches in order: front-2, front_2, front2, front
+      2. is_default → first image
     """
     imgs = product.get("images", [])
     if not imgs:
@@ -194,6 +209,16 @@ def pick_source_mockup_tshirt(product: dict, color_variant_ids: list[int] | None
         filtered = [i for i in pool if wanted.intersection(i.get("variant_ids") or [])]
         if filtered:
             pool = filtered
+
+    if _is_front_print_tshirt(product):
+        for needle in TSHIRT_FRONT_POSITION_PRIORITY:
+            for i in pool:
+                if _angle_position(i) == needle:
+                    return i
+        for i in pool:
+            if i.get("is_default"):
+                return i
+        return pool[0]
 
     for needle in TSHIRT_POSITION_PRIORITY:
         for i in pool:

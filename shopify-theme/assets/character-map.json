@@ -4803,21 +4803,6 @@
                 }
               ]
             }
-          },
-          "maillot": {
-            "name": "Maillot",
-            "slug": "maillot",
-            "dark": {
-              "image_handle": "maillot-de-bain-design-hokuno-dark",
-              "items": [
-                {
-                  "handle": "maillot-de-bain-design-hokuno-dark",
-                  "title": "Maillot De Bain Design Hokuno Dark",
-                  "price": "49,99 €",
-                  "dark": true
-                }
-              ]
-            }
           }
         }
       },
@@ -4844,6 +4829,17 @@
           "hokuno": {
             "name": "Hokuno",
             "slug": "hokuno",
+            "dark": {
+              "image_handle": "maillot-de-bain-design-hokuno-dark",
+              "items": [
+                {
+                  "handle": "maillot-de-bain-design-hokuno-dark",
+                  "title": "Maillot De Bain Design Hokuno Dark",
+                  "price": "49,99 €",
+                  "dark": true
+                }
+              ]
+            },
             "light": {
               "image_handle": "short-de-bain-design-hokuno-bleu",
               "items": [
@@ -4896,5 +4892,5 @@
       "short"
     ]
   },
-  "_cache_bust": "2026-05-18T16:57:21Z"
+  "_cache_bust": "2026-05-19T08:36:13Z"
 }

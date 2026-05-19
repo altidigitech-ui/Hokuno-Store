@@ -1,5 +1,9 @@
 """Build shopify-theme/assets/character-map.json from Printify titles.
 
+Adds a top-level `_cache_bust` timestamp on each write so the storefront
+sees a different file payload and forces the CDN+browser to refetch even
+when the rest of the map is unchanged.
+
 Output structure (one entry per Hokuno collection):
 
     {
@@ -35,6 +39,7 @@ Run:
 """
 from __future__ import annotations
 
+import datetime
 import json
 import re
 import sys
@@ -316,10 +321,11 @@ DH_CATEGORY_ORDER = ["tshirt", "polo", "accessoires", "short"]
 def _dh_categorize(title: str) -> str:
     u = title.upper()
     if "POLO" in u:                                     return "polo"
-    if "SHORT" in u:                                    return "short"
+    # Maillot de bain = swim trunk → same category as shorts (BP 978 anyway).
+    if "SHORT" in u or "MAILLOT" in u:                  return "short"
     if "COQUE" in u or " CASE" in u:                    return "accessoires"
     if "CASQUETTE" in u or re.search(r"\bBOB\b", u):    return "accessoires"
-    if "CLAQUETTE" in u or "MAILLOT" in u:              return "accessoires"
+    if "CLAQUETTE" in u:                                return "accessoires"
     if re.search(r"\bT[- ]?SHIRT\b", u):                return "tshirt"
     return "accessoires"
 
@@ -328,7 +334,6 @@ _DH_ACCESSORY_SUBTYPE_RULES: list[tuple[str, str, str]] = [
     (r"\bBOB\b",        "bob",       "Bob"),
     (r"\bCASQUETTE\b",  "casquette", "Casquette"),
     (r"\bCLAQUETTE\b",  "claquette", "Claquette"),
-    (r"\bMAILLOT\b",    "maillot",   "Maillot"),
     (r"\bCOQUE\b",      "coque",     "Coque"),
     (r"\bCASE\b",       "coque",     "Coque"),
 ]
@@ -402,6 +407,14 @@ def _dh_pick_category_image(category: str, items: list[dict]) -> str | None:
         for it in items:
             if it["bucket_slug"] == "casquette":
                 return it["handle"]
+    if category == "short":
+        # Shorts have no real dark/light split (the maillot is white-bodied
+        # like the rest); pick a vibrant colored short for the category card
+        # so it doesn't render as a white blob.
+        for color_word in ("bleu", "rouge", "vert", "jaune", "rose", "bleu-ciel", "pattern"):
+            for it in items:
+                if color_word in it["handle"].lower():
+                    return it["handle"]
     for it in items:
         if it["dark"]:
             return it["handle"]
@@ -720,9 +733,11 @@ def run() -> int:
         return 0
 
     OUT_FILE.parent.mkdir(parents=True, exist_ok=True)
+    char_map["_cache_bust"] = datetime.datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ")
     OUT_FILE.write_text(json.dumps(char_map, ensure_ascii=False, indent=2))
     size_kb = OUT_FILE.stat().st_size / 1024
-    print(f"\n✓ Wrote {OUT_FILE.relative_to(config.REPO_ROOT)} ({size_kb:.1f} KB)")
+    print(f"\n✓ Wrote {OUT_FILE.relative_to(config.REPO_ROOT)} ({size_kb:.1f} KB)  "
+          f"[_cache_bust={char_map['_cache_bust']}]")
     return 0
 
 
