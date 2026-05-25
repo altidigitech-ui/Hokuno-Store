@@ -462,20 +462,26 @@
     {%- comment -%}HOKUNO-MOCKUP-LIST:END{%- endcomment -%}
     {%- assign _list = "," | append: mockup_handles -%}
     <p class="hp-label">{{ 'hero.featured_label' | t }}</p>
-    {% for product in collections.all.products limit: 3 %}
-      <a href="{{ product.url }}" class="hp-card">
-        {%- assign _check = "," | append: product.handle | append: "," -%}
-        {%- if _list contains _check -%}
-          <img src="{{ 'mockup-' | append: product.handle | append: '.webp' | asset_url }}" alt="{{ product.title }}" width="60" height="60" loading="lazy">
-        {%- elsif product.featured_image -%}
-          <img src="{{ product.featured_image | image_url: width: 200 }}" alt="{{ product.title }}" width="60" height="60" loading="lazy">
+    {%- assign hero_card_handles = "t-shirt-lufi-wanted-noir-1-17,short-de-bain-design-hokuno-rouge,claquette-design-hokuno-dark" | split: "," -%}
+    {%- for target_h in hero_card_handles -%}
+      {%- for product in collections.all.products -%}
+        {%- if product.handle == target_h -%}
+          <a href="{{ product.url }}" class="hp-card">
+            {%- assign _check = "," | append: product.handle | append: "," -%}
+            {%- if _list contains _check -%}
+              <img src="{{ 'mockup-' | append: product.handle | append: '.webp' | asset_url }}" alt="{{ product.title }}" width="60" height="60" loading="lazy">
+            {%- elsif product.featured_image -%}
+              <img src="{{ product.featured_image | image_url: width: 200 }}" alt="{{ product.title }}" width="60" height="60" loading="lazy">
+            {%- endif -%}
+            <div>
+              <div class="hp-card-title">{{ product.title | truncate: 30 }}</div>
+              <div class="hp-card-price">{{ product.price | money }}</div>
+            </div>
+          </a>
+          {%- break -%}
         {%- endif -%}
-        <div>
-          <div class="hp-card-title">{{ product.title | truncate: 30 }}</div>
-          <div class="hp-card-price">{{ product.price | money }}</div>
-        </div>
-      </a>
-    {% endfor %}
+      {%- endfor -%}
+    {%- endfor -%}
   </div>
 </section>
 
@@ -523,8 +529,14 @@
 <section class="feat animate-on-scroll" aria-labelledby="feat-title">
   <h2 class="feat-title" id="feat-title">{{ 'home.featured' | t }}</h2>
   <div class="feat-grid">
-    {% for product in collections.all.products limit: 8 %}
-      {% render 'product-card', product: product %}
-    {% endfor %}
+    {%- assign feat_handles = "t-shirt-alabastards-wanted-noir-17-17,short-de-bain-design-hokuno-bleu,t-shirt-hokuno-design-target-dark,black-mug-wanted-baggy-11oz-15oz,bob-hokuno-design-dark,casquette-hokuno-dark,t-shirt-zoro-direction-noir-2-10,t-shirt-choper-mythologie-noir-6-10" | split: "," -%}
+    {%- for target_h in feat_handles -%}
+      {%- for product in collections.all.products -%}
+        {%- if product.handle == target_h -%}
+          {% render 'product-card', product: product %}
+          {%- break -%}
+        {%- endif -%}
+      {%- endfor -%}
+    {%- endfor -%}
   </div>
 </section>
