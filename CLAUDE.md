@@ -3,7 +3,7 @@
 ## Contexte du projet
 
 Ce repo est la source de vérité pour **Hokuno** (ホクノ), une marque streetwear manga en Print on Demand.
-Lis `CONTEXT.md` en premier — il contient toute la brand bible : identité, collections, produits, SEO/GEO, stratégie multi-canal.
+Lis `EXPLOITATION.md` **EN PREMIER** — c'est la mémoire opérationnelle (état boutique, accès, impasses, décisions). **Ne JAMAIS re-tester les IMPASSES qui y sont listées.** Puis lis `CONTEXT.md` — il contient toute la brand bible : identité, collections, produits, SEO/GEO, stratégie multi-canal.
 
 ## Structure
 
@@ -196,6 +196,7 @@ Consulte la section SEO & GEO dans `CONTEXT.md` pour toutes les directives.
 
 **À chaque fin de session ou après toute action sur Printify (création, modification, suppression de produits) :**
 
+0. **Mettre à jour `EXPLOITATION.md`** — état boutique, toute nouvelle impasse, décision, et une entrée de journal datée.
 1. **Mettre à jour `INVENTAIRE.md`** — régénérer depuis l'API (script ci-dessous) ou mettre à jour manuellement les sections concernées, avec le bon total et la bonne date
 2. **Mettre à jour `CLAUDE.md` section "État actuel"** — total produits, état par collection, anomalies connues
 3. **Mettre à jour la liste "Produits restants à créer"** — cocher ce qui est fait, ajouter ce qui est découvert
