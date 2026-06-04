@@ -314,11 +314,15 @@
       if (!t) return;
       var imgUrl = t.image_handle ? mockupUrl(t.image_handle) : '';
       var count = 0;
-      Object.keys(t.designs || {}).forEach(function (ds) {
-        var d = t.designs[ds];
-        if (d.dark && d.dark.items)  count += d.dark.items.length;
-        if (d.light && d.light.items) count += d.light.items.length;
-      });
+      if (t.flat) {
+        count = (t.items || []).length;
+      } else {
+        Object.keys(t.designs || {}).forEach(function (ds) {
+          var d = t.designs[ds];
+          if (d.dark && d.dark.items)  count += d.dark.items.length;
+          if (d.light && d.light.items) count += d.light.items.length;
+        });
+      }
       html += ''
         + '<button class="char-card type-card" type="button" '
         + 'data-type="' + escapeHtml(cat) + '" '
@@ -346,6 +350,45 @@
   function renderTypeIndex(cat) {
     var t = (col.types || {})[cat];
     if (!t) { location.hash = ''; return; }
+
+    // Flat type → niveau 1 click jumps straight to a product grid (no design
+    // picker, no dark/light split). Used for SHORT, where shorts and maillot
+    // all share the same silhouette and the only differentiator is color.
+    if (t.flat) {
+      var html = '<div class="view view-group">';
+      html += '<div class="char-products-view">';
+      html += '<div class="char-products-header">';
+      html += '<h2 class="char-products-title">' + escapeHtml(t.label) + '</h2>';
+      html += '<button class="char-back-btn" type="button" id="char-back-btn">' + i18n.backToCategories + '</button>';
+      html += '</div>';
+      var items = t.items || [];
+      if (!items.length) {
+        html += '<p class="char-nav-loading">' + i18n.empty + '</p>';
+      } else {
+        html += '<div class="char-product-grid">';
+        items.forEach(function (it) {
+          var display = cleanTitle(it.title);
+          html += ''
+            + '<a class="char-product" href="' + productUrl(it.handle) + '">'
+            + '  <div class="char-product-media">'
+            + '    <img src="' + mockupUrl(it.handle) + '" alt="' + escapeHtml(display) + '" loading="lazy" width="600" height="600">'
+            + '  </div>'
+            + '  <div class="char-product-body">'
+            + '    <div class="char-product-title">' + escapeHtml(display) + '</div>'
+            + '    <div class="char-product-price">' + escapeHtml(it.price) + '</div>'
+            + '  </div>'
+            + '</a>';
+        });
+        html += '</div>';
+      }
+      html += '</div></div>';
+      root.innerHTML = html;
+      var backFlat = document.getElementById('char-back-btn');
+      if (backFlat) backFlat.addEventListener('click', function () { location.hash = ''; });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+
     var html = '<div class="view view-group">';
     html += '<div class="char-products-view">';
     html += '<div class="char-products-header">';

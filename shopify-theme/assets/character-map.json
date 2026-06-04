@@ -4810,79 +4810,57 @@
         "label": "SHORT",
         "slug": "short",
         "image_handle": "short-de-bain-design-hokuno-bleu",
-        "designs": {
-          "pattern": {
-            "name": "Pattern",
-            "slug": "pattern",
-            "light": {
-              "image_handle": "short-de-bain-design-hokuno-pattern-light",
-              "items": [
-                {
-                  "handle": "short-de-bain-design-hokuno-pattern-light",
-                  "title": "Short de bain Design Hokuno Pattern Light",
-                  "price": "49,65 €",
-                  "dark": false
-                }
-              ]
-            }
+        "flat": true,
+        "items": [
+          {
+            "handle": "maillot-de-bain-design-hokuno-dark",
+            "title": "Maillot De Bain Design Hokuno Dark",
+            "price": "49,99 €",
+            "dark": true
           },
-          "hokuno": {
-            "name": "Hokuno",
-            "slug": "hokuno",
-            "dark": {
-              "image_handle": "maillot-de-bain-design-hokuno-dark",
-              "items": [
-                {
-                  "handle": "maillot-de-bain-design-hokuno-dark",
-                  "title": "Maillot De Bain Design Hokuno Dark",
-                  "price": "49,99 €",
-                  "dark": true
-                }
-              ]
-            },
-            "light": {
-              "image_handle": "short-de-bain-design-hokuno-bleu",
-              "items": [
-                {
-                  "handle": "short-de-bain-design-hokuno-bleu",
-                  "title": "Short De Bain Design Hokuno Bleu",
-                  "price": "49,99 €",
-                  "dark": false
-                },
-                {
-                  "handle": "short-de-bain-design-hokuno-bleu-ciel",
-                  "title": "Short De Bain Design Hokuno Bleu Ciel",
-                  "price": "49,99 €",
-                  "dark": false
-                },
-                {
-                  "handle": "short-de-bain-design-hokuno-jaune",
-                  "title": "Short De Bain Design Hokuno Jaune",
-                  "price": "49,99 €",
-                  "dark": false
-                },
-                {
-                  "handle": "short-de-bain-design-hokuno-rose",
-                  "title": "Short De Bain Design Hokuno Rose",
-                  "price": "49,99 €",
-                  "dark": false
-                },
-                {
-                  "handle": "short-de-bain-design-hokuno-rouge",
-                  "title": "Short De Bain Design Hokuno Rouge",
-                  "price": "49,99 €",
-                  "dark": false
-                },
-                {
-                  "handle": "short-de-bain-design-hokuno-vert",
-                  "title": "Short De Bain Design Hokuno Vert",
-                  "price": "49,99 €",
-                  "dark": false
-                }
-              ]
-            }
+          {
+            "handle": "short-de-bain-design-hokuno-bleu",
+            "title": "Short De Bain Design Hokuno Bleu",
+            "price": "49,99 €",
+            "dark": false
+          },
+          {
+            "handle": "short-de-bain-design-hokuno-bleu-ciel",
+            "title": "Short De Bain Design Hokuno Bleu Ciel",
+            "price": "49,99 €",
+            "dark": false
+          },
+          {
+            "handle": "short-de-bain-design-hokuno-jaune",
+            "title": "Short De Bain Design Hokuno Jaune",
+            "price": "49,99 €",
+            "dark": false
+          },
+          {
+            "handle": "short-de-bain-design-hokuno-rose",
+            "title": "Short De Bain Design Hokuno Rose",
+            "price": "49,99 €",
+            "dark": false
+          },
+          {
+            "handle": "short-de-bain-design-hokuno-rouge",
+            "title": "Short De Bain Design Hokuno Rouge",
+            "price": "49,99 €",
+            "dark": false
+          },
+          {
+            "handle": "short-de-bain-design-hokuno-vert",
+            "title": "Short De Bain Design Hokuno Vert",
+            "price": "49,99 €",
+            "dark": false
+          },
+          {
+            "handle": "short-de-bain-design-hokuno-pattern-light",
+            "title": "Short de bain Design Hokuno Pattern Light",
+            "price": "49,65 €",
+            "dark": false
           }
-        }
+        ]
       }
     },
     "type_order": [

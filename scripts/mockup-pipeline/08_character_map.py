@@ -482,6 +482,27 @@ def build_design_hokuno_block(products: list[dict]) -> dict:
         all_items_in_cat = [it for bk in buckets.values() for it in bk]
         cat_image = _dh_pick_category_image(cat, all_items_in_cat)
 
+        # SHORT category is flat: shorts/maillots all share the same silhouette
+        # and don't really split along Dark/Light. Niveau 1 click → product grid.
+        if cat == "short":
+            flat_items = sorted(
+                all_items_in_cat,
+                key=lambda x: (x["bucket_slug"] != "hokuno",
+                               not x["dark"], x["title"]),
+            )
+            out["types"][cat] = {
+                "label":        DH_CATEGORY_LABEL[cat],
+                "slug":         cat,
+                "image_handle": cat_image,
+                "flat":         True,
+                "items": [
+                    {"handle": it["handle"], "title": it["title"],
+                     "price": it["price"], "dark": it["dark"]}
+                    for it in flat_items
+                ],
+            }
+            continue
+
         buckets_out: dict = {}
         sorted_bucket_slugs = sorted(
             buckets.keys(),
@@ -679,13 +700,16 @@ def run() -> int:
     for col, payload in char_map.items():
         if payload.get("type_navigation"):
             n_types = len(payload.get("types") or {})
-            n_items = sum(
-                len(bk.get("items") or [])
-                for t in payload["types"].values()
-                for ds in t["designs"].values()
-                for grp_key in ("dark", "light")
-                for bk in [ds.get(grp_key)] if bk
-            )
+            n_items = 0
+            for t in payload["types"].values():
+                if t.get("flat"):
+                    n_items += len(t.get("items") or [])
+                else:
+                    for ds in t.get("designs", {}).values():
+                        for grp_key in ("dark", "light"):
+                            bk = ds.get(grp_key)
+                            if bk:
+                                n_items += len(bk.get("items") or [])
             type_labels = ", ".join(payload["types"][c]["label"] for c in payload["type_order"])
             print(f"  {col:<14} types={n_types:>3}  items={n_items:>3}  [{type_labels}]  type_navigation=True")
         else:
@@ -711,7 +735,10 @@ def run() -> int:
             for cat in payload["type_order"]:
                 t = payload["types"][cat]
                 print(f"  [{cat}] {t['label']}  image={t['image_handle']}")
-                for ds_slug, ds in t["designs"].items():
+                if t.get("flat"):
+                    print(f"      └─ FLAT  items={len(t.get('items') or [])}")
+                    continue
+                for ds_slug, ds in t.get("designs", {}).items():
                     n_dark = len((ds.get("dark") or {}).get("items") or [])
                     n_light = len((ds.get("light") or {}).get("items") or [])
                     print(f"      └─ {ds_slug:<12} {ds['name']:<14} dark={n_dark} light={n_light}")
